@@ -47,7 +47,7 @@ class Home extends React.Component {
             <div className="App" onClick = {(e) => this.closeSubMenu(e)}>
                 
                     <ul className={(this.state.menuActive) ? "menu active" : "menu"}>
-                        <li className="logo">Logo img</li>
+                        <li className="logo">LOGO</li>
 
                         <li className="item"> <a>Portfolio</a> </li>
                         <li className="item"> <a>My Works</a> </li>

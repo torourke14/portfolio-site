@@ -9,6 +9,7 @@
     width: 100%;
 }
 
+/* Hero Image Styling */
 #hero-wrapper {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../images/LinkedInPic.jpg');
@@ -22,26 +23,116 @@
     flex-flow: column wrap;
 }
 
-#hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    #hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        transform: translate(-50%, -50%);
+        color: white;
 
-    display: flex;
-    flex-flow: row nowrap;
-}
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: baseline;
+    }
+    #hero-name {
+        margin: 0 30px 20px 0;
+        font-size: 4.5em;
+    }
+    .hero-link {
+        margin: 2.5px;
+        padding-left: 2.5px;
+        line-height: 1.75em;
+    }
+    #hero-block-left {
+        width: 60%;
+    }
+    #hero-block-right {
+        width: 40%;
+    }
 
-#hero-block-left {
-
-}
-
-#hero-block-right {
-    float: right;
-}
-
+/* My Works Styling */
 #works-wrapper {
-    background-color: blue;
-    height: 500px;
+    background-color: #f1f1f1;
+    color: black;
+    height: 100%;
+    padding: 20px;
+    word-wrap: normal;
+    word-break: all;
 }
+
+    #works-title {
+        position: relative;
+        font-size: 3.75em;
+        padding-left: 10%;
+        padding-bottom: 40px;
+    }
+    #works-title p {
+        position: absolute;
+        top: -91.25px; /* 71.25 + 20*/
+        color: white;
+    }
+
+
+/* Portfolio Grid Styling */
+.portfolio-grid {
+    font-size: 40px;
+    margin: 8px -16px;
+}
+
+.portfolio-grid > .project {
+    padding: 8px;
+}
+
+.project {
+    float: left;
+    width: 50%;
+    display: block; /*none, hide by default */
+}
+
+/*Clear float after rows */
+.portfolio-grid:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Project-box content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+/* show class added to filtered elements */
+.show {
+    display: block;
+}
+
+/* Filter Button functionality*/
+/* Style the buttons */
+/*.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+  }
+  */
+  
+  /* Add a grey background color on mouse-over */
+  /*.btn:hover {
+    background-color: #ddd;
+  }
+  */
+  /* Add a dark background color to the active button */
+  /*.btn.active {
+    background-color: #666;
+     color: white;
+  }*/
+    

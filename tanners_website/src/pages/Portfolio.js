@@ -11,12 +11,16 @@ class Portfolio extends React.Component {
                                 <div id="hero-wrapper">
                                         <div id="hero-content">
                                                 <div id="hero-block-left">
-                                                        <div id="name"><h1>Tanner O'Rourke</h1></div>
-                                                        <div><a>UX / UI Ddesign</a></div>
+                                                        <div id="hero-name"><p><b>Tanner</b> <i>O'Rourke</i></p></div>
+                                                        <div className="hero-link"><a >UX / UI Design</a></div>
+                                                        <div className="hero-link"><a>Front-End</a></div>
+                                                        <div className="hero-link"><a>Freelance</a></div>
                                                 </div>
                                                 <div id="hero-block-right">
                                                         <h4 id="desscription">
-                                                        I Design Websites!!
+                                                        I Design Websites FOR THE FREAKING SOUL AAHHHH
+                                                        LETS BUILD FACEBOOK AAHHHHHH IM LIKE PICASSO BUT
+                                                        ILL WORK FOR YOU (maybe)
                                                         </h4>
                                                 
                                                 </div>
@@ -25,7 +29,17 @@ class Portfolio extends React.Component {
                         </div>
                         <div className="container">
                                 <div id="works-wrapper">
-                                        My Works
+                                        <div id='works-title'>
+                                                <p><i>My Works</i></p>
+                                        </div>
+
+                                        <div className="portfolio-grid">
+                                                <Project type="design" />
+                                                <Project type="design" />
+                                                <Project type="design" />
+                                                <Project type="design" />
+                                        </div>
+
                                 </div>
                         </div>
 
@@ -34,4 +48,26 @@ class Portfolio extends React.Component {
         }
 }
 
+
+class Project extends React.Component {
+        constructor(props) {
+                super(props);
+                this.type = props.type;
+        }
+
+        render() {
+        let defaultStyles = {
+                color: "white"
+        }
+        return (
+                <div className="project design">
+                <div className="content">
+                        <img src="../images/LinkedInPic.jpg" alt="" style={{width: "100%"}}/>
+                        <h4>Design Project</h4>
+                        <p>Details..</p>
+                </div>
+                </div>
+        );
+        }
+}
 export default Portfolio;
