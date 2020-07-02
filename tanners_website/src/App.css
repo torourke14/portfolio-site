@@ -1,0 +1,141 @@
+/*@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}*/
+
+/*@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
+
+/* Basic styling */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.App {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+    .menu {
+      background: #222;
+      padding: 0 15px;
+      list-style-type: none;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    .logo { 
+      font-size: 40px;
+      padding: 7.5px 10px 7.5px 0;
+    }
+    .item {
+      padding: 10px;
+    }
+    .item.button {
+      padding: 9px 5px;
+    }
+    .item:not(.button) a:hover, 
+    .item a:hover::after {
+      color: lightgray;
+    }
+
+
+    /* Mobile menu */
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu li a {
+      display: block;
+      padding: 15px 5px;
+    }
+    .toggle {
+      order: 1;
+      font-size: 20px;
+    }
+    .item.button {
+      order: 2;
+    }
+    .item {
+      order: 3;
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+    .active .item {
+      display: block;
+    }
+
+    /* Tablet menu */
+    @media all and (min-width: 700px) {
+        .menu {
+          justify-content: center;
+        }
+        .logo {
+          flex: 1;
+        }
+        .item.button {
+          width: auto;
+          order: 1;
+          display: block;
+        }
+        .toggle {
+          flex: 1;
+          text-align: right;
+          order: 2;
+        }
+        /* Button up from tablet screen */
+        .menu li.button a {
+          padding: 10px 15px;
+          margin: 5px 0;
+        }
+        .button a {
+          background: #0080ff;
+          border: 1px royalblue solid;
+        }
+        .button a:hover {
+          text-decoration: none;
+        }
+    }
+
+    /* Desktop menu */
+    @media all and (min-width: 960px) {
+      .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: black;
+      }
+      .item {
+        order: 0;
+        position: relative;
+        display: block;
+        width: auto;
+      }
+      .logo {
+        order: 1;
+        color: white;
+      }
+      .button {
+        order: 2;
+      }
+      .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+      }
+      .toggle {
+        display: none;
+      }
+    }

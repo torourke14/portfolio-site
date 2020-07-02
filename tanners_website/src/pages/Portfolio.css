@@ -1,0 +1,47 @@
+
+
+#portfolio-container {
+
+}
+
+#container {
+    display: inline-block;
+    width: 100%;
+}
+
+#hero-wrapper {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/LinkedInPic.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 60vw;
+
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#hero-block-left {
+
+}
+
+#hero-block-right {
+    float: right;
+}
+
+#works-wrapper {
+    background-color: blue;
+    height: 500px;
+}
