@@ -32,7 +32,7 @@
         color: white;
 
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         align-items: baseline;
     }
     #hero-name {

@@ -4,8 +4,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './App.css';
 
 import Portfolio from './pages/Portfolio';
-//import Connect from './pages/Connect';
-//import AboutMe from './pages/AboutMe';
+import AboutMe from './pages/AboutMe';
+import Connect from './pages/Connect';
+import Inspiration from './pages/Inspiration';
 
 //import bg from './images/LinkedInPic.jpg';
 
@@ -14,23 +15,26 @@ class App extends React.Component {
       render() {
         return (
             <div>
-                <Home />
+                <Master />
             </div>
 
         );
     }
 }
 
-class Home extends React.Component {
+class Master extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            currentPage: <Portfolio />,
+            currentRoute: 'Portfolio',
             menuActive: false,
             submenuActive: false,
         }
 
         this.closeSubMenu = this.closeSubmenu.bind(this);
+        this.renderSwitch = this.renderSwitch.bind(this);
     }
 
     closeSubmenu(e) {
@@ -42,17 +46,79 @@ class Home extends React.Component {
         }
     }
 
+    renderSwitch(page) {
+        switch(page) {
+            case page === this.state.currentRoute:
+                return;
+            case 'Portfolio':
+                this.setState({
+                    currentPage: <Portfolio path="/" />,
+                    currentRoute: 'Portfolio',
+                    menuActive: false
+                });
+                return;
+            case 'About':
+                this.setState({
+                    currentRoute: 'AboutMe',
+                    menuActive: false
+                });
+                return;
+            case 'Connect':
+                this.setState({
+                    currentPage: <Connect path="/connect"/>,
+                    currentRoute: 'Connect',
+                    menuActive: false
+                });
+                return;
+            case 'Inspiration':
+                this.setState({
+                    currentPage: <Inspiration path="/inspiration"/>,
+                    currentRoute: 'Inspiration',
+                    menuActive: false
+                });
+                return;
+            default: 
+                this.setState({
+                    currentRoute: 'Portfolio',
+                    menuActive: false
+                });
+                return;
+        }
+}
+
     render() {
+        let route = this.state.currentRoute;
+        let currentComponent;
+
+        if (route === "Portfolio") {
+            currentComponent = <Portfolio path="/"/>;
+        } else if (route === 'AboutMe') {
+            currentComponent = <AboutMe path="/about"/>;
+        } else if (route === 'Connect') {
+            currentComponent = <Connect path="/connect"/>;
+        } else if (route === 'Inspiration') {
+            currentComponent = <Inspiration path="/inspo"/>;
+        } else {
+            currentComponent = <Portfolio path="/"/>;
+        }
         return (
             <div className="App" onClick = {(e) => this.closeSubMenu(e)}>
                 
                     <ul className={(this.state.menuActive) ? "menu active" : "menu"}>
                         <li className="logo">LOGO</li>
 
-                        <li className="item"> <a>Portfolio</a> </li>
-                        <li className="item"> <a>My Works</a> </li>
-                        <li className="item button"><a href="#">Connect</a></li>
-                        <li className="item"> <a>About Me</a> </li>
+                        <li className="item">
+                            <a onClick={() => this.renderSwitch('Portfolio')}>Portfolio</a>
+                        </li>
+                        <li className="item">
+                            <a onClick={() => this.renderSwitch('About')}>About Me</a>
+                        </li>
+                        <li className="item button">
+                            <a onClick={() => this.renderSwitch('Connect')}>Connect</a>
+                        </li>
+                        <li className="item">
+                            <a onClick={() => this.renderSwitch('Inspiration')}>Inspiration</a>
+                        </li>
                         
                         <li className="toggle" onClick = { () => this.setState((prevState) => {return {menuActive: !prevState.menuActive}}) }>
                             {(this.state.menuActive) 
@@ -64,7 +130,9 @@ class Home extends React.Component {
                         </li>
                     </ul>
 
-                    <Portfolio />
+                    <div>
+                        {currentComponent}
+                    </div>
             </div>
         );
     }
