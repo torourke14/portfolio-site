@@ -90,6 +90,7 @@ class Master extends React.Component {
         let route = this.state.currentRoute;
         let currentComponent;
 
+        /* Navigation */
         if (route === "Portfolio") {
             currentComponent = <Portfolio path="/"/>;
         } else if (route === 'AboutMe') {
@@ -103,7 +104,7 @@ class Master extends React.Component {
         }
         return (
             <div className="App" onClick = {(e) => this.closeSubMenu(e)}>
-                
+                <nav>
                     <ul className={(this.state.menuActive) ? "menu active" : "menu"}>
                         <li className="logo">LOGO</li>
 
@@ -129,10 +130,12 @@ class Master extends React.Component {
                             </a>
                         </li>
                     </ul>
+                </nav>
 
-                    <div>
-                        {currentComponent}
-                    </div>
+                {currentComponent}
+                <article className="Body">
+                   
+                </article>
             </div>
         );
     }

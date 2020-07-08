@@ -34,10 +34,20 @@ class Portfolio extends React.Component {
                                         </div>
 
                                         <div className="portfolio-grid">
+                                                <h3>Design</h3>
                                                 <Project type="design" />
                                                 <Project type="design" />
-                                                <Project type="design" />
-                                                <Project type="design" />
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                
+                                        
+                                        <div className="portfolio-grid">
+                                                <h3>Software Dev</h3>
+                                                <Project type="softdev" />
+                                                <Project type="softdev" />
                                         </div>
 
                                 </div>
@@ -59,15 +69,27 @@ class Project extends React.Component {
         let defaultStyles = {
                 color: "white"
         }
+
+        /* Chamge into inherited subclasses of Project, i.e. Project.type - Project.Design */
         return (
-                <div className="project design">
-                <div className="content">
-                        <img src="../images/LinkedInPic.jpg" alt="" style={{width: "100%"}}/>
-                        <h4>Design Project</h4>
-                        <p>Details..</p>
-                </div>
+                <div>
+                        <div className="project">
+                                <div className="content">
+                                        <img src="../images/LinkedInPic.jpg" alt="" style={{width: "100%"}}/>
+                                        <h4>Design Project</h4>
+                                        <p>Details..</p>
+                                </div>
+                        </div>
                 </div>
         );
         }
 }
+
+/*
+*
+*
+*
+*
+*
+*/
 export default Portfolio;
