@@ -1,33 +1,26 @@
 
 
-#portfolio-container {
-
-}
-
 #container {
-    display: inline-block;
-    width: 100%;
+    
+    width: 100vw;
 }
 
 /* Hero Image Styling */
-#hero-wrapper {
+#HeroWrapper {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../images/LinkedInPic.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 60vw;
-
-    display: flex;
-    flex-flow: column wrap;
+    height: 45vw;
 }
 
     #hero-content {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 70%;
+        width: 75%;
         transform: translate(-50%, -50%);
         color: white;
 
@@ -35,72 +28,327 @@
         flex-flow: row wrap;
         align-items: baseline;
     }
-    #hero-name {
-        margin: 0 30px 20px 0;
-        font-size: 4.5em;
-    }
-    .hero-link {
-        margin: 2.5px;
-        padding-left: 2.5px;
-        line-height: 1.75em;
-    }
     #hero-block-left {
         width: 60%;
     }
+        .hero-links {
+            margin: 2.5px;
+            padding-left: 2.5px;
+            line-height: 1.75em;
+        }
+        #hero-name {
+            margin: 0 30px 20px 0;
+            font-size: 4.5em;
+        }
     #hero-block-right {
         width: 40%;
+        
     }
+        #hero-block-right h4 {
+            font-size: 1.75em;
+            line-height: 1.5; 
+        }
 
-/* My Works Styling */
-#works-wrapper {
-    background-color: #f1f1f1;
-    color: black;
+/* ===== About Me Intro Styling ===== */
+#AboutIntro {
+    display: flex;
+    flex-flow: row wrap;
     height: 100%;
-    padding: 20px;
-    word-wrap: normal;
-    word-break: all;
+    padding-bottom: 30px;
 }
 
-    #works-title {
-        position: relative;
-        font-size: 3.75em;
-        padding-left: 10%;
-        padding-bottom: 40px;
+#AboutIntro div {
+    padding-top: 30px;
+}
+
+.col-1 { 
+    width: 30%;
+}
+/* left column */
+#about-title {
+    position: relative;
+    left: 60%; /* 70% of 25% == 17,5% padding -- effective left padding */
+    top: 25%;
+    width: 3px;
+    height: 120px;
+    background: 2px #00E4E4;
+    /*min-width: 500px; for small screens -- hide title */
     }
-    #works-title p {
-        position: absolute;
-        top: -91.25px; /* 71.25 + 20*/
+    #about-title p {
+        position: relative;
+        top: 100px;
+        left: 0;
+        font-size: 2em;
+        }
+        #about-title span {
+            color: #F26B3E;
+            position: relative;
+            left: 0px;
+        }
+
+/* right column */
+.col-2 { 
+    width: 55%;
+    margin-right: 15%;
+    }
+    .col-2 * {
+        line-height: 1.6em;
+    }
+    .col-2 h2 {
+        line-height: 1.5;
+        padding: 12px 0;
+    }
+    .col-2 h4 {
+        padding: 12px 0 6px 0;
+        line-height: 1.3;   
+    }
+
+#AboutLinks {
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+    }
+    #AboutLinks a {
+        padding-right: 25px;
+        color: black;
+        /*background-color: #00E4E4;
+        padding: 20px;
+        border-radius: 50%;*/
+    }
+    #AboutLinks button {
+        background-color: #00E4E4;
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 16px;
+        float: right;
+    }
+
+
+/* ===== Knowledge/Skills Styling ===== */
+#KnowledgeIntro {
+    /*padding: 50px 7.5% 0 7.5%;*/
+    display: flex;
+    flex-flow: row wrap;
+    height: 500px;
+    background: #F26B3E;
+}
+#KnowledgeIntro > div {
+    padding-top: 50px;
+    }
+    #Knowledge-left {
+        padding-left: 15%;
+        margin-right: 0; /* override col-1 */
+    }
+    #Knowledge-left > p {
+        font-size: 1.5em;
+    }
+    
+    #Skills {
+        display: flex;
+        flex-flow: row wrap;
+        /*padding-left: 10px;*/
+        }
+        .knowledge-box {
+            width: 50%;
+        }
+        .knowledge-box p {
+            font-size: 0.9em;
+            padding-right: 10px;
+            padding-left: 6px;
+        }
+    
+    #Knowledge-right {
+        padding-right: 15%;
+        }
+        #knowledge-title {
+            /* changes from .col-1 > div */
+            position: relative;
+            left: 60%; /* 70% of 25% == 17,5% padding */
+            top: 10%;
+            width: 3px;
+            height: 110px;
+            background: 6px white;
+            }
+            #knowledge-title p {
+                position: relative;
+                top: 120px;
+                left: 0;
+                font-size: 2em;
+                }
+                #knowledge-title span {
+                    font-weight: normal;
+                    color: white;
+                }
+
+
+                #about-title p {
+                    position: relative;
+                    top: 100px;
+                    left: -80px;
+                    font-size: 2em;
+                    }
+                    #about-title span {
+                        font-weight: bold;
+                        color: #F26B3E;
+                    }
+
+
+/* ===== My Skills Styling ===== */
+#SkillsIntro {
+    /*padding: 50px 7.5% 0 7.5%;*/
+    display: flex;
+    flex-flow: row wrap;
+    height: 650px;
+    background-color: black;
+}
+
+    #skills-title {
+        /* changes from .col-1 > div */
+        top: 20%;
         color: white;
     }
+    #skills-title p {
+        position: relative;
+        top: 120px;
+        left: 0;
+        font-size: 1.5em;
+    }
+    #skills-title p::after {
+        content: ' Skills';
+        font-weight: bold;
+        color: #F26B3E;
+    }
+
+#MySkills {
+    display: flex;
+    flex-flow: row wrap;
+    color: white;
+    padding-top: 40px;
+    padding-left: 5%;
+}
+    #MySkills > p {
+        font-size: 1.5em;
+    }
+
+    .skill-bar {
+        padding-top: 16px;
+        padding-bottom: 20px;
+        display: inline-block;
+        width: 100%;
+    }
+        .bar {
+            width: 80%;
+            height: 24px;
+            background-color: white;
+            text-align: center;
+        }
+        #html {
+            width: 90%;
+            height: inherit;
+            background-color: #F26B3E;
+        }
+        #js {
+            width: 80%;
+            height: inherit;
+            background-color: #F26B3E;
+        }
+        #react {
+            width: 85%;
+            height: inherit;
+            background-color: #F26B3E;
+        }
+        #python {
+            width: 75%;
+            height: inherit;
+            background-color: #F26B3E;
+        }
+        #prototyping {
+            width: 90%;
+            height: inherit;
+            background-color: #F26B3E;
+        }
+        #illustrator-figma {
+            width: 75%;
+            height: inherit;
+            background-color: #F26B3E;
+        }
 
 
-/* Portfolio Grid Styling */
-.portfolio-grid {
-    font-size: 40px;
-    margin: 8px -16px;
+/* ===== My Works Styling ===== */
+#WorksIntro {
+    background-color: #f1f1f1;
+    padding: 40px 12.5% 32px 12.5%;
+    height: 400px;
+}
+    #works-title p {
+        font-size: 1.75em;
+    }
+
+/* Recent Work Grid */
+#recent-project-grid {
+    margin: 32px 16px 16px 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    word-wrap: normal;
+    
 }
 
-.portfolio-grid > .project {
-    padding: 8px;
+/* Recent Work Cards */
+.flip-card {
+    width: 300px;
+    height: 250px;
+    border-radius: 12px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    background-color: transparent;
 }
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      /* Do an horizontal flip when you move the mouse over the flip box container */
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      /* Position the front and back side */
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        border: 3px solid #007A45;
+      }
+      /* (front-side fallback if image is missing) */
+      .flip-card-front {
+        background-color: #ebebeb;
+        color: black;
+      }
+      
+      /* Style the back side */
+      .flip-card-back {
+        background-color: #00E4E4;
+        color: black;
+        text-align: center;
+        transform: rotateY(180deg);
+      }
 
-.project {
-    float: left;
-    width: 50%;
-    display: block; /*none, hide by default */
-}
-
-/*Clear float after rows */
-.portfolio-grid:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Project-box content */
-.content {
-    background-color: white;
+/* Link to Projects */
+#projects-link {
+    width: 20%; /* reletatively ~20% */
     padding: 10px;
+}
+#projects-link p {
+    position: relative;
+    top: 50%;
+    left: 50%;
 }
 
 
@@ -110,9 +358,9 @@
 
 
 /* show class added to filtered elements */
-.show {
+/*.show {
     display: block;
-}
+}*/
 
 /* Filter Button functionality*/
 /* Style the buttons */

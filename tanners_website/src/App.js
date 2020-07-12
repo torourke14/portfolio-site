@@ -6,6 +6,7 @@ import './App.css';
 import Portfolio from './pages/Portfolio';
 import AboutMe from './pages/AboutMe';
 import Connect from './pages/Connect';
+import MyWorks from './pages/MyWorks';
 import Inspiration from './pages/Inspiration';
 
 //import bg from './images/LinkedInPic.jpg';
@@ -77,6 +78,13 @@ class Master extends React.Component {
                     menuActive: false
                 });
                 return;
+            case 'MyWorks':
+                this.setState({
+                    currentPage: <Inspiration path="/works"/>,
+                    currentRoute: 'MyWorks',
+                    menuActive: false
+                });
+                return;
             default: 
                 this.setState({
                     currentRoute: 'Portfolio',
@@ -99,7 +107,9 @@ class Master extends React.Component {
             currentComponent = <Connect path="/connect"/>;
         } else if (route === 'Inspiration') {
             currentComponent = <Inspiration path="/inspo"/>;
-        } else {
+        } else if (route === 'MyWorks') {
+            currentComponent = <MyWorks path="/works"/>;
+        }else {
             currentComponent = <Portfolio path="/"/>;
         }
         return (
@@ -109,13 +119,16 @@ class Master extends React.Component {
                         <li className="logo">LOGO</li>
 
                         <li className="item">
-                            <a onClick={() => this.renderSwitch('Portfolio')}>Portfolio</a>
+                            <a onClick={() => this.renderSwitch('Portfolio')}>Home</a>
                         </li>
                         <li className="item">
                             <a onClick={() => this.renderSwitch('About')}>About Me</a>
                         </li>
                         <li className="item button">
                             <a onClick={() => this.renderSwitch('Connect')}>Connect</a>
+                        </li>
+                        <li className="item">
+                            <a onClick={() => this.renderSwitch('MyWorks')}>My Works</a>
                         </li>
                         <li className="item">
                             <a onClick={() => this.renderSwitch('Inspiration')}>Inspiration</a>
@@ -133,9 +146,6 @@ class Master extends React.Component {
                 </nav>
 
                 {currentComponent}
-                <article className="Body">
-                   
-                </article>
             </div>
         );
     }
