@@ -13,7 +13,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 45vw;
+    height: calc(100vh - 20px - 4em);
 }
 
     #hero-content {

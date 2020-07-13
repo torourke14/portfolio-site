@@ -7,3 +7,76 @@
 @media all and (min-width: 960px) {
 
 }
+
+
+.WorksTop {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('../images/enchantments.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: calc(100vh - 20px - 4em); /* minus height of navbar */
+    z-index: 2;
+    
+}
+
+    .WorksLinks {
+        position: absolute;
+        top: 90%;
+        right: 2.5%;
+        width: auto;
+        }
+        .WorksLinks > div {
+            background-color: #ebEBEb;
+            overflow: hidden;
+            float: left;
+            margin: 0 36px 36px 0;
+            padding: 8px 16px;
+            border-radius: 10px;
+        }
+        .WorksLinks a {
+            color: #333;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.3em;
+        }
+        .WorksLinks > div:hover {
+            background-color: #9CAFB7;
+            color: black;
+            transition: 0.5s all;
+        }
+
+.WorksContainer {
+    padding-bottom: 200px;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+}
+
+.work-dropbox {
+    padding: 20px;
+    color: white;
+    
+}
+
+.Works-row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.closebtn {
+    float: right;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }

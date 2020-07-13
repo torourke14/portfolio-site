@@ -1,6 +1,4 @@
 import React from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-
 import './App.css';
 
 import Portfolio from './pages/Portfolio';
@@ -114,6 +112,7 @@ class Master extends React.Component {
         }
         return (
             <div className="App" onClick = {(e) => this.closeSubMenu(e)}>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                 <nav>
                     <ul className={(this.state.menuActive) ? "menu active" : "menu"}>
                         <li className="logo">LOGO</li>
