@@ -3,6 +3,7 @@ import './MyWorks.css';
 
 // Project Images
 import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
+import { render } from '@testing-library/react';
 
 class MyWorks extends React.Component {
         constructor(props) {
@@ -151,7 +152,10 @@ class Project extends React.Component {
 
         render() {
                 this.styles = {
-                        background: 'blue',
+                        border: '2px solid #333',
+                        borderRadius: '4px',
+                        width: '100%',
+                        background: '#EBEBEB',
                         display: this.state.display ? 'block' : 'none'
                 }
                 //console.log(document.getElementsByClassName('work-dropbox--open') !== null);

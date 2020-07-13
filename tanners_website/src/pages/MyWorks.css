@@ -21,7 +21,9 @@
     position: relative;
     height: calc(90vh); /* minus height of navbar */
     z-index: 2;
+    top: 20px;
     margin: 0 10%;
+    margin-bottom: 20px;
     }
     .WorksLinks {
         position: absolute;
@@ -53,18 +55,15 @@
             
         }
 
-.WorksMid {
-    width: 100%;
-    height: 30px;
-}
-
 .Works {
     padding-bottom: 100px;
     
 }
 
 .works-row {
-    margin: 0 12.5%;
+    margin: 0 10%;
+    padding: 0 2.5%;
+    background-color: white;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -176,24 +175,50 @@
 
     /*entry dropboc animations*/
     .work-dropbox--open {
-        animation: work-dropbox--open 1s normal forwards ease-in-out;
+        animation: work-dropbox--open 0.5s normal forwards ease-in-out;
         transform-origin: 50% 0;
-        -webkit-animation: work-dropbox--open 1s normal forwards ease-in-out;
-           -moz-animation: work-dropbox--open 1s normal forwards ease-in-out;
-                animation: work-dropbox--open 1s normal forwards ease-in-out;
+        -webkit-animation: work-dropbox--open 0.5s normal forwards ease-in-out;
+           -moz-animation: work-dropbox--open 0.5s normal forwards ease-in-out;
+                animation: work-dropbox--open 0.5s normal forwards ease-in-out;
         -webkit-transform-origin: 100% 0%;
            -moz-transform-origin: 100% 0%;
                 transform-origin: 100% 0%;
     }
     .work-dropbox--closed {
-        animation: work-dropbox--closed 1s normal forwards ease-in-out;
+        animation: work-dropbox--closed 0.5s normal forwards ease-in-out;
         transform-origin: 50% 0;
-        -webkit-animation: work-dropbox--closed 1s normal forwards ease-in-out;
-           -moz-animation: work-dropbox--closed 1s normal forwards ease-in-out;
-                animation: work-dropbox--closed 1s normal forwards ease-in-out;
+        -webkit-animation: work-dropbox--closed 0.5s normal forwards ease-in-out;
+           -moz-animation: work-dropbox--closed 0.5s normal forwards ease-in-out;
+                animation: work-dropbox--closed 0.5s normal forwards ease-in-out;
         -webkit-transform-origin: 50% 0%;
            -moz-transform-origin: 50% 0%;
                 transform-origin: 50% 0%;
+    }
+
+    @-webkit-keyframes work-dropbox--open {
+        from { transform: scaleY(0) }
+        to { transform: scaleY(1) }
+    }
+    @-moz-keyframes work-dropbox--open {
+        from { transform: scaleY(0) }
+        to { transform: scaleY(1) }
+    }
+    @keyframes work-dropbox--open {
+        from { transform: scaleY(0) }
+        to { transform: scaleY(1) }
+    }
+
+    @-webkit-keyframes  work-dropbox--closed {
+        from { transform: scaleY(1) }
+        to { transform: scaleY(0) }
+    }
+    @-moz-keyframes  work-dropbox--closed {
+        from { transform: scaleY(1) }
+        to { transform: scaleY(0) }
+    }
+    @keyframes  work-dropbox--closed {
+        from { transform: scaleY(1) }
+        to { transform: scaleY(0) }
     }
 
 
