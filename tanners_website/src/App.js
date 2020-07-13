@@ -144,8 +144,10 @@ class Master extends React.Component {
                         </li>
                     </ul>
                 </nav>
-
-                {currentComponent}
+                <div id='PageBox'>
+                    {currentComponent}
+                </div>
+                
             </div>
         );
     }

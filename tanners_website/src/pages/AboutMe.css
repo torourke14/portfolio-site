@@ -3,71 +3,55 @@
     font-size: 16px;
     line-height: 1.6;
     scroll-behavior: smooth;
+    padding-left: 20%;
 }
 
 .sidenav {
+    width: 20%;
+    height: 100%;
+    left: 0;
+    top: 0;
     position: fixed;
     display: block;
-    left: 3em;
-    top: 5em;
-    padding: 1em;
-    width: 14em;
+    text-align: right;
+    padding: 120px 46px 0 0;
     line-height: 2;
+    background-color: #007A45; }
+
+/* Switch to Tablet / Mobile Menu */
+@media all and (max-width: 960px) {
+    .sidenav { visibility: hidden; }
+    #About { padding-left: 0; }
 }
 
     .sidenav ul {
-        /*height: 100%;
-        position: sticky;
-        z-index: 1;
-        background: #eee;
         overflow-x: hidden;
-        padding: 8px 0;*/
         list-style: none;
         padding: 0;
         margin: 0;
-    }
-
-    .sidenav li a {
-        /*height: 100%;
-        position: sticky;
-        z-index: 1;
-        background: #eee;
-        overflow-x: hidden;
-        padding: 8px 0;*/
-        display: inline-block;
-        color: #2196F3;
-        font-size: 1.3em;
-        text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    .toc li.visible > a {
-        color: #111;
-        transform: translate(5px); }
-
-    /*#sidenav-wrapper li a {
-        padding: 6px 8px 6px 16px;
-        font-size: 1em;
-        color: #2196F3;
-        display: block;
-        cursor: pointer;
-    }*/
+        }
+        .sidenav li a {
+            display: inline-block;
+            color: #ebebeb;
+            font-size: 1.6em;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .sidenav li a:hover {
+            color: darkgray;
+        }
+        .toc li.visible > a {
+            color: #111;
+            transform: translate(5px); }
 
 
-/* Hero Image Styling */
+/* ===== Main Content Container ===== */
 .about-contents {
-    /*
-    background-position: center;
-    position: relative;
-    height: 400px;
-    width: 90%;
-    float: right;
-    display: flex;
-    flex-flow: column wrap;*/
     padding: 1em;
     max-width: 1000px;
     font-size: 1.2em;
-    margin-left: 14em
+    width: 80%;
+    padding: 4em 15% 0 4em;
     
     
     /*font-family: 'Frank Ruhl Libre', sans-serif;*/

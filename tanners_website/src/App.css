@@ -25,8 +25,10 @@
   width: 100vw;
   height: 100vh;
   /*overflow-x: hidden;*/
-
 }
+    #PageBox {
+      z-index: 1; /* important !! */
+    }
     .menu {
       background: #222;
       padding: 0 15px;
@@ -34,6 +36,7 @@
       position: sticky;
       position: -webkit-sticky;
       top: 0;
+      z-index: 2; /* important !! */
     }
     a {
       color: white;
