@@ -8,19 +8,21 @@
 
 }
 
+#WorksMaster {
+    background-color: #ebebeb;
+}
 
 .WorksTop {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     url('../images/enchantments.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: calc(100vh - 20px - 4em); /* minus height of navbar */
+    height: calc(90vh); /* minus height of navbar */
     z-index: 2;
-    
-}
-
+    margin: 0 10%;
+    }
     .WorksLinks {
         position: absolute;
         top: 90%;
@@ -28,47 +30,84 @@
         width: auto;
         }
         .WorksLinks > div {
-            background-color: #ebEBEb;
+            background-color: #ebebeb;
+            color: #333;
             overflow: hidden;
             float: left;
-            margin: 0 36px 36px 0;
+            margin-right: 36px;
             padding: 8px 16px;
             border-radius: 10px;
         }
         .WorksLinks a {
-            color: #333;
+            color: inherit;
             text-align: center;
             text-decoration: none;
             font-size: 1.3em;
         }
         .WorksLinks > div:hover {
-            background-color: #9CAFB7;
-            color: black;
-            transition: 0.5s all;
+            background-color: #007A45;
+            color: #ebebeb;
+            scale: 1.1;
+            transition: 0.4s all;
+            cursor: pointer;
+            
         }
 
-.WorksContainer {
-    padding-bottom: 200px;
+.WorksMid {
+    width: 100%;
+    height: 30px;
 }
 
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 50px;
-    text-align: center;
-    font-size: 25px;
-    cursor: pointer;
-    color: white;
-    background-color: blue;
-}
-
-.work-dropbox {
-    padding: 20px;
-    color: white;
+.Works {
+    padding-bottom: 100px;
     
 }
 
-.Works-row::after {
+.works-row {
+    margin: 0 12.5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.entry {
+    padding: 50px;
+    width: 32.333%;
+    margin: 1% 0;
+    color: #333;
+    background-color: #9CAFB7;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    
+    }
+    .entry:hover {
+        background-color: rgba(0, 122, 69, 0.992);
+        transition: 0.6s all;
+    }
+    /* animation?? */
+    .work-dropbox--open {
+        animation: work-dropbox--open 1s normal forwards ease-in-out;
+        transform-origin: 50% 0;
+        -webkit-animation: work-dropbox--open 1s normal forwards ease-in-out;
+           -moz-animation: work-dropbox--open 1s normal forwards ease-in-out;
+                animation: work-dropbox--open 1s normal forwards ease-in-out;
+        -webkit-transform-origin: 100% 0%;
+           -moz-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+    }
+    .work-dropbox--closed {
+        animation: work-dropbox--closed 1s normal forwards ease-in-out;
+        transform-origin: 50% 0;
+        -webkit-animation: work-dropbox--closed 1s normal forwards ease-in-out;
+           -moz-animation: work-dropbox--closed 1s normal forwards ease-in-out;
+                animation: work-dropbox--closed 1s normal forwards ease-in-out;
+        -webkit-transform-origin: 50% 0%;
+           -moz-transform-origin: 50% 0%;
+                transform-origin: 50% 0%;
+    }
+
+
+.works-row::after {
     content: '';
     display: table;
     clear: both;

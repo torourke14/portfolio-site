@@ -5,69 +5,70 @@ import './MyWorks.css';
 import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 
 class MyWorks extends React.Component {
+        constructor(props) {
+                super(props);
+                this.filters = ['design', 'dev', 'freelance', 'professional'];
+        }
         render() {
                 return (
-                        <div>   
+                        <div id="WorksMaster">   
                                 <div className="WorksTop">
                                         <div className="WorksLinks">
                                                 <div><a>Design</a></div>
                                                 <div><a>Development</a></div>
-                                                <div><a>Small Projects</a></div>
+                                                <div><a>Freelance</a></div>
                                                 <div><a>Professional Work</a></div>
                                         </div>
                                 </div>
                                 
-                                <div className="WorksContainer">
-                                        <div className="Works-row">
-                                                <div className="column" onClick={(e) => this.refs.domad.openTab(e)} >DoMAD</div>
-                                                <div className="column" onClick={(e) => this.refs.lbs.openTab(e)} >London Bridge Studios</div>
-                                                <div className="column" onClick={(e) => this.refs.spotipy.openTab(e)} >Spotify Data Analysis</div>
-                                                <Project ref='domad' class="workDropbox"
+                                <div className='WorksMid'>&nbsp;</div>
+                                
+                                <div className="Works">
+                                        <div className="works-row">
+                                                <div className="entry" onClick={(e) => this.refs.domad.openTab(e)} >DoMAD</div>
+                                                <div className="entry" onClick={(e) => this.refs.lbs.openTab(e)} >London Bridge Studios</div>
+                                                <div className="entry" onClick={(e) => this.refs.spotipy.openTab(e)} >Spotify Data Analysis</div>
+                                                
+                                                <Project ref='domad' tags={['design', 'dev', 'professional']}
                                                 title="DoMAD" position='Lead UI Designer, Front-End Developer' 
                                                 desc='Website design and build for non-profit donation org. DoMAD' 
                                                 location='Boulder, CO'
-                                                imgsrc={DoMADLogo} 
-                                                />
-                                                <Project ref='lbs' class="workDropbox" 
+                                                imgsrc={DoMADLogo} />
+                                                <Project ref='lbs' tags={['dev', 'freelance']}
                                                 title="London Bridge Studios" position='Web Developer' 
                                                 desc='Page flows and SEO enhancements for a Seattle-based recording studio' 
                                                 location='Seattle, WA'
-                                                imgsrc={DoMADLogo} 
-                                                />
-                                                <Project ref='spotipy' class="workDropbox"
+                                                imgsrc={DoMADLogo}  />
+                                                <Project ref='spotipy' tags={['dev', 'freelance']}
                                                 title="Spotipy Data Analysis" position='Data Analytics Researcher' 
                                                 desc='Discovered patterns in past, present, and future musical attributes' 
                                                 location='Boulder, CO'
-                                                imgsrc={DoMADLogo}
-                                                />
+                                                imgsrc={DoMADLogo} />
                                         </div>
-
-                                        <div className="Works-row">
-                                                <div className="column" onClick={(e) => this.refs.d.openTab(e)} >DoMAD</div>
-                                                <div className="column" onClick={(e) => this.refs.l.openTab(e)} >London Bridge Studios</div>
-                                                <div className="column" onClick={(e) => this.refs.s.openTab(e)} >Spotify Data Analysis</div>
-                                                <Project ref='d' title="DoMAD"
+                                        <div className="works-row">
+                                                <div className="entry" onClick={() => this.refs.d.openTab()} >DoMAD</div>
+                                                <div className="entry" onClick={() => this.refs.l.openTab()} >London Bridge Studios</div>
+                                                <div className="entry" onClick={() => this.refs.s.openTab()} >Spotify Data Analysis</div>
+                                                
+                                                <Project ref='d' title="DoMAD" tags={['dev','freelance']}
                                                 position='Lead UI Designer, Front-End Developer' 
                                                 desc='Website design and build for non-profit donation org. DoMAD' 
                                                 location='Boulder, CO'
-                                                imgsrc={DoMADLogo} 
-                                                />
-                                                <Project ref='l' title="London Bridge Studios" 
+                                                imgsrc={DoMADLogo} />
+                                                <Project ref='l' title="London Bridge Studios" tags={['dev','freelance']}
                                                 position='Web Developer' 
                                                 desc='Page flows and SEO enhancements for a Seattle-based recording studio' 
                                                 location='Seattle, WA'
-                                                imgsrc={DoMADLogo} 
-                                                />
-                                                <Project ref='s' title="Spotipy Data Analysis" 
+                                                imgsrc={DoMADLogo} />
+                                                <Project ref='s' title="Spotipy Data Analysis" tags={['dev','freelance']}
                                                 position='Data Analytics Researcher' 
                                                 desc='Discovered patterns in past, present, and future musical attributes' 
                                                 location='Boulder, CO'
-                                                imgsrc={DoMADLogo}
-                                                />
+                                                imgsrc={DoMADLogo} />
                                         </div>
                                 </div>
                         </div>
-                )
+                );
         }
 }
 
@@ -87,8 +88,8 @@ class Project extends React.Component {
                 this.closeTab = this.closeTab.bind(this);
         }
 
-        openTab(e) {
-                if (!this.state.display) {
+        openTab() {
+                if (!this.state.display && document.getElementsByClassName('work-dropbox--open').length === 0) { //{
                         var i, x;
                         x = document.getElementsByClassName("work-dropbox");
                         for (i = 0; i < x.length; i++) {
@@ -104,22 +105,26 @@ class Project extends React.Component {
 
         render() {
                 this.styles = {
+                        className: this.state.display ? "work-dropbox--open" : "work-dropbox--closed",
                         background: 'blue',
                         display: this.state.display ? 'block' : 'none'
                 }
-        /* <img src={this.state.image} alt='' style={{width: "50px", height: "50px"}}/>*.
-        /* Chamge into inherited subclasses of Project, i.e. Project.type - Project.Design */
-        return (
-                <div style={this.styles} className='work-dropbox'>
-                        <div className="content">
-                                <span onClick={() => this.closeTab()} className="closebtn">X</span>
-                                <h2>{this.state.title}</h2>
-                                <h4>{this.state.position}</h4>
-                                <h4>{this.state.location}</h4>
-                                <p>{this.state.description}</p>
+                //console.log(document.getElementsByClassName('work-dropbox--open') !== null);
+                /* <img src={this.state.image} alt='' style={{width: "50px", height: "50px"}}/>*.
+                /* Chamge into inherited subclasses of Project, i.e. Project.type - Project.Design */
+                return (
+                        <div style={this.styles} >
+                                <div className="content">
+                                        <span onClick={() => this.closeTab()} className="closebtn">X</span>
+                                        <div>
+                                                <p>{this.state.title}</p>
+                                                <h4>{this.state.position}</h4>
+                                                <h4>{this.state.location}</h4>
+                                                <p>{this.state.description}</p>
+                                        </div>
+                                </div>
                         </div>
-                </div>
-        );
+                );
         }
 }
 

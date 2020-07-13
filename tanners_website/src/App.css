@@ -24,13 +24,14 @@
   font-size: 16px;
   width: 100vw;
   height: 100vh;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   /*overflow-x: hidden;*/
 }
     #PageBox {
       z-index: 1; /* important !! */
     }
     .menu {
-      background: #222;
+      background: #333;
       padding: 0 15px;
       list-style-type: none;
       position: sticky;
@@ -126,11 +127,13 @@
       .menu {
         align-items: flex-start;
         flex-wrap: nowrap;
-        background: black;
+        background: #ebebeb;
+        
         position: sticky;
         position: -webkit-sticky;
         top: 0;
       }
+      .menu a { color: #333; }
       .item {
         order: 0;
         position: relative;

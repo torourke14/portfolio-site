@@ -5,7 +5,6 @@ import Portfolio from './pages/Portfolio';
 import AboutMe from './pages/AboutMe';
 import Connect from './pages/Connect';
 import MyWorks from './pages/MyWorks';
-import Inspiration from './pages/Inspiration';
 
 //import bg from './images/LinkedInPic.jpg';
 
@@ -69,16 +68,9 @@ class Master extends React.Component {
                     menuActive: false
                 });
                 return;
-            case 'Inspiration':
-                this.setState({
-                    currentPage: <Inspiration path="/inspiration"/>,
-                    currentRoute: 'Inspiration',
-                    menuActive: false
-                });
-                return;
             case 'MyWorks':
                 this.setState({
-                    currentPage: <Inspiration path="/works"/>,
+                    currentPage: <MyWorks path="/works"/>,
                     currentRoute: 'MyWorks',
                     menuActive: false
                 });
@@ -103,11 +95,9 @@ class Master extends React.Component {
             currentComponent = <AboutMe path="/about"/>;
         } else if (route === 'Connect') {
             currentComponent = <Connect path="/connect"/>;
-        } else if (route === 'Inspiration') {
-            currentComponent = <Inspiration path="/inspo"/>;
         } else if (route === 'MyWorks') {
             currentComponent = <MyWorks path="/works"/>;
-        }else {
+        } else {
             currentComponent = <Portfolio path="/"/>;
         }
         return (
@@ -128,9 +118,6 @@ class Master extends React.Component {
                         </li>
                         <li className="item">
                             <a onClick={() => this.renderSwitch('MyWorks')}>My Works</a>
-                        </li>
-                        <li className="item">
-                            <a onClick={() => this.renderSwitch('Inspiration')}>Inspiration</a>
                         </li>
                         
                         <li className="toggle" onClick = { () => this.setState((prevState) => {return {menuActive: !prevState.menuActive}}) }>
