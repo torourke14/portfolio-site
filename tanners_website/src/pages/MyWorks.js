@@ -25,10 +25,32 @@ class MyWorks extends React.Component {
                                 
                                 <div className="Works">
                                         <div className="works-row">
-                                                <div className="entry" onClick={(e) => this.refs.domad.openTab(e)} >DoMAD</div>
-                                                <div className="entry" onClick={(e) => this.refs.lbs.openTab(e)} >London Bridge Studios</div>
-                                                <div className="entry" onClick={(e) => this.refs.spotipy.openTab(e)} >Spotify Data Analysis</div>
-                                                
+                                                <div className="entry entry-cover" onClick={(e) => this.refs.domad.openTab(e)}>
+                                                        <img src={DoMADLogo} alt="" />
+                                                        <div className='mask'>
+                                                                <h2>DoMAD</h2>
+                                                                <p>A Donation Database for worldwide travelers.</p>
+                                                                <p><a href="#" className='info'>Read More</a></p>
+                                                        </div>
+                                                </div>
+                                                <div className="entry entry-cover" onClick={(e) => this.refs.lbs.openTab(e)}>
+                                                        <img src={DoMADLogo} alt="" />
+                                                        <div className='mask'>
+                                                                <h2>DoMAD</h2>
+                                                                <p>A Donation Database for worldwide travelers.</p>
+                                                                <p><a href="#" className='info'>Read More</a></p>
+                                                        </div>
+                                                </div>
+
+                                                <div className="entry entry-cover" onClick={(e) => this.refs.spotipy.openTab(e)}>
+                                                        <img src={DoMADLogo} alt="" />
+                                                        <div className='mask'>
+                                                                <h2>DoMAD</h2>
+                                                                <p>A Donation Database for worldwide travelers.</p>
+                                                                <p><a href="#" className='info'>Read More</a></p>
+                                                        </div>
+                                                </div>
+                                                                                                        
                                                 <Project ref='domad' tags={['design', 'dev', 'professional']}
                                                 title="DoMAD" position='Lead UI Designer, Front-End Developer' 
                                                 desc='Website design and build for non-profit donation org. DoMAD' 
@@ -46,9 +68,31 @@ class MyWorks extends React.Component {
                                                 imgsrc={DoMADLogo} />
                                         </div>
                                         <div className="works-row">
-                                                <div className="entry" onClick={() => this.refs.d.openTab()} >DoMAD</div>
-                                                <div className="entry" onClick={() => this.refs.l.openTab()} >London Bridge Studios</div>
-                                                <div className="entry" onClick={() => this.refs.s.openTab()} >Spotify Data Analysis</div>
+                                                <div className="entry entry-cover" onClick={(e) => this.refs.d.openTab(e)}>
+                                                        <img src={DoMADLogo} alt="" />
+                                                        <div className='mask'>
+                                                                <h2>DoMAD</h2>
+                                                                <p>A Donation Database for worldwide travelers.</p>
+                                                                <p><a href="#" className='info'>Read More</a></p>
+                                                        </div>
+                                                </div>
+                                                <div className="entry entry-cover" onClick={(e) => this.refs.l.openTab(e)}>
+                                                        <img src={DoMADLogo} alt="" />
+                                                        <div className='mask'>
+                                                                <h2>DoMAD</h2>
+                                                                <p>A Donation Database for worldwide travelers.</p>
+                                                                <p><a href="#" className='info'>Read More</a></p>
+                                                        </div>
+                                                </div>
+
+                                                <div className="entry entry-cover" onClick={(e) => this.refs.s.openTab(e)}>
+                                                        <img src={DoMADLogo} alt="" />
+                                                        <div className='mask'>
+                                                                <h2>DoMAD</h2>
+                                                                <p>A Donation Database for worldwide travelers.</p>
+                                                                <p><a href="#" className='info'>Read More</a></p>
+                                                        </div>
+                                                </div>
                                                 
                                                 <Project ref='d' title="DoMAD" tags={['dev','freelance']}
                                                 position='Lead UI Designer, Front-End Developer' 
@@ -71,6 +115,8 @@ class MyWorks extends React.Component {
                 );
         }
 }
+
+//class WorksControl extends React.Component
 
 class Project extends React.Component {
         constructor(props) {
@@ -105,7 +151,6 @@ class Project extends React.Component {
 
         render() {
                 this.styles = {
-                        className: this.state.display ? "work-dropbox--open" : "work-dropbox--closed",
                         background: 'blue',
                         display: this.state.display ? 'block' : 'none'
                 }
@@ -113,7 +158,8 @@ class Project extends React.Component {
                 /* <img src={this.state.image} alt='' style={{width: "50px", height: "50px"}}/>*.
                 /* Chamge into inherited subclasses of Project, i.e. Project.type - Project.Design */
                 return (
-                        <div style={this.styles} >
+                        <div className={this.state.display ? "work-dropbox--open" : "work-dropbox--closed"}
+                        style={this.styles} >
                                 <div className="content">
                                         <span onClick={() => this.closeTab()} className="closebtn">X</span>
                                         <div>
