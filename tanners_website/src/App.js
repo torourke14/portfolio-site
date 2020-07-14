@@ -10,10 +10,19 @@ import MyWorks from './pages/MyWorks';
 /*
 *
 ========== Task List =============
----change navbar to white basis DONE
----flip home colors to new pallette DONE
----cange home and about padding to reflect 'cards'
-    - base bg to greyish
+--- cardify AboutMe
+    DONE -- side padding
+    -- add about me content design
+---page routing
+
+---add home icons
+---home content
+
+---portfolio entry design
+---add details to project entries
+
+---add AboutMe content
+---AboutMe scroll behavior
 *
 */
 

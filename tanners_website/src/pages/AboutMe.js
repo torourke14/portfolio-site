@@ -7,14 +7,15 @@ class AboutMe extends React.Component {
                 return (
                         <div id="About">
                                 <nav className="sidenav">
+                                        <div className='sidenav-wrapper'>
                                         <ul>
                                                 <li><a href="#Bio">Bio</a></li>
                                                 <li><a href="#History">My History</a></li>
                                                 <li><a href="#Colleagues">Colleagues</a></li>
                                                 <li><a href="#Personal">Personal</a></li>
                                         </ul>
+                                        </div>
                                 </nav>
-                               
 
                                 <article className="about-contents">
                                         <section id="Bio">

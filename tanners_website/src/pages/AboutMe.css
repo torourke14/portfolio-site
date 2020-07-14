@@ -3,27 +3,28 @@
     font-size: 16px;
     line-height: 1.6;
     scroll-behavior: smooth;
-    padding-left: 20%;
+    background-color: #e0e0e0;
+    /*margins set in about-contents */
 }
 
 .sidenav {
-    width: 20%;
-    height: 100%;
-    left: 0;
-    top: 0;
+    width: 15%;
+    height: auto;
+    left: 10%;
+    top: 120px;
     position: fixed;
     display: block;
     text-align: right;
-    padding: 120px 46px 0 0;
+    padding: 10px 10px;
     line-height: 2;
-    background-color: #007A45; }
-
-/* Switch to Tablet / Mobile Menu */
-@media all and (max-width: 960px) {
-    .sidenav { visibility: hidden; }
-    #About { padding-left: 0; }
+    background-color: white; 
 }
 
+.sidenav-wrapper {
+    background-color: #16253d;
+    padding: 16px 16px 8px 8px;
+    height: 100%;   
+    }
     .sidenav ul {
         overflow-x: hidden;
         list-style: none;
@@ -33,7 +34,7 @@
         .sidenav li a {
             display: inline-block;
             color: #ebebeb;
-            font-size: 1.6em;
+            font-size: 1.1em;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         }
@@ -44,30 +45,27 @@
             color: #111;
             transform: translate(5px); }
 
+/* Switch to Tablet / Mobile Menu */
+@media all and (max-width: 960px) {
+    .sidenav { visibility: hidden; }
+    #About { padding-left: 0; }
+}
 
 /* ===== Main Content Container ===== */
 .about-contents {
-    padding: 1em;
-    max-width: 1000px;
-    font-size: 1.2em;
-    width: 80%;
-    padding: 4em 15% 0 4em;
-    
-    
-    /*font-family: 'Frank Ruhl Libre', sans-serif;*/
-
+    width: 75%;
+    float: right;
+    padding: 20px 10% 0 10px;
 }
 
     #Bio {
         /*transform: translate(-50%, -50%);*/
-        
         color: black;
-
         /*display: flex;
         flex-flow: row wrap;
         align-items: baseline;*/
     }
-    /*#about-hero p {
-        margin: 0 30px 20px 0;
-        font-size: 4.5em;
-    }*/
+
+    #Colleagues {
+        background-color: #e0e0e0;
+    }
