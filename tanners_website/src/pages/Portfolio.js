@@ -15,7 +15,7 @@ import Resume from '../files/Resume__Tanner-ORourke.pdf';
 class Portfolio extends React.Component {
         render() {
                 return (
-                <div>
+                <div className="ComponentMaster">
                         <div id="HeroWrapper" className="container">
                                 <div id="hero-content">
                                         <div id="hero-block-left">
@@ -37,11 +37,11 @@ class Portfolio extends React.Component {
                                 <div className="col-1">
                                         <div id="about-title">
                                                 <div>
-                                                <p><b>About<br/><span>Me</span></b></p>
+                                                        <p>About<br/><span>Me</span></p>
                                                 </div>
                                         </div>
                                 </div>
-                                <div className="col-2">
+                                <div id='about-intro-content' className="col-2">
                                         <div className="description">
                                                 <h2>Hello! I'm Tanner O'Rourke.</h2>
                                                 <h2>I am a Web Designer based in Seattle.</h2>
@@ -52,17 +52,15 @@ class Portfolio extends React.Component {
                                                 practical software. Incorporates an exquisite proficiency to communicate the
                                                 User Experience as part of a team and in my deliverables.
                                                 </h5>
-
-                                                <h4>
-                                                <i>"Designing may not save the world, but it damn well makes it look good"</i>
-                                                </h4>
-                                                <h4>
-                                                <i>"Design is the intermediary between information and understanding"</i> - Hans Hoffman
-                                                </h4>
-
-                                                <h3>
-                                                        Tanner O'Rourke (signature)
-                                                </h3>
+                                                <div>
+                                                        <h4>
+                                                        <i>"Designing may not save the world, but it damn well makes it look good"</i>
+                                                        </h4>
+                                                        <h4>
+                                                        <i>"Design is the intermediary between information and understanding"</i> - Hans Hoffman
+                                                        </h4>
+                                                        <h3>Tanner O'Rourke (signature)</h3>
+                                                </div>
                                         </div>
 
                                         <div id='AboutLinks'>
@@ -75,7 +73,7 @@ class Portfolio extends React.Component {
                                                 <a href="github.com/torourke14">
                                                         <img src={githubIcon} alt="GitHub" height="30px" width="30px"/>
                                                 </a>
-                                                <button href={Resume} download>
+                                                <button href={Resume} download={Resume}>
                                                         Download CV
                                                 </button>
                                         </div>
@@ -84,8 +82,8 @@ class Portfolio extends React.Component {
                         </div>
                         
                         <div id="KnowledgeIntro" className="container">
-                                <div id='Knowledge-left'className='col-2'>
-                                        <p>Knowledge</p>
+                                <div id='knowledge-content'className='col-2'>
+                                        <h2>Knowledge</h2>
                                         <div id='Skills'>
                                                 <div className="knowledge-box">
                                                         <div className="skill-header">
@@ -148,7 +146,7 @@ class Portfolio extends React.Component {
                                 </div>
                                 <div id='Knowledge-right' className="col-1">
                                         <div id="knowledge-title">
-                                        <p><b>My<br/><span>Services</span></b></p>
+                                                <p>My<br/><span>Services</span></p>
                                         </div>
                                 </div>
                         </div>
@@ -156,11 +154,11 @@ class Portfolio extends React.Component {
                         <div id="SkillsIntro" className="container">
                                 <div className='col-1'>
                                         <div id="skills-title">
-                                                <p>My</p>
+                                                <p>My<br/><span>Skills</span></p>
                                         </div>
                                 </div>
-                                <div id="MySkills" className='col-2'>
-                                        <p>What you Need to Know</p>
+                                <div id="my-skills-content" className='col-2'>
+                                        <h2>What you Need to Know</h2>
 
                                         <div className="skill-bar">
                                                 <p>HTML/CSS</p>

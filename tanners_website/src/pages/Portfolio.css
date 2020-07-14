@@ -1,8 +1,11 @@
 
 
-#container {
-    
-    width: 100vw;
+.ComponentMaster {
+    margin: 0 10%;
+}
+.ComponentMaster > div { /* all card sections */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* Hero Image Styling */
@@ -13,9 +16,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: calc(100vh - 20px - 4em);
-}
-
+    height: 80vh;
+    margin-top: 10px;
+    }
     #hero-content {
         position: absolute;
         top: 50%;
@@ -28,102 +31,107 @@
         flex-flow: row wrap;
         align-items: baseline;
     }
-    #hero-block-left {
-        width: 60%;
+        #hero-block-left {
+            width: 60%;
+        }
+            .hero-links {
+                margin: 2.5px;
+                padding-left: 2.5px;
+                line-height: 1.75em;
+            } 
+            #hero-name {
+                margin: 0 30px 20px 0;
+                font-size: 4.5em;
+            }
+        #hero-block-right {
+            width: 40%;
+            
+            } #hero-block-right h4 {
+                font-size: 1.75em;
+                line-height: 1.5; 
+            }
+
+/* Common grid styling */
+.col-1 { width: 30%; }
+.col-2 { width: 70%; }
+
+    .col-2 p {
+        font-size: 0.9em;
     }
-        .hero-links {
-            margin: 2.5px;
-            padding-left: 2.5px;
-            line-height: 1.75em;
-        }
-        #hero-name {
-            margin: 0 30px 20px 0;
-            font-size: 4.5em;
-        }
-    #hero-block-right {
-        width: 40%;
-        
+    .col-2 h2 {
+        line-height: 1.8;
+        padding: 12px 0;
+        font-size: 1.8em;
+        padding-top: 10px;
     }
-        #hero-block-right h4 {
-            font-size: 1.75em;
-            line-height: 1.5; 
-        }
+    .col-2 h4 {
+        padding: 12px 0 6px 0;
+        line-height: 1.4;  
+        padding-top: 10px;
+        font-size: 1.4em; 
+    }
+    .col-2 h5 {
+        padding: 6px 0;
+        line-height: 1.1;  
+        padding-top: 10px;
+        font-size: 1.1em; 
+    }
 
 /* ===== About Me Intro Styling ===== */
 #AboutIntro {
     display: flex;
     flex-flow: row wrap;
     height: 100%;
-    padding-bottom: 30px;
-}
-
-#AboutIntro div {
-    padding-top: 30px;
-}
-
-.col-1 { 
-    width: 30%;
-}
-/* left column */
-#about-title {
-    position: relative;
-    left: 60%; /* 70% of 25% == 17,5% padding -- effective left padding */
-    top: 25%;
-    width: 3px;
-    height: 120px;
-    background: 2px #00E4E4;
-    /*min-width: 500px; for small screens -- hide title */
+    padding-bottom: 40px;
+    padding-top: 40px;
+    background-color: #efb609;
     }
-    #about-title p {
+    #about-intro-content { padding-right: 10%; }
+
+    #about-title {
         position: relative;
-        top: 100px;
-        left: 0;
-        font-size: 2em;
+        left: 40%;
+        top: 25%;
+        width: 3px;
+        height: 110px;
+        background: #002c54;
+        padding: 0;
+        /*min-width: 500px; for small screens -- hide title */
         }
-        #about-title span {
-            color: #F26B3E;
+        #about-title p {
             position: relative;
-            left: 0px;
+            top: 120px;
+            font-size: 2em;
+            font-weight: 550;
+            }
+            #about-title span {
+                color: #002c54;
+                position: relative;
+                left: 0px;
+                font-weight: 800;
+            }
+
+    #AboutLinks {
+        display: block;
+        width: 100%;
+        padding-top: 30px;
         }
-
-/* right column */
-.col-2 { 
-    width: 55%;
-    margin-right: 15%;
-    }
-    .col-2 * {
-        line-height: 1.6em;
-    }
-    .col-2 h2 {
-        line-height: 1.5;
-        padding: 12px 0;
-    }
-    .col-2 h4 {
-        padding: 12px 0 6px 0;
-        line-height: 1.3;   
-    }
-
-#AboutLinks {
-    display: block;
-    width: 100%;
-    padding-top: 30px;
-    }
-    #AboutLinks a {
-        padding-right: 25px;
-        color: black;
-        /*background-color: #00E4E4;
-        padding: 20px;
-        border-radius: 50%;*/
-    }
-    #AboutLinks button {
-        background-color: #00E4E4;
-        border: none;
-        color: black;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 16px;
-        float: right;
-    }
+        #AboutLinks a {
+            padding-right: 25px;
+            color: black;
+            /*background-color: #00E4E4;
+            padding: 20px;
+            border-radius: 50%;*/
+        }
+        #AboutLinks button {
+            background-color: #002c54;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 16px;
+            float: right;
+        }
 
 
 /* ===== Knowledge/Skills Styling ===== */
@@ -131,69 +139,50 @@
     /*padding: 50px 7.5% 0 7.5%;*/
     display: flex;
     flex-flow: row wrap;
-    height: 500px;
-    background: #F26B3E;
+    height: 100%;
+    background: #16253D;
+    color: white;
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
-#KnowledgeIntro > div {
-    padding-top: 50px;
-    }
-    #Knowledge-left {
-        padding-left: 15%;
-        margin-right: 0; /* override col-1 */
-    }
-    #Knowledge-left > p {
-        font-size: 1.5em;
-    }
+    #knowledge-content { padding-left: 10%; }
     
     #Skills {
         display: flex;
         flex-flow: row wrap;
-        /*padding-left: 10px;*/
         }
-        .knowledge-box {
-            width: 50%;
+        .knowledge-box { 
+            width: 50%; /*..of flex*/
         }
         .knowledge-box p {
-            font-size: 0.9em;
-            padding-right: 10px;
             padding-left: 6px;
+            padding-right: 12px;
         }
     
     #Knowledge-right {
-        padding-right: 15%;
+        padding-right: 10%;
         }
         #knowledge-title {
-            /* changes from .col-1 > div */
             position: relative;
-            left: 60%; /* 70% of 25% == 17,5% padding */
-            top: 10%;
+            left: 40%; /* 70% of 25% == 17,5% padding */
+            top: 25%;
             width: 3px;
             height: 110px;
-            background: 6px white;
+            background: #CD7213;
             }
             #knowledge-title p {
                 position: relative;
                 top: 120px;
-                left: 0;
                 font-size: 2em;
+                font-weight: 550;
                 }
                 #knowledge-title span {
-                    font-weight: normal;
-                    color: white;
+                    color: #EFB509;
+                    left: 0;
+                    font-weight: 800;
+
                 }
-
-
-                #about-title p {
-                    position: relative;
-                    top: 100px;
-                    left: -80px;
-                    font-size: 2em;
-                    }
-                    #about-title span {
-                        font-weight: bold;
-                        color: #F26B3E;
-                    }
-
+               
 
 /* ===== My Skills Styling ===== */
 #SkillsIntro {
@@ -201,36 +190,40 @@
     display: flex;
     flex-flow: row wrap;
     height: 650px;
-    background-color: black;
+    background-color: #EFB509;
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
-    #skills-title {
-        /* changes from .col-1 > div */
-        top: 20%;
-        color: white;
+/* left column */
+#skills-title {
+    /* changes from .col-1 > div */
+    position: relative;
+    left: 40%;
+    top: 25%;
+    width: 3px;
+    height: 110px;
+    background: #002c54;
+    padding: 0;
     }
     #skills-title p {
+        color: white;
         position: relative;
         top: 120px;
-        left: 0;
-        font-size: 1.5em;
+        font-size: 2em;
+        font-weight: 550;
     }
-    #skills-title p::after {
-        content: ' Skills';
-        font-weight: bold;
-        color: #F26B3E;
+    #skills-title span {
+        color: black;
+        font-weight: 800;
     }
 
-#MySkills {
+/* right column */
+#my-skills-content {
     display: flex;
     flex-flow: row wrap;
-    color: white;
-    padding-top: 40px;
-    padding-left: 5%;
+    color: black;
 }
-    #MySkills > p {
-        font-size: 1.5em;
-    }
 
     .skill-bar {
         padding-top: 16px;
@@ -242,43 +235,44 @@
             width: 80%;
             height: 24px;
             background-color: white;
+            color: white;
             text-align: center;
         }
         #html {
             width: 90%;
             height: inherit;
-            background-color: #F26B3E;
+            background-color: #002C54;
         }
         #js {
             width: 80%;
             height: inherit;
-            background-color: #F26B3E;
+            background-color: #002C54;
         }
         #react {
             width: 85%;
             height: inherit;
-            background-color: #F26B3E;
+            background-color: #002C54;
         }
         #python {
             width: 75%;
             height: inherit;
-            background-color: #F26B3E;
+            background-color: #002C54;
         }
         #prototyping {
             width: 90%;
             height: inherit;
-            background-color: #F26B3E;
+            background-color: #002C54;
         }
         #illustrator-figma {
             width: 75%;
             height: inherit;
-            background-color: #F26B3E;
+            background-color: #002C54;
         }
 
 
 /* ===== My Works Styling ===== */
 #WorksIntro {
-    background-color: #f1f1f1;
+    background-color: #CD7213;
     padding: 40px 12.5% 32px 12.5%;
     height: 400px;
 }

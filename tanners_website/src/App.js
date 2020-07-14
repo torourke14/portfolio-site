@@ -7,6 +7,15 @@ import Connect from './pages/Connect';
 import MyWorks from './pages/MyWorks';
 
 //import bg from './images/LinkedInPic.jpg';
+/*
+*
+========== Task List =============
+---change navbar to white basis DONE
+---flip home colors to new pallette DONE
+---cange home and about padding to reflect 'cards'
+    - base bg to greyish
+*
+*/
 
 
 class App extends React.Component {
@@ -105,7 +114,7 @@ class Master extends React.Component {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                 <nav>
                     <ul className={(this.state.menuActive) ? "menu active" : "menu"}>
-                        <li className="logo">LOGO</li>
+                        <li className="logo">&nbsp;</li>
 
                         <li className="item">
                             <a onClick={() => this.renderSwitch('Portfolio')}>Home</a>
