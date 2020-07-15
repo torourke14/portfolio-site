@@ -12,48 +12,87 @@
     background-color: #f5f5f5;
 }
 
-.WorksTop {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url('../images/enchantments.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: calc(90vh); /* minus height of navbar */
-    z-index: 2;
-    top: 20px;
-    margin: 0 10%;
-    margin-bottom: 20px;
+
+
+/* Common grid styling */
+.col-1 { width: 30%; }
+.col-2 { width: 70%; }
+
+    .col-2 p {
+        font-size: 0.85em;
     }
-    .WorksLinks {
-        position: absolute;
-        top: 90%;
-        right: 2.5%;
-        width: auto;
+    .col-2 h2 {
+        line-height: 1.8;
+        padding: 12px 0;
+        font-size: 1.6em;
+        padding-top: 10px;
+    }
+    .col-2 h4 {
+        padding: 12px 0 6px 0;
+        line-height: 1.4;  
+        padding-top: 10px;
+        font-size: 1.3em; 
+    }
+    .col-2 h5 {
+        padding: 6px 0;
+        line-height: 1.1;  
+        padding-top: 10px;
+        font-size: 1.05em; 
+    }
+
+
+
+
+/* ===== Knowledge/Skills Styling ===== */
+#KnowledgeIntro {
+    /*padding: 50px 7.5% 0 7.5%;*/
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    background: #16253D;
+    color: white;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+    #knowledge-content { padding-left: 10%; }
+    
+    #Skills {
+        display: flex;
+        flex-flow: row wrap;
         }
-        .WorksLinks > div {
-            background-color: #ebebeb;
-            color: #333;
-            overflow: hidden;
-            float: left;
-            margin-right: 36px;
-            padding: 8px 16px;
-            border-radius: 10px;
+        .knowledge-box { 
+            width: 50%; /*..of flex*/
         }
-        .WorksLinks a {
-            color: inherit;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1.3em;
+        .knowledge-box p {
+            padding-left: 6px;
+            padding-right: 12px;
         }
-        .WorksLinks > div:hover {
-            background-color: #007A45;
-            color: #ebebeb;
-            scale: 1.1;
-            transition: 0.4s all;
-            cursor: pointer;
-            
+    
+    #Knowledge-right {
+        padding-right: 10%;
         }
+        #knowledge-title {
+            position: relative;
+            left: 40%; /* 70% of 25% == 17,5% padding */
+            top: 25%;
+            width: 3px;
+            height: 110px;
+            background: #efb609;
+            }
+            #knowledge-title p {
+                position: relative;
+                top: 120px;
+                font-size: 2em;
+                font-weight: 550;
+                }
+                #knowledge-title span {
+                    color: #CD7213;
+                    left: 0;
+                    font-weight: 800;
+
+                }
+
+
 
 .Works {
     padding-bottom: 100px;
@@ -234,3 +273,118 @@
     font-size: 35px;
     cursor: pointer;
   }
+
+
+
+
+  
+/* Common grid styling */
+.col-1 { width: 30%; }
+.col-2 { width: 70%; }
+
+    .col-2 p {
+        font-size: 0.85em;
+    }
+    .col-2 h2 {
+        line-height: 1.8;
+        padding: 12px 0;
+        font-size: 1.6em;
+        padding-top: 10px;
+    }
+    .col-2 h4 {
+        padding: 12px 0 6px 0;
+        line-height: 1.4;  
+        padding-top: 10px;
+        font-size: 1.3em; 
+    }
+    .col-2 h5 {
+        padding: 6px 0;
+        line-height: 1.1;  
+        padding-top: 10px;
+        font-size: 1.05em; 
+    }               
+
+/* ===== My Skills Styling ===== */
+#SkillsIntro {
+    /*padding: 50px 7.5% 0 7.5%;*/
+    display: flex;
+    flex-flow: row wrap;
+    height: 650px;
+    background-color: #16253D;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+/* left column */
+#skills-title {
+    /* changes from .col-1 > div */
+    position: relative;
+    left: 40%;
+    top: 25%;
+    width: 3px;
+    height: 110px;
+    background: #EFB509;
+    padding: 0;
+    }
+    #skills-title p {
+        color: white;
+        position: relative;
+        top: 120px;
+        font-size: 2em;
+        font-weight: 550;
+    }
+    #skills-title span {
+        color: #CD7213;
+        font-weight: 800;
+    }
+
+/* right column */
+#my-skills-content {
+    display: flex;
+    flex-flow: row wrap;
+    color: white;
+}
+
+    .skill-bar {
+        padding-top: 16px;
+        padding-bottom: 20px;
+        display: inline-block;
+        width: 100%;
+    }
+        .bar {
+            width: 80%;
+            height: 24px;
+            background-color: white;
+            color: white;
+            text-align: center;
+        }
+        #html {
+            width: 90%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #js {
+            width: 80%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #react {
+            width: 85%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #python {
+            width: 75%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #prototyping {
+            width: 90%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #illustrator-figma {
+            width: 75%;
+            height: inherit;
+            background-color: #CD7213;
+        }

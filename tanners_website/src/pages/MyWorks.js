@@ -13,17 +13,76 @@ class MyWorks extends React.Component {
         render() {
                 return (
                         <div id="WorksMaster">   
-                                <div className="WorksTop">
-                                        <div className="WorksLinks">
-                                                <div><a>Design</a></div>
-                                                <div><a>Development</a></div>
-                                                <div><a>Freelance</a></div>
-                                                <div><a>Professional Work</a></div>
+                                <div id="KnowledgeIntro" className="container">
+                                        <div id='knowledge-content'className='col-2'>
+                                                <h2>Knowledge</h2>
+                                                <div id='Skills'>
+                                                        <div className="knowledge-box">
+                                                                <div className="skill-header">
+                                                                        <img/>
+                                                                        <h4>Web Development</h4>
+                                                                </div>
+                                                                <p>
+                                                                I have proven experience building websites from the 
+                                                                ground-up utilizing various development stacks
+                                                                </p>
+                                                        </div>
+                                                        <div className="knowledge-box">
+                                                                <div className="skill-img">
+                                                                        <img />
+                                                                        <h4>UX/UI Design</h4>
+                                                                </div>
+                                                                <p>
+                                                                
+                                                                </p> 
+                                                        </div>
+                                                
+                                                        <div className="knowledge-box">
+                                                                <div className="skill-img">
+                                                                        <img />
+                                                                        <h4>App Development</h4>
+                                                                </div>
+                                                                <p>
+                                                                
+                                                                </p> 
+                                                        </div>
+                                                        <div className="knowledge-box">
+                                                                <div className="skill-img">
+                                                                        <img />
+                                                                        <h4>Full-Stack Development</h4>
+                                                                </div>
+                                                                <p>
+                                                                
+                                                                </p> 
+                                                        </div>
+                                                
+                                                        <div className="knowledge-box">
+                                                                <div className="skill-img">
+                                                                        <img />
+                                                                        <h4>Analytics</h4>
+                                                                </div>
+                                                                <p>
+                                                                
+                                                                </p> 
+                                                        </div>
+                                                        <div className="knowledge-box">
+                                                                <div className="skill-img">
+                                                                        <img />
+                                                                        <h4>Human-Computer Interaction</h4>
+                                                                </div>
+                                                                <p>
+                                                                
+                                                                </p> 
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div id='Knowledge-right' className="col-1">
+                                                <div id="knowledge-title">
+                                                        <p>My<br/><span>Services</span></p>
+                                                </div>
                                         </div>
                                 </div>
-                                
-                                <div className='WorksMid'>&nbsp;</div>
-                                
+
                                 <div className="Works">
                                         <div className="works-row">
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.domad.openTab(e)}>
@@ -110,6 +169,54 @@ class MyWorks extends React.Component {
                                                 desc='Discovered patterns in past, present, and future musical attributes' 
                                                 location='Boulder, CO'
                                                 imgsrc={DoMADLogo} />
+                                        </div>
+                                </div>
+
+                                <div id="SkillsIntro" className="container">
+                                        <div className='col-1'>
+                                                <div id="skills-title">
+                                                        <p>My<br/><span>Skills</span></p>
+                                                </div>
+                                        </div>
+                                        <div id="my-skills-content" className='col-2'>
+                                                <h2>What you Need to Know</h2>
+
+                                                <div className="skill-bar">
+                                                        <p>HTML/CSS</p>
+                                                        <div className="bar">
+                                                                <div id='html'>95%</div>
+                                                        </div>
+                                                </div>
+                                                <div className="skill-bar">
+                                                        <p>JavaScript</p>
+                                                        <div className="bar">
+                                                                <div id='js'>80%</div>
+                                                        </div>
+                                                </div>
+                                                <div className="skill-bar">
+                                                        <p>ReactJS</p>
+                                                        <div className="bar">
+                                                                <div id='react'>85%</div>
+                                                        </div>
+                                                </div>
+                                                <div className="skill-bar">
+                                                        <p>Python</p>
+                                                        <div className="bar">
+                                                                <div id='python'>70%</div>
+                                                        </div>
+                                                </div>
+                                                <div className="skill-bar">
+                                                        <p>Prototyping</p>
+                                                        <div className="bar">
+                                                                <div id='prototyping'>70%</div>
+                                                        </div>
+                                                </div>
+                                                <div className="skill-bar">
+                                                        <p>Illustrator / Figma</p>
+                                                        <div className="bar">
+                                                                <div id='illustrator-figma'>75%</div>
+                                                        </div>
+                                                </div>
                                         </div>
                                 </div>
                         </div>

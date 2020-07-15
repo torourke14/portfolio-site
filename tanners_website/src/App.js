@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import Portfolio from './pages/Portfolio';
+import Intro from './pages/Intro';
 import AboutMe from './pages/AboutMe';
 import Connect from './pages/Connect';
 import MyWorks from './pages/MyWorks';
@@ -43,14 +43,12 @@ class Master extends React.Component {
         super(props);
 
         this.state = {
-            currentPage: <Portfolio />,
-            currentRoute: 'Portfolio',
+            currentRoute: 'Intro',
             menuActive: false,
             submenuActive: false,
         }
 
         this.closeSubMenu = this.closeSubmenu.bind(this);
-        this.renderSwitch = this.renderSwitch.bind(this);
     }
 
     closeSubmenu(e) {
@@ -62,64 +60,31 @@ class Master extends React.Component {
         }
     }
 
-    renderSwitch(page) {
-        switch(page) {
-            case page === this.state.currentRoute:
-                return;
-            case 'Portfolio':
-                this.setState({
-                    currentPage: <Portfolio path="/" />,
-                    currentRoute: 'Portfolio',
-                    menuActive: false
-                });
-                return;
-            case 'About':
-                this.setState({
-                    currentRoute: 'AboutMe',
-                    menuActive: false
-                });
-                return;
-            case 'Connect':
-                this.setState({
-                    currentPage: <Connect path="/connect"/>,
-                    currentRoute: 'Connect',
-                    menuActive: false
-                });
-                return;
-            case 'MyWorks':
-                this.setState({
-                    currentPage: <MyWorks path="/works"/>,
-                    currentRoute: 'MyWorks',
-                    menuActive: false
-                });
-                return;
-            default: 
-                this.setState({
-                    currentRoute: 'Portfolio',
-                    menuActive: false
-                });
-                return;
-        }
+    render() {
+        return (
+            <div>
+                <div id='PageBox'>
+                    <Intro />
+                </div>
+                <div id='floating-nav'></div>
+                <div id='PageBox'>
+                    <AboutMe />
+                </div>
+                <div id='PageBox'>
+                    <MyWorks />
+                </div>
+                <div id='PageBox'>
+                    <Connect />
+                </div>
+                
+                
+            </div>
+        );
+    }
 }
 
-    render() {
-        let route = this.state.currentRoute;
-        let currentComponent;
-
-        /* Navigation */
-        if (route === "Portfolio") {
-            currentComponent = <Portfolio path="/"/>;
-        } else if (route === 'AboutMe') {
-            currentComponent = <AboutMe path="/about"/>;
-        } else if (route === 'Connect') {
-            currentComponent = <Connect path="/connect"/>;
-        } else if (route === 'MyWorks') {
-            currentComponent = <MyWorks path="/works"/>;
-        } else {
-            currentComponent = <Portfolio path="/"/>;
-        }
-        return (
-            <div className="App" onClick = {(e) => this.closeSubMenu(e)}>
+/*
+<div className="App" onClick = {(e) => this.closeSubMenu(e)}>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                 <nav>
                     <ul className={(this.state.menuActive) ? "menu active" : "menu"}>
@@ -148,14 +113,21 @@ class Master extends React.Component {
                         </li>
                     </ul>
                 </nav>
-                <div id='PageBox'>
-                    {currentComponent}
-                </div>
-                
-            </div>
-        );
-    }
-}
+*/
+/*
+<li className="item">
+                            <a onClick={() => this.renderSwitch('Portfolio')}>Home</a>
+                        </li>
+                        <li className="item">
+                            <a onClick={() => this.renderSwitch('About')}>About Me</a>
+                        </li>
+                        <li className="item button">
+                            <a onClick={() => this.renderSwitch('Connect')}>Connect</a>
+                        </li>
+                        <li className="item">
+                            <a onClick={() => this.renderSwitch('MyWorks')}>My Works</a>
+                        </li>
+*/
     /*
     * Home -- Intro to me (specialities)
             RECENT works

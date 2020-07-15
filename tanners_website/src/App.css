@@ -25,136 +25,17 @@
   width: 100%;
   height: 100%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: #e0e0e0;
+  background-color: #d6d6d6;
 }
     #PageBox {
       z-index: 1; /* important !! */
     }
-    .menu {
-      background: #16253d;
-      padding: 0 10%;
-      margin: 0;
-      width: 100%; 
-      list-style-type: none;
-      position: sticky;
-      position: -webkit-sticky;
-      top: 0;
-      z-index: 2; /* important !! */
-    }
-    .menu li { cursor: pointer; }
-    a {
-      color: white;
-      text-decoration: none;
-    }
-    .logo { 
-      font-size: 40px;
-      padding: 7.5px 10px 7.5px 0;
-    }
-    .item {
-      padding: 12px 24px;
-      font-size: 1.2em;
-    }
-    .item.button {
-      padding: 8px 5px;
-    }
-    .item:not(.button) a:hover, 
-    .item a:hover::after {
-      /*color: lightgray;*/
-      text-decoration: underline;
-      transition: 0.4s all;
-    }
 
-
-
-
-    /* Mobile menu */
-    .menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .menu li a {
-      display: block;
-      padding: 15px 5px;
-    }
-    .toggle {
-      order: 1;
-      font-size: 20px;
-    }
-    .item.button {
-      order: 2;
-    }
-    .item {
-      order: 3;
-      width: 100%;
-      text-align: center;
-      display: none;
-    }
-    .active .item {
-      display: block;
-    }
 
     /* Tablet menu */
     @media all and (min-width: 700px) {
-        .menu {
-          justify-content: center;
-        }
-        .logo {
-          flex: 1;
-        }
-        .item.button {
-          width: auto;
-          order: 1;
-          display: block;
-        }
-        .toggle {
-          flex: 1;
-          text-align: right;
-          order: 2;
-        }
-        /* Button up from tablet screen */
-        .menu li.button a {
-          padding: 15px 25px;
-          margin: 5px 0;
-          color: white;
-        }
-        .button a {
-          background: #333333;
-          border: 1px #ebebeb solid;
-        }
-        .button a:hover {
-          text-decoration: none;
-        }
     }
 
     /* Desktop menu */
     @media all and (min-width: 960px) {
-      
-      .menu {
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        background: #16253d;
-        
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-      }
-      .menu a { color: white; }
-      .item {
-        order: 0;
-        position: relative;
-        display: block;
-        width: auto;
-      }
-      .logo {
-        order: 1;
-        color: white;
-      }
-      .button {
-        order: 2;
-      }
-      .toggle {
-        display: none;
-      }
     }
