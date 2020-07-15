@@ -1,0 +1,129 @@
+/* Common grid styling */
+.col-1 { width: 30%; }
+.col-2 { width: 70%; }
+
+    .col-2 p {
+        font-size: 0.85em;
+    }
+    .col-2 h5 {
+        padding: 6px 0;
+        line-height: 1.1;  
+        font-size: 1.05em; 
+    }
+    .col-2 h4 {
+        padding: 12px 0 6px 0;
+        line-height: 1.4;  
+        font-size: 1.3em; 
+    }
+    .col-2 h2 {
+        line-height: 1.8;
+        padding: 12px 0;
+        font-size: 2em;
+    }
+    .col-2 h1 {
+        line-height: 2;
+        padding: 12px 0;
+        font-size: 2.4em;
+    }
+
+
+/* ===== My Skills Styling ===== */
+#Skills {
+    /*padding: 50px 7.5% 0 7.5%;*/
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    background-color: #16253D;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+/* left column */
+#skills-title {
+    /* changes from .col-1 > div */
+    position: relative;
+    left: 40%;
+    top: 25%;
+    width: 3px;
+    height: 110px;
+    background: #EFB509;
+    padding: 0;
+    }
+    #skills-title p {
+        color: white;
+        position: relative;
+        top: 120px;
+        font-size: 2em;
+        font-weight: 550;
+    }
+    #skills-title span {
+        color: #CD7213;
+        font-weight: 800;
+    }
+
+/* right column */
+#my-skills-content {
+    display: flex;
+    flex-flow: row wrap;
+    color: white;
+    }
+    .skills-header { 
+        width: 100%; /*of box */
+        padding: 16px 0;
+        }
+        .header-hr {
+            border: 0;
+            height: 1px;
+            width: 50%;
+            min-width: 200px;
+            background: #333;
+            background-image: linear-gradient(to right, #ffffff, #e7e7e7, #365b96, #264069, #16253d);
+        }
+        #title-hr { 
+            width: 90%; 
+            height: 2px;
+            margin-bottom: 64px;
+        }
+    .skill-bar {
+        padding-top: 16px;
+        padding-bottom: 20px;
+        display: inline-block;
+        width: 100%;
+    }
+        .bar {
+            width: 80%;
+            height: 24px;
+            background-color: white;
+            color: white;
+            text-align: center;
+        }
+        #html {
+            width: 90%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #js {
+            width: 80%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #react {
+            width: 85%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #python {
+            width: 75%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #prototyping {
+            width: 90%;
+            height: inherit;
+            background-color: #CD7213;
+        }
+        #illustrator-figma {
+            width: 75%;
+            height: inherit;
+            background-color: #CD7213;
+        }

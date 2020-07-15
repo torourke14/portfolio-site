@@ -1,8 +1,37 @@
-/* Tablet menu */
+
+/* Common grid styling */
+.col-1 { width: 30%; }
+.col-2 { width: 70%; }
+
+    .col-2 p {
+        font-size: 0.85em;
+    }
+    .col-2 h5 {
+        padding: 6px 0;
+        line-height: 1.1;  
+        font-size: 1.05em; 
+    }
+    .col-2 h4 {
+        padding: 12px 0 6px 0;
+        line-height: 1.4;  
+        font-size: 1.3em; 
+    }
+    .col-2 h2 {
+        line-height: 1.8;
+        padding: 12px 0;
+        font-size: 2em;
+    }
+    .col-2 h1 {
+        line-height: 2;
+        padding: 12px 0;
+        font-size: 4;
+    }
+/* end ----- */
+
+/* Phone menu */
 @media all and (min-width: 700px) {
 
 }
-
 /* Tablet menu */
 @media all and (min-width: 960px) {
 
@@ -13,46 +42,15 @@
 }
 
 
-
-/* Common grid styling */
-.col-1 { width: 30%; }
-.col-2 { width: 70%; }
-
-    .col-2 p {
-        font-size: 0.85em;
-    }
-    .col-2 h2 {
-        line-height: 1.8;
-        padding: 12px 0;
-        font-size: 1.6em;
-        padding-top: 10px;
-    }
-    .col-2 h4 {
-        padding: 12px 0 6px 0;
-        line-height: 1.4;  
-        padding-top: 10px;
-        font-size: 1.3em; 
-    }
-    .col-2 h5 {
-        padding: 6px 0;
-        line-height: 1.1;  
-        padding-top: 10px;
-        font-size: 1.05em; 
-    }
-
-
-
-
-/* ===== Knowledge/Skills Styling ===== */
-#KnowledgeIntro {
+/* ===== My Services Intro Styling ===== */
+#MyServices {
     /*padding: 50px 7.5% 0 7.5%;*/
     display: flex;
     flex-flow: row wrap;
     height: 100%;
     background: #16253D;
     color: white;
-    padding-bottom: 40px;
-    padding-top: 40px;
+    padding: 80px 0;
 }
     #knowledge-content { padding-left: 10%; }
     
@@ -94,78 +92,102 @@
 
 
 
+/* ===== Portfolio/Works Grid Styling ===== */
+.works-title { 
+    padding: 32px 0 0 5%;
+    height: 0;
+    background-color: #e0e0e0;
+}
+    .works-title h1 {
+        position: relative;
+        bottom: 28px;
+        z-index: 1;
+
+        font-size: 6em;
+        font-family: 'Arial Black', serif; 
+    }
+
 .Works {
-    padding-bottom: 100px;
-    
+    padding: 50px 0 100px 0;
+    background-color: #e0e0e0;
 }
 
 .works-row {
-    margin: 0 10%;
     padding: 0 2.5%;
-    background-color: white;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    flex-basis: auto;
 }
-.entry {
-    padding: 50px;
-    width: 32.333%;
-    margin: 1% 0;
-    color: #333;
-    box-shadow: 1px 1px 2px #e6e6e6;
-    background-color: #9CAFB7;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 25px;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    }
-    .entry img {
-        display: block;
-        position: relative;
-        height: 90%;
-        width: 90%;
-    }
-    .entry .mask, .entry .content {
-        width: 100%;
-        height: 100%;
-        position: absolute;
+    .entry {
+        flex-basis: auto;
+        padding: 50px;
+        margin: 16px 16px;
+        width: calc(50% - 32px);
+        height: 300px;
+        
+        color: #333;
+        box-shadow: 1px 1px 2px #444444;
+        background-color: #EFB509;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 25px;
+        cursor: pointer;
         overflow: hidden;
-        top: 0;
-        left: 0;
-    }
-    .entry h2 {
-        text-transform: uppercase;
-        color: #ebebeb;
-        text-align: center;
         position: relative;
-        font-size: 17px;
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.8);
-        margin: 20px 0 0 0;
     }
-    .entry p {
-        font-size: 12px;
-        position: relative;
-        color: #fff;
-        padding: 5px 10px 10px;
-        text-align: center;
+    .works-row:nth-child(odd) .entry:nth-child(even) {
+        background-color: #16253D;
     }
-    .entry a.info {
-        display: inline-block;
-        text-decoration: none;
-        padding: 7px 14px;
-        background: #000;
-        color: #fff;
-        text-transform: uppercase;
-        box-shadow: 0 0 1px #000
+    
+    .works-row:nth-child(even) .entry:nth-child(odd) {
+        background-color: #16253D;
     }
-    .entry:hover {
-        background-color: rgba(0, 122, 69, 0.992);
-        transition: 0.6s all;
-        box-shadow: 0 0 5px #000
-    }
+        .entry img {
+            display: block;
+            position: relative;
+            height: 90%;
+            width: 90%;
+        }
+        .entry .mask, .entry .content {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+        .entry h2 {
+            text-transform: uppercase;
+            color: #ebebeb;
+            text-align: center;
+            position: relative;
+            font-size: 17px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            margin: 20px 0 0 0;
+        }
+        .entry p {
+            font-size: 12px;
+            position: relative;
+            color: #fff;
+            padding: 5px 10px 10px;
+            text-align: center;
+        }
+        .entry a.info {
+            display: inline-block;
+            text-decoration: none;
+            padding: 7px 14px;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            box-shadow: 0 0 1px #000
+        }
+        .entry:hover {
+            background-color: #CD7213;
+            transition: 0.6s all;
+            box-shadow: 0 0 5px #000
+        }
     
     /* box animation cover styling */
     .entry-cover img { 
@@ -173,7 +195,7 @@
     }
         .entry-cover .mask {
             opacity: 0;
-            background-color: #007A45; 
+            background-color: #CD7213; 
             transition: all 0.4s ease-in-out;
         }
         .entry-cover h2 {
@@ -234,6 +256,7 @@
                 transform-origin: 50% 0%;
     }
 
+    /* initialize animations for each browser */
     @-webkit-keyframes work-dropbox--open {
         from { transform: scaleY(0) }
         to { transform: scaleY(1) }
@@ -260,7 +283,6 @@
         to { transform: scaleY(0) }
     }
 
-
 .works-row::after {
     content: '';
     display: table;
@@ -273,118 +295,4 @@
     font-size: 35px;
     cursor: pointer;
   }
-
-
-
-
-  
-/* Common grid styling */
-.col-1 { width: 30%; }
-.col-2 { width: 70%; }
-
-    .col-2 p {
-        font-size: 0.85em;
-    }
-    .col-2 h2 {
-        line-height: 1.8;
-        padding: 12px 0;
-        font-size: 1.6em;
-        padding-top: 10px;
-    }
-    .col-2 h4 {
-        padding: 12px 0 6px 0;
-        line-height: 1.4;  
-        padding-top: 10px;
-        font-size: 1.3em; 
-    }
-    .col-2 h5 {
-        padding: 6px 0;
-        line-height: 1.1;  
-        padding-top: 10px;
-        font-size: 1.05em; 
-    }               
-
-/* ===== My Skills Styling ===== */
-#SkillsIntro {
-    /*padding: 50px 7.5% 0 7.5%;*/
-    display: flex;
-    flex-flow: row wrap;
-    height: 650px;
-    background-color: #16253D;
-    padding-bottom: 40px;
-    padding-top: 40px;
-}
-
-/* left column */
-#skills-title {
-    /* changes from .col-1 > div */
-    position: relative;
-    left: 40%;
-    top: 25%;
-    width: 3px;
-    height: 110px;
-    background: #EFB509;
-    padding: 0;
-    }
-    #skills-title p {
-        color: white;
-        position: relative;
-        top: 120px;
-        font-size: 2em;
-        font-weight: 550;
-    }
-    #skills-title span {
-        color: #CD7213;
-        font-weight: 800;
-    }
-
-/* right column */
-#my-skills-content {
-    display: flex;
-    flex-flow: row wrap;
-    color: white;
-}
-
-    .skill-bar {
-        padding-top: 16px;
-        padding-bottom: 20px;
-        display: inline-block;
-        width: 100%;
-    }
-        .bar {
-            width: 80%;
-            height: 24px;
-            background-color: white;
-            color: white;
-            text-align: center;
-        }
-        #html {
-            width: 90%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #js {
-            width: 80%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #react {
-            width: 85%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #python {
-            width: 75%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #prototyping {
-            width: 90%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #illustrator-figma {
-            width: 75%;
-            height: inherit;
-            background-color: #CD7213;
-        }
+/* end ----- */

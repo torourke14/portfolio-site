@@ -48,7 +48,7 @@
     color: white;
     }
     #banner {
-        padding: 120px 10% 240px 5%;
+        padding: 120px 10% 240px 10%;
     }
     #banner h2 { color: #EFB509; }
 
@@ -79,7 +79,8 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 40px 10%;
-    background-color: #efb609;
+    background-color: #16253D;
+    color: white;
     }
     .details-container {
         width: 33.33%;

@@ -1,6 +1,3 @@
-
-
-
 .IntroMaster > div:not(:first-child) { /* all card sections */
     padding: 20px 8%;
     margin: 2%;
@@ -16,7 +13,7 @@
     background-size: cover;
     position: relative;
     height: 80vh;
-    margin: 0 2%;
+    margin: 0;
     }
     #hero-content {
         position: absolute;

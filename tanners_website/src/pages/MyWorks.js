@@ -13,7 +13,7 @@ class MyWorks extends React.Component {
         render() {
                 return (
                         <div id="WorksMaster">   
-                                <div id="KnowledgeIntro" className="container">
+                                <div id="MyServices" className="container">
                                         <div id='knowledge-content'className='col-2'>
                                                 <h2>Knowledge</h2>
                                                 <div id='Skills'>
@@ -83,6 +83,10 @@ class MyWorks extends React.Component {
                                         </div>
                                 </div>
 
+                                <div className='works-title'>
+                                        <h1>My Work.</h1>
+                                </div>
+
                                 <div className="Works">
                                         <div className="works-row">
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.domad.openTab(e)}>
@@ -101,7 +105,20 @@ class MyWorks extends React.Component {
                                                                 <p><a href="#" className='info'>Read More</a></p>
                                                         </div>
                                                 </div>
+                                                                   
+                                                <Project ref='domad' tags={['design', 'dev', 'professional']}
+                                                        title="DoMAD" position='Lead UI Designer, Front-End Developer' 
+                                                        desc='Website design and build for non-profit donation org. DoMAD' 
+                                                        location='Boulder, CO'
+                                                        imgsrc={DoMADLogo} />
+                                                <Project ref='lbs' tags={['dev', 'freelance']}
+                                                        title="London Bridge Studios" position='Web Developer' 
+                                                        desc='Page flows and SEO enhancements for a Seattle-based recording studio' 
+                                                        location='Seattle, WA'
+                                                        imgsrc={DoMADLogo}  />
+                                        </div>    
 
+                                        <div className="works-row">
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.spotipy.openTab(e)}>
                                                         <img src={DoMADLogo} alt="" />
                                                         <div className='mask'>
@@ -110,24 +127,6 @@ class MyWorks extends React.Component {
                                                                 <p><a href="#" className='info'>Read More</a></p>
                                                         </div>
                                                 </div>
-                                                                                                        
-                                                <Project ref='domad' tags={['design', 'dev', 'professional']}
-                                                title="DoMAD" position='Lead UI Designer, Front-End Developer' 
-                                                desc='Website design and build for non-profit donation org. DoMAD' 
-                                                location='Boulder, CO'
-                                                imgsrc={DoMADLogo} />
-                                                <Project ref='lbs' tags={['dev', 'freelance']}
-                                                title="London Bridge Studios" position='Web Developer' 
-                                                desc='Page flows and SEO enhancements for a Seattle-based recording studio' 
-                                                location='Seattle, WA'
-                                                imgsrc={DoMADLogo}  />
-                                                <Project ref='spotipy' tags={['dev', 'freelance']}
-                                                title="Spotipy Data Analysis" position='Data Analytics Researcher' 
-                                                desc='Discovered patterns in past, present, and future musical attributes' 
-                                                location='Boulder, CO'
-                                                imgsrc={DoMADLogo} />
-                                        </div>
-                                        <div className="works-row">
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.d.openTab(e)}>
                                                         <img src={DoMADLogo} alt="" />
                                                         <div className='mask'>
@@ -136,6 +135,20 @@ class MyWorks extends React.Component {
                                                                 <p><a href="#" className='info'>Read More</a></p>
                                                         </div>
                                                 </div>
+
+                                                <Project ref='spotipy' tags={['dev', 'freelance']}
+                                                        title="Spotipy Data Analysis" position='Data Analytics Researcher' 
+                                                        desc='Discovered patterns in past, present, and future musical attributes' 
+                                                        location='Boulder, CO'
+                                                        imgsrc={DoMADLogo} />
+                                                <Project ref='d' title="DoMAD" tags={['dev','freelance']}
+                                                        position='Lead UI Designer, Front-End Developer' 
+                                                        desc='Website design and build for non-profit donation org. DoMAD' 
+                                                        location='Boulder, CO'
+                                                        imgsrc={DoMADLogo} />
+                                        </div>
+
+                                        <div className="works-row">
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.l.openTab(e)}>
                                                         <img src={DoMADLogo} alt="" />
                                                         <div className='mask'>
@@ -154,11 +167,6 @@ class MyWorks extends React.Component {
                                                         </div>
                                                 </div>
                                                 
-                                                <Project ref='d' title="DoMAD" tags={['dev','freelance']}
-                                                position='Lead UI Designer, Front-End Developer' 
-                                                desc='Website design and build for non-profit donation org. DoMAD' 
-                                                location='Boulder, CO'
-                                                imgsrc={DoMADLogo} />
                                                 <Project ref='l' title="London Bridge Studios" tags={['dev','freelance']}
                                                 position='Web Developer' 
                                                 desc='Page flows and SEO enhancements for a Seattle-based recording studio' 
@@ -169,54 +177,6 @@ class MyWorks extends React.Component {
                                                 desc='Discovered patterns in past, present, and future musical attributes' 
                                                 location='Boulder, CO'
                                                 imgsrc={DoMADLogo} />
-                                        </div>
-                                </div>
-
-                                <div id="SkillsIntro" className="container">
-                                        <div className='col-1'>
-                                                <div id="skills-title">
-                                                        <p>My<br/><span>Skills</span></p>
-                                                </div>
-                                        </div>
-                                        <div id="my-skills-content" className='col-2'>
-                                                <h2>What you Need to Know</h2>
-
-                                                <div className="skill-bar">
-                                                        <p>HTML/CSS</p>
-                                                        <div className="bar">
-                                                                <div id='html'>95%</div>
-                                                        </div>
-                                                </div>
-                                                <div className="skill-bar">
-                                                        <p>JavaScript</p>
-                                                        <div className="bar">
-                                                                <div id='js'>80%</div>
-                                                        </div>
-                                                </div>
-                                                <div className="skill-bar">
-                                                        <p>ReactJS</p>
-                                                        <div className="bar">
-                                                                <div id='react'>85%</div>
-                                                        </div>
-                                                </div>
-                                                <div className="skill-bar">
-                                                        <p>Python</p>
-                                                        <div className="bar">
-                                                                <div id='python'>70%</div>
-                                                        </div>
-                                                </div>
-                                                <div className="skill-bar">
-                                                        <p>Prototyping</p>
-                                                        <div className="bar">
-                                                                <div id='prototyping'>70%</div>
-                                                        </div>
-                                                </div>
-                                                <div className="skill-bar">
-                                                        <p>Illustrator / Figma</p>
-                                                        <div className="bar">
-                                                                <div id='illustrator-figma'>75%</div>
-                                                        </div>
-                                                </div>
                                         </div>
                                 </div>
                         </div>
