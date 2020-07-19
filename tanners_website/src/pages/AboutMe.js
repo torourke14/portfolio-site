@@ -68,16 +68,16 @@ class AboutMe extends React.Component {
                                 </div>
 
                                 <div id='AboutLinks'>
-                                                <a href="mailto:tannero@live.com">
-                                                        <img src={emailIcon} alt="Email" height="30px" width="65px"/>
-                                                </a>
-                                                <a href="linkedin.com/in/tworourke">
-                                                        <img src={linkedinIcon} alt="LinkedIn" height="30px" width="30px"/>
-                                                </a>                                                                
-                                                <a href="github.com/torourke14">
-                                                        <img src={githubIcon} alt="GitHub" height="30px" width="30px"/>
-                                                </a>
-                                        </div>
+                                        <a href="mailto:tannero@live.com">
+                                                <img src={emailIcon} alt="Email" height="30px" width="65px"/>
+                                        </a>
+                                        <a href="linkedin.com/in/tworourke">
+                                                <img src={linkedinIcon} alt="LinkedIn" height="30px" width="30px"/>
+                                        </a>                                                                
+                                        <a href="github.com/torourke14">
+                                                <img src={githubIcon} alt="GitHub" height="30px" width="30px"/>
+                                        </a>
+                                </div>
 
                                  
                         </div>   

@@ -1,52 +1,153 @@
-.IntroMaster > div:not(:first-child) { /* all card sections */
-    padding: 20px 8%;
-    margin: 2%;
+.IntroMaster > div:not(:first-child) { /* all card section (except intro) */
+    padding: 0 0 20px 0;
+    margin: 0;
+    font-size: 1rem;
 }
 
 
+/* Common text styling */
+.IntroMaster h6 { font-size: 1.1em; }
+.IntroMaster h4 { font-size: 1.5em; }
+.IntroMaster h2 { font-size: 2em; }
+.IntroMaster h1 { font-size: 5em; }
+/* end ----- */
+
+
 /* Hero Image Styling */
-#HeroWrapper {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('../images/enchantments.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 80vh;
+#hero-contents {
+    width: 100%;
+    height: 100%; /* for scaling */
+    min-height: 60vh;
     margin: 0;
+    padding: 5% 0; /* 5% of 80vh */
+    position: relative;
+    z-index: -1;
+    background-color: #ebebeb;
     }
-    #hero-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 75%;
-        transform: translate(-50%, -50%);
+    #hero-title-block {
+        position: relative;
+        left: 10%;
+        width: 50%;
+        max-height: 450px; /* keep??? */
+        padding: 32px 0 24px 5%;
+        background-color: #16253D;
+        box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
         color: white;
-
-        display: flex;
-        flex-flow: row wrap;
-        align-items: baseline;
-    }
-        #hero-block-left {
-            width: 60%;
+        z-index: 1;
         }
-            .hero-links {
-                margin: 2.5px;
-                padding-left: 2.5px;
-                line-height: 1.75em;
-            } 
-            #hero-name {
-                margin: 0 30px 20px 0;
-                font-size: 4.5em;
-            }
-        #hero-block-right {
-            width: 40%;
-            
-            } #hero-block-right h4 {
-                font-size: 1.75em;
-                line-height: 1.5; 
-            }
+        #hero-title-block h1 { line-height: 100px; }
+        #hero-title-block h4 {
+            line-height: 30px;
+            line-break: loose;
+            font-weight: lighter;
+        }
 
+    #hero-desc-block {
+        z-index: 0; /* behind */
+        position: relative;
+        width: 50%; /* 15% on right */
+        max-width: 800px;
+        left: 30%;
+        top: -24px; /* minus hero-title paddding-bottom */
+        padding: 32px 48px; /* 24px + 8px more */
+        background-color: #EFB509;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+        color: black;
+        font-weight: normal;
+        } 
+        #hero-desc-block h4 {
+            line-height: 40px; 
+            font-weight: 500;
+        }
+        
+        #hero-desc-block div h6 {
+            font-weight: normal;
+            width: 80%;
+            line-height: 30px;
+        }
+
+        /* send down arrow */
+        #icon {
+            position: absolute;
+            top: calc(90% - 40px); /* position - 'width' */
+            left: 90%;
+            transform: translate(-50%,-50%);
+            width: 40px;
+            height: 30px;
+            cursor: pointer;
+            transform: rotate(90deg); /* down arrow! */
+            }
+            #arrow {
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                background-color: #fff;
+                box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+                animation: updown 1s ease-in-out infinite;
+                }
+                @keyframes updown {
+                    0%, 100% { transform: translate(0, 0); }
+                    50% { transform: translate(6px, 0); }
+                }
+                #arrow::after, #arrow::before {
+                    content: '';
+                    position: absolute;
+                    width: 50%;
+                    height: 5px;
+                    right: -4px; /* = -'arrow height' */
+                    background-color: #fff;
+                }
+                #arrow::after {
+                    top: -6px; /* = -1.5 x "after/before right" */
+                    transform: rotate(45deg);
+                }
+                #arrow::before {
+                    top: 6px; /* = 1.5 x "after/before right" */
+                    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+                    transform: rotate(-45deg);
+                }
+/* end ----- */
+
+
+
+/* ===== Table of Contents Styling ===== */
+#table-of-contents {
+    background-color: #EFB509;
+    
+    }
+    #svg-container {
+        width: 100%;
+        position: relative;
+        height: auto;
+        /*1000px; of 1000px */
+    }
+        .svg-toc:not(.selected) { /* lighten non-chosen lines */
+            opacity: 0.4;
+        }
+
+    /* SVG toc links */
+    .svg-link { 
+        position: absolute; 
+        text-decoration: none;
+        color: black
+    }
+    .svg-link:hover {
+        transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        transition: 0.5s all ease-in-out;
+    }
+    .svg-link h4 {
+        font-size: 200%;
+        font-weight: bolder;
+    }
+    /* right: "20-25% + 2%"
+    *  top: "svg line pos. - 48px (3*rem)" */
+    #about-me { top: calc(10% - 48px); right: 27% }
+    #portfolio { top: calc(40% - 48px); right: 22% }
+    #exp-skills { top: calc(60% - 48px); right: 22% }
+    #connect { top: calc(90% - 48px); right: 27% }
+        
 
 /* ===== My Works Styling ===== */
 /*#WorksIntro {

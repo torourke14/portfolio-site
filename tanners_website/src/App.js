@@ -60,6 +60,18 @@ class Master extends React.Component {
         }
     }
 
+    /*
+    *
+    * Intro     -- Intro
+                -- Hero Table of Contents
+    * About Me  -- Intro Banner
+                -- Timeline paragraphs
+    * My Works  -- Decr. of Services
+                -- Portfolio grid
+                -- Skill bars
+    * Connect (side pullout)
+    *
+    */
     render() {
         return (
             <div>
