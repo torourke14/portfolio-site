@@ -29,16 +29,15 @@ class Intro extends React.Component {
                                         <h1>Hello;<br/>I am Tanner.</h1>
                                         <h4>Software Developer&nbsp;&nbsp;|&nbsp;&nbsp;Interface Designer</h4>
                                 </div>
+                               
                                 <div id="hero-desc-block">
-                                        <h4>Welcome to my life of developing applications &&nbsp;composing user-driven interfaces.</h4>
-                                        <div>
-                                                <h6>(among other things)</h6>
-                                                <a id='icon' href="#table-of-contents" > 
-                                                        <div id="arrow"/> 
-                                                </a>
+                                        <div id="title-link">
+                                                <a id="arrow" href="table-of-contents"/> 
                                         </div>
-                                        
+                                        <h4>Welcome to my life of composing software apps &&nbsp;user-driven interfaces.</h4>
+                                        <h6>(among other things)</h6>
                                 </div>
+                                
                         </div>
 
                         <div id="table-of-contents">
@@ -47,16 +46,16 @@ class Intro extends React.Component {
                                                 <image href={DoMADLogo} x="0" y="0" width="75" height="100" />
 
                                                 <g className="svg-toc">
-                                                        <path d="M 20,30  L 70,10  L 112.5,10" fill="none" stroke="#3d3d3d" strokeWidth="0.5" />
+                                                        <path d="M 20,30  L 70,10  L 112.5,10" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                                 </g>
                                                 <g className="svg-toc selected">
-                                                        <path d="M 30,30  L 75,40  L 120,40" fill="none" stroke="#3d3d3d" strokeWidth="0.5" />
+                                                        <path d="M 30,30  L 75,40  L 120,40" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                                 </g>
                                                 <g className="svg-toc selected">
-                                                        <path  d="M 20,70  L 75,60  L 120,60" fill="none" stroke="#3d3d3d" strokeWidth="0.5" />
+                                                        <path  d="M 20,70  L 75,60  L 120,60" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                                 </g>
                                                 <g className="svg-toc">
-                                                        <path  d="M 30,85  L 70,90  L 112.5,90" fill="none" stroke="#3d3d3d" strokeWidth="0.5" />
+                                                        <path  d="M 30,85  L 70,90  L 112.5,90" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                                 </g>
                                         </svg>
 

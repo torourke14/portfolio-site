@@ -15,25 +15,25 @@
 
 /* Hero Image Styling */
 #hero-contents {
+    position: relative;
+    background-color: #ebebeb;
     width: 100%;
     height: 100%; /* for scaling */
     min-height: 60vh;
     margin: 0;
     padding: 5% 0; /* 5% of 80vh */
-    position: relative;
-    z-index: -1;
-    background-color: #ebebeb;
     }
     #hero-title-block {
         position: relative;
+        z-index: 2; /*--top*/
+        background-color: #16253D;
+        box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
+        border-radius: 4px;
         left: 10%;
         width: 50%;
         max-height: 450px; /* keep??? */
         padding: 32px 0 24px 5%;
-        background-color: #16253D;
-        box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
         color: white;
-        z-index: 1;
         }
         #hero-title-block h1 { line-height: 100px; }
         #hero-title-block h4 {
@@ -43,47 +43,40 @@
         }
 
     #hero-desc-block {
-        z-index: 0; /* behind */
         position: relative;
+        z-index: 0; /*--2nd*/
+        background-color: #EFB509;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+        border-radius: 4px;
         width: 50%; /* 15% on right */
         max-width: 800px;
         left: 30%;
-        top: -24px; /* minus hero-title paddding-bottom */
-        padding: 32px 48px; /* 24px + 8px more */
-        background-color: #EFB509;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-        color: black;
+        top: -18px; /* --'#hero-title paddding-bottom' + 6px */
+        padding: 42px 48px; /* 24px++16px */
+        color:#3d3d3d;
         font-weight: normal;
-        } 
-        #hero-desc-block h4 {
-            line-height: 40px; 
-            font-weight: 500;
         }
-        
-        #hero-desc-block div h6 {
-            font-weight: normal;
-            width: 80%;
-            line-height: 30px;
-        }
-
-        /* send down arrow */
-        #icon {
+        #title-link {
             position: absolute;
-            top: calc(90% - 40px); /* position - 'width' */
-            left: 90%;
-            transform: translate(-50%,-50%);
-            width: 40px;
-            height: 30px;
-            cursor: pointer;
-            transform: rotate(90deg); /* down arrow! */
+            z-index: 1; /*--2nd*/
+
+            width: 30px;
+            bottom: 30px;
+            height: 60px;
+            left: calc(75% - 15px); /* block-middle - 1/2*'arrow-width' */
+
+            transform: translate(-50%, 50%) rotate(45deg);
+            cursor: pointer; 
             }
+            /* send down arrow */
             #arrow {
                 position: absolute;
                 width: 100%;
-                height: 4px;
-                background-color: #fff;
+                height: 4px; /* arrow "width" */
+                background-color: #3d3d3d;
                 box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
                 animation: updown 1s ease-in-out infinite;
+                
                 }
                 @keyframes updown {
                     0%, 100% { transform: translate(0, 0); }
@@ -93,19 +86,38 @@
                     content: '';
                     position: absolute;
                     width: 50%;
-                    height: 5px;
-                    right: -4px; /* = -'arrow height' */
-                    background-color: #fff;
+                    height: 4px;
+                    right: -4px; /* --#arrow height */
+                    background-color: #3d3d3d;
                 }
                 #arrow::after {
-                    top: -6px; /* = -1.5 x "after/before right" */
+                    top: -4px;
                     transform: rotate(45deg);
+                    cursor: pointer; 
                 }
                 #arrow::before {
-                    top: 6px; /* = 1.5 x "after/before right" */
+                    top: 4px;
                     box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
                     transform: rotate(-45deg);
+                    cursor: pointer; 
                 }
+
+        #hero-desc-block h4 {
+            position: relative;
+            z-index: 0;
+            display: block;
+            width: 100%;
+            line-height: 40px; 
+            font-weight: 500;
+        }
+        #hero-desc-block h6 {
+            position: relative;
+            z-index: 0;
+            display: block;
+            font-weight: 200;
+            width: 100%;
+            line-height: 30px;
+        }
 /* end ----- */
 
 
@@ -129,7 +141,7 @@
     .svg-link { 
         position: absolute; 
         text-decoration: none;
-        color: black
+        color: #3b3b3b;
     }
     .svg-link:hover {
         transform: scale(1.2);
@@ -198,13 +210,13 @@
        (front-side fallback if image is missing) */
       /*.flip-card-front {
         background-color: #ebebeb;
-        color: black;
+        color: #3b3b3b;
       }*/
       
       /* Style the back side */
       /*.flip-card-back {
         background-color: #00E4E4;
-        color: black;
+        color: #3b3b3b;
         text-align: center;
         transform: rotateY(180deg);
       }*/
