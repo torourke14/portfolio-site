@@ -12,10 +12,9 @@ import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 //Files
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
-
 /* 
 * ===== TO ADD =====
-* -- 
+* -- change <a> to <button>'s
 * -- 
 */
 
@@ -31,7 +30,7 @@ class Intro extends React.Component {
                                 </div>
                                 <div id="hero-desc-block">
                                         <div id="title-link">
-                                                <a id="arrow" href="table-of-contents"/> 
+                                                <a id="arrow" href="#TOC-container"/> 
                                         </div>
                                         <h4>Welcome to my life of composing software apps &&nbsp;user-driven interfaces.</h4>
                                         <h6>(among other menagerie)</h6>
@@ -42,17 +41,22 @@ class Intro extends React.Component {
                                 </div>
                         </div>
 
-                        
                         <div id="TOC-container">
-                                <div id="contents-cover">
-                                        <a id="about-me" className="svg-link" href="#"><h4>About Me</h4></a>
+                                <div id="content-cover">
 
-                                        <a id="portfolio" className="svg-link" href="#"><h4>Portfolio</h4></a>
+                                        <div id="about-me" className="content-link">
+                                                <a href=""><h4>About Me</h4></a>
+                                        </div>
+                                        <div id="portfolio" className="content-link">
+                                                <a href="#"><h4>Portfolio</h4></a>
+                                        </div>
+                                        <div id="exp-skills" className="content-link">
+                                                <a href="#"><h4>Experience & Skills</h4></a>
+                                        </div>
+                                        <div id="connect" className="content-link">
+                                                <a href="#"><h4>Connect</h4></a>
+                                        </div>
 
-                                        <a id="exp-skills" className="svg-link" href="#"><h4>Experience & Skills</h4></a>
-
-                                        <a id="connect" className="svg-link" href="#"><h4>Connect</h4></a>
-                                        
                                         <div>
                                                 <a href="mailto:tannero@live.com">
                                                         <img src={emailIcon} alt="Email" height="30px" width="65px"/>
@@ -68,19 +72,19 @@ class Intro extends React.Component {
                                 </div>
 
                                 <svg id="svg-container" viewBox="0 0 150 100" preserveAspectRatio="xMinYMid meet">
-                                        <image href={DoMADLogo} x="0" y="0" width="75" height="100" />
+                                        <image href={DoMADLogo} x="0" y="0" width="50" height="100" />
 
                                         <g className="svg-gpath">
-                                                <path d="M 20,30  L 70,10  L 112.5,10" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
+                                                <path d="M 15,20  L 45,10  L 120,10" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                         </g>
                                         <g className="svg-gpath selected">
-                                                <path d="M 30,30  L 75,40  L 120,40" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
+                                                <path d="M 30,30  L 50,40  L 120,40" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                         </g>
                                         <g className="svg-gpath selected">
-                                                <path  d="M 20,70  L 75,60  L 120,60" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
+                                                <path  d="M 35,70  L 50,60  L 120,60" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                         </g>
                                         <g className="svg-gpath">
-                                                <path  d="M 30,85  L 70,90  L 112.5,90" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
+                                                <path  d="M 15,85  L 45,90  L 120,90" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                         </g>
                                 </svg>
                         </div>

@@ -30,8 +30,9 @@
         box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
         border-radius: 4px;
         left: 10%;
-        width: 50%;
-        max-height: 450px; /* keep??? */
+        width: 50%; 
+        max-width: 960px;
+        max-height: 450px;
         padding: 32px 0 32px 5%;
         color: white;
         }
@@ -155,32 +156,37 @@
             opacity: 0.4;
         }
 
-    #contents-cover { 
+    #content-cover { 
         width: 100%; height: 100%;
         position: absolute; /* out of flow, on top */
         top: 0; left: 0;
         z-index: 1; /*--front */ 
     }
-        .svg-link { 
-            position: absolute;
-            text-decoration: none;
-            color: #3b3b3b;
-        }
-        .svg-link:hover {
-            transform: scale(1.2);
-            -ms-transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-            transition: 0.5s all ease-in-out;
-        }
-        #about-me { bottom: 90%; right: 27% }
-        #portfolio { bottom: 60%; right: 22% }
-        #exp-skills { bottom: 40%; right: 22% }
-        #connect { bottom: 10%; right: 27% }
-            .svg-link h4 {
-                font-size: 200%;
-                font-weight: bolder;
-            }
 
+        .content-link { 
+            position: absolute; 
+            right: 20%;
+            margin-bottom: -1em; /*::-16px */
+            width: 40%;
+        }
+        #about-me { bottom: calc(90% - 1.5em) }
+        #portfolio { bottom: calc(60% - 1.5em) }
+        #exp-skills { bottom: calc(40% - 1.5em) }
+        #connect { bottom: calc(10% - 1.5em); }
+            .content-link a {
+                font-size: 1.5em; /*::24px */
+                text-decoration: none;
+                font-weight: 600;
+                color: #3b3b3b;
+                text-align: right;
+            }
+            .content-link a:hover h4 {
+                transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                transition: 0.5s all ease-in-out;
+            }
+        
 /* ===== My Works Styling ===== */
 /*#WorksIntro {
     background-color: #CD7213;
