@@ -21,14 +21,10 @@ class AboutMe extends React.Component {
                                         <h1>I am a Interface Designer and Software Developer from Seattle,&nbsp;WA.</h1>
                                         <h2>I design things, then build them. Plain and Simple.</h2>
                                         <h3>Tanner O'Rourke (signature)</h3>
-                                        <button href={Resume} download={Resume}>
-                                                Download CV
-                                        </button>
                                 </div>
                                 <div id='intro-img' className="col-1">
                                         <p>Introductory Image</p>
                                 </div>
-                                
                         </div>
 
                         <div id='quote-spacer'>
@@ -66,20 +62,6 @@ class AboutMe extends React.Component {
                                         and product design.
                                         </p>
                                 </div>
-
-                                <div id='AboutLinks'>
-                                        <a href="mailto:tannero@live.com">
-                                                <img src={emailIcon} alt="Email" height="30px" width="65px"/>
-                                        </a>
-                                        <a href="linkedin.com/in/tworourke">
-                                                <img src={linkedinIcon} alt="LinkedIn" height="30px" width="30px"/>
-                                        </a>                                                                
-                                        <a href="github.com/torourke14">
-                                                <img src={githubIcon} alt="GitHub" height="30px" width="30px"/>
-                                        </a>
-                                </div>
-
-                                 
                         </div>   
                 </div>
                 )

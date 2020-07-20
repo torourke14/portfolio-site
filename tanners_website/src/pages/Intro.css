@@ -1,5 +1,5 @@
 .IntroMaster > div:not(:first-child) { /* all card section (except intro) */
-    padding: 0 0 20px 0;
+    padding: 0;
     margin: 0;
     font-size: 1rem;
 }
@@ -21,18 +21,18 @@
     height: 100%; /* for scaling */
     min-height: 60vh;
     margin: 0;
-    padding: 5% 0; /* 5% of 80vh */
+    padding: 7.5% 0 10% 0;
     }
     #hero-title-block {
         position: relative;
-        z-index: 2; /*--top*/
+        z-index: 3; /*--1st*/
         background-color: #16253D;
         box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
         border-radius: 4px;
         left: 10%;
         width: 50%;
         max-height: 450px; /* keep??? */
-        padding: 32px 0 24px 5%;
+        padding: 32px 0 32px 5%;
         color: white;
         }
         #hero-title-block h1 { line-height: 100px; }
@@ -44,27 +44,27 @@
 
     #hero-desc-block {
         position: relative;
-        z-index: 0; /*--2nd*/
-        background-color: #EFB509;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-        border-radius: 4px;
+        z-index: 2; /*--2nd*/
         width: 50%; /* 15% on right */
         max-width: 800px;
         left: 30%;
-        top: -18px; /* --'#hero-title paddding-bottom' + 6px */
+        top: -24px; /* --'#hero-title paddding-bottom' + 6px */
+
         padding: 42px 48px; /* 24px++16px */
+        background-color: #EFB509;
+        border-radius: 4px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
         color:#3d3d3d;
         font-weight: normal;
         }
         #title-link {
             position: absolute;
-            z-index: 1; /*--2nd*/
-
+            z-index: 2; /*NEW context --1st*/
+            
             width: 30px;
             bottom: 30px;
             height: 60px;
             left: calc(75% - 15px); /* block-middle - 1/2*'arrow-width' */
-
             transform: translate(-50%, 50%) rotate(45deg);
             cursor: pointer; 
             }
@@ -104,7 +104,7 @@
 
         #hero-desc-block h4 {
             position: relative;
-            z-index: 0;
+            z-index: 0; /*--3rd */
             display: block;
             width: 100%;
             line-height: 40px; 
@@ -112,54 +112,74 @@
         }
         #hero-desc-block h6 {
             position: relative;
-            z-index: 0;
+            z-index: 0; /*--3rd */
             display: block;
             font-weight: 200;
             width: 100%;
             line-height: 30px;
         }
+
+    #hero-desc-block button {
+        position: absolute;
+        display: ;
+        z-index: 1; /*--2nd */
+        right: 0;
+        top: 100%;
+        padding: 16px 32px;
+        margin: 16px 32px 0 0;
+        
+        background-color: #002A52;
+        color: white;
+        border: none;
+        border-radius: 16px;
+        text-decoration: none;
+        
+    }
 /* end ----- */
 
 
 
 /* ===== Table of Contents Styling ===== */
-#table-of-contents {
+#TOC-container {
+    position: relative; /* CORRECT ======= */
+    width: 100%;
+    height: auto;
     background-color: #EFB509;
-    
+}
+
+    #svg-container { 
+        width: 100%; height: 100%;
+        z-index: 4; /*--back */
     }
-    #svg-container {
-        width: 100%;
-        position: relative;
-        height: auto;
-        /*1000px; of 1000px */
-    }
-        .svg-toc:not(.selected) { /* lighten non-chosen lines */
+        .svg-gpath:not(.selected) { /* lighten non-chosen lines */
             opacity: 0.4;
         }
 
-    /* SVG toc links */
-    .svg-link { 
-        position: absolute; 
-        text-decoration: none;
-        color: #3b3b3b;
+    #contents-cover { 
+        width: 100%; height: 100%;
+        position: absolute; /* out of flow, on top */
+        top: 0; left: 0;
+        z-index: 1; /*--front */ 
     }
-    .svg-link:hover {
-        transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        transition: 0.5s all ease-in-out;
-    }
-    .svg-link h4 {
-        font-size: 200%;
-        font-weight: bolder;
-    }
-    /* right: "20-25% + 2%"
-    *  top: "svg line pos. - 48px (3*rem)" */
-    #about-me { top: calc(10% - 48px); right: 27% }
-    #portfolio { top: calc(40% - 48px); right: 22% }
-    #exp-skills { top: calc(60% - 48px); right: 22% }
-    #connect { top: calc(90% - 48px); right: 27% }
-        
+        .svg-link { 
+            position: absolute;
+            text-decoration: none;
+            color: #3b3b3b;
+        }
+        .svg-link:hover {
+            transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            transition: 0.5s all ease-in-out;
+        }
+        #about-me { bottom: 90%; right: 27% }
+        #portfolio { bottom: 60%; right: 22% }
+        #exp-skills { bottom: 40%; right: 22% }
+        #connect { bottom: 10%; right: 27% }
+            .svg-link h4 {
+                font-size: 200%;
+                font-weight: bolder;
+            }
 
 /* ===== My Works Styling ===== */
 /*#WorksIntro {

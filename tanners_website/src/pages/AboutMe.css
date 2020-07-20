@@ -44,11 +44,12 @@
     display: flex;
     flex-flow: row wrap;
     height: 100%; 
+    padding: 120px 2.5% 80px 10%;
     background-color: #16253D;
     color: white;
     }
     #banner {
-        padding: 120px 10% 240px 10%;
+        padding-right: 10%;
     }
     #banner h2 { color: #EFB509; }
 
@@ -58,27 +59,25 @@
         top: 50%;
         left: 0;
     }
-    
-    #AboutIntro button {
-        background-color: #EFB509;
-        border: none;
-        color: black;
-        padding: 16px 32px;
-        text-decoration: none;
-        border-radius: 16px;
-        margin: 24px 0 0 6px;
-    }
 /* end ----- */
 
+/* ===== Quote Spacer Styling =====  */
+#quote-spacer {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: white;
+}
+/* end ----- */
 
-/* ===== About Paragraphs Styling */
+/* ===== About Paragraphs Styling ===== */
 #AboutDetails {
     display: flex;
     flex-flow: row wrap;
     height: 100%;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 40px 10%;
+    padding: 60px 10%;
     background-color: #16253D;
     color: white;
     }
@@ -97,25 +96,3 @@
         padding: 0 8px;
     }
 /* end ----- */
-
-#AboutLinks {
-    display: block;
-    width: 100%;
-    padding-top: 30px;
-    }
-    #AboutLinks a {
-        padding-right: 25px;
-        color: black;
-        /*background-color: #00E4E4;
-        padding: 20px;
-        border-radius: 50%;*/
-    }
-
-
-/* Quote Spacer Styling */
-#quote-spacer {
-    padding: 10px 0;
-    text-align: center;
-    font-size: 1.1em;
-    background-color: white;
-}
