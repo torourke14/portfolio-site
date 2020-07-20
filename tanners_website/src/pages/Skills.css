@@ -2,33 +2,26 @@
 .col-1 { width: 30%; }
 .col-2 { width: 70%; }
 
-    .col-2 p {
-        font-size: 0.85em;
-    }
-    .col-2 h5 {
+    #SkillsMaster h5 {
         padding: 6px 0;
-        line-height: 1.1;  
         font-size: 1.05em; 
     }
-    .col-2 h4 {
+    #SkillsMaster h4 {
         padding: 12px 0 6px 0;
-        line-height: 1.4;  
         font-size: 1.3em; 
     }
-    .col-2 h2 {
-        line-height: 1.8;
+    #SkillsMaster h2 {
         padding: 12px 0;
         font-size: 2em;
     }
-    .col-2 h1 {
-        line-height: 2;
+    #SkillsMaster h1 {
         padding: 12px 0;
         font-size: 2.4em;
     }
 
 
 /* ===== My Skills Styling ===== */
-#Skills {
+#SkillsMaster {
     /*padding: 50px 7.5% 0 7.5%;*/
     display: flex;
     flex-flow: row wrap;

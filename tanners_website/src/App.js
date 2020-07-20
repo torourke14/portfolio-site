@@ -1,12 +1,16 @@
+// Modules
 import React from 'react';
 import './App.css';
 
+// Pages
 import Intro from './pages/Intro';
 import AboutMe from './pages/AboutMe';
-import Connect from './pages/Connect';
 import MyWorks from './pages/MyWorks';
+import Skills from './pages/Skills';
+// Components
+import ConnectDrawer from './components/ConnectDrawer';
+import FloatingFooter from './components/FloatingFooter';
 
-//import bg from './images/LinkedInPic.jpg';
 /*
 *
 ========== Task List =============
@@ -61,35 +65,30 @@ class Master extends React.Component {
     }
 
     /*
-    *
+    * ---PAGES-----------------------------------
     * Intro     -- Intro
                 -- Hero Table of Contents
-    * About Me  -- Intro Banner
+    * About Me  -- Intro Banner (not too high)
                 -- Timeline paragraphs
-    * My Works  -- Decr. of Services
-                -- Portfolio grid
-                -- Skill bars
-    * Connect (side pullout)
+                -- descr of my services
+    * My Works  -- Portfolio grid
+    * Skills    -- Skill bars
+    * 
+    * ---COMPONENTS-------------------------------
+    * Footer    -- Sticky bottom nav + Footer
+    * Connect   -- side pullout/modal with form
     *
     */
     render() {
         return (
             <div>
-                <div id='PageBox'>
-                    <Intro />
-                </div>
-                <div id='floating-nav'></div>
-                <div id='PageBox'>
-                    <AboutMe />
-                </div>
-                <div id='PageBox'>
-                    <MyWorks />
-                </div>
-                <div id='PageBox'>
-                    <Connect />
-                </div>
-                
-                
+                <Intro />
+                <AboutMe />
+                <MyWorks />
+                <Skills />
+
+                <ConnectDrawer />
+                <FloatingFooter />
             </div>
         );
     }

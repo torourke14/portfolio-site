@@ -1,10 +1,10 @@
 import React from 'react';
-import './Connect.css';
+import './Skills.css';
 
-class Connect extends React.Component {
+class Skills extends React.Component {
         render() {
                 return (
-                        <div id="Skills" className="container">
+                        <div id="SkillsMaster">
                                 <div className='col-1'>
                                         <div id="skills-title">
                                                 <p>My<br/><span>Skills</span></p>
@@ -64,4 +64,4 @@ class Connect extends React.Component {
         }
 }
 
-export default Connect;
+export default Skills;
