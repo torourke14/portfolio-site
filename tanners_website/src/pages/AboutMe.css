@@ -1,40 +1,45 @@
+/* AboutMe.js Styling
+* ======================= *
+* Includes 2-col Intro, detail paragraphs, & 'My Services'
+*/ 
 
 #AboutMaster {
-    line-height: 1.5;
+    line-height: 1.2;
     scroll-behavior: smooth;
-    background-color: #e0e0e0;
-    /*margins set in about-contents */
+
+    background-image: linear-gradient(
+        #16253d, 
+        #5f7391 40%,
+        #d4d5d7 50%,
+        #e0e0e0 60%,
+        #d4d5d7 70%, 
+        #efb509 80%
+    );
 }
 
-/* Common grid styling */
-.col-1 { width: 30%; }
-.col-2 { width: 70%; }
-
-    .col-2 p {
-        font-size: 0.85em;
-    }
-    .col-2 h5 {
+/* Common Styling */
+    #AboutMaster h4 {
         padding: 6px 0;
-        line-height: 1.1;  
-        padding-top: 10px;
-        font-size: 1.05em; 
-    }
-    .col-2 h4 {
-        padding: 12px 0 6px 0;
-        line-height: 1.4;  
+        line-height: 1.3;  
         padding-top: 10px;
         font-size: 1.3em; 
     }
-    .col-2 h2 {
+    #AboutMaster h3 {
+        padding: 8px 0;
+        line-height: 1.5;  
+        padding-top: 10px;
+        font-size: 1.8em; 
+    }
+    #AboutMaster h2 {
         line-height: 1.8;
         padding: 12px 0;
         font-size: 2em;
         padding-top: 10px;
     }
-    .col-2 h1 {
+    #AboutMaster h1 {
         line-height: 2;
         padding: 12px 0;
-        font-size: 2.4em;
+        font-size: 4em;
         padding-top: 10px;
     }
 /* end ----- */
@@ -44,29 +49,39 @@
     display: flex;
     flex-flow: row wrap;
     height: 100%; 
-    padding: 120px 2.5% 80px 10%;
-    background-color: #16253D;
+    padding: 128px 2.5% 64px 10%;
     color: white;
     }
     #banner {
         padding-right: 10%;
+        width: 65%;
     }
     #banner h2 { color: #EFB509; }
+    #banner h3 { padding-top: 2em; }
 
-    /* temporary */
+    #intro-img { 
+        position: relative;
+        top: 50%;
+        width: 35%; 
+    }
+    /* temporary 
     #intro-img p {
         position: relative;
         top: 50%;
         left: 0;
-    }
-/* end ----- */
+    }*/
 
-/* ===== Quote Spacer Styling =====  */
-#quote-spacer {
-    padding: 10px 0;
-    text-align: center;
-    font-size: 1.1em;
-    background-color: white;
+/* Intro Banner ==>> Phone Styling */
+@media all and (max-width: 700px) {
+    #banner {
+        width: 100%;
+        padding: 0;
+    }
+    #inrtro-img {
+        display: inline-block;
+        width: 50%;
+        margin: 0 25%;
+    }
 }
 /* end ----- */
 
@@ -74,16 +89,16 @@
 #AboutDetails {
     display: flex;
     flex-flow: row wrap;
-    height: 100%;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 60px 10%;
-    background-color: #16253D;
-    color: white;
+    height: 100%;
+    padding: 48px 10% 96px 10%;
+    color: black;
     }
     .details-container {
         width: 33.33%;
         padding: 0 32px;
+        line-height: 1.5;
     }
     .details-container:first-child { padding-left: 0; }
     .details-container:last-child { padding-right: 0; }
@@ -95,4 +110,71 @@
     .details-container p {
         padding: 0 8px;
     }
+/* end ----- */
+
+
+
+/* ===== Quote Spacer Styling =====  */
+#gradient-spacer {
+    background-color: #16253D;
+    width: 100%;
+    color: white;
+    text-align: center;
+    }
+    #gradient-spacer h4 {
+        padding: 40px 0;
+        font-size: 1.1em;
+    }
+/* end ----- */
+
+
+
+/* ===== My Services Intro Styling ===== */
+#MyServices {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    padding: 96px 0 128px 10%;
+    }
+    #services-content { 
+        width: 70%;
+        color: black;
+    }
+    
+    #skill-blocks {
+        display: flex;
+        flex-flow: row wrap;
+        }
+        .skill-box { 
+            width: 50%; /*..of flex*/
+        }
+        .skill-box p {
+            padding-left: 6px;
+            padding-right: 12px;
+        }
+    
+    #services-right {
+        width: 30%;
+        padding-right: 5%;
+    }
+        #title {
+            position: relative;
+            left: 0; 
+            top: 25%;
+            width: 3px; /*=stroke*/
+            height: 110px; /*=length*/
+            background: #003F7A;
+            }
+            #title p {
+                position: relative;
+                top: 130px; /*=position from top of line*/
+                font-size: 2em;
+                font-weight: 500;
+            }
+            #title span {
+                color: #003F7A;
+                left: 0;
+                font-weight: 700;
+
+            }
 /* end ----- */

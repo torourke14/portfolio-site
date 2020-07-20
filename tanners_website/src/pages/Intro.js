@@ -14,8 +14,12 @@ import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
 /* 
 * ===== TO ADD =====
-* -- change <a> to <button>'s
-* -- 
+* -- underline all hyperlinks/links
+        -- different colors for links, etc (reduce uncertainty)
+        -- static elements should be diff. color than hyperlinks
+* -- arrows on TOC links
+* -- gradients?? solid lines??
+*
 */
 
 
@@ -34,41 +38,37 @@ class Intro extends React.Component {
                                         </div>
                                         <h4>Welcome to my life of composing software apps &&nbsp;user-driven interfaces.</h4>
                                         <h6>(among other menagerie)</h6>
-                                        <button href={Resume} download={Resume}>Download CV</button>
-                                </div>
-                                <div id="hero-links-block">
-                                        
+
+                                        <a id="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
+                                                <div className="bt-front">
+                                                        <span className="icon fa fa-cloud"></span>Download&nbsp;Resume
+                                                </div>
+                                                <div className="bt-back">
+                                                        <span className="icon fa fa-hdd-o"></span>Size: 179 kb
+                                                </div>
+                                        </a>
                                 </div>
                         </div>
 
+                        <div className="transition-spacer first" />
+
                         <div id="TOC-container">
                                 <div id="content-cover">
+                                        <button id="about-me" className="content-link" href="">
+                                                <h4>About Me</h4>
+                                        </button>
 
-                                        <div id="about-me" className="content-link">
-                                                <a href=""><h4>About Me</h4></a>
-                                        </div>
-                                        <div id="portfolio" className="content-link">
-                                                <a href="#"><h4>Portfolio</h4></a>
-                                        </div>
-                                        <div id="exp-skills" className="content-link">
-                                                <a href="#"><h4>Experience & Skills</h4></a>
-                                        </div>
-                                        <div id="connect" className="content-link">
-                                                <a href="#"><h4>Connect</h4></a>
-                                        </div>
+                                        <button id="portfolio" className="content-link" href="#">
+                                                <h4>Portfolio</h4>
+                                        </button>
 
-                                        <div>
-                                                <a href="mailto:tannero@live.com">
-                                                        <img src={emailIcon} alt="Email" height="30px" width="65px"/>
-                                                </a>
-                                                <a href="linkedin.com/in/tworourke">
-                                                        <img src={linkedinIcon} alt="LinkedIn" height="30px" width="30px"/>
-                                                </a>                                                                
-                                                <a href="github.com/torourke14">
-                                                        <img src={githubIcon} alt="GitHub" height="30px" width="30px"/>
-                                                </a>
-                                        </div>
-                                        
+                                        <button id="exp-skills" className="content-link" href="#">
+                                                <h4>Experience & Skills</h4>
+                                        </button>
+
+                                        <button id="connect" className="content-link" href="#">
+                                                <h4>Connect</h4>
+                                        </button>                                       
                                 </div>
 
                                 <svg id="svg-container" viewBox="0 0 150 100" preserveAspectRatio="xMinYMid meet">
@@ -89,6 +89,7 @@ class Intro extends React.Component {
                                 </svg>
                         </div>
                         
+                        <div className="transition-spacer second" />
                 </div>
                 );
         }
@@ -97,6 +98,19 @@ class Intro extends React.Component {
 
 /*
 *
+<div>
+        <a href="mailto:tannero@live.com">
+                <img src={emailIcon} alt="Email" height="30px" width="65px"/>
+        </a>
+        <a href="linkedin.com/in/tworourke">
+                <img src={linkedinIcon} alt="LinkedIn" height="30px" width="30px"/>
+        </a>                                                                
+        <a href="github.com/torourke14">
+                <img src={githubIcon} alt="GitHub" height="30px" width="30px"/>
+        </a>
+</div>
+
+
 * <div>
         <div className="hero-links"><a>UI Designer</a></div>
         <div className="hero-links"><a>Software Developer</a></div>

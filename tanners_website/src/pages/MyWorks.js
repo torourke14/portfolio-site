@@ -10,79 +10,12 @@ class MyWorks extends React.Component {
                 super(props);
                 this.filters = ['design', 'dev', 'freelance', 'professional'];
         }
+
+        /* MAYBE add function to show active open project */
+
         render() {
                 return (
                         <div id="WorksMaster">   
-                                <div id="MyServices" className="container">
-                                        <div id='knowledge-content'className='col-2'>
-                                                <h2>Knowledge</h2>
-                                                <div id='Skills'>
-                                                        <div className="knowledge-box">
-                                                                <div className="skill-header">
-                                                                        <img/>
-                                                                        <h4>Web Development</h4>
-                                                                </div>
-                                                                <p>
-                                                                I have proven experience building websites from the 
-                                                                ground-up utilizing various development stacks
-                                                                </p>
-                                                        </div>
-                                                        <div className="knowledge-box">
-                                                                <div className="skill-img">
-                                                                        <img />
-                                                                        <h4>UX/UI Design</h4>
-                                                                </div>
-                                                                <p>
-                                                                
-                                                                </p> 
-                                                        </div>
-                                                
-                                                        <div className="knowledge-box">
-                                                                <div className="skill-img">
-                                                                        <img />
-                                                                        <h4>App Development</h4>
-                                                                </div>
-                                                                <p>
-                                                                
-                                                                </p> 
-                                                        </div>
-                                                        <div className="knowledge-box">
-                                                                <div className="skill-img">
-                                                                        <img />
-                                                                        <h4>Full-Stack Development</h4>
-                                                                </div>
-                                                                <p>
-                                                                
-                                                                </p> 
-                                                        </div>
-                                                
-                                                        <div className="knowledge-box">
-                                                                <div className="skill-img">
-                                                                        <img />
-                                                                        <h4>Analytics</h4>
-                                                                </div>
-                                                                <p>
-                                                                
-                                                                </p> 
-                                                        </div>
-                                                        <div className="knowledge-box">
-                                                                <div className="skill-img">
-                                                                        <img />
-                                                                        <h4>Human-Computer Interaction</h4>
-                                                                </div>
-                                                                <p>
-                                                                
-                                                                </p> 
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div id='Knowledge-right' className="col-1">
-                                                <div id="knowledge-title">
-                                                        <p>My<br/><span>Services</span></p>
-                                                </div>
-                                        </div>
-                                </div>
-
                                 <div className='works-title'>
                                         <h1>My Work.</h1>
                                 </div>
@@ -90,15 +23,15 @@ class MyWorks extends React.Component {
                                 <div className="Works">
                                         <div className="works-row">
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.domad.openTab(e)}>
-                                                        <img src={DoMADLogo} alt="" />
+                                                        <img src={DoMADLogo} alt="logo" />
                                                         <div className='mask'>
                                                                 <h2>DoMAD</h2>
                                                                 <p>A Donation Database for worldwide travelers.</p>
                                                                 <p><a href="#" className='info'>Read More</a></p>
                                                         </div>
                                                 </div>
-                                                <div className="entry entry-cover" onClick={(e) => this.refs.lbs.openTab(e)}>
-                                                        <img src={DoMADLogo} alt="" />
+                                                <div className="entry entry-cover" onClick={(e) => this.refs.lbs.openTab(e) }>
+                                                        <img src={DoMADLogo} alt="logo" />
                                                         <div className='mask'>
                                                                 <h2>DoMAD</h2>
                                                                 <p>A Donation Database for worldwide travelers.</p>
@@ -120,7 +53,7 @@ class MyWorks extends React.Component {
 
                                         <div className="works-row">
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.spotipy.openTab(e)}>
-                                                        <img src={DoMADLogo} alt="" />
+                                                        <img src={DoMADLogo} alt="logo" />
                                                         <div className='mask'>
                                                                 <h2>DoMAD</h2>
                                                                 <p>A Donation Database for worldwide travelers.</p>
@@ -128,7 +61,7 @@ class MyWorks extends React.Component {
                                                         </div>
                                                 </div>
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.d.openTab(e)}>
-                                                        <img src={DoMADLogo} alt="" />
+                                                        <img src={DoMADLogo} alt="logo" />
                                                         <div className='mask'>
                                                                 <h2>DoMAD</h2>
                                                                 <p>A Donation Database for worldwide travelers.</p>
@@ -150,7 +83,7 @@ class MyWorks extends React.Component {
 
                                         <div className="works-row">
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.l.openTab(e)}>
-                                                        <img src={DoMADLogo} alt="" />
+                                                        <img src={DoMADLogo} alt="logo" />
                                                         <div className='mask'>
                                                                 <h2>DoMAD</h2>
                                                                 <p>A Donation Database for worldwide travelers.</p>
@@ -159,7 +92,7 @@ class MyWorks extends React.Component {
                                                 </div>
 
                                                 <div className="entry entry-cover" onClick={(e) => this.refs.s.openTab(e)}>
-                                                        <img src={DoMADLogo} alt="" />
+                                                        <img src={DoMADLogo} alt="logo" />
                                                         <div className='mask'>
                                                                 <h2>DoMAD</h2>
                                                                 <p>A Donation Database for worldwide travelers.</p>
@@ -232,7 +165,7 @@ class Project extends React.Component {
                         <div className={this.state.display ? "work-dropbox--open" : "work-dropbox--closed"}
                         style={this.styles} >
                                 <div className="content">
-                                        <span onClick={() => this.closeTab()} className="closebtn">X</span>
+                                        <span className="closebtn" onClick={() => this.closeTab()}>X</span>
                                         <div>
                                                 <p>{this.state.title}</p>
                                                 <h4>{this.state.position}</h4>

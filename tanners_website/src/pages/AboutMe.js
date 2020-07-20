@@ -5,10 +5,6 @@ import './AboutMe.css';
 import linkedinIcon from '../images/linkedin-icon.png';
 import githubIcon from '../images/github-icon.png';
 import emailIcon from '../images/mail-icon.png';
-// Recent Work
-import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
-//Files
-import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
 class AboutMe extends React.Component {
         
@@ -17,22 +13,16 @@ class AboutMe extends React.Component {
                 <div id='AboutMaster'>
 
                         <div id='AboutIntro'>
-                                <div id="banner" className="col-2">
+                                <div id="banner">
                                         <h1>I am a Interface Designer and Software Developer from Seattle,&nbsp;WA.</h1>
                                         <h2>I design things, then build them. Plain and Simple.</h2>
                                         <h3>Tanner O'Rourke (signature)</h3>
                                 </div>
-                                <div id='intro-img' className="col-1">
+                                <div id='intro-img'>
                                         <p>Introductory Image</p>
                                 </div>
                         </div>
-
-                        <div id='quote-spacer'>
-                                <h4>
-                                <i>"Design is the intermediary between information and understanding"</i> - Hans Hoffman
-                                </h4>
-                        </div>
-
+                
                         <div id='AboutDetails'>
                                 <div className='details-container'>
                                         <h3>Who I am</h3>
@@ -44,7 +34,6 @@ class AboutMe extends React.Component {
                                         User Experience as part of a team and in my deliverables.
                                         </p>
                                 </div>
-
                                 <div className='details-container'>
                                         <h3>What I'm Doing</h3>
                                         <p>
@@ -53,7 +42,6 @@ class AboutMe extends React.Component {
                                         skills. I am currently looking for employment in UX/UI Designer and Software Developer roles!
                                         </p>
                                 </div>
-
                                 <div className='details-container'>
                                         <h3>Where I'm Going</h3>
                                         <p>
@@ -63,10 +51,88 @@ class AboutMe extends React.Component {
                                         </p>
                                 </div>
                         </div>   
+
+                        <div id='gradient-spacer'>
+                                <h4>
+                                <i>"Design is the intermediary between information and understanding"</i> - Hans Hoffman
+                                </h4>
+                        </div>
+
+                        <div id="MyServices" className="container">
+                                <div id='services-content'>
+                                        <h2>Knowledge</h2>
+                                        <div id='skill-blocks'>
+                                                <div className="skill-box">
+                                                        <div className="skill-header">
+                                                                <img/>
+                                                                <h4>Web Development</h4>
+                                                        </div>
+                                                        <p>
+                                                        I have proven experience building websites from the 
+                                                        ground-up utilizing various development stacks
+                                                        </p>
+                                                </div>
+                                                <div className="skill-box">
+                                                        <div className="skill-img">
+                                                                <img />
+                                                                <h4>UX/UI Design</h4>
+                                                        </div>
+                                                        <p>
+                                                        </p> 
+                                                </div>
+                                                <div className="skill-box">
+                                                        <div className="skill-img">
+                                                                <img />
+                                                                <h4>App Development</h4>
+                                                        </div>
+                                                        <p>
+                                                        </p> 
+                                                </div>
+                                                <div className="skill-box">
+                                                        <div className="skill-img">
+                                                                <img />
+                                                                <h4>Full-Stack Development</h4>
+                                                        </div>
+                                                        <p>
+                                                        </p> 
+                                                </div>
+                                                <div className="skill-box">
+                                                        <div className="skill-img">
+                                                                <img />
+                                                                <h4>Analytics</h4>
+                                                        </div>
+                                                        <p>
+                                                        </p> 
+                                                </div>
+                                                <div className="skill-box">
+                                                        <div className="skill-img">
+                                                                <img />
+                                                                <h4>Human-Computer Interaction</h4>
+                                                        </div>
+                                                        <p>
+                                                        </p> 
+                                                </div>
+                                        </div>
+                                </div>
+                                <div id='services-right'>
+                                        <div id="title">
+                                                <p>My<br/><span>Services</span></p>
+                                        </div>
+                                </div>
+                        </div>
                 </div>
                 )
         }
 }
+
+/*
+*
+<div id='quote-spacer'>
+        <h4>
+        <i>"Design is the intermediary between information and understanding"</i> - Hans Hoffman
+        </h4>
+</div>
+*/
 
 export default AboutMe;
 

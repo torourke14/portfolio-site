@@ -1,28 +1,18 @@
 
-/* Common grid styling */
-.col-1 { width: 30%; }
-.col-2 { width: 70%; }
-
-    .col-2 p {
-        font-size: 0.85em;
-    }
-    .col-2 h5 {
+/* Common Text styling */
+    #WorksMaster h5 {
         padding: 6px 0;
-        line-height: 1.1;  
         font-size: 1.05em; 
     }
-    .col-2 h4 {
-        padding: 12px 0 6px 0;
-        line-height: 1.4;  
+    #WorksMaster h4 {
+        padding: 12px 0 6px 0; 
         font-size: 1.3em; 
     }
-    .col-2 h2 {
-        line-height: 1.8;
+    #WorksMaster h2 {
         padding: 12px 0;
         font-size: 2em;
     }
-    .col-2 h1 {
-        line-height: 2;
+    #WorksMaster h1 {
         padding: 12px 0;
         font-size: 4;
     }
@@ -41,100 +31,53 @@
     background-color: #f5f5f5;
 }
 
-
-/* ===== My Services Intro Styling ===== */
-#MyServices {
-    /*padding: 50px 7.5% 0 7.5%;*/
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
-    background: #16253D;
-    color: white;
-    padding: 80px 0;
-}
-    #knowledge-content { padding-left: 10%; }
-    
-    #Skills {
-        display: flex;
-        flex-flow: row wrap;
-        }
-        .knowledge-box { 
-            width: 50%; /*..of flex*/
-        }
-        .knowledge-box p {
-            padding-left: 6px;
-            padding-right: 12px;
-        }
-    
-    #Knowledge-right {
-        padding-right: 10%;
-        }
-        #knowledge-title {
-            position: relative;
-            left: 40%; /* 70% of 25% == 17,5% padding */
-            top: 25%;
-            width: 3px;
-            height: 110px;
-            background: #efb609;
-            }
-            #knowledge-title p {
-                position: relative;
-                top: 120px;
-                font-size: 2em;
-                font-weight: 550;
-                }
-                #knowledge-title span {
-                    color: #CD7213;
-                    left: 0;
-                    font-weight: 800;
-
-                }
-
-
-
 /* ===== Portfolio/Works Grid Styling ===== */
 .works-title { 
-    padding: 32px 0 0 5%;
-    height: 0;
+    padding: 96px 0 0 5%;
     background-color: #e0e0e0;
 }
     .works-title h1 {
-        position: relative;
-        bottom: 28px;
-        z-index: 1;
-
         font-size: 6em;
         font-family: 'Arial Black', serif; 
+        position: relative;
+        bottom: 0px;
+        z-index: 1;
     }
 
 .Works {
-    padding: 50px 0 100px 0;
+    padding: 32px 0; /* 32px = 2x margins*/
     background-color: #e0e0e0;
 }
 
 .works-row {
-    padding: 0 2.5%;
+    padding: 0 2.5%; /*--side padding */
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     flex-basis: auto;
 }
+.works-row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
     .entry {
+        position: relative;
         flex-basis: auto;
-        padding: 50px;
+        overflow: hidden;
+        padding: 24px 0;
         margin: 16px 16px;
         width: calc(50% - 32px);
         height: 300px;
         
-        color: #333;
-        box-shadow: 1px 1px 2px #444444;
+        color: rgb(34, 29, 29);
         background-color: #EFB509;
+        box-shadow: 2px 2px 4px #333;
+        border: 3px outset black; /* ????????? */
         border-radius: 4px;
         text-align: center;
-        font-size: 25px;
+        font-size: 1.5em;
         cursor: pointer;
-        overflow: hidden;
-        position: relative;
     }
     .works-row:nth-child(odd) .entry:nth-child(even) {
         background-color: #16253D;
@@ -146,8 +89,9 @@
         .entry img {
             display: block;
             position: relative;
-            height: 90%;
-            width: 90%;
+            /* center (& pad) image */
+            top: 10%; left: 10%;
+            height: 80%; width: 80%;
         }
         .entry .mask, .entry .content {
             width: 100%;
@@ -256,7 +200,7 @@
                 transform-origin: 50% 0%;
     }
 
-    /* initialize animations for each browser */
+    /* map animations (4each browser) */
     @-webkit-keyframes work-dropbox--open {
         from { transform: scaleY(0) }
         to { transform: scaleY(1) }
@@ -283,16 +227,12 @@
         to { transform: scaleY(0) }
     }
 
-.works-row::after {
-    content: '';
-    display: table;
-    clear: both;
-}
 
 .closebtn {
     float: right;
-    color: white;
-    font-size: 35px;
+    margin-right: 12px;
+    color: #3d3d3d;
+    font-size: 3em;
     cursor: pointer;
-  }
+}
 /* end ----- */
