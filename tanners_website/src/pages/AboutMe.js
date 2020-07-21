@@ -10,7 +10,7 @@ class AboutMe extends React.Component {
         
         render() {
                 return (
-                <div id='AboutMaster'>
+                <div id='About' className="panel__AboutMe">
 
                         <div id='AboutIntro'>
                                 <div id="banner">

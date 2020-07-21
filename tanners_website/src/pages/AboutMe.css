@@ -3,7 +3,7 @@
 * Includes 2-col Intro, detail paragraphs, & 'My Services'
 */ 
 
-#AboutMaster {
+#About {
     line-height: 1.2;
     scroll-behavior: smooth;
 
@@ -18,25 +18,25 @@
 }
 
 /* Common Styling */
-    #AboutMaster h4 {
+    #About h4 {
         padding: 6px 0;
         line-height: 1.3;  
         padding-top: 10px;
         font-size: 1.3em; 
     }
-    #AboutMaster h3 {
+    #About h3 {
         padding: 8px 0;
         line-height: 1.5;  
         padding-top: 10px;
         font-size: 1.8em; 
     }
-    #AboutMaster h2 {
+    #About h2 {
         line-height: 1.8;
         padding: 12px 0;
         font-size: 2em;
         padding-top: 10px;
     }
-    #AboutMaster h1 {
+    #About h1 {
         line-height: 2;
         padding: 12px 0;
         font-size: 4em;

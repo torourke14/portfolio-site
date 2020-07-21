@@ -1,135 +1,161 @@
-.IntroMaster > div:not(:first-child) { /* all card section (except intro) */
-    padding: 0;
-    margin: 0;
-}
+@import "~animate.css/animate.css";
 
 
-/* Common text styling */
-.IntroMaster h6 { font-size: 1.1em; }
-.IntroMaster h4 { font-size: 1.5em; }
-.IntroMaster h2 { font-size: 2em; }
-.IntroMaster h1 { font-size: 5em; }
-/* end ----- */
+/* Global styling */
+#Intro h6 { font-size: 1.1em; }
+#Intro h4 { font-size: 1.5em; }
+#Intro h2 { font-size: 2em; }
+#Intro h1 { font-size: 5em; }
 
 
 /* Hero Image Styling */
 #hero-contents {
-    position: relative;
-    background-color: #ebebeb;
+    position: relative; z-index: 0;
+    /*& NEW stack-context*/
     width: 100%;
-    height: 100%; /* for scaling */
-    min-height: 60vh;
-    margin: 0;
+    height: 100%;
+    min-height: 95vh; 
+    background-color: #e0e0e0;
+    background-size: cover;
     padding: 7.5% 0;
-    }
-    #hero-title-block {
-        position: relative;
-        z-index: 3; /*--1st*/
-        background-color: #16253D;
-        box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
-        border-radius: 4px;
-        left: 10%;
-        width: 50%; 
-        max-width: 960px;
-        max-height: 450px;
-        padding: 32px 0 32px 5%;
+    margin: 0;
+}
+
+    #arrow-container {
+        position: relative; z-index: 20;
+        /*& NEW stack-context*/
+        width: 100px;
+        height: 100px;
+        left: 25%;
+        bottom: 25%;
+        margin: 0;
+        cursor: pointer; 
+        }
+        /* send down arrow */
+        .arrow-1 {
+            width: 100px;
+            height: 100px;
+            background: #006064;
+            opacity: 0.5;
+            border-radius: 50%;
+            /*position: absolute;*/
+        }
+        .arrow-2 {
+            width: 60px;
+            height: 60px;
+            background: #00BCD4;
+            border-radius: 50%;
+            position: absolute;
+            /*z-index: 1; /*--front */
+            top: 20px; /* 1/2 (100-60px)*/
+            left: 20px;
+            display: table;
+            }
+            /*arrow arms */
+            .arrow-2:before { 
+                width: 52px;
+                height: 52px;
+                content: '';
+                border: 2px solid #006064;
+                border-radius: 50%;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+            }
+            .arrow-2 .fa {
+                font-size: 2em;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                color: #006064;
+            }
+            
+            /* Custom Animate.css */
+            .animate__animated.animate__hinge {
+                -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+            }
+            .animate__zoomIn {
+                -webkit-animation-name: zoomIn;
+                animation-name: zoomIn;
+            }
+            @-webkit-keyframes zoomIn {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: scale3d(.4, .4, .4);
+                            transform: scale3d(.4, .4, .4);
+                }
+                50% { opacity: 0.5; }
+                100% { opacity: 1; }
+            }
+            @keyframes zoomIn {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: scale3d(.4, .4, .4);
+                            transform: scale3d(.4, .4, .4);
+                }
+                50% { opacity: 0.5; }
+                100% { opacity: 1; }
+            }
+    
+
+    #hero {
+        position: relative; z-index: 10;
+        /*& NEW stack-context*/
+        left: 20%;
+        width: 50%; /*...centered*/
         color: white;
         }
-        #hero-title-block h1 { line-height: 100px; }
-        #hero-title-block h4 {
-            line-height: 30px;
-            line-break: loose;
-            font-weight: lighter;
-        }
-
-    #hero-desc-block {
-        position: relative;
-        z-index: 2; /*--2nd*/
-        width: 50%; /* 15% on right */
-        max-width: 800px;
-        left: 30%;
-        top: -24px; /* --'#hero-title paddding-bottom' + 6px */
-
-        padding: 42px 48px; /* 24px++16px */
-        background-color: #EFB509;
-        border-radius: 4px;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-        color:#3d3d3d;
-        font-weight: normal;
-        }
-        #title-link {
-            position: absolute;
-            z-index: 2; /*NEW context --1st*/
-            
-            width: 30px;
-            bottom: 30px;
-            height: 60px;
-            left: calc(75% - 15px); /* block-middle - 1/2*'arrow-width' */
-            transform: translate(-50%, 50%) rotate(45deg);
-            cursor: pointer; 
+        #callout {
+            background-color: #16253D;
+            padding: 32px 0 32px 5%;
+            box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
+            border-radius: 4px;
+            overflow-x: visible;
             }
-            /* send down arrow */
-            #arrow {
-                position: absolute;
-                width: 100%;
-                height: 4px; /* arrow "width" */
-                background-color: #3d3d3d;
-                box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-                animation: updown 1s ease-in-out infinite;
-                
-                }
-                @keyframes updown {
-                    0%, 100% { transform: translate(0, 0); }
-                    50% { transform: translate(6px, 0); }
-                }
-                #arrow::after, #arrow::before {
-                    content: '';
-                    position: absolute;
-                    width: 50%;
-                    height: 4px;
-                    right: -4px; /* --#arrow height */
-                    background-color: #3d3d3d;
-                }
-                #arrow::after {
-                    top: -4px;
-                    transform: rotate(45deg);
-                    cursor: pointer; 
-                }
-                #arrow::before {
-                    top: 4px;
-                    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-                    transform: rotate(-45deg);
-                    cursor: pointer; 
-                }
+            #callout h1 { line-height: 100px; }
+            #callout h4 {
+                line-height: 30px;
+                line-break: loose;
+                font-weight: lighter;
+            }
+        #description {
+            position: relative; z-index: -1; 
+            /* Placed behind #title */ 
+            width: 80%; /*..of parent */
+            left: 30%;
+            top: -32px; /* --'#hero-title paddding-bottom' */
 
-        #hero-desc-block h4 {
-            position: relative;
-            z-index: 0; /*--3rd */
-            display: block;
-            width: 100%;
-            line-height: 40px; 
-            font-weight: 500;
-        }
-        #hero-desc-block h6 {
-            position: relative;
-            z-index: 0; /*--3rd */
-            display: block;
-            font-weight: 200;
-            width: 100%;
-            line-height: 30px;
-        }
+            padding: 48px 48px; /* 32px++16px */
+            background-color: #EFB509;
+            border-radius: 4px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+            color:#3d3d3d;
+            font-weight: normal;
+            }
+            #description h4 {
+                display: block;
+                width: 100%;
+                line-height: 40px; 
+                font-weight: 500;
+            }
+            #description h6 {
+                display: block;
+                font-weight: 200;
+                width: 100%;
+                line-height: 30px;
+            }
 
     /*----- Download Button -----*/
     #dl-button {
         position: absolute;
             z-index: 1; /*--2nd */
-            bottom: -72px; /*48px ++24px */
+            bottom: 24px; /*48px+24px */
             right: 24px;
         height: 48px;
         display: inline-block; /*for inner divs*/
         border: 3px solid #003F7A;
         border-radius: 4px;
-        /*font-family: 'Roboto', sans-serif;*/
         font-size: 1em;
         font-weight: 500;
         text-align: center;
@@ -161,7 +187,6 @@
         -ms-transform: scale(1.05);
         -webkit-transform: scale(1.05);
     }
-        
 /* end ----- */
 
 
@@ -191,8 +216,7 @@
         .content-link { 
             position: absolute; 
             right: 20%;
-            /* font-size == margin-top */
-            margin-top: 32px;
+            margin-top: 32px; /* font-size == margin-top */
             font-size: 2em;
             color: #3D3D3D;
             text-align: right;
@@ -219,8 +243,9 @@
 
 /* ===== Gradient Spacers =====  */
 .transition-spacer {
-    width: 100%;
-    height: 150px;
+    width: 100%; height: 100%;
+    height: 5vh;
+    border: 1px solid black;
 }
 .transition-spacer.first {
     background-image: linear-gradient(180deg,

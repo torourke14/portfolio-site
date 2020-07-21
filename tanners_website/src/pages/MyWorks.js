@@ -15,7 +15,7 @@ class MyWorks extends React.Component {
 
         render() {
                 return (
-                        <div id="WorksMaster">   
+                        <div id="Works" className="panel__Works">   
                                 <div className='works-title'>
                                         <h1>My Work.</h1>
                                 </div>

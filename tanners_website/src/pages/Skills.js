@@ -4,13 +4,13 @@ import './Skills.css';
 class Skills extends React.Component {
         render() {
                 return (
-                        <div id="SkillsMaster">
+                        <div id="Skills" className="panel__Skills">
                                 <div className='col-1'>
                                         <div id="skills-title">
                                                 <p>My<br/><span>Skills</span></p>
                                         </div>
                                 </div>
-                                <div id="my-skills-content" className='col-2'>
+                                <div id="skills-content" className='col-2'>
                                         <div className='skills-header'>
                                                 <h2>What you Need to Know</h2>
                                                 <hr id='title-hr' className='header-hr' />

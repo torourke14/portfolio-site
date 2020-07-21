@@ -2,26 +2,26 @@
 .col-1 { width: 30%; }
 .col-2 { width: 70%; }
 
-    #SkillsMaster h5 {
+    #Skills h5 {
         padding: 6px 0;
         font-size: 1.05em; 
     }
-    #SkillsMaster h4 {
+    #Skills h4 {
         padding: 12px 0 6px 0;
         font-size: 1.3em; 
     }
-    #SkillsMaster h2 {
+    #Skills h2 {
         padding: 12px 0;
         font-size: 2em;
     }
-    #SkillsMaster h1 {
+    #Skills h1 {
         padding: 12px 0;
         font-size: 2.4em;
     }
 
 
 /* ===== My Skills Styling ===== */
-#SkillsMaster {
+#Skills {
     /*padding: 50px 7.5% 0 7.5%;*/
     display: flex;
     flex-flow: row wrap;
@@ -55,7 +55,7 @@
     }
 
 /* right column */
-#my-skills-content {
+#skills-content {
     display: flex;
     flex-flow: row wrap;
     color: white;

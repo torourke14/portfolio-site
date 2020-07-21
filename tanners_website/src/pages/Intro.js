@@ -1,12 +1,16 @@
+
 import React from 'react';
 import './Intro.css';
+import 'animate.css';
 
 //Images
+//import linkedinIcon from '../images/linkedin-icon.png';
+//import githubIcon from '../images/github-icon.png';
+//import emailIcon from '../images/mail-icon.png';
 
 //Icons
-import linkedinIcon from '../images/linkedin-icon.png';
-import githubIcon from '../images/github-icon.png';
-import emailIcon from '../images/mail-icon.png';
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Recent Work
 import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 //Files
@@ -22,31 +26,38 @@ import Resume from '../files/Resume__Tanner-ORourke.pdf';
 *
 */
 
-
 class Intro extends React.Component {
         render() {
                 return (
-                <div className="IntroMaster">
+                <div id="Intro" className="panel__Intro">
                         <div id="hero-contents">
-                                <div id="hero-title-block">
-                                        <h1>Hello;<br/>I am Tanner.</h1>
-                                        <h4>Software Developer&nbsp;&nbsp;|&nbsp;&nbsp;Interface Designer</h4>
-                                </div>
-                                <div id="hero-desc-block">
-                                        <div id="title-link">
-                                                <a id="arrow" href="#TOC-container"/> 
-                                        </div>
-                                        <h4>Welcome to my life of composing software apps &&nbsp;user-driven interfaces.</h4>
-                                        <h6>(among other menagerie)</h6>
 
-                                        <a id="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
-                                                <div className="bt-front">
-                                                        <span className="icon fa fa-cloud"></span>Download&nbsp;Resume
-                                                </div>
-                                                <div className="bt-back">
-                                                        <span className="icon fa fa-hdd-o"></span>Size: 179 kb
-                                                </div>
-                                        </a>
+                                <div id="arrow-container" className="title-block arrow-container animate__animated animate__fadeOutDown">
+                                        <div className="arrow-2">
+                                                <FontAwesomeIcon className="fa" icon={faAngleDown} ></FontAwesomeIcon>
+                                        </div>
+                                        <div className="arrow-1 animate__animated animate__hinge animate__infinite animate__zoomIn"></div>
+                                </div>
+
+                                <div id="hero" className="title-block">
+                                        <div id="callout">
+                                                <h1>Hello;<br/>I am Tanner.</h1>
+                                                <h4>Software Developer&nbsp;&nbsp;|&nbsp;&nbsp;Interface Designer</h4>
+                                        </div>
+                                        
+                                        <div id="description" className="title-block">
+                                                <h4>Welcome to my life of composing software apps &&nbsp;user-driven interfaces.</h4>
+                                                <h6>(among other menagerie)</h6>
+
+                                                <a id="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
+                                                        <div className="bt-front">
+                                                                <span className="icon fa fa-cloud"></span>Download&nbsp;Resume
+                                                        </div>
+                                                        <div className="bt-back">
+                                                                <span className="icon fa fa-hdd-o"></span>Size: 179 kb
+                                                        </div>
+                                                </a>
+                                        </div>
                                 </div>
                         </div>
 

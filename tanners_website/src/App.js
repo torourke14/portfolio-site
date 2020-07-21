@@ -1,10 +1,14 @@
 // Modules
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 // Pages
 import Intro from './pages/Intro';
 import AboutMe from './pages/AboutMe';
+
 import MyWorks from './pages/MyWorks';
 import Skills from './pages/Skills';
 // Components
@@ -14,30 +18,21 @@ import FloatingFooter from './components/FloatingFooter';
 /*
 *
 ========== Task List =============
---- cardify AboutMe
-    DONE -- side padding
-    -- add about me content design
----page routing
+--add extra stylesheets to <head>
+
+-- add about me content, content design
+---portfolio entry design + content
+---Intro content
 
 ---add home icons
----home content
-
----portfolio entry design
----add details to project entries
-
----add AboutMe content
----AboutMe scroll behavior
+---authenticate <AboutMe/> with redirect
 *
 */
 
-
 class App extends React.Component {
-      render() {
+    render() {
         return (
-            <div>
-                <Master />
-            </div>
-
+            <div><Master/></div>
         );
     }
 }
@@ -51,9 +46,13 @@ class Master extends React.Component {
             menuActive: false,
             submenuActive: false,
         }
-
-        this.closeSubMenu = this.closeSubmenu.bind(this);
     }
+
+    /*componentDidMount() {
+        Router.useEffect(() => {
+            window.scrollTo(0, 0)
+          }, [])
+    }*/
 
     closeSubmenu(e) {
         const menu = document.querySelector(".menu");
@@ -80,16 +79,32 @@ class Master extends React.Component {
     *
     */
     render() {
-        return (
-            <div>
-                <Intro />
-                <AboutMe />
-                <MyWorks />
-                <Skills />
+        // Intro renders ALWAYS
+        // FloatingFooter renders when another path exists (i.e. not "/"")
+        // About, Works, Skills render EXCLUSIVELY
+        // ConnectDrawer RENDERED on LINKto
 
-                <ConnectDrawer />
-                <FloatingFooter />
-            </div>
+        return (
+            <Router>
+                <Route path="/" 
+                    render={() => <div>  <Intro/>  </div>} 
+                />
+                <Route path='/:subpath' 
+                    render={() =>   <Fragment>  <FloatingFooter/><ConnectDrawer/>  </Fragment>}
+                />
+
+                <Switch>
+                    <Route path="/about" 
+                        render={() => <div>  <AboutMe/>  </div>} 
+                    />
+                    <Route path="/works" 
+                        render={() => <div>  <MyWorks/>  </div>}
+                    />
+                    <Route path="/experience" 
+                        render={() => <div>  <Skills/>  </div>}
+                    /> 
+                </Switch>
+            </Router>
         );
     }
 }

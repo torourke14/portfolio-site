@@ -1,21 +1,25 @@
 
-/* Common Text styling */
-    #WorksMaster h5 {
+/* Global styling */
+    #Works h5 {
         padding: 6px 0;
         font-size: 1.05em; 
     }
-    #WorksMaster h4 {
+    #Works h4 {
         padding: 12px 0 6px 0; 
         font-size: 1.3em; 
     }
-    #WorksMaster h2 {
+    #Works h2 {
         padding: 12px 0;
         font-size: 2em;
     }
-    #WorksMaster h1 {
+    #Works h1 {
         padding: 12px 0;
         font-size: 4;
     }
+
+#Works {
+    background-color: #f5f5f5;
+}
 /* end ----- */
 
 /* Phone menu */
@@ -25,10 +29,6 @@
 /* Tablet menu */
 @media all and (min-width: 960px) {
 
-}
-
-#WorksMaster {
-    background-color: #f5f5f5;
 }
 
 /* ===== Portfolio/Works Grid Styling ===== */
