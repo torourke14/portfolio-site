@@ -32,12 +32,7 @@ class Intro extends React.Component {
                 <div id="Intro" className="panel__Intro">
                         <div id="hero-contents">
 
-                                <div id="arrow-container" className="title-block arrow-container animate__animated animate__fadeOutDown">
-                                        <div className="arrow-2">
-                                                <FontAwesomeIcon className="fa" icon={faAngleDown} ></FontAwesomeIcon>
-                                        </div>
-                                        <div className="arrow-1 animate__animated animate__hinge animate__infinite animate__zoomIn"></div>
-                                </div>
+                                
 
                                 <div id="hero" className="title-block">
                                         <div id="callout">
@@ -60,8 +55,6 @@ class Intro extends React.Component {
                                         </div>
                                 </div>
                         </div>
-
-                        <div className="transition-spacer first" />
 
                         <div id="TOC-container">
                                 <div id="content-cover">
@@ -88,13 +81,13 @@ class Intro extends React.Component {
                                         <g className="svg-gpath">
                                                 <path d="M 15,20  L 45,10  L 120,10" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                         </g>
-                                        <g className="svg-gpath selected">
+                                        <g className="svg-gpath">
                                                 <path d="M 30,30  L 50,40  L 120,40" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                         </g>
-                                        <g className="svg-gpath selected">
+                                        <g className="svg-gpath">
                                                 <path  d="M 35,70  L 50,60  L 120,60" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                         </g>
-                                        <g className="svg-gpath">
+                                        <g className="svg-gpath selected">
                                                 <path  d="M 15,85  L 45,90  L 120,90" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
                                         </g>
                                 </svg>
@@ -108,9 +101,18 @@ class Intro extends React.Component {
 
 
 /*
+========== scroll down arrow
+<div id="arrow-container" className="title-block arrow-container animate__animated animate__fadeOutDown">
+        <div className="arrow-2">
+                <FontAwesomeIcon className="fa" icon={faAngleDown} ></FontAwesomeIcon>
+        </div>
+        <div className="arrow-1 animate__animated animate__hinge animate__infinite animate__zoomIn"></div>
+</div>
+
+============== Social Links
 *
 <div>
-        <a href="mailto:tannero@live.com">
+        <a href="mailto:tannero@live.com?subject=From Your Website - Lets Talk">
                 <img src={emailIcon} alt="Email" height="30px" width="65px"/>
         </a>
         <a href="linkedin.com/in/tworourke">

@@ -1,12 +1,12 @@
 import React from 'react';
-import './AboutMe.css';
+import './AboutMeDrawer.css';
 
 //Icons
 import linkedinIcon from '../images/linkedin-icon.png';
 import githubIcon from '../images/github-icon.png';
 import emailIcon from '../images/mail-icon.png';
 
-class AboutMe extends React.Component {
+class AboutMeDrawer extends React.Component {
         
         render() {
                 return (
@@ -134,5 +134,5 @@ class AboutMe extends React.Component {
 </div>
 */
 
-export default AboutMe;
+export default AboutMeDrawer;
 

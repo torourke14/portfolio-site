@@ -1,7 +1,7 @@
 import React from 'react';
-import './Skills.css';
+import './ExpSkillsDrawer.css';
 
-class Skills extends React.Component {
+class ExpSkillsDrawer extends React.Component {
         render() {
                 return (
                         <div id="Skills" className="panel__Skills">
@@ -64,4 +64,4 @@ class Skills extends React.Component {
         }
 }
 
-export default Skills;
+export default ExpSkillsDrawer;

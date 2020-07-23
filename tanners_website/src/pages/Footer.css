@@ -1,0 +1,66 @@
+/* Footer.js Styling
+* ======================= *
+* 
+*/ 
+
+.footer-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: #363D48;
+    color: white;
+}
+
+.wrapper-column {
+    width: 40%;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.logo-wrapper-column {
+    width: 20%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#link-logo {
+    width: 90%;
+    object-fit: contain;
+}
+
+.foot-items {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    list-style-type: none;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.foot-items li {
+    text-decoration: none;
+}
+.foot-items li a {
+    color: white;
+    font-size: 1.2em;
+}
+.foot-items a:hover,
+.foot-items a:active {
+    color: #CBB95A;
+}
+
+@media screen and (max-width:750px) {
+    .foot-items {
+        font-size: 0.6em;
+    }
+}

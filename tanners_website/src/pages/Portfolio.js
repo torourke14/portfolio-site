@@ -1,11 +1,11 @@
 import React from 'react';
-import './MyWorks.css';
+import './Portfolio.css';
 
 // Project Images
 import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 import { render } from '@testing-library/react';
 
-class MyWorks extends React.Component {
+class Portfolio extends React.Component {
         constructor(props) {
                 super(props);
                 this.filters = ['design', 'dev', 'freelance', 'professional'];
@@ -277,4 +277,4 @@ class ToTopBtn extends React.Component {
         }
     }
 
-export default MyWorks;
+export default Portfolio;

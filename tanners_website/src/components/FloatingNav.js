@@ -1,7 +1,7 @@
 import React from 'react';
-import './FloatingFooter.css';
+import './FloatingNav.css';
 
-class FloatingFooter extends React.Component {
+class FloatingNav extends React.Component {
         render() {
                 return (
                         <div>
@@ -10,4 +10,4 @@ class FloatingFooter extends React.Component {
         }
 }
 
-export default FloatingFooter;
+export default FloatingNav;
