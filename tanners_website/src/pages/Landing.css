@@ -3,7 +3,7 @@
 
 /* Hero Image Styling */
 #hero-container {
-    display: none; 
+    /*opacity: 0; position: absolute */
     /* !!!! Take away once works dev finished */
     
     position: relative;
@@ -21,11 +21,11 @@
 }
 
     /* Global styling */
-    #Intro h6 { font-size: 1.1em; }
-    #Intro h4 { font-size: 1em; }
-    #Intro h3 { font-size: 1.25em; }
-    #Intro h2 { font-size: 2em; }
-    #Intro h1 { font-size: 4em; }
+    #Landing h6 { font-size: 1.1em; }
+    #Landing h4 { font-size: 1em; }
+    #Landing h3 { font-size: 1.25em; }
+    #Landing h2 { font-size: 2em; }
+    #Landing h1 { font-size: 4em; }
 
     .callout-container {
         position: absolute; z-index: 10;
@@ -226,84 +226,6 @@ button.trigger {
             -moz-osx-font-smoothing: grayscale;
         }
 
-
-
-/* ===== Table of Contents Styling ===== */
-#TOC-container {
-    position: relative; /* CORRECT ======= */
-    width: 100%; height: auto;
-    background: #ebebeb;
-
-    position: relative;
-    min-height: 95vh; 
-    width: 100%;
-    height: 100%;
-    
-    background-color: #ebebeb;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-    #svg-container { 
-        width: 100%; height: 100%;
-        z-index: 4; /*--back */
-    }
-        .svg-gpath:not(.selected) { /* lighten non-chosen lines */
-            opacity: 0.4;
-        }
-
-    #content-cover { 
-        width: 100%; height: 100%;
-        position: absolute; /* out of flow, on top */
-        top: 0; left: 0;
-        z-index: 1; /*--front */ 
-    }
-
-        .content-link { 
-            position: absolute; 
-            right: 20%;
-            margin-top: 32px; /* font-size == margin-top */
-            font-size: 2em;
-            color: #3D3D3D;
-            text-align: right;
-            border: none; 
-            background-color: transparent;
-            text-decoration: none;
-            font-weight: 600;
-            }
-            .content-link:hover {
-                transform: scale(1.15);
-                -ms-transform: scale(1.15);
-                -webkit-transform: scale(1.15);
-                transition: 0.5s all ease-in-out;
-            }
-            #about-me { bottom: 90% }
-            #portfolio { bottom: 60% }
-            #exp-skills { bottom: 40% }
-            #connect { bottom: 10% }
-            
-            /*.svg-gpath.selected, .svg-gpath:not(.selected):hover {
-                opacity: 1.0;
-                transform: scale(1.1);
-            }*/
-
-
-
-
-            
-/* ===== Gradient Spacers =====  */
-.transition-spacer {
-    width: 100%; height: 100%;
-    height: 5vh;
-}
-.transition-spacer.second {
-    background-image: linear-gradient(
-        rgb(239, 181, 9) 10%,
-        rgb(61, 63, 52) 90%,
-        rgb(22, 37, 61) 
-    );
-}
-/* end ----- */
         
 /* arrow
 #arrow-container {

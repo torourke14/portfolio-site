@@ -6,7 +6,7 @@ import { Switch, Route, withRouter, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 // Pages & Components
-import Intro from './pages/Intro';
+import Landing from './pages/Landing';
 import Portfolio from './pages/Portfolio';
 import Footer from './pages/Footer';
 import AboutMeDrawer from './components/AboutMeDrawer';
@@ -26,10 +26,8 @@ function AppContainer({ location }) {
                 <Switch location={location}>
                     <Route path="/" render={() =>
                         <IntersectionRoutingObserver>
-                            <Intro/>
-                            <Portfolio/>
-                            <Footer/>
-                            <FloatingNav/>
+                            <Landing/>
+
                         </IntersectionRoutingObserver>
                     }/>
                     

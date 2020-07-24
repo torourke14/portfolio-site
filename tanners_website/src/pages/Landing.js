@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './Intro.css';
+import './Landing.css';
 import 'animate.css';
 
 import { Link } from "react-router-dom";
@@ -19,6 +19,8 @@ import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 //Files
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
+import Portfolio from "./Portfolio"
+
 /* 
 * ===== TO ADD =====
 * -- underline all hyperlinks/links
@@ -34,7 +36,7 @@ import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
 //font-family: 'Raleway', Arial, sans-serif;
 
-class Intro extends React.Component {
+class Landing extends React.Component {
         constructor(props) {
             super(props);
 
@@ -46,8 +48,11 @@ class Intro extends React.Component {
 
         render() {
                 return (
-                <div id="Intro" className="panel__Intro">
+                <div id="Landing" className="panel__Landing">
+                    
                     <div id="hero-container">
+
+                        
                         <div id="content-container">
                             <div className="callout-container">
                                     <div className="title-text">
@@ -80,44 +85,7 @@ class Intro extends React.Component {
                         </button>
                     </div>
 
-                    <div id="TOC-container">
-                        <div id="content-cover">
-                                <button id="about-me" className="content-link" href="">
-                                        <h4>About Me</h4>
-                                </button>
-
-                                <button id="portfolio" className="content-link" href="#">
-                                        <h4>Portfolio</h4>
-                                </button>
-
-                                <button id="exp-skills" className="content-link" href="#">
-                                        <h4>Experience & Skills</h4>
-                                </button>
-
-                                <button id="connect" className="content-link" href="#">
-                                        <h4>Connect</h4>
-                                </button>                                       
-                        </div>
-
-                        <svg id="svg-container" viewBox="0 0 150 100" preserveAspectRatio="xMinYMid meet">
-                                <image href={DoMADLogo} x="0" y="0" width="50" height="100" />
-
-                                <g className="svg-gpath">
-                                        <path d="M 15,20  L 45,10  L 120,10" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
-                                </g>
-                                <g className="svg-gpath">
-                                        <path d="M 30,30  L 50,40  L 120,40" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
-                                </g>
-                                <g className="svg-gpath">
-                                        <path  d="M 35,70  L 50,60  L 120,60" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
-                                </g>
-                                <g className="svg-gpath selected">
-                                        <path  d="M 15,85  L 45,90  L 120,90" fill="none" stroke="#3d3d3d" strokeWidth="0.4" />
-                                </g>
-                        </svg>
-                    </div>
-                        
-                        <div className="transition-spacer second" />
+                    <Portfolio />
                 </div>
                 );
         }
@@ -304,4 +272,4 @@ value: function(t) {
 */
 
 
-export default Intro;
+export default Landing;
