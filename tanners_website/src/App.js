@@ -9,9 +9,10 @@ import { createBrowserHistory } from 'history';
 import AppContainer from './AppContainer';
 
 /** ---PAGES-----------------------------------
+    * music
     * Intro.js   
-    *   -- Intro callout (right-top)   (~50vh)  
-    *   -- Hero Navigation (left, left-bottom) (95vh)
+    *   -- Intro callout (left-top)   (~50vh)  
+    *   -- Hero Navigation (right--bottom) (95vh)
     *   -- About intro (75-100vh)
     *       -- banner quote (5vh)
     *       -- My Services section (basically) (cards)

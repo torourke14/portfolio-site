@@ -43,7 +43,7 @@ function AppContainer({ location }) {
                         <ConnectDrawer open={match ? true : false} />
                     )}/>
 
-                    <Route render={
+                    <Route render={() =>
                         <div><NoMatch/></div>
                     }/>
                 </Switch>

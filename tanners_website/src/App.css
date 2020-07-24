@@ -33,11 +33,3 @@
     /*background-color: #d6d6d6;*/
     scroll-behavior: smooth;
 }
-
-    /* Tablet menu */
-    @media all and (min-width: 700px) {
-    }
-
-    /* Desktop menu */
-    @media all and (min-width: 960px) {
-    }

@@ -1,157 +1,132 @@
 @import "~animate.css/animate.css";
 
 
-/* Global styling */
-#Intro h6 { font-size: 1.1em; }
-#Intro h4 { font-size: 1.5em; }
-#Intro h2 { font-size: 2em; }
-#Intro h1 { font-size: 5em; }
-
-
 /* Hero Image Styling */
-#hero-contents {
-    position: relative; z-index: 0;
-    /*& NEW stack-context*/
+#hero-container {
+    display: none; 
+    /* !!!! Take away once works dev finished */
+    
+    position: relative;
+    min-height: 95vh; 
     width: 100%;
     height: 100%;
-    min-height: 95vh; 
-    background-color: #e0e0e0;
-    background-size: cover;
-    padding: 7.5% 0;
-    margin: 0;
+    
+    background-color: #ebebeb;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#content-container {
+    word-wrap: break-word;
+    min-height: 100vh;
 }
 
-    #arrow-container {
-        position: relative; z-index: 20;
+    /* Global styling */
+    #Intro h6 { font-size: 1.1em; }
+    #Intro h4 { font-size: 1em; }
+    #Intro h3 { font-size: 1.25em; }
+    #Intro h2 { font-size: 2em; }
+    #Intro h1 { font-size: 4em; }
+
+    .callout-container {
+        position: absolute; z-index: 10;
         /*& NEW stack-context*/
-        width: 100px;
-        height: 100px;
-        left: 25%;
-        bottom: 25%;
-        margin: 0;
-        cursor: pointer; 
+        top: 15%;
+        left: 15%;
+        width: 40%;
+        color: #2B3136;
         }
-        /* send down arrow */
-        .arrow-1 {
-            width: 100px;
-            height: 100px;
-            background: #006064;
-            opacity: 0.5;
-            border-radius: 50%;
-            /*position: absolute;*/
+        
+        .title-text {
+            overflow-x: visible;
         }
-        .arrow-2 {
-            width: 60px;
-            height: 60px;
-            background: #00BCD4;
-            border-radius: 50%;
-            position: absolute;
-            /*z-index: 1; /*--front */
-            top: 20px; /* 1/2 (100-60px)*/
-            left: 20px;
-            display: table;
+            .title-text h2 { 
+                padding-top: 4rem; 
             }
-            /*arrow arms */
-            .arrow-2:before { 
-                width: 52px;
-                height: 52px;
-                content: '';
-                border: 2px solid #006064;
-                border-radius: 50%;
-                position: absolute;
-                top: 2px;
-                left: 2px;
+            .title-text h2::before {
+                content: "Design";
+                font-weight: bold;
+                white-space: pre;
             }
-            .arrow-2 .fa {
-                font-size: 2em;
-                display: table-cell;
-                vertical-align: middle;
-                text-align: center;
-                color: #006064;
+            .title-text h2::after {
+                content: "\A Developer";
+                font-weight: normal;
+                white-space: pre;
             }
-            
-            /* Custom Animate.css */
-            .animate__animated.animate__hinge {
-                -webkit-animation-duration: 2s;
-                animation-duration: 2s;
+             
+        .hero-links {
+            padding-top: 25%;
+            padding-left: 12px;
+        } 
+            .hero-links Link, a {
+                text-decoration: none;
+                font-size: 1.75rem;
+                font-weight: 450;
+                line-height: 3.5rem;
+                line-break: loose;
+                color: #F2BC18;
             }
-            .animate__zoomIn {
-                -webkit-animation-name: zoomIn;
-                animation-name: zoomIn;
-            }
-            @-webkit-keyframes zoomIn {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: scale3d(.4, .4, .4);
-                            transform: scale3d(.4, .4, .4);
-                }
-                50% { opacity: 0.5; }
-                100% { opacity: 1; }
-            }
-            @keyframes zoomIn {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: scale3d(.4, .4, .4);
-                            transform: scale3d(.4, .4, .4);
-                }
-                50% { opacity: 0.5; }
-                100% { opacity: 1; }
+            .hero-links Link:hover, .hero-links a:hover {
+                text-decoration: underline;
+                text-decoration-color: #2B3136;
+                transition: 0.5s all; 
             }
     
 
-    #hero {
-        position: relative; z-index: 10;
-        /*& NEW stack-context*/
-        left: 20%;
-        width: 50%; /*...centered*/
-        color: white;
+        .img-container {
+            position: absolute; z-index: 5;  
+            /*& NEW stack-context*/
+            top: 0; right: 0;
+            width: 100%; /*..parent dims*/
+            height: 100%;
         }
-        #callout {
-            background-color: #16253D;
-            padding: 32px 0 32px 5%;
-            box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
-            border-radius: 4px;
-            overflow-x: visible;
+            .hero-img { 
+                position: absolute;
             }
-            #callout h1 { line-height: 100px; }
-            #callout h4 {
-                line-height: 30px;
-                line-break: loose;
-                font-weight: lighter;
-            }
-        #description {
-            position: relative; z-index: -1; 
-            /* Placed behind #title */ 
-            width: 80%; /*..of parent */
-            left: 30%;
-            top: -32px; /* --'#hero-title paddding-bottom' */
 
-            padding: 48px 48px; /* 32px++16px */
-            background-color: #EFB509;
-            border-radius: 4px;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-            color:#3d3d3d;
-            font-weight: normal;
+            .pre {
+                width: 25%;
+                padding-top: 25%; 
+                /*.. MUST be same to maintain aspect ratio*/
+                top: 25%;
+                right: 10%;
+                background-color: blue;
+                /*background-image: url('../images/linkedin-icon.png');*/
+                background-repeat: no-repeat;
+                background-size: contain;
+                object-fit: contain;
             }
-            #description h4 {
-                display: block;
-                width: 100%;
-                line-height: 40px; 
-                font-weight: 500;
+            .main {
+                width: 35%;
+                padding-top: 35%; 
+                /*.. MUST be same to maintain aspect ratio*/
+                right: 15%;
+                top: 35%;
+                background-color: yellow;
+                /*background-image: url('../images/mail-icon.png');*/
+                background-repeat: no-repeat;
+                background-size: contain;
+                object-fit: contain;
             }
-            #description h6 {
-                display: block;
-                font-weight: 200;
-                width: 100%;
-                line-height: 30px;
+            .post {
+                width: 15%;
+                padding-top: 15%;  
+                /*.. MUST be same to maintain aspect ratio*/
+                right: 45%;
+                top: 57.5%;
+                background-color: orange;
+                /*background-image: url('../images/github-icon.png');*/
+                background-repeat: no-repeat;
+                background-size: contain;
+                object-fit: contain;
             }
+            
 
     /*----- Download Button -----*/
     #dl-button {
         position: absolute;
             z-index: 1; /*--2nd */
-            bottom: 24px; /*48px+24px */
-            right: 24px;
+            top: 32px; /*48px+24px */
+            right: 32px;
         height: 48px;
         display: inline-block; /*for inner divs*/
         border: 3px solid #003F7A;
@@ -164,9 +139,9 @@
         overflow: hidden;
         transition: transform 1s;
     }
-    /*.button-button .icon { 
-        margin-right: 6px 
-    }*/
+    #dl-button .icon { 
+        padding-right: 6px 
+    }
     #dl-button .bt-front,
     #dl-button .bt-back {
         display: block;
@@ -189,13 +164,84 @@
     }
 /* end ----- */
 
+/* Down Scroll button */
+button.trigger {
+    position: fixed;
+	bottom: 40px;
+	left: 50%;
+	z-index: 5000;
+	display: block;
+	margin-left: -0.5em;
+	padding: 0;
+	width: 1em;
+	height: 1em;
+	border: none;
+	background: transparent;
+	color: transparent;
+	font-size: 2em;
+    cursor: pointer;
+    }
+.container:not(.notrans) button.trigger {
+    -webkit-transition: opacity 0.3s 0.5s;
+    transition: opacity 0.3s 0.5s;
+}
+    button.trigger::before {
+        position: absolute;
+        bottom: 100%;
+        left: -100%;
+        padding: 0.8em;
+        width: 300%;
+        color: #fff;
+        content: attr(data-info);
+        font-size: 0.35em;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    button.trigger:focus {
+        outline: none;
+    }
+    button.trigger span {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        }
+        button.trigger span::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            content: "\e097";
+            text-transform: none;
+            font-weight: normal;
+            font-style: normal;
+            font-variant: normal;
+            font-family: 'icomoon';
+            line-height: 1;
+            speak: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
 
 
 /* ===== Table of Contents Styling ===== */
 #TOC-container {
     position: relative; /* CORRECT ======= */
     width: 100%; height: auto;
-    background-color: #EFB509;
+    background: #ebebeb;
+
+    position: relative;
+    min-height: 95vh; 
+    width: 100%;
+    height: 100%;
+    
+    background-color: #ebebeb;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
     #svg-container { 
@@ -241,11 +287,14 @@
                 transform: scale(1.1);
             }*/
 
+
+
+
+            
 /* ===== Gradient Spacers =====  */
 .transition-spacer {
     width: 100%; height: 100%;
     height: 5vh;
-    border: 1px solid black;
 }
 .transition-spacer.second {
     background-image: linear-gradient(
@@ -256,6 +305,85 @@
 }
 /* end ----- */
         
+/* arrow
+#arrow-container {
+        position: relative; z-index: 20;
+        // NEW stack-context
+        width: 100px;
+        height: 100px;
+        left: 25%;
+        bottom: 25%;
+        margin: 0;
+        cursor: pointer; 
+        }
+        
+        .arrow-1 {
+            width: 100px;
+            height: 100px;
+            background: #006064;
+            opacity: 0.5;
+            border-radius: 50%;
+           
+        }
+        .arrow-2 {
+            width: 60px;
+            height: 60px;
+            background: #00BCD4;
+            border-radius: 50%;
+            position: absolute;
+            
+            top: 20px; 
+            left: 20px;
+            display: table;
+            }
+            
+            .arrow-2:before { 
+                width: 52px;
+                height: 52px;
+                content: '';
+                border: 2px solid #006064;
+                border-radius: 50%;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+            }
+            .arrow-2 .fa {
+                font-size: 2em;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                color: #006064;
+            }
+            
+            .animate__animated.animate__hinge {
+                -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+            }
+            .animate__zoomIn {
+                -webkit-animation-name: zoomIn;
+                animation-name: zoomIn;
+            }
+            @-webkit-keyframes zoomIn {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: scale3d(.4, .4, .4);
+                            transform: scale3d(.4, .4, .4);
+                }
+                50% { opacity: 0.5; }
+                100% { opacity: 1; }
+            }
+            @keyframes zoomIn {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: scale3d(.4, .4, .4);
+                            transform: scale3d(.4, .4, .4);
+                }
+                50% { opacity: 0.5; }
+                100% { opacity: 1; }
+            }
+*/
+
+
 /* ===== My Works Styling ===== */
 /*#WorksIntro {
     background-color: #CD7213;
