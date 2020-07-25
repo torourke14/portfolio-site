@@ -49,20 +49,12 @@ class Landing extends React.Component {
         render() {
                 return (
                 <div id="Landing" className="panel__Landing">
-                    
                     <div id="hero-container">
-
-                        
                         <div id="content-container">
                             <div className="callout-container">
-                                    <div className="title-text">
-                                            <h1>Welcome</h1>
-                                            <h2><b>&nbsp;Driven</b></h2>
-                                    </div>
-                                    <div className="hero-links">
-                                            <p><Link to="/about">About</Link></p>
-                                            <p><Link to="/skills">Skills</Link></p>
-                                            <p><a href="#Works">My Work</a></p>
+                                    <div className="rotating-text">
+                                        <h1>- Hi; I'm Tanner.</h1>
+                                        <h2><b>Driven</b></h2>
                                     </div>
                             </div>
                             
@@ -78,14 +70,23 @@ class Landing extends React.Component {
                                     </div>
                             </a> 
                         </div>
-
-                        <button class="trigger" data-info="Click to see the header effect"
+                        <button class="trigger" data-info="Dive In"
                             onClick={ console.log("going down!") }>
                             <span>Trigger</span>
                         </button>
                     </div>
-
-                    <Portfolio />
+                    <div id="DiveIn">
+                        <div className="dive-in-content">
+                                <div className="about-qIntro">
+                                    <h2>About</h2>
+                                    <p>I am a Full-Stack Developer with a keen eye for Design from
+                                        Seattle, Washington. </p>
+                                </div>
+                                <div className="portfolio-header">
+                                    My Work.
+                                </div>
+                        </div>
+                    </div>
                 </div>
                 );
         }

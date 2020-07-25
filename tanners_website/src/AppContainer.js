@@ -26,8 +26,10 @@ function AppContainer({ location }) {
                 <Switch location={location}>
                     <Route path="/" render={() =>
                         <IntersectionRoutingObserver>
+                            <FloatingNav />
                             <Landing/>
-
+                            <Portfolio />
+                            <Footer />
                         </IntersectionRoutingObserver>
                     }/>
                     

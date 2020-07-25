@@ -5,13 +5,11 @@
 #hero-container {
     /*opacity: 0; position: absolute */
     /* !!!! Take away once works dev finished */
-    
+    background-color: #EEDDAA;
     position: relative;
-    min-height: 95vh; 
+    min-height: 100vh; 
     width: 100%;
     height: 100%;
-    
-    background-color: #ebebeb;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -30,45 +28,28 @@
     .callout-container {
         position: absolute; z-index: 10;
         /*& NEW stack-context*/
-        top: 15%;
-        left: 15%;
-        width: 40%;
+        top: 30vh;
+        left: 10%;
+        width: 50%;
         color: #2B3136;
+        overflow-x: visible;
         }
         
-        .title-text {
-            overflow-x: visible;
+        .rotating-text {
+        
         }
-            .title-text h2 { 
+            .rotating-text h2 { 
                 padding-top: 4rem; 
             }
-            .title-text h2::before {
-                content: "Design";
-                font-weight: bold;
-                white-space: pre;
-            }
-            .title-text h2::after {
-                content: "\A Developer";
+            .rotating-text h2::before {
+                content: "Design \A";
                 font-weight: normal;
                 white-space: pre;
             }
-             
-        .hero-links {
-            padding-top: 25%;
-            padding-left: 12px;
-        } 
-            .hero-links Link, a {
-                text-decoration: none;
-                font-size: 1.75rem;
-                font-weight: 450;
-                line-height: 3.5rem;
-                line-break: loose;
-                color: #F2BC18;
-            }
-            .hero-links Link:hover, .hero-links a:hover {
-                text-decoration: underline;
-                text-decoration-color: #2B3136;
-                transition: 0.5s all; 
+            .rotating-text h2::after {
+                content: "\A Developer";
+                font-weight: bold;
+                white-space: pre;
             }
     
 
@@ -162,70 +143,104 @@
         -ms-transform: scale(1.05);
         -webkit-transform: scale(1.05);
     }
-/* end ----- */
 
-/* Down Scroll button */
-button.trigger {
-    position: fixed;
-	bottom: 40px;
-	left: 50%;
-	z-index: 5000;
-	display: block;
-	margin-left: -0.5em;
-	padding: 0;
-	width: 1em;
-	height: 1em;
-	border: none;
-	background: transparent;
-	color: transparent;
-	font-size: 2em;
-    cursor: pointer;
-    }
-.container:not(.notrans) button.trigger {
-    -webkit-transition: opacity 0.3s 0.5s;
-    transition: opacity 0.3s 0.5s;
-}
-    button.trigger::before {
-        position: absolute;
-        bottom: 100%;
-        left: -100%;
-        padding: 0.8em;
-        width: 300%;
-        color: #fff;
-        content: attr(data-info);
-        font-size: 0.35em;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-    button.trigger:focus {
-        outline: none;
-    }
-    button.trigger span {
-        position: relative;
+
+    /* Down Scroll button */
+    button.trigger {
+        position: fixed;
+        bottom: 40px;
+        left: 50%;
+        z-index: 5000;
         display: block;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
+        margin-left: -0.5em;
+        padding: 0;
+        width: 1em;
+        height: 1em;
+        border: none;
+        background: transparent;
+        color: transparent;
+        font-size: 2em;
+        cursor: pointer;
         }
-        button.trigger span::before {
+    .container:not(.notrans) button.trigger {
+        -webkit-transition: opacity 0.3s 0.5s;
+        transition: opacity 0.3s 0.5s;
+    }
+        button.trigger::before {
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 100%;
+            left: -100%;
+            padding: 0.8em;
+            width: 300%;
+            color: #fff;
+            content: attr(data-info);
+            font-size: 0.35em;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        button.trigger:focus {
+            outline: none;
+        }
+        button.trigger span {
+            position: relative;
+            display: block;
+            overflow: hidden;
             width: 100%;
             height: 100%;
-            color: #fff;
-            content: "\e097";
-            text-transform: none;
-            font-weight: normal;
-            font-style: normal;
-            font-variant: normal;
-            font-family: 'icomoon';
-            line-height: 1;
-            speak: none;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            }
+            button.trigger span::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                content: "\e097";
+                text-transform: none;
+                font-weight: normal;
+                font-style: normal;
+                font-variant: normal;
+                font-family: 'icomoon';
+                line-height: 1;
+                speak: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+/* end ----- */
+
+
+/* ====== Dive In Container ===== */
+#DiveIn {
+    min-height: 80vh;
+    height: 100%;
+    background: #2B3136;
+    color: #EEDDAA;
+    position: relative;
+}
+
+    .dive-in-content {
+        padding-top: 20vh;
+        padding-bottom: 60vh;
+        padding-left: 10%;
+    } 
+        .about-qIntro {
+            width: 30%;
+        }
+        .about-qIntro p {
+            padding-top: 1rem;
+            line-height: 1.6rem;
+            font-size: 0.8rem;
+            font-weight: 450;
+            line-break: loose;
         }
 
+        .portfolio-header { 
+            position: absolute;
+            bottom: 4px;
+            font-size: 6rem;
+            font-family: 'Arial Black', serif; 
+            /*padding: 96px 0 0 5%;*/
+        }
         
 /* arrow
 #arrow-container {
