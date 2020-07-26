@@ -103,11 +103,13 @@
             
 
     /*----- Download Button -----*/
-    #dl-button {
+    #resume-dl {
         position: absolute;
-            z-index: 1; /*--2nd */
-            top: 32px; /*48px+24px */
-            right: 32px;
+            z-index: 10; /*--2nd */
+        top: 32px; /*48px+24px */
+        right: 32px;
+    }
+    .dl-button {
         height: 48px;
         display: inline-block; /*for inner divs*/
         border: 3px solid #003F7A;
@@ -120,25 +122,25 @@
         overflow: hidden;
         transition: transform 1s;
     }
-    #dl-button .icon { 
-        padding-right: 6px 
+    .dl-button .icon { 
+        margin-right: 6px;
     }
-    #dl-button .bt-front,
-    #dl-button .bt-back {
+    .dl-button .bt-front,
+    .dl-button .bt-back {
         display: block;
         padding: 0 24px;
         line-height: 42px; /* = height - borders [6px] */
         transition: margin 0.5s ease-out 0.2s;
     }
-    #dl-button .bt-front {
+    .dl-button .bt-front {
         background-color: #003F7A;
         color: #e0e0e0;
     }
     /* Animations */
-    #dl-button:hover .bt-front { 
+    .dl-button:hover .bt-front { 
         margin-top: -42px; /* = --height - borders [6px] */
     }
-    #dl-button:hover {
+    .dl-button:hover {
         transform: scale(1.05);
         -ms-transform: scale(1.05);
         -webkit-transform: scale(1.05);

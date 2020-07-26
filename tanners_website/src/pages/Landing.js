@@ -14,12 +14,10 @@ import emailIcon from '../images/mail-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-// Recent Work
-import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 //Files
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
-import Portfolio from "./Portfolio"
+//import Portfolio from "./Portfolio";
 
 /* 
 * ===== TO ADD =====
@@ -60,7 +58,7 @@ class Landing extends React.Component {
                             
                             <HeroImgGallery />
 
-                            <a id="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
+                            <a id="resume-dl" className="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
                                     <div className="bt-front">
                                             <span className="icon"><FontAwesomeIcon icon={faDownload}/></span>
                                             Resume
@@ -70,8 +68,7 @@ class Landing extends React.Component {
                                     </div>
                             </a> 
                         </div>
-                        <button class="trigger" data-info="Dive In"
-                            onClick={ console.log("going down!") }>
+                        <button class="trigger" data-info="Dive In" onClick={ console.log("going down!") }>
                             <span>Trigger</span>
                         </button>
                     </div>
@@ -254,23 +251,6 @@ value: function(t) {
                 <FontAwesomeIcon className="fa" icon={faAngleDown} ></FontAwesomeIcon>
         </div>
         <div className="arrow-1 animate__animated animate__hinge animate__infinite animate__zoomIn"></div>
-</div>
-
-============== Social Links
-*
-<div>
-        <a href="mailto:tannero@live.com?subject=From Your Website - Lets Talk">
-                <img src={emailIcon} alt="Email" height="30px" width="65px"/>
-        </a>
-        <a href="linkedin.com/in/tworourke">
-                <img src={linkedinIcon} alt="LinkedIn" height="30px" width="30px"/>
-        </a>                                                                
-        <a href="github.com/torourke14">
-                <img src={githubIcon} alt="GitHub" height="30px" width="30px"/>
-        </a>
-</div>
-*
-*/
-
+</div>*/
 
 export default Landing;
