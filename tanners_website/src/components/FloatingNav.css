@@ -1,0 +1,112 @@
+/*
+===============
+- 
+- 
+- 
+===============
+*/
+
+
+/* --- Un-deprecated navigation, 
+    displayed on landing --- */
+.side-navigator .landing {
+    position: fixed;
+    top: 32px;
+    right: 48px;
+}
+
+    .side-navigator .landing a {
+        display: block;
+        text-align: right;
+        padding-bottom: 0.9rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        color: #111;
+        /* transitions in component */
+    }
+
+    
+/* --- Closed & deprecated Sidebar --*/
+.pullout-closed {
+    position: fixed;
+    top: 0; right: 0;
+    margin: 0; padding: 0;
+    
+}
+    
+    .pullout-closed div {
+        width: 10em;
+        height: 6em;
+        position: relative; /* to position children */
+    }
+    
+    .pullout-closed div::before,
+    .pullout-closed div::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+    .pullout-closed div::before {
+        border-width: 1rem;
+        border-right-color: #E0BF00;
+        border-left-color: #ccc;
+    }
+    .pullout-closed div::after {
+        border-radius: 0.4em;
+        border-width: 4.5rem;
+        border-right-color: white;
+        border-top-color: white;
+    }
+
+    .pullout-closed .three-bars {
+        position: absolute; z-index: 70;
+        top: 0;
+        right: 0rem;
+        cursor: pointer; color: #2b3136;
+    }
+
+
+/* --- OPEN & deprecated Sodebar --- */
+.pullout-open .navbar {
+    height: 100%;
+    /*width: 0; --- 0/30vw on changes */
+    position: fixed;
+    z-index: 60;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden; /* --- Disable horizontal scroll */
+    padding-top: 48px;
+    }
+
+    
+    .pullout-open .navbar a, span {
+        padding: 24px 48px 12px 24px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #f9f1dc;
+        display: block;
+        transition: 0.3s;
+        text-align: right;
+    }
+    .pullout-open .navbar span { color: white; }
+
+    .pullout-open .navbar a:hover {
+        color: #EEDDAA;
+    }
+    
+    .pullout-open .navbar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 32px;
+        font-size: 2.25rem;
+        margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+        .pullout-open .navbar {padding-top: 16px }
+        .pullout-open .navbar a {font-size: 1rem }
+    }

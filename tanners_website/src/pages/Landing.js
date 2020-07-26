@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Landing.css';
 import 'animate.css';
 
@@ -14,10 +14,13 @@ import emailIcon from '../images/mail-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+
 //Files
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
-//import Portfolio from "./Portfolio";
+// Pages
+import FloatingNav from '../components/FloatingNav';
+import Portfolio from "./Portfolio";
 
 /* 
 * ===== TO ADD =====
@@ -48,30 +51,22 @@ class Landing extends React.Component {
                 return (
                 <div id="Landing" className="panel__Landing">
                     <div id="hero-container">
-                        <div id="content-container">
-                            <div className="callout-container">
+                        <NavigatorIntersectionObserver>
+                            <div id="content-container">
+                                <div className="callout-container">
                                     <div className="rotating-text">
                                         <h1>- Hi; I'm Tanner.</h1>
                                         <h2><b>Driven</b></h2>
                                     </div>
+                                </div>
+                                <HeroImgGallery />
                             </div>
-                            
-                            <HeroImgGallery />
-
-                            <a id="resume-dl" className="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
-                                    <div className="bt-front">
-                                            <span className="icon"><FontAwesomeIcon icon={faDownload}/></span>
-                                            Resume
-                                    </div>
-                                    <div className="bt-back">
-                                            <span>Size: 179 kb</span>
-                                    </div>
-                            </a> 
-                        </div>
+                        </NavigatorIntersectionObserver>
                         <button class="trigger" data-info="Dive In" onClick={ console.log("going down!") }>
                             <span>Trigger</span>
                         </button>
                     </div>
+                    
                     <div id="DiveIn">
                         <div className="dive-in-content">
                                 <div className="about-qIntro">
@@ -84,6 +79,9 @@ class Landing extends React.Component {
                                 </div>
                         </div>
                     </div>
+
+                    <Portfolio />
+                
                 </div>
                 );
         }
@@ -107,6 +105,34 @@ function HeroImgGallery() {
                         <div className="hero-img main"/> 
                 </div>
         );
+}
+
+/* ===============================
+--- Sets an observer on the landing container visibility 
+--- to apply deprecation to the <FloatingNavbar>
+=============================== */
+function NavigatorIntersectionObserver({ children, sticky=false, className, ...rest }){
+    const [isScrolled, setisScrolled] = useState(false);
+    const ref = React.createRef();
+    
+    // mount observer
+    useEffect(() => {
+        const cachedRef = ref.current, 
+            observer = new IntersectionObserver(
+                ([e]) => setisScrolled(e.intersectionRatio < 0.15), { threshold: [0.15] } 
+            );
+        observer.observe(cachedRef);
+      
+        // unmount
+        return function(){ observer.unobserve(cachedRef); }
+    }, [ref])
+    
+    return (
+        <div className={(isScrolled ? "deprecate" : "")} ref={ref} {...rest}>
+            <FloatingNav deprecate={isScrolled ? true : false} />
+            {children}
+        </div>
+    );
 }
 
 

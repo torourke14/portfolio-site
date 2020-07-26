@@ -6,6 +6,8 @@ import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
+import Footer from './Footer';
+
 class Portfolio extends React.Component {
         constructor(props) {
                 super(props);
@@ -34,6 +36,7 @@ class Portfolio extends React.Component {
                                     location='Seattle, WA'
                                     imgsrc={DoMADLogo} />
                             </div>
+                            <Footer />
                         </div>
                 );
         }

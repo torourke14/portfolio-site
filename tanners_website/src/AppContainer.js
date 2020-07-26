@@ -7,17 +7,16 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 // Pages & Components
 import Landing from './pages/Landing';
-import Portfolio from './pages/Portfolio';
-import Footer from './pages/Footer';
+
 import AboutMeDrawer from './components/AboutMeDrawer';
 import ExpSkillsDrawer from './components/ExpSkillsDrawer';
 import ConnectDrawer from './components/ConnectDrawer';
-import FloatingNav from './components/FloatingNav';
 
 
 function AppContainer({ location }) {
     return (
-        <div><TransitionGroup component={null}>
+        <div style={{transition: "margin-right 0.5s"}}>
+        <TransitionGroup component={null}>
 
             <CSSTransition key={location.key} 
               classNames={'fade'}
@@ -25,12 +24,7 @@ function AppContainer({ location }) {
             >
                 <Switch location={location}>
                     <Route path="/" render={() =>
-                        <IntersectionRoutingObserver>
-                            <FloatingNav />
-                            <Landing/>
-                            <Portfolio />
-                            <Footer />
-                        </IntersectionRoutingObserver>
+                        <Landing />
                     }/>
                     
                     <Route exact path="/about" children={({ match }) => (
@@ -49,33 +43,7 @@ function AppContainer({ location }) {
                 </Switch>
             </CSSTransition>
 
-        </TransitionGroup></div>
-    );
-}
-
-
-/* Sets a viewport visibility observer on the main container to apply the <FloatingNavbar>*/
-function IntersectionRoutingObserver({ children, sticky=false, className, ...rest }){
-    const [isSticky, setIsSticky] = React.useState(false);
-    const ref = React.createRef();
-    
-    // mount observer
-    React.useEffect(() => {
-        const cachedRef = ref.current, 
-                observer = new IntersectionObserver(
-                    ([e]) => setIsSticky(e.intersectionRatio < 0.1), {
-                        threshold: [0.1]
-                    } 
-                );
-        observer.observe(cachedRef);
-      
-        // unmount
-        return function(){ observer.unobserve(cachedRef); }
-    }, [ref])
-    
-    return (
-        <div className={className + (isSticky ? " isSticky" : "")} ref={ref} {...rest}>
-            {children}
+        </TransitionGroup>
         </div>
     );
 }
