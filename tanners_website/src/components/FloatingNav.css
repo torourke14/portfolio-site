@@ -22,6 +22,7 @@
         text-decoration: none;
         font-size: 0.9rem;
         color: #111;
+        cursor: pointer;
         /* transitions in component */
     }
 
@@ -83,7 +84,7 @@
     }
 
     
-    .pullout-open .navbar a, span {
+    .navbar a, .navbar span {
         padding: 24px 48px 12px 24px;
         text-decoration: none;
         font-size: 25px;

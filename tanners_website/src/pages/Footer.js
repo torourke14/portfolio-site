@@ -18,7 +18,7 @@ class Footer extends React.Component {
                         <div className="foot-callout-text">
                             <h2>Seen enough?</h2>
 
-                            <a id="mail-foot" className="dl-button mail-foot" href="mailto:tannero@live.com">
+                            <a id="mail-foot" className="dl-button" href="mailto:tannero@live.com">
                                 <div className="bt-front foot">
                                         <span className="icon"><FontAwesomeIcon icon={faLink} /></span> 
                                 </div>
@@ -26,7 +26,7 @@ class Footer extends React.Component {
                                         <span>Mail Me!</span>
                                 </div>
                             </a>
-                            <a id="linkedin-foot" className="dl-button" href="linkedin.com/in/tworourke">
+                            <a id="linkedin-foot" className="dl-button" href="http://linkedin.com/in/tworourke">
                                 <div className="bt-front foot">
                                         <span className="icon"><FontAwesomeIcon icon={faLinkedinIn} /></span>
                                 </div>
@@ -34,7 +34,7 @@ class Footer extends React.Component {
                                         <span>LinkedIn</span>
                                 </div>
                             </a> 
-                            <a id="github-foot" className="dl-button" href="github.com/torourke14">
+                            <a id="github-foot" className="dl-button" href="http://github.com/torourke14/to-pers">
                                 <div className="bt-front foot">
                                         <span className="icon"><FontAwesomeIcon icon={faLink} /></span>
                                 </div>
