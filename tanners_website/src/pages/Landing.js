@@ -50,8 +50,8 @@ class Landing extends React.Component {
         render() {
                 return (
                 <div id="Landing" className="panel__Landing">
-                    <div id="hero-container">
-                        <NavigatorIntersectionObserver>
+                    <NavigatorIntersectionObserver>
+                        <div id="hero-container">
                             <div id="content-container">
                                 <div className="callout-container">
                                     <div className="rotating-text">
@@ -61,11 +61,12 @@ class Landing extends React.Component {
                                 </div>
                                 <HeroImgGallery />
                             </div>
-                        </NavigatorIntersectionObserver>
-                        <button class="trigger" data-info="Dive In" onClick={ console.log("going down!") }>
-                            <span>Trigger</span>
-                        </button>
-                    </div>
+                        
+                            <button class="trigger" data-info="Dive In" onClick={ console.log("going down!") }>
+                                <span>Trigger</span>
+                            </button>
+                        </div>
+                    </NavigatorIntersectionObserver>
                     
                     <div id="DiveIn">
                         <div className="dive-in-content">

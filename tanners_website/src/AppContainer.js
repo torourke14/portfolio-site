@@ -28,13 +28,13 @@ function AppContainer({ location }) {
                     }/>
                     
                     <Route exact path="/about" children={({ match }) => (
-                        <AboutMeDrawer open={match ? true : false} />
+                        <AboutMeDrawer />
                     )}/>
                     <Route exact path="/skills" children={({ match }) => (
-                        <ExpSkillsDrawer open={match ? true : false} />
+                        <ExpSkillsDrawer />
                     )}/>
                     <Route exact path="/connect" children={({ match }) => (
-                        <ConnectDrawer open={match ? true : false} />
+                        <ConnectDrawer />
                     )}/>
 
                     <Route render={() =>
