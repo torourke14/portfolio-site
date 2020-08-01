@@ -15,11 +15,11 @@ import ConnectDrawer from './components/ConnectDrawer';
 
 function AppContainer({ location }) {
     return (
-        <div style={{transition: "margin-right 0.5s"}}>
+        <div id="backdrop">
         <TransitionGroup component={null}>
             <CSSTransition key={location.key} 
               classNames={'slide'}
-              timeout={{ enter: 300, exit: 200 }} 
+              timeout={{ enter: 400, exit: 300 }} 
             >
                 <section className="route-section">
                     <Switch location={location}>
