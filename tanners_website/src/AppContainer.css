@@ -1,10 +1,12 @@
 #backdrop {
-    background: linear-gradient(#2b3136 100%, #EEDDAA 25%, #F9F1DC 0%);
+    background: linear-gradient(#2b3136 100%, 
+        #EEDDAA 25%, 
+        #F9F1DC 0%
+    );
 }
 
 /* Entering Page - @START of Animation */
 .slide-enter {
-    opacity: 0.3;
     transform: translateX(100%);
     box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
 }

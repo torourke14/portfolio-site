@@ -1,10 +1,12 @@
 import React from 'react';
 import './FloatingNav.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+//import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+
+import scrollToComponent from 'react-scroll-to-component';
 
 class FloatingNav extends React.Component {
         constructor(props) {
@@ -17,6 +19,10 @@ class FloatingNav extends React.Component {
             this.openNav = this.openNav.bind(this);
             this.closeNav = this.closeNav.bind(this);
         }
+
+        /*componentDidMount() {
+            scrollToComponent
+        }*/
 
         static getDerivedStateFromProps(props, state) {
             console.log("derived:", props.deprecate);
@@ -58,7 +64,12 @@ class FloatingNav extends React.Component {
             return (
                 <div className="side-navigator">
                     <div className="landing" style={landingSidenavStyles}>
-                        <Link to="/">Home</Link>
+                        <a href="#Portfolio"
+                            onClick={() => scrollToComponent(this.pf, 
+                                { offset: 100, align: 'top', duration: 500 }
+                            )}>
+                            Portfolio
+                        </a>
                         <Link to="/about">About</Link>
                         <Link to='/skills'>Skills</Link>
                         <a href="#foot-master">Connect</a>
@@ -73,11 +84,11 @@ class FloatingNav extends React.Component {
                     </div>
                     <div className="pullout-open" >
                         <div className="navbar" style={openSidenavStyles}>
-                            <span><FontAwesomeIcon icon={ faTimes } size="2x" onClick={this.closeNav}/>
-                            </span>
-                            <Link to="/">Home</Link>
-                            <Link to="/about">About</Link>
-                            <Link to='/skills'>Skills</Link>
+                            <span><FontAwesomeIcon icon={ faTimesCircle } 
+                                size="2x" onClick={this.closeNav}/></span>
+                            <NavLink activeClassName="activeLinkLoc" to="/">Home</NavLink>
+                            <NavLink activeClassName="activeLinkLoc" to="/about">About</NavLink>
+                            <NavLink activeClassName="activeLinkLoc" to='/skills'>Skills</NavLink>
                             <a href="#foot-master">Connect</a>
                         </div>
                     </div>

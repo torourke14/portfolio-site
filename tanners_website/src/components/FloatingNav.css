@@ -99,8 +99,12 @@
     }
     .pullout-open .navbar span { color: white; }
 
-    .pullout-open .navbar a:hover {
+    .pullout-open .navbar *:hover {
         color: #EEDDAA;
+        transition: color 200ms linear;
+    }
+    .pullout-open .navbar .closebtn:hover {
+        transform: scale(1.1);
     }
     
     .pullout-open .navbar .closebtn {
@@ -109,6 +113,16 @@
         right: 32px;
         font-size: 2.25rem;
         margin-left: 50px;
+        cursor: pointer;
+    }
+    
+
+    /*--- Active Link Location --- */
+    .pullout-open .navbar .activeLinkLoc {
+        color: #EEDDAA;
+    }
+    .pullout-open .navbar .activeLinkLoc {
+        color: #E0BF00;
     }
     
     @media screen and (max-height: 450px) {

@@ -3,24 +3,15 @@ import React, { useState, useEffect } from 'react';
 import './Landing.css';
 import 'animate.css';
 
-import { Link } from "react-router-dom";
-
-//Images
-import linkedinIcon from '../images/linkedin-icon.png';
-import githubIcon from '../images/github-icon.png';
-import emailIcon from '../images/mail-icon.png';
-
-//Icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
-
 //Files
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
 // Pages
 import FloatingNav from '../components/FloatingNav';
 import Portfolio from "./Portfolio";
+
+import scrollToComponent from 'react-scroll-to-component';
+
 
 /* 
 * ===== TO ADD =====
@@ -44,6 +35,8 @@ class Landing extends React.Component {
             this.state = {
                 isAnimating: false
             }
+
+            this.portfolioRef = React.createRef();
         }
 
 
@@ -81,7 +74,7 @@ class Landing extends React.Component {
                         </div>
                     </div>
 
-                    <Portfolio />
+                    <Portfolio ref={this.portfolioRef}/>
                 
                 </div>
                 );
