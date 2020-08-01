@@ -18,12 +18,12 @@ function AppContainer({ location }) {
         <div style={{transition: "margin-right 0.5s"}}>
         <TransitionGroup component={null}>
             <CSSTransition key={location.key} 
-              classNames={'fade'}
+              classNames={'slide'}
               timeout={{ enter: 300, exit: 200 }} 
             >
                 <section className="route-section">
                     <Switch location={location}>
-                        <Route exact path="/" render={() =>
+                        <Route exact path="/"  render={() =>
                             <Landing />
                         }/>
                         <Route path="/about" children={({ match }) => (

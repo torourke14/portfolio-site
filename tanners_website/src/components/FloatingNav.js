@@ -58,6 +58,7 @@ class FloatingNav extends React.Component {
             return (
                 <div className="side-navigator">
                     <div className="landing" style={landingSidenavStyles}>
+                        <Link to="/">Home</Link>
                         <Link to="/about">About</Link>
                         <Link to='/skills'>Skills</Link>
                         <a href="#foot-master">Connect</a>
@@ -74,6 +75,7 @@ class FloatingNav extends React.Component {
                         <div className="navbar" style={openSidenavStyles}>
                             <span><FontAwesomeIcon icon={ faTimes } size="2x" onClick={this.closeNav}/>
                             </span>
+                            <Link to="/">Home</Link>
                             <Link to="/about">About</Link>
                             <Link to='/skills'>Skills</Link>
                             <a href="#foot-master">Connect</a>
