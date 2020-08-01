@@ -6,12 +6,14 @@ import linkedinIcon from '../images/linkedin-icon.png';
 import githubIcon from '../images/github-icon.png';
 import emailIcon from '../images/mail-icon.png';
 
+import FloatingNav from './FloatingNav';
+
 class AboutMeDrawer extends React.Component {
         
         render() {
                 return (
                 <div id='About' className="panel__AboutMe">
-
+                        <FloatingNav deprecate={true} />
                         <div id='AboutIntro'>
                                 <div id="banner">
                                         <h1>I am a Interface Designer and Software Developer from Seattle,&nbsp;WA.</h1>

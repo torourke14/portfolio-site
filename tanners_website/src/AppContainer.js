@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './AppContainer.css';
 
 // Packages
 import { Switch, Route, withRouter, useLocation } from "react-router-dom";
@@ -17,32 +17,31 @@ function AppContainer({ location }) {
     return (
         <div style={{transition: "margin-right 0.5s"}}>
         <TransitionGroup component={null}>
-
             <CSSTransition key={location.key} 
               classNames={'fade'}
               timeout={{ enter: 300, exit: 200 }} 
             >
-                <Switch location={location}>
-                    <Route path="/" render={() =>
-                        <Landing />
-                    }/>
-                    
-                    <Route exact path="/about" children={({ match }) => (
-                        <AboutMeDrawer />
-                    )}/>
-                    <Route exact path="/skills" children={({ match }) => (
-                        <ExpSkillsDrawer />
-                    )}/>
-                    <Route exact path="/connect" children={({ match }) => (
-                        <ConnectDrawer />
-                    )}/>
+                <section className="route-section">
+                    <Switch location={location}>
+                        <Route exact path="/" render={() =>
+                            <Landing />
+                        }/>
+                        <Route path="/about" children={({ match }) => (
+                            <AboutMeDrawer />
+                        )}/>
+                        <Route path="/skills" children={({ match }) => (
+                            <ExpSkillsDrawer />
+                        )}/>
+                        <Route path="/connect" children={({ match }) => (
+                            <ConnectDrawer />
+                        )}/>
 
-                    <Route render={() =>
-                        <div><NoMatch/></div>
-                    }/>
-                </Switch>
+                        <Route children={() =>
+                            <NoMatch/>
+                        }/>
+                    </Switch>
+                </section>
             </CSSTransition>
-
         </TransitionGroup>
         </div>
     );

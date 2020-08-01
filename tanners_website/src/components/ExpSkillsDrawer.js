@@ -1,10 +1,15 @@
 import React from 'react';
 import './ExpSkillsDrawer.css';
 
+import FloatingNav from './FloatingNav';
+
+
+
 class ExpSkillsDrawer extends React.Component {
         render() {
                 return (
                         <div id="Skills" className="panel__Skills">
+                                <FloatingNav deprecate={true} />
                                 <div className='col-1'>
                                         <div id="skills-title">
                                                 <p>My<br/><span>Skills</span></p>

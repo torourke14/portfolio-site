@@ -65,9 +65,9 @@ class FloatingNav extends React.Component {
 
                     <div className="pullout-closed" style={closedSidenavStyles}>
                         <div>
-                        <span className="three-bars">
+                            <span className="three-bars">
                                 <FontAwesomeIcon icon={faBars} size="2x" onClick={this.openNav}/>
-                        </span>
+                            </span>
                         </div>
                     </div>
                     <div className="pullout-open" >
