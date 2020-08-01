@@ -32,81 +32,139 @@
         /*& NEW stack-context*/
         top: 20vh;
         left: 10%;
-        width: 50%;
+        width: 40%;
         color: #2B3136;
         overflow-x: visible;
+    }
+        .callout-container h1 {
+            line-height: 1.25em; /*to sit at level of img */
+            max-width: 100%;
+            word-break: normal;
         }
-        
-        .rotating-text {
-        
+
+        .rotating-words-wrap {
+            padding-top: 20vh;
         }
-            .rotating-text h1 {
-                line-height: 1.25em; /*to sit at level of img */
-                max-width: 100%;
-                word-break: normal;
+            .rw-sentence { /*h2*/
+                text-align: left;
+                text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+                line-height: 4rem;
             }
-            .rotating-text h2 { 
-                padding-top: 8rem; 
-            }
-            .rotating-text h2::before {
-                content: "Design \A";
+            .rw-sentence span {
+                white-space: nowrap;
                 font-weight: normal;
-                white-space: pre;
             }
-            .rotating-text h2::after {
-                content: "\A Developer";
-                font-weight: bold;
-                white-space: pre;
+            .rw-words {
+                display: inline;
+                text-indent: 10px;
             }
-    
-
-        .img-container {
-            position: absolute; z-index: 5;  
-            /*& NEW stack-context*/
-            top: 0; right: 0;
-            width: 100%; /*..parent dims*/
-            height: 100%;
-        }
-            .hero-img { 
+            .rw-words span{
                 position: absolute;
+                opacity: 0;
+                overflow: hidden;
+                width: 100%;
+                color: #F9F1DC;
+                -webkit-animation: rotateWords 18s linear infinite 0s;
+                animation: rotateWords 18s linear infinite 0s;
+                
+                -webkit-transform-origin: 10% 75%;
+                transform-origin: 10% 75%;
             }
+                .rw-words span:nth-child(2) { 
+                    -webkit-animation-delay: 3s; 
+	                -ms-animation-delay: 3s; 
+                    animation-delay: 3s; 
+                    color: #6b889d;
+                }
+                .rw-words span:nth-child(3) { 
+                    -webkit-animation-delay: 3s; 
+	                -ms-animation-delay: 3s; 
+                    animation-delay: 6s; 
+                    color: #6b739d;	
+                }
+                .rw-words span:nth-child(4) { 
+                    -webkit-animation-delay: 3s; 
+	                -ms-animation-delay: 3s; 
+                    animation-delay: 9s; 
+                    color: #7a6b9d;
+                }
+                .rw-words span:nth-child(5) { 
+                    -webkit-animation-delay: 3s; 
+	                -ms-animation-delay: 3s; 
+                    animation-delay: 12s; 
+                    color: #8d6b9d;
+                }
+                @keyframes rotateWords {
+                    0%   { opacity: 0; /*animation-timing-function: ease-in;*/ }
+                    10%  { opacity: 1; }
+                    
+                    17% { opacity: 1; -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+                    19% { opacity: 1; -webkit-transform: rotate(98deg); transform: rotate(98deg); }
+                    21% { opacity: 1; -webkit-transform: rotate(86deg); transform: rotate(86deg); }
+                    23% { opacity: 1; -webkit-transform: translateY(85px) rotate(83deg); transform: translateY(85px) rotate(83deg); }
+                    25% { opacity: 0; -webkit-transform: translateY(170px) rotate(80deg); transform: translateY(170px) rotate(80deg); } 
 
-            .hero-img.pre {
-                width: 22.5%;
-                padding-top: 22.5%; 
-                /*.. Padding/Width MUST be same to maintain aspect ratio*/
-                top: 32.5vh;
-                right: 12.5vw;
-                background-color: blue;
-                /*background-image: url('../images/linkedin-icon.png');*/
-                background-repeat: no-repeat;
-                background-size: contain;
-                object-fit: contain;
-            }
-            .hero-img.main {
-                width: 30%;
-                padding-top: 30%; 
-                /*.. MUST be same to maintain aspect ratio*/
-                right: 15vw;
-                top: 40vh;
-                background-color: yellow;
-                /*background-image: url('../images/mail-icon.png');*/
-                background-repeat: no-repeat;
-                background-size: contain;
-                object-fit: contain;
-            }
-            .hero-img.post {
-                width: 15%;
-                padding-top: 15%;  
-                /*.. MUST be same to maintain aspect ratio*/
-                right: 37.5vw;
-                top: 52.5vh;
-                background-color: orange;
-                /*background-image: url('../images/github-icon.png');*/
-                background-repeat: no-repeat;
-                background-size: contain;
-                object-fit: contain;
-            }
+                    80%  { opacity: 0; }
+                    100% { opacity: 0; }
+                }
+                /* timing-function ease-in 
+                @-webkit-keyframes rotateWord {
+                    0% { opacity: 0; }
+                    2% { opacity: 0; -webkit-transform: translateY(-30px); }
+                    5% { opacity: 1; -webkit-transform: translateY(0px);}
+                    17% { opacity: 1; -webkit-transform: translateY(0px); }
+                    20% { opacity: 0; -webkit-transform: translateY(30px); }
+                    80% { opacity: 0; }
+                    100% { opacity: 0; }
+                }*/
+
+    .img-container {
+        position: absolute; z-index: 5;  
+        /*& NEW stack-context*/
+        top: 0; right: 0;
+        width: 100%; /*..parent dims*/
+        height: 100%;
+    }
+        .hero-img { 
+            position: absolute;
+        }
+
+        .hero-img.pre {
+            width: 22.5%;
+            padding-top: 22.5%; 
+            /*.. Padding/Width MUST be same to maintain aspect ratio*/
+            top: 32.5vh;
+            right: 12.5vw;
+            background-color: blue;
+            /*background-image: url('../images/linkedin-icon.png');*/
+            background-repeat: no-repeat;
+            background-size: contain;
+            object-fit: contain;
+        }
+        .hero-img.main {
+            width: 30%;
+            padding-top: 30%; 
+            /*.. MUST be same to maintain aspect ratio*/
+            right: 15vw;
+            top: 40vh;
+            background-color: yellow;
+            /*background-image: url('../images/mail-icon.png');*/
+            background-repeat: no-repeat;
+            background-size: contain;
+            object-fit: contain;
+        }
+        .hero-img.post {
+            width: 15%;
+            padding-top: 15%;  
+            /*.. MUST be same to maintain aspect ratio*/
+            right: 37.5vw;
+            top: 52.5vh;
+            background-color: orange;
+            /*background-image: url('../images/github-icon.png');*/
+            background-repeat: no-repeat;
+            background-size: contain;
+            object-fit: contain;
+        }
 
             
 /* ==== download button === */
@@ -224,7 +282,7 @@
     height: 100%;
     background: #2B3136;
     color: #EEDDAA;
-    position: relative; z-index: -1;
+    position: relative;
 }
 
     .dive-in-content {

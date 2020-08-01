@@ -15,12 +15,11 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 /* 
 * ===== TO ADD =====
-* -- underline all hyperlinks/links
+* -- DONE underline all hyperlinks/links
         -- different colors for links, etc (reduce uncertainty)
         -- static elements should be diff. color than hyperlinks
 * -- arrows on TOC links
-* -- gradients?? solid lines??
-*
+====================
 */
 
 // <h5>My life of composing software apps &&nbsp;user-driven interfaces.</h4>
@@ -47,11 +46,21 @@ class Landing extends React.Component {
                         <div id="landing-container">
                             <div id="landing-content">
                                 <div className="callout-container">
-                                    <div className="rotating-text">
-                                        <span>
-                                            <h1>- Hi;</h1><h1>I'm&nbsp;Tanner.</h1>
-                                        </span>
-                                        <h2><b>Driven</b></h2>
+                                    <h1>- Hi;</h1><h1>I'm&nbsp;Tanner.</h1>
+
+                                    <div className="rotating-words-wrap">
+                                    <h2 className="rw-sentence">
+                                        <span>I specialize in</span>
+                                        
+                                        <div class="rw-words">
+                                            <span>designing</span>
+                                            <span>building</span>
+                                            <span>developing</span>
+                                            <span>stylizing</span>
+                                            <span>managing</span>
+                                        </div>
+                                        <span><br/>User-Facing Interfaces</span>
+                                    </h2>
                                     </div>
                                 </div>
                                 <HeroImgGallery />

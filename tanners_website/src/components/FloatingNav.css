@@ -24,15 +24,14 @@
         text-align: right;
         padding-bottom: 0.9rem;
         text-decoration: none;
-        text-decoration-color: #2E5900;
         font-size: 0.9rem;
         color: #111;
         cursor: pointer;
     }
     .side-navigator .landing a:hover {
-        text-decoration: underline;
-        text-decoration-color: #2E5900;
-        transition: all 1000ms linear;
+        text-decoration: underline #2E5900;
+        transition: 0.5s ease-in-out;
+        margin-right: 4px;
     }
 
     
