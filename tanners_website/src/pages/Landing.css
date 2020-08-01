@@ -2,7 +2,7 @@
 
 
 /* Hero Image Styling */
-#hero-container {
+#landing-container {
     /*opacity: 0; position: absolute */
     /* !!!! Take away once works dev finished */
     background-color: #EEDDAA;
@@ -13,9 +13,11 @@
     margin: 0 auto;
     overflow: hidden;
 }
-#content-container {
+#landing-content {
     word-wrap: break-word;
     min-height: 100vh;
+    height: 100%;
+    
 }
 
     /* Global styling */
@@ -64,7 +66,7 @@
                 position: absolute;
             }
 
-            .pre {
+            .hero-img.pre {
                 width: 25%;
                 padding-top: 25%; 
                 /*.. MUST be same to maintain aspect ratio*/
@@ -76,7 +78,7 @@
                 background-size: contain;
                 object-fit: contain;
             }
-            .main {
+            .hero-img.main {
                 width: 35%;
                 padding-top: 35%; 
                 /*.. MUST be same to maintain aspect ratio*/
@@ -88,7 +90,7 @@
                 background-size: contain;
                 object-fit: contain;
             }
-            .post {
+            .hero-img.post {
                 width: 15%;
                 padding-top: 15%;  
                 /*.. MUST be same to maintain aspect ratio*/
@@ -102,111 +104,111 @@
             }
 
             
-        /* ==== download button === */
-        #resume-dl {
-            position: absolute;
-                z-index: 10; 
-            top: 32px;
-            right: 32px;
-        }
-        .dl-button {
-            height: 48px;
-            display: inline-block; 
-            border: 4px solid #003F7A;
-            border-radius: 4px;
-            font-size: 1em;
-            font-weight: 500;
-            text-align: center;
-            text-decoration: none;
-            color: #003F7A;
-            overflow: hidden;
-            transition: transform 1s;
-            }
-            .dl-button .icon { 
-                margin-right: 6px;
-            }
-            .dl-button .bt-front,
-            .dl-button .bt-back {
-                display: block;
-                padding: 0 24px;
-                line-height: 42px;
-                transition: margin 0.5s ease-out 0.2s;
-            }
-            .dl-button .bt-front {
-                background-color: #003F7A;
-                color: #e0e0e0;
-            }
-            /* Animations */
-            .dl-button:hover .bt-front { 
-                margin-top: -42px; /* = --height - borders [6px] */
-            }
-            .dl-button:hover {
-                transform: scale(1.05);
-                -ms-transform: scale(1.05);
-                -webkit-transform: scale(1.05);
-            }
-
-    /* Down Scroll button */
-    button.trigger {
-        position: fixed;
-        bottom: 40px;
-        left: 50%;
-        z-index: 5000;
-        display: block;
-        margin-left: -0.5em;
-        padding: 0;
-        width: 1em;
-        height: 1em;
-        border: none;
-        background: transparent;
-        color: transparent;
-        font-size: 2em;
-        cursor: pointer;
-        }
-    .container:not(.notrans) button.trigger {
-        -webkit-transition: opacity 0.3s 0.5s;
-        transition: opacity 0.3s 0.5s;
+/* ==== download button === */
+    #resume-dl {
+        position: absolute;
+            z-index: 10; 
+        top: 32px;
+        right: 32px;
     }
-        button.trigger::before {
-            position: absolute;
-            bottom: 100%;
-            left: -100%;
-            padding: 0.8em;
-            width: 300%;
-            color: #fff;
-            content: attr(data-info);
-            font-size: 0.35em;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    .dl-button {
+        height: 48px;
+        display: inline-block; 
+        border: 4px solid #003F7A;
+        border-radius: 4px;
+        font-size: 1em;
+        font-weight: 500;
+        text-align: center;
+        text-decoration: none;
+        color: #003F7A;
+        overflow: hidden;
+        transition: transform 1s;
         }
-        button.trigger:focus {
-            outline: none;
+        .dl-button .icon { 
+            margin-right: 6px;
         }
-        button.trigger span {
-            position: relative;
+        .dl-button .bt-front,
+        .dl-button .bt-back {
             display: block;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            }
-            button.trigger span::before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                color: #fff;
-                content: "\e097";
-                text-transform: none;
-                font-weight: normal;
-                font-style: normal;
-                font-variant: normal;
-                font-family: 'icomoon';
-                line-height: 1;
-                speak: none;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
+            padding: 0 24px;
+            line-height: 42px;
+            transition: margin 0.5s ease-out 0.2s;
+        }
+        .dl-button .bt-front {
+            background-color: #003F7A;
+            color: #e0e0e0;
+        }
+        /* Animations */
+        .dl-button:hover .bt-front { 
+            margin-top: -42px; /* = --height - borders [6px] */
+        }
+        .dl-button:hover {
+            transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+        }
+
+/* === Down Scroll button === */
+.linkDown {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    padding-top: 40px;
+    bottom: 40px;
+}
+.landingLinkBox {
+    position: relative;
+    z-index: 1000;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -60px;
+    display: block; /*inline-block*/
+    font-size: 26px;
+    color: #2b3136;
+    text-align: center;
+    width: 160px;
+    height: 70px;
+    line-height: 60px;
+    border: 5px solid #2b3136;
+    overflow: hidden;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: width 0.5s ease-in-out,
+            margin 0.5s ease-in-out,
+            border-radius 0.25s ease-in-out
+            color 0.25s ease-in-out;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 1000;
+    overflow: hidden;
+    display: inline-block;
+    color: #2b3136;
+    top: -50%;
+    left: calc(50% - 11.3px); /*quick fix*/
+    transform: translate(50%, -50%);
+    margin-top: -6px;
+}
+
+.landingLinkBox:hover {
+    width: 70px;
+    margin-left: -30px;
+    border-radius: 50px;
+    color: rgba(43, 49, 54, 0); /*#2b3136*/
+    transition: width 0.5s ease-in-out,
+            margin 0.5s ease-in-out,
+            border-radius 0.25s ease-in-out,
+            color 0.25s ease-in-out 0.25s;
+    }
+    .landingLinkBox:hover .arrow {
+        animation: arrowDown 1s cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite 0.5s;
+    }
+
+    @keyframes arrowDown {
+        0%   { transform: translateY(70px); }
+        100% { transform: translateY(-50px); }
+    }
 /* end ----- */
 
 
@@ -242,85 +244,6 @@
             font-family: 'Arial Black', serif; 
             /*padding: 96px 0 0 5%;*/
         }
-        
-/* arrow
-#arrow-container {
-        position: relative; z-index: 20;
-        // NEW stack-context
-        width: 100px;
-        height: 100px;
-        left: 25%;
-        bottom: 25%;
-        margin: 0;
-        cursor: pointer; 
-        }
-        
-        .arrow-1 {
-            width: 100px;
-            height: 100px;
-            background: #006064;
-            opacity: 0.5;
-            border-radius: 50%;
-           
-        }
-        .arrow-2 {
-            width: 60px;
-            height: 60px;
-            background: #00BCD4;
-            border-radius: 50%;
-            position: absolute;
-            
-            top: 20px; 
-            left: 20px;
-            display: table;
-            }
-            
-            .arrow-2:before { 
-                width: 52px;
-                height: 52px;
-                content: '';
-                border: 2px solid #006064;
-                border-radius: 50%;
-                position: absolute;
-                top: 2px;
-                left: 2px;
-            }
-            .arrow-2 .fa {
-                font-size: 2em;
-                display: table-cell;
-                vertical-align: middle;
-                text-align: center;
-                color: #006064;
-            }
-            
-            .animate__animated.animate__hinge {
-                -webkit-animation-duration: 2s;
-                animation-duration: 2s;
-            }
-            .animate__zoomIn {
-                -webkit-animation-name: zoomIn;
-                animation-name: zoomIn;
-            }
-            @-webkit-keyframes zoomIn {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: scale3d(.4, .4, .4);
-                            transform: scale3d(.4, .4, .4);
-                }
-                50% { opacity: 0.5; }
-                100% { opacity: 1; }
-            }
-            @keyframes zoomIn {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: scale3d(.4, .4, .4);
-                            transform: scale3d(.4, .4, .4);
-                }
-                50% { opacity: 0.5; }
-                100% { opacity: 1; }
-            }
-*/
-
 
 /* ===== My Works Styling ===== */
 /*#WorksIntro {

@@ -2,16 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import './Landing.css';
 import 'animate.css';
+import scrollToComponent from 'react-scroll-to-component';
 
-//Files
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
 // Pages
 import FloatingNav from '../components/FloatingNav';
 import Portfolio from "./Portfolio";
 
-import scrollToComponent from 'react-scroll-to-component';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 /* 
 * ===== TO ADD =====
@@ -44,20 +44,27 @@ class Landing extends React.Component {
                 return (
                 <div id="Landing" className="panel__Landing">
                     <NavigatorIntersectionObserver>
-                        <div id="hero-container">
-                            <div id="content-container">
+                        <div id="landing-container">
+                            <div id="landing-content">
                                 <div className="callout-container">
                                     <div className="rotating-text">
-                                        <h1>- Hi; I'm Tanner.</h1>
+                                        <h1>- Hi; I'm&nbsp;Tanner.</h1>
                                         <h2><b>Driven</b></h2>
                                     </div>
                                 </div>
                                 <HeroImgGallery />
                             </div>
                         
-                            <button class="trigger" data-info="Dive In" onClick={ console.log("going down!") }>
-                                <span>Trigger</span>
-                            </button>
+                            <div className="linkDown">
+                                <span className="landingLinkBox" 
+                                    onClick={ console.log("going down!") }>
+                                    My Work
+                                    <span className="arrow">
+                                    <FontAwesomeIcon icon={faArrowDown} />
+                                </span>
+                                </span>
+                                
+                            </div>
                         </div>
                     </NavigatorIntersectionObserver>
                     
@@ -83,22 +90,22 @@ class Landing extends React.Component {
 
 /*
 <img className="hero-img pre" src={linkedinIcon} alt="" />
-                        <img className="hero-img main" src={githubIcon} alt="" />
-                        <img className="hero-img main" src={emailIcon} alt="" />
+<img className="hero-img main" src={githubIcon} alt="" />
+<img className="hero-img main" src={emailIcon} alt="" />
 */
 
 
 function HeroImgGallery() {
-        /*var id = setInterval(() => Switch, 5);
-        function Switch() {
-        }*/
-        return (
-                <div className="img-container">
-                        <div className="hero-img pre"/>
-                        <div className="hero-img post"/>
-                        <div className="hero-img main"/> 
-                </div>
-        );
+    /*var id = setInterval(() => Switch, 5);
+    function Switch() {
+    }*/
+    return (
+        <div className="img-container">
+                <div className="hero-img pre"/>
+                <div className="hero-img post"/>
+                <div className="hero-img main"/> 
+        </div>
+    );
 }
 
 /* ===============================
