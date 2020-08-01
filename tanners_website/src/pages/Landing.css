@@ -7,9 +7,9 @@
     /* !!!! Take away once works dev finished */
     background-color: #EEDDAA;
     position: relative;
-    min-height: 100vh; 
+    height: 100vh; 
+    min-height: 100%;
     width: 100%;
-    height: 100%;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -30,7 +30,7 @@
     .callout-container {
         position: absolute; z-index: 10;
         /*& NEW stack-context*/
-        top: 30vh;
+        top: 20vh;
         left: 10%;
         width: 50%;
         color: #2B3136;
@@ -40,8 +40,13 @@
         .rotating-text {
         
         }
+            .rotating-text h1 {
+                line-height: 1.25em; /*to sit at level of img */
+                max-width: 100%;
+                word-break: normal;
+            }
             .rotating-text h2 { 
-                padding-top: 4rem; 
+                padding-top: 8rem; 
             }
             .rotating-text h2::before {
                 content: "Design \A";
@@ -67,11 +72,11 @@
             }
 
             .hero-img.pre {
-                width: 25%;
-                padding-top: 25%; 
-                /*.. MUST be same to maintain aspect ratio*/
-                top: 25%;
-                right: 10%;
+                width: 22.5%;
+                padding-top: 22.5%; 
+                /*.. Padding/Width MUST be same to maintain aspect ratio*/
+                top: 32.5vh;
+                right: 12.5vw;
                 background-color: blue;
                 /*background-image: url('../images/linkedin-icon.png');*/
                 background-repeat: no-repeat;
@@ -79,11 +84,11 @@
                 object-fit: contain;
             }
             .hero-img.main {
-                width: 35%;
-                padding-top: 35%; 
+                width: 30%;
+                padding-top: 30%; 
                 /*.. MUST be same to maintain aspect ratio*/
-                right: 15%;
-                top: 35%;
+                right: 15vw;
+                top: 40vh;
                 background-color: yellow;
                 /*background-image: url('../images/mail-icon.png');*/
                 background-repeat: no-repeat;
@@ -94,8 +99,8 @@
                 width: 15%;
                 padding-top: 15%;  
                 /*.. MUST be same to maintain aspect ratio*/
-                right: 45%;
-                top: 57.5%;
+                right: 37.5vw;
+                top: 52.5vh;
                 background-color: orange;
                 /*background-image: url('../images/github-icon.png');*/
                 background-repeat: no-repeat;
@@ -152,9 +157,8 @@
 .linkDown {
     position: relative;
     width: 100%;
-    min-height: 100px;
-    padding-top: 40px;
-    bottom: 40px;
+    height: 100px;
+    bottom: 80px;
 }
 .landingLinkBox {
     position: relative;
@@ -172,6 +176,7 @@
     border: 5px solid #2b3136;
     overflow: hidden;
     text-transform: uppercase;
+    text-decoration: underline #2b3136;
     cursor: pointer;
     transition: width 0.5s ease-in-out,
             margin 0.5s ease-in-out,
@@ -195,6 +200,7 @@
     width: 70px;
     margin-left: -30px;
     border-radius: 50px;
+    text-decoration: none;
     color: rgba(43, 49, 54, 0); /*#2b3136*/
     transition: width 0.5s ease-in-out,
             margin 0.5s ease-in-out,
@@ -206,8 +212,8 @@
     }
 
     @keyframes arrowDown {
-        0%   { transform: translateY(70px); }
-        100% { transform: translateY(-50px); }
+        0%   { transform: translateY(-50px); }
+        100% { transform: translateY(70px); }
     }
 /* end ----- */
 

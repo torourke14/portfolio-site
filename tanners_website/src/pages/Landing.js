@@ -48,7 +48,9 @@ class Landing extends React.Component {
                             <div id="landing-content">
                                 <div className="callout-container">
                                     <div className="rotating-text">
-                                        <h1>- Hi; I'm&nbsp;Tanner.</h1>
+                                        <span>
+                                            <h1>- Hi;</h1><h1>I'm&nbsp;Tanner.</h1>
+                                        </span>
                                         <h2><b>Driven</b></h2>
                                     </div>
                                 </div>
@@ -60,10 +62,9 @@ class Landing extends React.Component {
                                     onClick={ console.log("going down!") }>
                                     My Work
                                     <span className="arrow">
-                                    <FontAwesomeIcon icon={faArrowDown} />
+                                        <FontAwesomeIcon icon={faArrowDown} />
+                                    </span>
                                 </span>
-                                </span>
-                                
                             </div>
                         </div>
                     </NavigatorIntersectionObserver>

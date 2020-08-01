@@ -56,7 +56,7 @@ class FloatingNav extends React.Component {
                 transitionDuration: "0.4s", transitionDelay: "0.25s"
             };
             let openSidenavStyles = {
-                width: (deprecated && this.state.sidenavOpen) ? ("30vw") : ("0"),
+                width: (deprecated && this.state.sidenavOpen) ? ("100%") : ("0"),
                 transition: "width 0.5s linear",
                 transitionDuration: "0.4s", transitionDelay: "0.25s"
             };
@@ -82,7 +82,7 @@ class FloatingNav extends React.Component {
                             </span>
                         </div>
                     </div>
-                    <div className="pullout-open" >
+                    <div className="pullout-open">
                         <div className="navbar" style={openSidenavStyles}>
                             <span><FontAwesomeIcon icon={ faTimesCircle } 
                                 size="2x" onClick={this.closeNav}/></span>
