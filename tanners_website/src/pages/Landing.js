@@ -5,13 +5,14 @@ import 'animate.css';
 import scrollToComponent from 'react-scroll-to-component';
 
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
-
 // Pages
 import FloatingNav from '../components/FloatingNav';
 import Portfolio from "./Portfolio";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+
 
 /* 
 * ===== TO ADD =====
@@ -21,9 +22,6 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 * -- arrows on TOC links
 ====================
 */
-
-// <h5>My life of composing software apps &&nbsp;user-driven interfaces.</h4>
-// <h6>(among other menagerie)</h6>
 
 //font-family: 'Raleway', Arial, sans-serif;
 
@@ -35,7 +33,7 @@ class Landing extends React.Component {
                 isAnimating: false
             }
 
-            this.portfolioRef = React.createRef();
+            this.pfRef = React.createRef();
         }
 
 
@@ -50,7 +48,7 @@ class Landing extends React.Component {
 
                                     <div className="rotating-words-wrap">
                                     <h2 className="rw-sentence">
-                                        <span>I specialize in</span>
+                                        <span>Welcome to my life of</span>
                                         
                                         <div class="rw-words">
                                             <span>designing</span>
@@ -59,7 +57,7 @@ class Landing extends React.Component {
                                             <span>stylizing</span>
                                             <span>managing</span>
                                         </div>
-                                        <span><br/>User-Facing Interfaces</span>
+                                        <span>User-Driven Interfaces</span>
                                     </h2>
                                     </div>
                                 </div>
@@ -69,7 +67,7 @@ class Landing extends React.Component {
                             <div className="linkDown">
                                 <span className="landingLinkBox" 
                                     onClick={ console.log("going down!") }>
-                                    My Work
+                                    See
                                     <span className="arrow">
                                         <FontAwesomeIcon icon={faArrowDown} />
                                     </span>
@@ -91,20 +89,16 @@ class Landing extends React.Component {
                         </div>
                     </div>
 
-                    <Portfolio ref={this.portfolioRef}/>
-                
+                    <Portfolio ref={(div) => { this.pfRef = div}}/>
                 </div>
                 );
         }
 }
-
 /*
 <img className="hero-img pre" src={linkedinIcon} alt="" />
 <img className="hero-img main" src={githubIcon} alt="" />
 <img className="hero-img main" src={emailIcon} alt="" />
 */
-
-
 function HeroImgGallery() {
     /*var id = setInterval(() => Switch, 5);
     function Switch() {
@@ -140,7 +134,7 @@ function NavigatorIntersectionObserver({ children, sticky=false, className, ...r
     
     return (
         <div className={(isScrolled ? "deprecate" : "")} ref={ref} {...rest}>
-            <FloatingNav deprecate={isScrolled ? true : false} />
+            <FloatingNav deprecate={isScrolled ? true : false} /*ref={pfRef}*//>
             {children}
         </div>
     );

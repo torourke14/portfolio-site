@@ -5,8 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-import scrollToComponent from 'react-scroll-to-component';
+import Resume from '../files/Resume__Tanner-ORourke.pdf';
+
+import scrollToComponent from "react-scroll-to-component";
 
 class FloatingNav extends React.Component {
         constructor(props) {
@@ -60,15 +63,17 @@ class FloatingNav extends React.Component {
                 transition: "width 0.5s linear",
                 transitionDuration: "0.4s", transitionDelay: "0.25s"
             };
-
+            // Tanner
+                // Who? (to About slideout)
+            // About 
+                // Skills (to Skills pullout)
+            // Work
+            // Connect
             return (
                 <div className="side-navigator">
                     <div className="landing" style={landingSidenavStyles}>
-                        <a href="#Portfolio"
-                            onClick={() => scrollToComponent(this.pf, 
-                                { offset: 100, align: 'top', duration: 500 }
-                            )}>
-                            Portfolio
+                        <a href="about">
+                            Port
                         </a>
                         <Link to="/about">About</Link>
                         <Link to='/skills'>Skills</Link>
@@ -85,11 +90,24 @@ class FloatingNav extends React.Component {
                     <div className="pullout-open">
                         <div className="navbar" style={openSidenavStyles}>
                             <span><FontAwesomeIcon icon={ faTimesCircle } 
-                                size="2x" onClick={this.closeNav}/></span>
+                                size="2x" onClick={this.closeNav}/>
+                            </span>
                             <NavLink activeClassName="activeLinkLoc" to="/">Home</NavLink>
                             <NavLink activeClassName="activeLinkLoc" to="/about">About</NavLink>
                             <NavLink activeClassName="activeLinkLoc" to='/skills'>Skills</NavLink>
                             <a href="#foot-master">Connect</a>
+
+                            <div>
+                            <a id="sidenav-res-dl" className="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
+                                    <div className="bt-front">
+                                            <span className="icon"><FontAwesomeIcon icon={faDownload}/></span>
+                                            Resume
+                                    </div>
+                                    <div className="bt-back">
+                                            <span>Size: 179 kb</span>
+                                    </div>
+                            </a> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,13 +119,4 @@ export default FloatingNav;
 
 
 /*
-<a id="resume-dl" className="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
-                                        <div className="bt-front">
-                                                <span className="icon"><FontAwesomeIcon icon={faDownload}/></span>
-                                                Resume
-                                        </div>
-                                        <div className="bt-back">
-                                                <span>Size: 179 kb</span>
-                                        </div>
-                                </a> 
 */

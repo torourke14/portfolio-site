@@ -11,8 +11,8 @@
 }
 
 
-/* --- Un-deprecated navigation, 
-    displayed on landing --- */
+/* --- Un-deprecated navigation 
+    (displayed on landing) --- */
 .side-navigator .landing {
     position: fixed;
     top: 32px;
@@ -120,7 +120,17 @@
         cursor: pointer;
     }
     
+    #sidenav-res-dl {
+        position: absolute;
+            z-index: 10; 
+        bottom: 24px;
+        left: 0;
 
+        padding: initial;
+        font-size: initial;
+        display: initial;
+        text-align: initial;
+    }
     /*--- Active Link Location --- */
     .pullout-open .navbar .activeLinkLoc {
         color: #EEDDAA;

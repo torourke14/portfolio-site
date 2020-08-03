@@ -47,15 +47,11 @@ function AppContainer({ location }) {
     );
 }
 
-
 function NoMatch() {
     let location = useLocation();
     return (
-        <div>
-            <h3>No match for <code>{location.pathname}</code></h3>
-        </div>
+        <div><h3>No match for <code>{location.pathname}</code></h3></div>
     );
 }
-
 
 export default withRouter(AppContainer);
