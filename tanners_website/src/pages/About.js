@@ -2,10 +2,17 @@ import React from 'react';
 import './About.css';
 import { Link } from 'react-router-dom';
 
+
+import FloatingNav from '../components/FloatingNav';
+
+
+
+
 class About extends React.Component {
     render() {
         return (
             <section id="About" className="panel__About">
+                <FloatingNav />
                 <div className="about-content">
                     <div className="about-intro-para">
                         <h2>I am</h2>
@@ -27,7 +34,7 @@ class About extends React.Component {
                 </div>
                 <div className="about-more-content">
                     <span>
-                        <Link to="/about">
+                        <Link to="/me">
                             <h3>Learn more about this guy</h3>
                         </Link>
                     </span>

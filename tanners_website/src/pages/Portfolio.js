@@ -6,7 +6,7 @@ import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
-
+import FloatingNav from '../components/FloatingNav';
 
 class Portfolio extends React.Component {
         constructor(props) {
@@ -23,19 +23,20 @@ class Portfolio extends React.Component {
 
         positionOnMouseMove = e => {
             const projects = this.projectRef.current;
-            console.log(projects);
+            //console.log(projects);
             let relX = e.offsetX / window.innerWidth;
             let relY = e.offsetY / window.innerHeight;
 
             //this.refs.projectRef.
             //current.style.margin = relX + "vh";
-            //console.log(relX, relY);
+            console.log(relX, relY);
         };
 
         /* MAYBE add function to show active open project */
         render() {
                 return (
-                        <section id="Portfolio" className="panel__Portfolio">         
+                        <section id="Portfolio" className="panel__Portfolio">   
+                            <FloatingNav />      
                             <div className="portfolio-header">
                                 My Work.
                             </div>

@@ -6,12 +6,11 @@ import scrollToComponent from 'react-scroll-to-component';
 
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 // Pages
-import FloatingNav from '../components/FloatingNav';
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+
+import FloatingNav from '../components/FloatingNav';
 
 
 /* 

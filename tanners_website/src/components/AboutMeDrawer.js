@@ -10,13 +10,16 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
+
+
 class AboutMeDrawer extends React.Component {
         
         render() {
                 return (
                 <div id='About_MeDrawer'>
+
                         <div className="aboutme-back-button">
-                            <Link to='/'>
+                            <Link to='/about'>
                                 <FontAwesomeIcon icon={ faTimesCircle } size="2x" />
                             </Link>
                         </div>

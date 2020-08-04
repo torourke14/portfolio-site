@@ -26,19 +26,25 @@ function AppContainer({ location }) {
                     <section className="route-section">
                         <Switch location={location}>
                             <Route exact path="/"  render={() =>
-                                <div>
                                     <Landing />
-                                    <About />
-                                    <Portfolio />
-                                    <ConnectFoot />
-                                </div>
                             }/>
                             <Route path="/about" children={({ match }) => (
-                                <AboutMeDrawer />
+                                    <About />
+                            )}/>
+                            <Route path="/portfolio" children={({ match }) => (
+                                    <Portfolio />
+                            )}/>
+                            <Route path="/connect" children={({ match }) => (
+                                    <ConnectFoot />
+                            )}/>
+
+                            <Route path="/me" children={({ match }) => (
+                                    <AboutMeDrawer />
                             )}/>
                             <Route path="/skills" children={({ match }) => (
-                                <ExpSkillsDrawer />
+                                    <ExpSkillsDrawer />
                             )}/>
+
 
                             <Route children={() =>
                                 <NoMatch/>

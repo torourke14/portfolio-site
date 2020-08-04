@@ -8,12 +8,14 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAtlas } from "@fortawesome/free-solid-svg-icons";
 
+import FloatingNav from '../components/FloatingNav';
 
 class ConnectFoot extends React.Component {
         
     render() {
         return (
             <section id="ConnectFoot" className="panel__ConnectFoot">
+                <FloatingNav />
                     <div className="foot-callout-bg">
                         <div className="foot-bg-gif">
                             <video src="https://media.giphy.com/media/3owzVYk3A2E572jRSM/source.mp4" alt="" autoPlay={true} loop={true} />
