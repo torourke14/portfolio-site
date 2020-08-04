@@ -16,14 +16,14 @@ class ConnectFoot extends React.Component {
             <section id="ConnectFoot" className="panel__ConnectFoot">
                     <div className="foot-callout-bg">
                         <div className="foot-bg-gif">
-                            <img src="https://media.giphy.com/media/3owzVYk3A2E572jRSM/source.mp4" alt="" />
+                            <video src="https://media.giphy.com/media/3owzVYk3A2E572jRSM/source.mp4" alt="" autoPlay={true} loop={true} />
                         </div>
                         <div className="foot-callout">
-                            <h2>Seen enough?</h2>
+                            <h2>Connect With Me</h2>
                         </div>
                         <div className="foot-links">
                             <span>
-                                <span>Find Me on</span>
+                                <span>I'm active on</span>
                                 <a id="linkedin-foot" className="dl-button foot" href="http://linkedin.com/in/tworourke">
                                     <div className="bt-front">
                                             <span>LinkedIn</span>

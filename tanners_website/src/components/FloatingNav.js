@@ -55,7 +55,7 @@ class FloatingNav extends React.Component {
                     <ul>
                         <li><a href="#Landing">-</a></li>
                         <li><a href="#About">About Me</a></li>
-                        <li><a href="#Work">Portfolio</a></li>
+                        <li><a href="#Portfolio">Portfolio</a></li>
                         <li><a href="#Connect">Connect</a></li>
                     </ul>
                 </nav>

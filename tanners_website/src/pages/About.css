@@ -1,25 +1,47 @@
 /* ====== Dive In Container ===== */
 #About {
-    min-height: 80vh;
+    position: relative;
+    display: flex;
+    min-height: 100vh;
     height: 100%;
-    color: #eeddaa;
+    padding-top: 10vh;
     border-top: 1px solid #eeddaa;
     background: #2b3136;
-    position: relative;
 }
 
     .about-content {
-        padding-top: 20vh;
-        padding-bottom: 60vh;
+        display: flex;
+        flex-flow: column nowrap;
+        width: 50%;
         padding-left: 10%;
     } 
-        .about-qIntro {
-            width: 30%;
+        .about-intro-para {
+            height: 33%;
+            padding-bottom: 4rem;
+            color: #eeddaa;
         }
-        .about-qIntro p {
-            padding-top: 1rem;
-            line-height: 1.6rem;
-            font-size: 0.8rem;
-            font-weight: 450;
-            line-break: loose;
+            .about-intro-para h2 {
+                font-size: 3rem;
+            }
+            .about-intro-para p {
+                padding-top: 1rem;
+                line-height: 0.8rem;
+                font-size: 0.8rem;
+                font-weight: 450;
+                line-break: loose;
+            }
+    
+    .about-more-content {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 40%;
+        padding: 0 10% 5vh 10%;
+    }
+        .about-more-content span {
+            height: 33%;
+            padding-top: 15%;
+        }
+        .about-more-content h3 {
+            color: #f9f1dc;
+            text-decoration: underline dotted;
         }
