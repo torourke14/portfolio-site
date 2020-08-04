@@ -1,39 +1,39 @@
 @import "~animate.css/animate.css";
 
 
-/* Hero Image Styling */
-#landing-container {
-    /*opacity: 0; position: absolute */
-    /* !!!! Take away once works dev finished */
-    background-color: #EEDDAA;
+/* Global Landing font styles */
+#Landing h6 { font-size: 1.1em; }
+#Landing h4 { font-size: 1em; }
+#Landing h3 { font-size: 1.25em; }
+#Landing h2 { font-size: 2em; }
+#Landing h1 { font-size: 4em; }
+
+#Landing {
     position: relative;
-    height: 100vh; 
-    min-height: 100%;
+}
+#landing-container {
+    position: relative; /* for absolutely positioned children */
+    display: flex;
     width: 100%;
+    height: 100%; 
+    min-height: 90vh;
+
+    background-color: #2b3136;
     margin: 0 auto;
+    padding: 2%;
     overflow: hidden;
 }
 #landing-content {
-    word-wrap: break-word;
-    min-height: 100vh;
     height: 100%;
-    
 }
 
-    /* Global styling */
-    #Landing h6 { font-size: 1.1em; }
-    #Landing h4 { font-size: 1em; }
-    #Landing h3 { font-size: 1.25em; }
-    #Landing h2 { font-size: 2em; }
-    #Landing h1 { font-size: 4em; }
-
     .callout-container {
-        position: absolute; z-index: 10;
+        position: relative; z-index: 10;
         /*& NEW stack-context*/
-        top: 20vh;
-        left: 10%;
-        width: 40vw;
-        color: #2B3136;
+        width: 40%;
+        padding: 96px 0 32px 10%;
+        word-wrap: break-word;
+        color: #eeddaa;
         overflow-x: visible;
     }
         .callout-container h1 {
@@ -42,8 +42,71 @@
             word-break: normal;
         }
 
+        /* === Down Scroll button === */
+        .down-link {
+            position: relative;
+            left: 96px;
+            top: 1.5rem;
+        }
+        .landingLinkBox {
+            position: relative; 
+                z-index: 1000;
+            display: block; /*inline-block*/
+            height: 70px;
+            width: 100px;
+            margin-left: -64px;
+            line-height: 60px;
+            font-size: 26px;
+            color: #eeddaa;
+            text-align: center;
+            border: 2px solid #2b3136; /* i.e. none*/
+            border-radius: 8px;
+            background: transparent;
+            overflow: hidden;
+            text-decoration: underline dotted #E0BF00;
+            cursor: pointer;
+            transition: width 0.5s ease-in-out,
+                    margin 0.5s ease-in-out,
+                    border-radius 0.25s ease-in-out
+                    color 0.25s ease-in-out;
+        }
+            .arrow {
+                position: absolute;
+                z-index: 1000;
+                overflow: hidden;
+                display: inline-block;
+                color: #eeddaa;
+                top: -50%;
+                left: calc(50% - 11.3px); /*quick fix*/
+                transform: translate(50%, -50%);
+                margin-top: -6px;
+            }
+
+            .landingLinkBox:hover {
+                width: 70px;
+                margin-left: -30px;
+                border-radius: 35px;
+                border-color: #eeddaa;
+                text-decoration: none;
+                color: rgba(43, 49, 54, 0); /*#2b3136*/
+                transition: width 0.5s ease-in-out,
+                        margin 0.5s ease-in-out,
+                        border-color 0.25s linear,
+                        border-radius 0.25s ease-in-out,
+                        color 0.25s ease-in-out 0.25s;
+                }
+                .landingLinkBox:hover .arrow {
+                    animation: arrowDown 1s cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite 0.5s;
+                }
+
+                @keyframes arrowDown {
+                    0%   { transform: translateY(-50px); }
+                    100% { transform: translateY(70px); }
+                }
+        /* end ----- */
+
         .rotating-words-wrap {
-            padding-top: 20vh;
+            padding-top: 12rem;
         }
             .rw-sentence { /*h2*/
                 text-align: left;
@@ -63,7 +126,7 @@
                 opacity: 0;
                 overflow: hidden;
                 width: 100%;
-                color: #F9F1DC;
+                color: #E0BF00;
                 -webkit-animation: rotateWords 18s linear infinite 0s;
                 animation: rotateWords 18s linear infinite 0s;
 
@@ -74,25 +137,21 @@
                     -webkit-animation-delay: 3s; 
 	                -ms-animation-delay: 3s; 
                     animation-delay: 3s; 
-                    color: #6b889d;
                 }
                 .rw-words span:nth-child(3) { 
                     -webkit-animation-delay: 3s; 
 	                -ms-animation-delay: 3s; 
                     animation-delay: 6s; 
-                    color: #6b739d;	
                 }
                 .rw-words span:nth-child(4) { 
                     -webkit-animation-delay: 3s; 
 	                -ms-animation-delay: 3s; 
                     animation-delay: 9s; 
-                    color: #7a6b9d;
                 }
                 .rw-words span:nth-child(5) { 
                     -webkit-animation-delay: 3s; 
 	                -ms-animation-delay: 3s; 
                     animation-delay: 12s; 
-                    color: #8d6b9d;
                 }
                 @keyframes rotateWords {
                     0%   { opacity: 0; /*animation-timing-function: ease-in;*/ }
@@ -117,24 +176,26 @@
                     80% { opacity: 0; }
                     100% { opacity: 0; }
                 }*/
+        /*--- end */
+/* ----- end */
 
     .img-container {
-        position: absolute; z-index: 5;  
+        width: 60%; /*..parent dims*/
+        position: relative; z-index: 15; 
         /*& NEW stack-context*/
-        top: 0; right: 0;
-        width: 100%; /*..parent dims*/
-        height: 100%;
+        padding: 96px 0 96px 0;
+        left: 10%; /**/
     }
         .hero-img { 
-            position: absolute;
+           position: absolute;
         }
 
         .hero-img.pre {
-            width: 22.5vw;
-            padding-top: 22.5vw; 
+            width: 20%;
+            padding-top: 20%; 
             /*.. Padding/Width MUST be same to maintain aspect ratio*/
-            top: 32.5vh;
-            right: 12.5vw;
+            top: 15%;
+            left: 42.5%;
             background-color: blue;
             /*background-image: url('../images/linkedin-icon.png');*/
             background-repeat: no-repeat;
@@ -142,11 +203,11 @@
             object-fit: contain;
         }
         .hero-img.main {
-            width: 30vw;
-            padding-top: 30vw; 
+            width: 40%;
+            padding-top: 40%; 
             /*.. MUST be same to maintain aspect ratio*/
-            right: 15vw;
-            top: 40vh;
+            left: 10%;
+            top: 20%;
             background-color: yellow;
             /*background-image: url('../images/mail-icon.png');*/
             background-repeat: no-repeat;
@@ -154,11 +215,11 @@
             object-fit: contain;
         }
         .hero-img.post {
-            width: 15vw;
-            padding-top: 15vw;  
+            width: 0%;
+            padding-top: 0%;  
             /*.. MUST be same to maintain aspect ratio*/
-            right: 35vw;
-            top: 55vh;
+            right: 0%;
+            top: 0%;
             background-color: orange;
             /*background-image: url('../images/github-icon.png');*/
             background-repeat: no-repeat;
@@ -210,105 +271,7 @@
             -ms-transform: scale(1.05);
             -webkit-transform: scale(1.05);
         }
-
-/* === Down Scroll button === */
-.linkDown {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    bottom: 80px;
-}
-.landingLinkBox {
-    position: relative;
-    z-index: 1000;
-    left: 50%;
-    margin-top: -30px;
-    margin-left: -60px;
-    display: block; /*inline-block*/
-    font-size: 26px;
-    color: #2b3136;
-    text-align: center;
-    width: 160px;
-    height: 70px;
-    line-height: 60px;
-    border: 5px solid #2b3136;
-    border-radius: 6px;
-    overflow: hidden;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: width 0.5s ease-in-out,
-            margin 0.5s ease-in-out,
-            border-radius 0.25s ease-in-out
-            color 0.25s ease-in-out;
-}
-
-.arrow {
-    position: absolute;
-    z-index: 1000;
-    overflow: hidden;
-    display: inline-block;
-    color: #2b3136;
-    top: -50%;
-    left: calc(50% - 11.3px); /*quick fix*/
-    transform: translate(50%, -50%);
-    margin-top: -6px;
-}
-
-.landingLinkBox:hover {
-    width: 70px;
-    margin-left: -30px;
-    border-radius: 50px;
-    text-decoration: none;
-    color: rgba(43, 49, 54, 0); /*#2b3136*/
-    transition: width 0.5s ease-in-out,
-            margin 0.5s ease-in-out,
-            border-radius 0.25s ease-in-out,
-            color 0.25s ease-in-out 0.25s;
-    }
-    .landingLinkBox:hover .arrow {
-        animation: arrowDown 1s cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite 0.5s;
-    }
-
-    @keyframes arrowDown {
-        0%   { transform: translateY(-50px); }
-        100% { transform: translateY(70px); }
-    }
-/* end ----- */
-
-
-/* ====== Dive In Container ===== */
-#DiveIn {
-    min-height: 80vh;
-    height: 100%;
-    background: #2B3136;
-    color: #EEDDAA;
-    position: relative;
-}
-
-    .dive-in-content {
-        padding-top: 20vh;
-        padding-bottom: 60vh;
-        padding-left: 10%;
-    } 
-        .about-qIntro {
-            width: 30%;
-        }
-        .about-qIntro p {
-            padding-top: 1rem;
-            line-height: 1.6rem;
-            font-size: 0.8rem;
-            font-weight: 450;
-            line-break: loose;
-        }
-
-        .portfolio-header { 
-            position: absolute;
-            bottom: 4px;
-            font-size: 6rem;
-            font-family: 'Arial Black', serif; 
-            /*padding: 96px 0 0 5%;*/
-        }
+/* ----- end */
 
 /* ===== My Works Styling ===== */
 /*#WorksIntro {

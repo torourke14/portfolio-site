@@ -73,10 +73,8 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            showNavbar: false,
             aboutDrawerOpen: false,
             skillsDrawerOpem: false,
-            ConnectDrawerOpen: false
         };
         this.handleURLChange = this.handleURLChange.bind(this);
     }

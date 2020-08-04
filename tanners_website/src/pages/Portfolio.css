@@ -1,23 +1,23 @@
 
 /* Global styling */
-    #Works h5 {
+    #Portfolio h5 {
         padding: 6px 0;
         font-size: 1.05em; 
     }
-    #Works h4 {
+    #Portfolio h4 {
         padding: 12px 0 6px 0; 
         font-size: 1.3em; 
     }
-    #Works h2 {
+    #Portfolio h2 {
         padding: 12px 0;
         font-size: 2em;
     }
-    #Works h1 {
+    #Portfolio h1 {
         padding: 12px 0;
         font-size: 4;
     }
 
-#Works {
+#Portfolio {
     background-color: #EEDDAA;
 }
 /* end ----- */

@@ -12,9 +12,9 @@ class AboutMeDrawer extends React.Component {
         
         render() {
                 return (
-                <div id='About' className="panel__AboutMe">
+                <div id='About_MeDrawer'>
                         <FloatingNav deprecate={true} />
-                        <div id='AboutIntro'>
+                        <div id='About_DrawerIntro'>
                                 <div id="banner">
                                         <h1>I am a Interface Designer and Software Developer from Seattle,&nbsp;WA.</h1>
                                         <h2>I design things, then build them. Plain and Simple.</h2>
@@ -25,7 +25,7 @@ class AboutMeDrawer extends React.Component {
                                 </div>
                         </div>
                 
-                        <div id='AboutDetails'>
+                        <div id='About_DrawerDetails'>
                                 <div className='details-container'>
                                         <h3>Who I am</h3>
                                         <p>
@@ -60,7 +60,7 @@ class AboutMeDrawer extends React.Component {
                                 </h4>
                         </div>
 
-                        <div id="MyServices" className="container">
+                        <div id="About_DrawerServices" className="container">
                                 <div id='services-content'>
                                         <h2>Knowledge</h2>
                                         <div id='skill-blocks'>

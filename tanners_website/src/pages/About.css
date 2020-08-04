@@ -1,0 +1,33 @@
+/* ====== Dive In Container ===== */
+#About {
+    min-height: 80vh;
+    height: 100%;
+    color: #eeddaa;
+    border-top: 1px solid #eeddaa;
+    background: #2b3136;
+    position: relative;
+}
+
+    .about-content {
+        padding-top: 20vh;
+        padding-bottom: 60vh;
+        padding-left: 10%;
+    } 
+        .about-qIntro {
+            width: 30%;
+        }
+        .about-qIntro p {
+            padding-top: 1rem;
+            line-height: 1.6rem;
+            font-size: 0.8rem;
+            font-weight: 450;
+            line-break: loose;
+        }
+
+        .portfolio-header { 
+            position: absolute;
+            bottom: 4px;
+            font-size: 6rem;
+            font-family: 'Arial Black', serif; 
+            /*padding: 96px 0 0 5%;*/
+        }

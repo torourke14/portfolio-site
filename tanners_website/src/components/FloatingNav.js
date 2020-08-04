@@ -9,8 +9,6 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
-import scrollToComponent from "react-scroll-to-component";
-
 class FloatingNav extends React.Component {
         constructor(props) {
             super(props);
@@ -19,50 +17,33 @@ class FloatingNav extends React.Component {
                 deprecatePullout: props.deprecate,
                 sidenavOpen: false
             }
-            this.openNav = this.openNav.bind(this);
-            this.closeNav = this.closeNav.bind(this);
+            this.opScroll = this.onScroll.bind(this);
+
+            const mainNavLinks = document.querySelectorAll("nav ul li a");
+            const mainSections = document.querySelectorAll("main section");
         }
 
-        /*componentDidMount() {
-            scrollToComponent
-        }*/
+        componentDidMount() {
+            window.addEventListener("scroll", this.onScroll);
+        }
 
         static getDerivedStateFromProps(props, state) {
             console.log("derived:", props.deprecate);
             return {deprecatePullout: props.deprecate};
         }
 
-        openNav() {
-            this.setState({sidenavOpen: !this.state.sidenavOpen});
+        onScroll() {
+            
         }
 
-        closeNav() {
-            this.setState({sidenavOpen: !this.state.sidenavOpen});
+        componentWillMount() {
+            window.removeEventListener("scroll");
         }
 
-        // CHANGE HREF'S TO 'SCROLL-TOP-COMPONENT */
         render() {
             const deprecated = this.state.deprecatePullout;
             console.log(this.state.sidenavOpen && deprecated);
 
-            let landingSidenavStyles = {
-                opacity: (!deprecated ? 1 : 0),
-                visibility: (!deprecated ? 'visible' : 'hidden'),
-                transition: "visibility 0s, opacity 0.5s linear",
-                transitionDuration: "0.3s", transitionDelay: "0.25s"
-            };
-            let closedSidenavStyles = {
-                //display: (deprecated && !this.state.sidenavOpen) ? ("block") : ("none"),
-                opacity: (deprecated && !this.state.sidenavOpen) ? 1 : 0,
-                visibility: (deprecated && !this.state.sidenavOpen ? 'visible' : 'hidden'),
-                transition: "visibility 0.15s, opacity 0.25s linear",
-                transitionDuration: "0.4s", transitionDelay: "0.25s"
-            };
-            let openSidenavStyles = {
-                width: (deprecated && this.state.sidenavOpen) ? ("100%") : ("0"),
-                transition: "width 0.5s linear",
-                transitionDuration: "0.4s", transitionDelay: "0.25s"
-            };
             // Tanner
                 // Who? (to About slideout)
             // About 
@@ -70,50 +51,49 @@ class FloatingNav extends React.Component {
             // Work
             // Connect
             return (
-                <div className="side-navigator">
-                    <div className="landing" style={landingSidenavStyles}>
-                        <a href="about">
-                            Port
-                        </a>
-                        <Link to="/about">About</Link>
-                        <Link to='/skills'>Skills</Link>
-                        <a href="#foot-master">Connect</a>
-                    </div>
-
-                    <div className="pullout-closed" style={closedSidenavStyles}>
-                        <div>
-                            <span className="three-bars">
-                                <FontAwesomeIcon icon={faBars} size="2x" onClick={this.openNav}/>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="pullout-open">
-                        <div className="navbar" style={openSidenavStyles}>
-                            <span><FontAwesomeIcon icon={ faTimesCircle } 
-                                size="2x" onClick={this.closeNav}/>
-                            </span>
-                            <NavLink activeClassName="activeLinkLoc" to="/">Home</NavLink>
-                            <NavLink activeClassName="activeLinkLoc" to="/about">About</NavLink>
-                            <NavLink activeClassName="activeLinkLoc" to='/skills'>Skills</NavLink>
-                            <a href="#foot-master">Connect</a>
-
-                            <div>
-                            <a id="sidenav-res-dl" className="dl-button" href={Resume} download="Tanner__ORourke-Resume-Copy.pdf">
-                                    <div className="bt-front">
-                                            <span className="icon"><FontAwesomeIcon icon={faDownload}/></span>
-                                            Resume
-                                    </div>
-                                    <div className="bt-back">
-                                            <span>Size: 179 kb</span>
-                                    </div>
-                            </a> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <nav className="nav-menu">
+                    <ul>
+                        <li><a href="#Landing">-</a></li>
+                        <li><a href="#About">About Me</a></li>
+                        <li><a href="#Work">Portfolio</a></li>
+                        <li><a href="#Connect">Connect</a></li>
+                    </ul>
+                </nav>
             );
         }
 }
+
+let mainNavLinks = document.querySelectorAll("nav ul li a");
+let mainSections = document.querySelectorAll("main section");
+
+let lastId;
+let cur = [];
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach(link => {
+    let section = document.querySelector(link.hash);
+
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add("current");
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
 
 export default FloatingNav;
 

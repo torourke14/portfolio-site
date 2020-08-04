@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css';
+import './ConnectFoot.css';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,11 +8,11 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 
-class Footer extends React.Component {
+class ConnectFoot extends React.Component {
         
     render() {
         return (
-            <footer className="foot-master">
+            <section id="ConnectFoot" className="panel__ConnectFoot">
                 <div className="foot-callout">
                     <div className="foot-callout-bg">
                         <div className="foot-callout-text">
@@ -45,20 +45,9 @@ class Footer extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className='foot-container'>
-                    <div className="foot-logo">
-                        <Link to="/"><img src="" alt="LOGO"/></Link>
-                    </div>  
-                    <ul className='foot-items'>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/">Portfolio</Link></li>
-                            <li><Link to="/connect">Connect</Link></li>
-                            <li><Link to="/disclaimer">Disclaimer</Link></li>
-                    </ul>
-                </div>
-            </footer>
+            </section>
         )
     }
 }
 
-export default Footer;
+export default ConnectFoot;

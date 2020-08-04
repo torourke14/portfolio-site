@@ -7,7 +7,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import Resume from '../files/Resume__Tanner-ORourke.pdf';
 // Pages
 import FloatingNav from '../components/FloatingNav';
-import Portfolio from "./Portfolio";
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -32,65 +32,50 @@ class Landing extends React.Component {
             this.state = {
                 isAnimating: false
             }
-
-            this.pfRef = React.createRef();
         }
 
 
         render() {
                 return (
-                <div id="Landing" className="panel__Landing">
-                    <NavigatorIntersectionObserver>
-                        <div id="landing-container">
-                            <div id="landing-content">
-                                <div className="callout-container">
-                                    <h1>- Hi;</h1><h1>I'm&nbsp;Tanner.</h1>
+                <header id="Landing" className="panel__Landing">
+                    <div id="landing-container">
+                        <FloatingNav />
+                        <div className="callout-container">
+                            <h1>- Hi;</h1>
+                            <h1>I'm&nbsp;Tanner.</h1>
 
-                                    <div className="rotating-words-wrap">
-                                    <h2 className="rw-sentence">
-                                        <span>Welcome to my life of</span>
-                                        
-                                        <div class="rw-words">
-                                            <span>designing</span>
-                                            <span>building</span>
-                                            <span>developing</span>
-                                            <span>stylizing</span>
-                                            <span>managing</span>
-                                        </div>
-                                        <span>User-Driven Interfaces</span>
-                                    </h2>
-                                    </div>
-                                </div>
-                                <HeroImgGallery />
-                            </div>
-                        
-                            <div className="linkDown">
-                                <span className="landingLinkBox" 
-                                    onClick={ console.log("going down!") }>
-                                    See
+                            <div className="down-link">
+                                <button className="landingLinkBox" onClick={ console.log("going down!") }>
+                                    Who?
                                     <span className="arrow">
                                         <FontAwesomeIcon icon={faArrowDown} />
                                     </span>
-                                </span>
+                                </button>
+                            </div>
+
+                            <div className="rotating-words-wrap">
+                            <h2 className="rw-sentence">
+                                <span>Welcome to my life of</span>
+                                
+                                <div className="rw-words">
+                                    <span>designing</span>
+                                    <span>building</span>
+                                    <span>developing</span>
+                                    <span>stylizing</span>
+                                    <span>managing</span>
+                                </div>
+                                <span><br/>User-Driven Interfaces</span>
+                            </h2>
                             </div>
                         </div>
-                    </NavigatorIntersectionObserver>
-                    
-                    <div id="DiveIn">
-                        <div className="dive-in-content">
-                                <div className="about-qIntro">
-                                    <h2>About</h2>
-                                    <p>I am a Full-Stack Developer with a keen eye for Design from
-                                        Seattle, Washington. </p>
-                                </div>
-                                <div className="portfolio-header">
-                                    My Work.
-                                </div>
+
+                        <div className="img-container">
+                                <div className="hero-img pre"/>
+                                <div className="hero-img post"/>
+                                <div className="hero-img main"/> 
                         </div>
                     </div>
-
-                    <Portfolio ref={(div) => { this.pfRef = div}}/>
-                </div>
+                </header>
                 );
         }
 }
@@ -99,24 +84,20 @@ class Landing extends React.Component {
 <img className="hero-img main" src={githubIcon} alt="" />
 <img className="hero-img main" src={emailIcon} alt="" />
 */
-function HeroImgGallery() {
+/*fun/tion HeroImgGallery() {
     /*var id = setInterval(() => Switch, 5);
-    function Switch() {
-    }*/
+    //function Switch() {
+    //}
     return (
-        <div className="img-container">
-                <div className="hero-img pre"/>
-                <div className="hero-img post"/>
-                <div className="hero-img main"/> 
-        </div>
+        
     );
-}
+}*/
 
 /* ===============================
 --- Sets an observer on the landing container visibility 
 --- to apply deprecation to the <FloatingNavbar>
 =============================== */
-function NavigatorIntersectionObserver({ children, sticky=false, className, ...rest }){
+function IntersectionObservingNavigator({ children, sticky=false, className, ...rest }){
     const [isScrolled, setisScrolled] = useState(false);
     const ref = React.createRef();
     

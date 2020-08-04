@@ -6,7 +6,7 @@ import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
-import Footer from './Footer';
+
 
 class Portfolio extends React.Component {
         constructor(props) {
@@ -18,7 +18,7 @@ class Portfolio extends React.Component {
 
         render() {
                 return (
-                        <div id="Works" className="panel__Works">   
+                        <section id="Portfolio" className="panel__Portfolio">   
                             <div className="Works">              
                                 <Project ref='domad' tags={['design', 'dev', 'professional']}
                                     title="DoMAD" position='Lead UI Designer, Front-End Developer' 
@@ -36,8 +36,7 @@ class Portfolio extends React.Component {
                                     location='Seattle, WA'
                                     imgsrc={DoMADLogo} />
                             </div>
-                            <Footer />
-                        </div>
+                        </section>
                 );
         }
 }

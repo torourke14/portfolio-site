@@ -49,7 +49,7 @@
 
 
 /* ===== Footer Styling ===== */
-.foot-container {
+/*.foot-container {
     padding: 48px 5%;
     display: flex;
     display: -webkit-flex;
@@ -103,4 +103,4 @@
         flex-direction: column;
         -webkit-flex-direction: column;
     }
-}
+}*/
