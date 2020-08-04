@@ -9,15 +9,16 @@ class About extends React.Component {
                 <div className="about-content">
                     <div className="about-intro-para">
                         <h2>I am</h2>
-                        <p>a Full-Stack Developer from Seattle, Washington with a keen eye for Design from
-                            Seattle, Washington. </p>
-                        <p>I graduated from the University od Colorado-Boulder in the Class of 2020 with a Bachelor's 
-                            in Computer Science.</p>
-                        <p>My informal focus and passion is in designing products.</p>
+                        <p>a Front-End Developer and Interface Designer from Seattle, Washington.
+                            </p>
+                        <p>I recently graduated from the University od Colorado-Boulder in the Class of 2020 with as a 
+                            Bachelor of Science in Computer Science.</p>
                     </div>
                     <div className="about-intro-para">
                         <h2>Passionate</h2>
-                        <p>about</p>
+                        <p>about designing, building, refactoring, and shipping user-driven products.
+                            My informal focus is in Cognitive Psychology and Visual Communication.
+                        </p>
                     </div>
                     <div className="about-intro-para">
                         <h2>Fluent</h2>

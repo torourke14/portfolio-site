@@ -7,15 +7,17 @@
     line-height: 1.2;
     scroll-behavior: smooth;
 
-    background-image: linear-gradient(
-        #16253d, 
-        #5f7391 40%,
-        #d4d5d7 50%,
-        #e0e0e0 60%,
-        #d4d5d7 70%, 
-        #efb509 80%
-    );
+    background-color:#eeddaa;
 }
+
+.aboutme-back-button {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+}
+    .aboutme-back-button a {
+        color: #2b3136;
+    }
 
 /* Common Styling */
     #About_MeDrawer h4 {
@@ -50,7 +52,7 @@
     flex-flow: row wrap;
     height: 100%; 
     padding: 128px 2.5% 64px 10%;
-    color: white;
+    color: #2b3136;
     }
     #banner {
         padding-right: 10%;
@@ -125,56 +127,4 @@
         padding: 40px 0;
         font-size: 1.1em;
     }
-/* end ----- */
-
-
-
-/* ===== My Services Intro Styling ===== */
-#About_DrawerServices {
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
-    padding: 96px 0 128px 10%;
-    }
-    #services-content { 
-        width: 70%;
-        color: black;
-    }
-    
-    #skill-blocks {
-        display: flex;
-        flex-flow: row wrap;
-        }
-        .skill-box { 
-            width: 50%; /*..of flex*/
-        }
-        .skill-box p {
-            padding-left: 6px;
-            padding-right: 12px;
-        }
-    
-    #services-right {
-        width: 30%;
-        padding-right: 5%;
-    }
-        #title {
-            position: relative;
-            left: 0; 
-            top: 25%;
-            width: 3px; /*=stroke*/
-            height: 110px; /*=length*/
-            background: #003F7A;
-            }
-            #title p {
-                position: relative;
-                top: 130px; /*=position from top of line*/
-                font-size: 2em;
-                font-weight: 500;
-            }
-            #title span {
-                color: #003F7A;
-                left: 0;
-                font-weight: 700;
-
-            }
 /* end ----- */

@@ -1,3 +1,54 @@
+/* ===== My Services Intro Styling ===== */
+#About_DrawerServices {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    padding: 96px 0 128px 10%;
+    }
+    #services-content { 
+        width: 70%;
+        color: black;
+    }
+    
+    #skill-blocks {
+        display: flex;
+        flex-flow: row wrap;
+        }
+        .skill-box { 
+            width: 50%; /*..of flex*/
+        }
+        .skill-box p {
+            padding-left: 6px;
+            padding-right: 12px;
+        }
+    
+    #services-right {
+        width: 30%;
+        padding-right: 5%;
+    }
+        #title {
+            position: relative;
+            left: 0; 
+            top: 25%;
+            width: 3px; /*=stroke*/
+            height: 110px; /*=length*/
+            background: #003F7A;
+            }
+            #title p {
+                position: relative;
+                top: 130px; /*=position from top of line*/
+                font-size: 2em;
+                font-weight: 500;
+            }
+            #title span {
+                color: #003F7A;
+                left: 0;
+                font-weight: 700;
+
+            }
+/* end ----- */
+
+
 /* Common grid styling */
 .col-1 { width: 30%; }
 .col-2 { width: 70%; }

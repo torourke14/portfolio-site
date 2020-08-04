@@ -6,14 +6,20 @@ import linkedinIcon from '../images/linkedin-icon.png';
 import githubIcon from '../images/github-icon.png';
 import emailIcon from '../images/mail-icon.png';
 
-import FloatingNav from './FloatingNav';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 class AboutMeDrawer extends React.Component {
         
         render() {
                 return (
                 <div id='About_MeDrawer'>
-                        <FloatingNav deprecate={true} />
+                        <div className="aboutme-back-button">
+                            <Link to='/'>
+                                <FontAwesomeIcon icon={ faTimesCircle } size="2x" />
+                            </Link>
+                        </div>
                         <div id='About_DrawerIntro'>
                                 <div id="banner">
                                         <h1>I am a Interface Designer and Software Developer from Seattle,&nbsp;WA.</h1>
@@ -58,69 +64,6 @@ class AboutMeDrawer extends React.Component {
                                 <h4>
                                 <i>"Design is the intermediary between information and understanding"</i> - Hans Hoffman
                                 </h4>
-                        </div>
-
-                        <div id="About_DrawerServices" className="container">
-                                <div id='services-content'>
-                                        <h2>Knowledge</h2>
-                                        <div id='skill-blocks'>
-                                                <div className="skill-box">
-                                                        <div className="skill-header">
-                                                                <img/>
-                                                                <h4>Web Development</h4>
-                                                        </div>
-                                                        <p>
-                                                        I have proven experience building websites from the 
-                                                        ground-up utilizing various development stacks
-                                                        </p>
-                                                </div>
-                                                <div className="skill-box">
-                                                        <div className="skill-img">
-                                                                <img />
-                                                                <h4>UX/UI Design</h4>
-                                                        </div>
-                                                        <p>
-                                                        </p> 
-                                                </div>
-                                                <div className="skill-box">
-                                                        <div className="skill-img">
-                                                                <img />
-                                                                <h4>App Development</h4>
-                                                        </div>
-                                                        <p>
-                                                        </p> 
-                                                </div>
-                                                <div className="skill-box">
-                                                        <div className="skill-img">
-                                                                <img />
-                                                                <h4>Full-Stack Development</h4>
-                                                        </div>
-                                                        <p>
-                                                        </p> 
-                                                </div>
-                                                <div className="skill-box">
-                                                        <div className="skill-img">
-                                                                <img />
-                                                                <h4>Analytics</h4>
-                                                        </div>
-                                                        <p>
-                                                        </p> 
-                                                </div>
-                                                <div className="skill-box">
-                                                        <div className="skill-img">
-                                                                <img />
-                                                                <h4>Human-Computer Interaction</h4>
-                                                        </div>
-                                                        <p>
-                                                        </p> 
-                                                </div>
-                                        </div>
-                                </div>
-                                <div id='services-right'>
-                                        <div id="title">
-                                                <p>My<br/><span>Services</span></p>
-                                        </div>
-                                </div>
                         </div>
                 </div>
                 )
