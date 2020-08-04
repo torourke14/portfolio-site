@@ -7,12 +7,12 @@ class About extends React.Component {
             <section id="About" className="panel__About">
                 <div className="about-content">
                         <div className="about-qIntro">
-                            <h2>About</h2>
-                            <p>I am a Full-Stack Developer with a keen eye for Design from
+                            <h2>Who..?</h2>
+                            <p>I am a Full-Stack Developer from Seattle, Washington with a keen eye for Design from
                                 Seattle, Washington. </p>
-                        </div>
-                        <div className="portfolio-header">
-                            My Work.
+                            <p>I graduated from the University od Colorado-Boulder in the Class of 2020 with a Bachelor's 
+                                in Computer Science.</p>
+                            <p>My informal focus and passion is in designing products.</p>
                         </div>
                 </div>
             </section>

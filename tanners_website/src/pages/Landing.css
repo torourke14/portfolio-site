@@ -39,7 +39,7 @@
         .callout-container h1 {
             line-height: 1.25em; /*to sit at level of img */
             max-width: 100%;
-            word-break: normal;
+            white-space: nowrap;
         }
 
         /* === Down Scroll button === */

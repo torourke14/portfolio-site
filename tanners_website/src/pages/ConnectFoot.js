@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faAtlas } from "@fortawesome/free-solid-svg-icons";
 
 
 class ConnectFoot extends React.Component {
@@ -13,38 +14,56 @@ class ConnectFoot extends React.Component {
     render() {
         return (
             <section id="ConnectFoot" className="panel__ConnectFoot">
-                <div className="foot-callout">
                     <div className="foot-callout-bg">
-                        <div className="foot-callout-text">
+                        <div className="foot-bg-gif">
+                            <img src="https://media.giphy.com/media/3owzVYk3A2E572jRSM/source.mp4" alt="" />
+                        </div>
+                        <div className="foot-callout">
                             <h2>Seen enough?</h2>
-
-                            <a id="mail-foot" className="dl-button" href="mailto:tannero@live.com">
-                                <div className="bt-front foot">
-                                        <span className="icon"><FontAwesomeIcon icon={faLink} /></span> 
-                                </div>
-                                <div className="bt-back foot">
-                                        <span>Mail Me!</span>
-                                </div>
-                            </a>
-                            <a id="linkedin-foot" className="dl-button" href="http://linkedin.com/in/tworourke">
-                                <div className="bt-front foot">
-                                        <span className="icon"><FontAwesomeIcon icon={faLinkedinIn} /></span>
-                                </div>
-                                <div className="bt-back foot">
-                                        <span>LinkedIn</span>
-                                </div>
-                            </a> 
-                            <a id="github-foot" className="dl-button" href="http://github.com/torourke14/to-pers">
-                                <div className="bt-front foot">
-                                        <span className="icon"><FontAwesomeIcon icon={faLink} /></span>
-                                </div>
-                                <div className="bt-back foot">
-                                        <span>Github Repo</span>
-                                </div>
-                            </a> 
+                        </div>
+                        <div className="foot-links">
+                            <span>
+                                <span>Find Me on</span>
+                                <a id="linkedin-foot" className="dl-button foot" href="http://linkedin.com/in/tworourke">
+                                    <div className="bt-front">
+                                            <span>LinkedIn</span>
+                                    </div>
+                                    <div className="bt-back">
+                                            <span className="icon"><FontAwesomeIcon icon={faLinkedinIn} /></span>
+                                    </div>
+                                </a> 
+                                <span> / </span>
+                                <a id="github-foot" className="dl-button foot" href="http://github.com/torourke14/to-pers">
+                                    <div className="bt-front">
+                                            <span className="icon">Github</span>
+                                    </div>
+                                    <div className="bt-back">
+                                            <span><FontAwesomeIcon icon={faGithub} /></span>
+                                    </div>
+                                </a> 
+                                <span>(incl. this site's repo!)</span>
+                                <br/>
+                                <a id="mail-foot" className="dl-button foot" href="mailto:tannero@live.com">
+                                    <div className="bt-front">
+                                            <span className="icon">Academia</span> 
+                                    </div>
+                                    <div className="bt-back">
+                                            <span><FontAwesomeIcon icon={faAtlas} /></span>
+                                    </div>
+                                </a>
+                                <span> / </span>
+                                <a id="mail-foot" className="dl-button foot" href="https://colorado.academia.edu/TannerOR">
+                                    <div className="bt-front">
+                                            <span className="icon">Email</span> 
+                                    </div>
+                                    <div className="bt-back">
+                                            <span><FontAwesomeIcon icon={faLink} /></span>
+                                    </div>
+                                </a>
+                                <span> /&nbsp;&nbsp;&nbsp;425-786-6688</span>
+                            </span>
                         </div>
                     </div>
-                </div>
             </section>
         )
     }

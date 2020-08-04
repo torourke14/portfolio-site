@@ -23,11 +23,3 @@
             font-weight: 450;
             line-break: loose;
         }
-
-        .portfolio-header { 
-            position: absolute;
-            bottom: 4px;
-            font-size: 6rem;
-            font-family: 'Arial Black', serif; 
-            /*padding: 96px 0 0 5%;*/
-        }

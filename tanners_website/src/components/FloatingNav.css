@@ -31,11 +31,12 @@
         cursor: pointer;
     }
     .nav-menu ul li a {
-        display: block;
+        display: inline-block;
         text-decoration: none;
         font-size: 1.6vw;
         color: #f9f1dc;
         cursor: pointer;
+        white-space: nowrap;
     }
 
     .nav-menu ul li a.current {

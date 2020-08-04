@@ -7,100 +7,62 @@
 .foot-master {
     background-color: #2B3136;
 }
-.foot-callout {
-    height: 60vh;
-}
 .foot-callout-bg {
+    width: 100%;
+    height: 100vh;
+    position: relative;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../images/enchantments.jpg');
-    width: 100%;
-    height: 100%;
-    position: relative;
+    background-color: #2b3136;
+
+    border-top: 1px solid #eeddaa;
     }
 
-    .foot-callout-text {
+    .foot-callout {
         text-align: center;
         position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        
+        display: inline-block;
+        top: 25%;
+        left: 10%;
+    }
+    .foot-callout h2 {
+        color: #F9F1DC;
+        font-size: 5rem;
     }
 
-    .foot-callout-text > * { /* Connect */
-        position: relative;
+    .foot-links { /* Connect */
+        position: absolute;
+        top: 55%;
+        left: 15%;
         display: block;
+        transform: scale(1.3);
     }
-    .dl-button .bt-back.foot { background-color: #F9F1DC; }
-        .foot-callout-text h2 {
-            bottom: 200px;
+        .foot-links span > span{
+            position: relative;
+            bottom: 19px;
+            color: #F9F1DC;
+            font-size: 1rem;
+            font-weight: 500;
         }
-        #mail-foot {
-            bottom: 40px;
-        }
-        #github-foot {
-            top: 40px;
-        }
-        
-
-
-/* ===== Footer Styling ===== */
-/*.foot-container {
-    padding: 48px 5%;
-    display: flex;
-    display: -webkit-flex;
-    flex-flow: row wrap;
-}
-
-    .foot-items {
-        flex: 4;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        }
-        .foot-items li {
-            flex: 1;
-            list-style-type: none;
-            padding: 16px;
-            width: 50px;
-        }
-            .foot-items li a {
-                text-decoration: none;
-                color: #F9F1DC;
-                font-size: 1rem;
-            }
-            .foot-items li a:hover,
-            .foot-items li a:active {
-                color: #E0BF00;
-                text-decoration: underline;
-                text-decoration-color: #E0BF00;
-                transition: all 0.4s;
-            }
-    .foot-logo {
-        flex: 1;
-        overflow: hidden;
-        align-self: center;
-        justify-self: center;
-    }
-        .foot-logo img {
-            width: 90%;
-            object-fit: contain;
+        .foot-links span a { /* box spacing */
+            margin: 0 10px;
         }
 
-@media (max-width: 760px) {
-    .foot-container {
-        flex-direction: column;
-        -webkit-flex-direction: column;
-    }
-}
+        .dl-button.foot {
+            border: none;
+            margin-top: 8px;
+        }
 
-@media (max-width: 600px) {
-    .foot-items {
-        flex-direction: column;
-        -webkit-flex-direction: column;
-    }
-}*/
+        .dl-button.foot .bt-back { 
+            background-color: transparent;
+            color: #f9f1dc; 
+        }
+        .dl-button.foot .bt-front { 
+            color: #F9F1DC; 
+            background-color: transparent;
+        }
+        .dl-button.foot .bt-back,
+        .dl-button.foot .bt-front {
+            padding: 0 16px;
+        }

@@ -11,31 +11,50 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 class Portfolio extends React.Component {
         constructor(props) {
                 super(props);
-                this.filters = ['design', 'dev', 'freelance', 'professional'];
+
+                this.projectRef = React.createRef();
+
+                this.positionOnMouseMove = this.positionOnMouseMove.bind(this);
         }
 
-        /* MAYBE add function to show active open project */
+        componentDidMount() {
+            window.addEventListener("mousemove", this.positionOnMouseMove);
+        }
 
+        positionOnMouseMove = e => {
+            const projects = this.projectRef.current;
+            console.log(projects);
+            let relX = e.offsetX / window.innerWidth;
+            let relY = e.offsetY / window.innerHeight;
+
+            //this.refs.projectRef.
+            //current.style.margin = relX + "vh";
+            //console.log(relX, relY);
+        };
+
+        /* MAYBE add function to show active open project */
         render() {
                 return (
-                        <section id="Portfolio" className="panel__Portfolio">   
-                            <div className="Works">              
-                                <Project ref='domad' tags={['design', 'dev', 'professional']}
+                        <section id="Portfolio" className="panel__Portfolio">         
+                            <div className="portfolio-header">
+                                My Work.
+                            </div>
+                                <Project ref={this.projectRef}
                                     title="DoMAD" position='Lead UI Designer, Front-End Developer' 
                                     desc='Website design and build for non-profit donation org. DoMAD' 
                                     location='Boulder, CO'
                                     imgsrc={DoMADLogo} />
-                                <Project ref='spotipy' tags={['dev', 'freelance']}
+                                <Project ref={this.projectRef}
                                     title="Spotipy Data Analysis" position='Data Analytics Researcher' 
                                     desc='Discovered patterns in past, present, and future musical attributes' 
                                     location='Boulder, CO'
                                     imgsrc={DoMADLogo} />
-                                <Project ref='l' title="London Bridge Studios" tags={['dev','freelance']}
+                                <Project ref={this.projectRef}
+                                    title="London Bridge Studios"
                                     position='Web Developer' 
                                     desc='Page flows and SEO enhancements for a Seattle-based recording studio' 
                                     location='Seattle, WA'
                                     imgsrc={DoMADLogo} />
-                            </div>
                         </section>
                 );
         }
@@ -63,7 +82,7 @@ class Project extends React.Component {
     openTab() {
         if (!this.state.display && document.getElementsByClassName('work-dropbox--open').length === 0) { //{
             var i, x;
-            x = document.getElementsByClassName("work-dropbox");
+            x = document.getElementsByClassName("work-dropbox--open");
             for (i = 0; i < x.length; i++) {
                     x[i].style.display = "none";
             }
