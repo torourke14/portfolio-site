@@ -9,6 +9,10 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
 import FloatingNav from '../components/FloatingNav';
 
+// Card images
+import linkedInPic from '../images/LinkedInPic.jpg'; 
+import rainier from '../images/rainier.JPG';
+import codeShot from '../images/codeScreenshot.png'
 
 /* 
 * ===== TO ADD =====
@@ -22,64 +26,52 @@ import FloatingNav from '../components/FloatingNav';
 //font-family: 'Raleway', Arial, sans-serif;
 
 class Landing extends React.Component {
-        constructor(props) {
-            super(props);
+    render() {
+        return (
+        <header id="Landing" className="panel__Landing">
+            <div id="landing-container">
+                <FloatingNav />
+                <div className="callout-container">
+                    <h1>- Hi;</h1>
+                    <h1>I'm&nbsp;Tanner.</h1>
 
-            this.state = {
-                isAnimating: false
-            }
-        }
-
-
-        render() {
-                return (
-                <header id="Landing" className="panel__Landing">
-                    <div id="landing-container">
-                        <FloatingNav />
-                        <div className="callout-container">
-                            <h1>- Hi;</h1>
-                            <h1>I'm&nbsp;Tanner.</h1>
-
-                            <div className="down-link">
-                                <Link to="/about">
-                                <button className="landingLinkBox">
-                                        Who?
-                                        <span className="arrow">
-                                            <FontAwesomeIcon icon={faArrowDown} />
-                                        </span>
-                                </button>
-                                </Link>
-                            </div>
-
-                            <div className="rotating-words-wrap">
-                                <h2 className="rw-sentence">
-                                    <span>Welcome to my life</span>
-                                    <div className="rw-words">
-                                        <span>developing</span>
-                                        <span>building</span>
-                                        <span>designing</span>
-                                        <span>stylizing</span>
-                                    </div>
-                                    <span><br/></span>
-                                </h2>
-                            </div>
-                        </div>
-
-                        <div className="img-container">
-                                <div className="hero-img pre"/>
-                                <div className="hero-img post"/>
-                                <div className="hero-img main"/> 
-                        </div>
+                    <div className="down-link">
+                        <Link to="/about">
+                        <button className="landingLinkBox">
+                                Who?
+                                <span className="arrow">
+                                    <FontAwesomeIcon icon={faArrowDown} />
+                                </span>
+                        </button>
+                        </Link>
                     </div>
-                </header>
-                );
-        }
+
+                    <div className="rotating-words-wrap">
+                        <h2 className="rw-sentence">
+                            <span>Welcome to my life of</span>
+                            <br/>
+                            <div className="rw-words">
+                                <span>developing</span>
+                                <span>building</span>
+                                <span>designing</span>
+                                <span>stylizing</span>
+                            </div>
+                        </h2>
+                    </div>
+                </div>
+
+                <div className="img-container">
+                    <div className="bg-streak" />
+                    <img src={rainier} alt="oops :(" className="hero-img top" />
+                    <img src={linkedInPic} alt="oops :(" className="hero-img mid" />
+                    <img src={codeShot} alt="oops :(" className="hero-img bot" />
+                </div>
+            </div>
+        </header>
+        );
+    }
 }
-/*
-<img className="hero-img pre" src={linkedinIcon} alt="" />
-<img className="hero-img main" src={githubIcon} alt="" />
-<img className="hero-img main" src={emailIcon} alt="" />
-*/
+
 /*fun/tion HeroImgGallery() {
     /*var id = setInterval(() => Switch, 5);
     //function Switch() {
@@ -88,34 +80,6 @@ class Landing extends React.Component {
         
     );
 }*/
-
-/* ===============================
---- Sets an observer on the landing container visibility 
---- to apply deprecation to the <FloatingNavbar>
-=============================== */
-function IntersectionObservingNavigator({ children, sticky=false, className, ...rest }){
-    const [isScrolled, setisScrolled] = useState(false);
-    const ref = React.createRef();
-    
-    // mount observer
-    useEffect(() => {
-        const cachedRef = ref.current, 
-            observer = new IntersectionObserver(
-                ([e]) => setisScrolled(e.intersectionRatio < 0.15), { threshold: [0.15] } 
-            );
-        observer.observe(cachedRef);
-      
-        // unmount
-        return function(){ observer.unobserve(cachedRef); }
-    }, [ref])
-    
-    return (
-        <div className={(isScrolled ? "deprecate" : "")} ref={ref} {...rest}>
-            <FloatingNav deprecate={isScrolled ? true : false} /*ref={pfRef}*//>
-            {children}
-        </div>
-    );
-}
 
 
 /*

@@ -2,11 +2,11 @@
 
 
 /* Global Landing font styles */
-#Landing h6 { font-size: 1.1em; }
-#Landing h4 { font-size: 1em; }
-#Landing h3 { font-size: 1.25em; }
-#Landing h2 { font-size: 2em; }
-#Landing h1 { font-size: 4em; }
+#Landing h6 { font-size: 1.1rem; }
+#Landing h4 { font-size: 1rem; }
+#Landing h3 { font-size: 1.75rem; }
+#Landing h2 { font-size: 2rem; }
+#Landing h1 { font-size: 5rem; }
 
 #Landing {
     position: relative;
@@ -15,13 +15,13 @@
 #landing-container {
     position: relative; /* for absolutely positioned children */
     display: flex;
+    flex-flow: row nowrap;
     width: 100%;
     height: 100%; 
     min-height: 100vh;
 
     background-color: #2b3136;
-    margin: 0 auto;
-    padding: 2%;
+    padding: 0;
     overflow: hidden;
 }
 #landing-content {
@@ -31,14 +31,13 @@
     .callout-container {
         position: relative; z-index: 10;
         /*& NEW stack-context*/
-        width: 40%;
-        padding: 96px 0 32px 10%;
+        width: 70%;
+        padding: 10vh 5vw 5vh 10vw;
         word-wrap: break-word;
         color: #eeddaa;
         overflow-x: visible;
     }
         .callout-container h1 {
-            line-height: 1.25em; /*to sit at level of img */
             max-width: 100%;
             white-space: nowrap;
         }
@@ -48,6 +47,7 @@
             position: relative;
             left: 96px;
             top: 1.5rem;
+            width: 100px; /* little bigger than child */
         }
         .down-link a {
             text-decoration: none;
@@ -103,7 +103,6 @@
                 .landingLinkBox:hover .arrow {
                     animation: arrowDown 1s cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite 0.5s;
                 }
-
                 @keyframes arrowDown {
                     0%   { transform: translateY(-50px); }
                     100% { transform: translateY(70px); }
@@ -111,7 +110,8 @@
         /* end ----- */
 
         .rotating-words-wrap {
-            padding-top: 12rem;
+            padding-top: 20vh;
+            padding-bottom: 4rem; /* rw-words font-height */
         }
             .rw-sentence { /*h2*/
                 text-align: left;
@@ -131,8 +131,6 @@
                 position: absolute;
                 opacity: 0;
                 overflow: hidden;
-                width: 100%;
-                font-size: 2.25rem;
                 color: #E0BF00;
                 -webkit-animation: rotateWords 12s linear infinite 0s;
                 animation: rotateWords 12s linear infinite 0s;
@@ -163,68 +161,98 @@
                 }
                 @keyframes rotateWords {
                     0% { opacity: 0; }
-                    2% { opacity: 0; -webkit-transform: translateY(-80px); }
-                    20% { opacity: 0.1;  -webkit-transform: translateY(-60px); }
-                    25% { opacity: 0.5; -webkit-transform: translateY(-40px); }
+                    2% { opacity: 0;  -webkit-transform: translate(-100%, 150px);}
+                    /*transition into view*/
+                    23% { opacity: 0.05;  -webkit-transform: translateX(-100%); }
+                    /*transition into center*/
+                    25% { opacity: 0.3; -webkit-transform: translateX(-100%); }
+                    27% { opacity: 1; -webkit-transform: translateX(0px); }
 
-                    27% { opacity: 1; -webkit-transform: translateY(0px); }
-                    50% { opacity: 0.8; -webkit-transform: translateY(0px); }
-                    54% { opacity: 0.5; -webkit-transform: translateY(60px); }
+                    /*transition out of center*/
+                    50% { opacity: 0.9; -webkit-transform: translateX(0px); }
+                    54% { opacity: 0.2; -webkit-transform: translateX(200px); }
 
-                    75% { opacity: 0.2; -webkit-transform: translateY(60px); }
-                    78% { opacity: 0; -webkit-transform: translateY(120px); }
+                    /*transition off page*/
+                    75% { opacity: 0.1; -webkit-transform: translateX(200px); }
+                    78% { opacity: 0; -webkit-transform: translateY(150px); }
                     100% { opacity: 0; }
                 }
         /*--- end */
 /* ----- end */
 
     .img-container {
-        width: 60%; /*..parent dims*/
-        position: relative; z-index: 15; 
+        width: 40%; 
+        position: relative; z-index: 5; 
         /*& NEW stack-context*/
-        padding: 96px 0 96px 0;
-        left: 10%; /**/
+        padding: 0 5vw;
+        left: 0;
+        top: 0;
     }
-        .hero-img { 
-           position: absolute;
-        }
 
-        .hero-img.pre {
-            width: 20%;
-            padding-top: 20%; 
+    .bg-streak {
+        background: linear-gradient(#000, rgba(0,0,0,0));
+        width: 50%;
+        height: 80%;
+    }
+    .hero-img {
+        position: absolute;
+        background-color: white;
+        max-width: 40vh;    
+            min-width: 15vh;
+        height: auto;
+        padding: 3% 1% 2%;
+    }
+        .hero-img.top {
             /*.. Padding/Width MUST be same to maintain aspect ratio*/
-            top: 15%;
-            left: 42.5%;
-            background-color: blue;
-            /*background-image: url('../images/linkedin-icon.png');*/
-            background-repeat: no-repeat;
-            background-size: contain;
-            object-fit: contain;
-        }
-        .hero-img.main {
-            width: 40%;
-            padding-top: 40%; 
+            top: 0;
+            left: 5%;
+            transform: rotate(-20deg);
+            
+            animation: fadeIn__top 0.5s;
+            animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+            }
+            @keyframes fadeIn__top {
+                0% { top: -300px; transform: rotate(0deg); }
+                100% { top: 0; left: 15%; transform: rotate(-20deg);}
+            }
+        .hero-img.mid {
             /*.. MUST be same to maintain aspect ratio*/
-            left: 10%;
-            top: 20%;
-            background-color: yellow;
-            /*background-image: url('../images/mail-icon.png');*/
-            background-repeat: no-repeat;
-            background-size: contain;
-            object-fit: contain;
-        }
-        .hero-img.post {
-            width: 0%;
-            padding-top: 0%;  
+            top: 30%;
+            left: 15%;
+            transform: rotate(15deg);
+            /*background-image: url('../images/');*/
+            animation: fadeIn__mid 0.7s;
+            animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+            }
+            @keyframes fadeIn__mid {
+                0% { top: -300px; 
+                    left: 5%; 
+                    transform: rotate(0deg); 
+                }
+                100% { top: 30%; 
+                    left: 15%;
+                    transform: rotate(15deg);
+                }
+            }
+        .hero-img.bot { 
             /*.. MUST be same to maintain aspect ratio*/
-            right: 0%;
-            top: 0%;
-            background-color: orange;
+            top: 70%;
+            left: 5%;
+            transform: rotate(-15deg);
             /*background-image: url('../images/github-icon.png');*/
-            background-repeat: no-repeat;
-            background-size: contain;
-            object-fit: contain;
-        }
+            animation: fadeIn__bot 1s;
+            animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+            }
+            @keyframes fadeIn__bot {
+                0% { top: -300px; 
+                    left: 0; 
+                    transform: rotate(0deg); 
+                }
+                100% { top: 70%; 
+                    left: 5%;
+                    transform: rotate(-15deg);
+                }
+            }
 
             
 /* ==== download button === */
@@ -272,20 +300,58 @@
         }
 /* ----- end */
 
+
+
+@media all and (max-width: 760px) {
+    #Landing h6 { font-size: 0.3rem; }
+    #Landing h4 { font-size: 0.5rem; }
+    #Landing h3 { font-size: 0.75rem; }
+    #Landing h2 { font-size: 1rem; }
+    #Landing h1 { font-size: 2rem; }
+
+    #landing-container {
+        flex-direction: column-reverse;
+    }
+        .callout-container {
+            padding-top: 0;
+        }
+        .rotating-words-wrap {
+            padding-top: 10vh;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .rw-sentence {
+            line-height: 2rem;
+        }
+
+    .img-container {
+        width: 100%;
+        height: 40vh;
+        }
+        .bg-streak { display: none; }
+        .hero-img {
+            max-height: 50vw;
+            width: auto;
+        }
+        .hero-img.top {
+            left: 10%;
+        }
+        .hero-img.mid {
+            left: 35%;
+            top: 0;
+        }
+        .hero-img.bot {
+            left: 75%;
+            top: 10%;
+        }
+        
+}
+
 /* ===== My Works Styling ===== */
 /*#WorksIntro {
     background-color: #CD7213;
     padding: 40px 12.5% 32px 12.5%;
     height: 400px;
-}*/
-
-/* Recent Work Grid */
-/*#recent-project-grid {
-    margin: 32px 16px 16px 16px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    word-wrap: normal;
 }*/
 
 /* Recent Work Cards */
@@ -331,31 +397,3 @@
         text-align: center;
         transform: rotateY(180deg);
       }*/
-
-/* show class added to filtered elements */
-/*.show {
-    display: block;
-}*/
-
-/* Filter Button functionality*/
-/* Style the buttons */
-/*.btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: white;
-    cursor: pointer;
-  }
-  */
-  
-  /* Add a grey background color on mouse-over */
-  /*.btn:hover {
-    background-color: #ddd;
-  }
-  */
-  /* Add a dark background color to the active button */
-  /*.btn.active {
-    background-color: #666;
-     color: white;
-  }*/
-    
