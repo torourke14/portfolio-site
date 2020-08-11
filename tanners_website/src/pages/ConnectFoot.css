@@ -6,6 +6,7 @@
 /* ===== Footer Callout Styling ===== */
 .foot-master {
     background-color: #2B3136;
+    font-family: "Cousine", monospace;
 }
 .foot-callout-bg {
     width: 100%;

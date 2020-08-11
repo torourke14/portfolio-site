@@ -7,6 +7,7 @@
     height: 100%;
     background: #e0bf00;
     scroll-behavior: smooth;
+    font-family: "Cousine", monospace;
 }
 
 .aboutme-back-button {
@@ -31,7 +32,7 @@
         width: 65%;
     }
     #banner h2 { 
-        color: #EFB509; 
+        color: #2b3136; 
         font-size: 2rem;
     }
     #banner h3 { 

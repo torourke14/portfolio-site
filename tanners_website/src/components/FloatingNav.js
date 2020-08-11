@@ -53,7 +53,7 @@ class FloatingNav extends React.Component {
             return (
                 <nav className="nav-menu">
                     <ul>
-                        <li><Link to="/Landing">-</Link></li>
+                        <li><Link to="/">-</Link></li>
                         <li><Link to="/About">About Me</Link></li>
                         <li><Link to="/Portfolio">Portfolio</Link></li>
                         <li><Link to="/connect">Connect</Link></li>

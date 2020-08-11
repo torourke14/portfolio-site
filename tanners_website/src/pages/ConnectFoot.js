@@ -7,6 +7,8 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAtlas } from "@fortawesome/free-solid-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import Resume from '../files/Resume__Tanner-ORourke.pdf';
 
 import FloatingNav from '../components/FloatingNav';
 
@@ -63,7 +65,20 @@ class ConnectFoot extends React.Component {
                                     </div>
                                 </a>
                                 <span> /&nbsp;&nbsp;&nbsp;425-786-6688</span>
-                            </span>
+
+                                <br/>
+                                <span> 
+                                    Download my 
+                                    <a className="dl-button foot" href={ Resume } download={true}>
+                                        <div className="bt-front">
+                                                <span>Resume</span>
+                                        </div>
+                                        <div className="bt-back">
+                                                <span className="icon"><FontAwesomeIcon icon={faDownload} /></span>
+                                        </div>
+                                    </a> 
+                                </span>
+                            </span> 
                         </div>
                     </div>
             </section>

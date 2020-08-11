@@ -2,30 +2,32 @@
 #About {
     position: relative;
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     height: 100%;
     padding-top: 10vh;
     border-top: 1px solid #eeddaa;
     background: #2b3136;
+    font-family: "Cousine", monospace;
 }
 
     .about-content {
         display: flex;
         flex-flow: column nowrap;
-        width: 50%;
-        padding-left: 10%;
+        width: 100%;
+        padding: 0 10%;
     } 
         .about-intro-para {
-            height: 33%;
-            padding-bottom: 4rem;
+            padding: 2rem 0;
             color: #eeddaa;
         }
             .about-intro-para h2 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             .about-intro-para p {
                 padding-top: 1rem;
-                line-height: 0.8rem;
+                padding-left: 8px;
+                line-height: 1.2rem;
                 font-size: 0.8rem;
                 font-weight: 450;
                 line-break: loose;
@@ -33,8 +35,8 @@
     
     .about-more-content {
         display: flex;
-        flex-flow: column nowrap;
-        width: 40%;
+        flex-flow: row wrap;
+        width: 100%;
         padding: 0 10% 5vh 10%;
     }
         .about-more-content span {
@@ -44,4 +46,16 @@
         .about-more-content h3 {
             color: #f9f1dc;
             text-decoration: underline dotted;
+        }
+
+        @media all and (min-width: 700px) {
+            #About {
+                flex-direction: row;
+            }
+            .about-content {
+                width: 50%;
+            }
+            .about-more-content {
+                width: 50%;
+            }
         }

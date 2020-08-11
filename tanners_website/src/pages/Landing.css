@@ -10,6 +10,7 @@
 
 #Landing {
     position: relative;
+    font-family: "Cousine", monospace;
 }
 #landing-container {
     position: relative; /* for absolutely positioned children */
@@ -47,6 +48,9 @@
             position: relative;
             left: 96px;
             top: 1.5rem;
+        }
+        .down-link a {
+            text-decoration: none;
         }
         .landingLinkBox {
             position: relative; 
@@ -89,6 +93,7 @@
                 border-color: #eeddaa;
                 text-decoration: none;
                 color: rgba(43, 49, 54, 0); /*#2b3136*/
+                text-decoration: none;
                 transition: width 0.5s ease-in-out,
                         margin 0.5s ease-in-out,
                         border-color 0.25s linear,
@@ -119,19 +124,22 @@
             }
             .rw-words {
                 display: inline;
-                text-indent: 10px;
+                text-indent: 16px;
             }
-            .rw-words span{
+            .rw-words span {
+                font-family: monospace;
                 position: absolute;
                 opacity: 0;
                 overflow: hidden;
                 width: 100%;
+                font-size: 2.25rem;
                 color: #E0BF00;
-                -webkit-animation: rotateWords 18s linear infinite 0s;
-                animation: rotateWords 18s linear infinite 0s;
+                -webkit-animation: rotateWords 12s linear infinite 0s;
+                animation: rotateWords 12s linear infinite 0s;
 
                 -webkit-transform-origin: 10% 75%;
                 transform-origin: 10% 75%;
+                animation-timing-function: ease-in;
             }
                 .rw-words span:nth-child(2) { 
                     -webkit-animation-delay: 3s; 
@@ -154,28 +162,19 @@
                     animation-delay: 12s; 
                 }
                 @keyframes rotateWords {
-                    0%   { opacity: 0; /*animation-timing-function: ease-in;*/ }
-                    10%  { opacity: 1; }
-                    
-                    17% { opacity: 1; -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-                    19% { opacity: 1; -webkit-transform: rotate(98deg); transform: rotate(98deg); }
-                    21% { opacity: 1; -webkit-transform: rotate(86deg); transform: rotate(86deg); }
-                    23% { opacity: 1; -webkit-transform: translateY(85px) rotate(83deg); transform: translateY(85px) rotate(83deg); }
-                    25% { opacity: 0; -webkit-transform: translateY(170px) rotate(80deg); transform: translateY(170px) rotate(80deg); } 
+                    0% { opacity: 0; }
+                    2% { opacity: 0; -webkit-transform: translateY(-80px); }
+                    20% { opacity: 0.1;  -webkit-transform: translateY(-60px); }
+                    25% { opacity: 0.5; -webkit-transform: translateY(-40px); }
 
-                    80%  { opacity: 0; }
+                    27% { opacity: 1; -webkit-transform: translateY(0px); }
+                    50% { opacity: 0.8; -webkit-transform: translateY(0px); }
+                    54% { opacity: 0.5; -webkit-transform: translateY(60px); }
+
+                    75% { opacity: 0.2; -webkit-transform: translateY(60px); }
+                    78% { opacity: 0; -webkit-transform: translateY(120px); }
                     100% { opacity: 0; }
                 }
-                /* timing-function ease-in 
-                @-webkit-keyframes rotateWord {
-                    0% { opacity: 0; }
-                    2% { opacity: 0; -webkit-transform: translateY(-30px); }
-                    5% { opacity: 1; -webkit-transform: translateY(0px);}
-                    17% { opacity: 1; -webkit-transform: translateY(0px); }
-                    20% { opacity: 0; -webkit-transform: translateY(30px); }
-                    80% { opacity: 0; }
-                    100% { opacity: 0; }
-                }*/
         /*--- end */
 /* ----- end */
 

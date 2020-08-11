@@ -4,10 +4,11 @@
     flex-flow: row wrap;
     height: 100%;
     padding: 96px 0 128px 10%;
+    font-family: "Cousine", monospace;
     }
     #services-content { 
         width: 70%;
-        color: black;
+        color: #eeddaa;
     }
     
     #skill-blocks {

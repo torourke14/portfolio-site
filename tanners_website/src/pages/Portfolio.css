@@ -1,42 +1,17 @@
 
 /* Global styling */
-    #Portfolio h5 {
-        padding: 6px 0;
-        font-size: 1.05em; 
-    }
-    #Portfolio h4 {
-        padding: 12px 0 6px 0; 
-        font-size: 1.3em; 
-    }
-    #Portfolio h2 {
-        padding: 12px 0;
-        font-size: 2em;
-    }
-    #Portfolio h1 {
-        padding: 12px 0;
-        font-size: 4;
-    }
 
 #Portfolio {
     background-color: #2b3136;
     border-top: 1px solid #eeddaa;
     position: relative;
     padding: 0;
+    font-family: "Cousine", monospace;
 }
 /* end ----- */
 
-/* Phone menu */
-@media all and (min-width: 700px) {
-
-}
-/* Tablet menu */
-@media all and (min-width: 960px) {
-
-}
-
-
 .portfolio-header { 
-    position: absolute;
+    position: fixed;
     top: -4px;
     left: 30px;
     font-size: 6rem;
@@ -47,100 +22,128 @@
 
 /* ===== Portfolio/Works Grid Styling ===== */
 .project-container {
-    padding: 0; /*--side padding */
+    height: 100%;
+    min-height: 60vh;
+    padding: 20vh 15% 20vh 15%;
+    background: none;
 }
-.project-container::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-    .project-container {
-        background: #2b3136;
-        height: 100%;
-        min-height: 100vh;
-        padding: 15vh 10% 15vh 20%;
-        margin: 0;
+/*.project-wrapper {
+    position: relative;
+    rest of styles in component
+}*/
+    .entry {
+        position: relative;
+        height: 60vh;
+        width: 100%;
+        padding: 24px 0;
+        overflow: hidden;
+        border-radius: 2px;
+        text-align: center;
+        background: black;
+        display: table;
+        /*animation: moveEntryCard 10ms ease-in;*/
     }
-    /*.project-container:nth-child(odd) {
-        background-color: #F9F1DC;
+        .entry-bg-wrap {
+            display: table-cell;
+            vertical-align: middle;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .project-container:nth-child(odd) .entry {
-            background-color: #EEDDAA;
-        }
-    .project-container:nth-child(even) {
-        background-color: #EEDDAA;
-        }
-        .project-container:nth-child(even) .entry {
-            background-color: #2B3136;
-        }*/
-        
-        .entry {
+    
+    .project-container:nth-of-type(1) .entry {
+        background-color: #428FBE; /* from style guide */
+    }
+    .project-container:nth-of-type(2) .entry {
+        background-color: #1DB954; /* spotify green */
+    }
+    .project-container:nth-of-type(3) .entry {
+        background-color: white;
+    }
+    .project-container:nth-of-type(4) .entry {
+        background-color: #000000;
+    }
+    
+        .entry img, .entry svg {
+            display: block;
             position: relative;
-            width: 70%;
-            height: 60vh;
-            overflow: hidden;
-            padding: 24px 0;
-            background-color: #778692;
-            color: #2b3136;
-            box-shadow: 4px 4px 8px #eeddaa;
-            border-radius: 2px;
-            text-align: center;
-            font-size: 1.5em;
+            /* center (& pad) image */
+            top: 0; left: 5%;
+            width: 90%; height: auto;
         }
-            .entry img {
-                display: block;
+        .entry #spt svg {
+            transform: scale(2.5);
+            left: 10%;
+            }
+            .entry #spt h1 {
                 position: relative;
-                /* center (& pad) image */
-                top: 10%; left: 10%;
-                height: 80%; width: 80%;
+                top: 5vh;
+                color: white;
             }
-            .entry .mask, .entry .content-bg {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                overflow: hidden;
-                top: 0;
-                left: 0;
-            }
+
+        .entry .mask, .entry .content-bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+        .entry h2 {
+            text-transform: uppercase;
+            color: #EEDDAA;
+            text-align: center;
+            position: relative;
+            font-size: 4rem;
+            padding: 10px 0;
+            background: rgba(0,0,0, 0.8);
+            margin-top: 10vh;
+        }
+        .entry p {
+            font-size: 1rem;
+            position: relative;
+            top: 1vh;
+            padding: 10px 10px 10px;
+            color: black;
+        }
+        .entry button.info {
+            position: relative;
+                top: 2vh;
+            background: black;
+            padding: 7px 14px;
+            color: #fff;
+            text-transform: uppercase;
+            box-shadow: 0 0 1px #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media all and (max-width: 900px) {
             .entry h2 {
-                text-transform: uppercase;
-                color: #EEDDAA;
-                text-align: center;
-                position: relative;
-                font-size: 1rem;
-                padding: 10px;
-                background: rgba(0,0,0, 0.8);
-                margin: 40px 0 0 0;
+                padding: 0;
             }
-            .entry p {
+            .entry p, .entry button {
+                top: 0;
+                font-size: 0.5rem;
+
+            }
+        }
+        @media all and (max-width: 600px) {
+            .entry h2 {
+                font-size: 2rem;
+            }
+            .entry p, .entry button {
                 font-size: 0.75rem;
-                position: relative;
-                color: #EEDDAA;
-                top: 30px;
-                padding: 10px 10px 10px;
-                text-align: center;
+                top: 2%;
+            }
+        }
+        .entry:hover {
+            background-color: #F3C12B;
+            box-shadow: 0 0 5px #000;
 
-            }
-            .entry a.info {
-                display: inline-block;
-                text-decoration: none;
-                padding: 7px 14px;
-                background: #000;
-                color: #fff;
-                text-transform: uppercase;
-                box-shadow: 0 0 1px #000;
-                cursor: pointer;
-            }
-            .entry:hover {
-                background-color: #F3C12B;
-                box-shadow: 0 0 5px #000;
-
-                -webkit-transition-timing-function: cubic-bezier(0.6,0,0.4,1);
-                transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	            -webkit-transition-duration: 0.8s;
-	            transition-duration: 0.8s;
-            }
+            -webkit-transition-timing-function: cubic-bezier(0.6,0,0.4,1);
+            transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+            -webkit-transition-duration: 0.8s;
+            transition-duration: 0.8s;
+        }
         
         /* box animation cover styling */
         .entry-cover img { 
@@ -148,7 +151,8 @@
         }
             .entry-cover .mask {
                 opacity: 0;
-                background-color: #eeddaa; 
+                background-color: transparent; 
+                box-shadow: 4px 4px 8px #2b3136;
 
                 -webkit-transition-timing-function: cubic-bezier(0.6,0,0.4,1);
                 transition-timing-function: cubic-bezier(0.7,0,0.3,1);
@@ -156,7 +160,7 @@
 	            transition-duration: 0.8s;
             }
             .entry-cover h2 {
-                transform: translateY(-100px);
+                transform: translateY(1000px);
                 opacity: 0;
                 transition: all 0.2s ease-in-out;
             }
@@ -165,7 +169,7 @@
                 opacity: 0;
                 transition: all 0.2s linear;
             }
-            .entry-cover a.info{
+            .entry-cover button.info {
                 opacity: 0;
                 transition: all 0.2s ease-in-out;
                 overflow: hidden;
@@ -173,14 +177,15 @@
 
         /* box cover animation */
         .entry-cover:hover img { 
-            transform: scale(1.1);
+            transform: scale(1.05);
+            opacity: 0;
         } 
         .entry-cover:hover .mask { 
             opacity: 1;
         }
         .entry-cover:hover h2,
         .entry-cover:hover p,
-        .entry-cover:hover a.info {
+        .entry-cover:hover button.info {
             opacity: 1;
             transform: translateY(0px);
         }
@@ -278,9 +283,7 @@
 
 
 
-            .content .problem {
-
-                }
+            
                 .content .section-title {
                     text-decoration: underline;
                     padding-top: 16px;

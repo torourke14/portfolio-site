@@ -4,8 +4,6 @@ import './AboutMeDrawer.css';
 //Icons
 import linkedInHero from '../images/LinkedInPic.jpg';
 import picFiller from '../images/enchantments.jpg';
-import githubIcon from '../images/github-icon.png';
-import emailIcon from '../images/mail-icon.png';
 
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,7 +25,7 @@ class AboutMeDrawer extends React.Component {
 
                         <div id='AboutDrawer_Intro'>
                                 <div id="banner">
-                                        <h2>I design, I develop. I create.</h2>
+                                        <h2>I design. I develop. I create.</h2>
                                         <h3>(signature)</h3>
                                 </div>
                                 <div className="intro-img-container">

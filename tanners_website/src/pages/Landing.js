@@ -2,14 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import './Landing.css';
 import 'animate.css';
-import scrollToComponent from 'react-scroll-to-component';
 
-import Resume from '../files/Resume__Tanner-ORourke.pdf';
 // Pages
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from 'react-router-dom';
 import FloatingNav from '../components/FloatingNav';
 
 
@@ -44,27 +41,27 @@ class Landing extends React.Component {
                             <h1>I'm&nbsp;Tanner.</h1>
 
                             <div className="down-link">
-                                <button className="landingLinkBox" onClick={ console.log("going down!") }>
-                                    Who?
-                                    <span className="arrow">
-                                        <FontAwesomeIcon icon={faArrowDown} />
-                                    </span>
+                                <Link to="/about">
+                                <button className="landingLinkBox">
+                                        Who?
+                                        <span className="arrow">
+                                            <FontAwesomeIcon icon={faArrowDown} />
+                                        </span>
                                 </button>
+                                </Link>
                             </div>
 
                             <div className="rotating-words-wrap">
-                            <h2 className="rw-sentence">
-                                <span>Welcome to my life of</span>
-                                
-                                <div className="rw-words">
-                                    <span>designing</span>
-                                    <span>building</span>
-                                    <span>developing</span>
-                                    <span>stylizing</span>
-                                    <span>managing</span>
-                                </div>
-                                <span><br/>User-Driven Interfaces</span>
-                            </h2>
+                                <h2 className="rw-sentence">
+                                    <span>Welcome to my life</span>
+                                    <div className="rw-words">
+                                        <span>developing</span>
+                                        <span>building</span>
+                                        <span>designing</span>
+                                        <span>stylizing</span>
+                                    </div>
+                                    <span><br/></span>
+                                </h2>
                             </div>
                         </div>
 
