@@ -14,7 +14,6 @@ class About extends React.Component {
     render() {
         return (
             <section id="About" className="panel__About">
-                <FloatingNav />
                 <div className="about-content">
                     <div className="about-intro-para">
                         <h2>I am a Front-End Developer</h2>

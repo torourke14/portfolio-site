@@ -17,16 +17,12 @@ class ConnectFoot extends React.Component {
     render() {
         return (
             <section id="ConnectFoot" className="panel__ConnectFoot">
-                <FloatingNav />
-                    <div className="foot-callout-bg">
-                        <div className="foot-bg-gif">
-                            <video src="https://media.giphy.com/media/3owzVYk3A2E572jRSM/source.mp4" alt="" autoPlay={true} loop={true} />
-                        </div>
+                    <div className="foot-container">
                         <div className="foot-callout">
-                            <h2>Connect With Me</h2>
+                            <h1>I'm looking for hire!</h1>
                         </div>
                         <div className="foot-links">
-                            <span>
+                            <h2>
                                 <span>I'm active on</span>
                                 <a id="linkedin-foot" className="dl-button foot" href="http://linkedin.com/in/tworourke">
                                     <div className="bt-front">
@@ -45,7 +41,6 @@ class ConnectFoot extends React.Component {
                                             <span><FontAwesomeIcon icon={faGithub} /></span>
                                     </div>
                                 </a> 
-                                <span>(incl. this site's repo!)</span>
                                 <br/>
                                 <a id="mail-foot" className="dl-button foot" href="mailto:tannero@live.com">
                                     <div className="bt-front">
@@ -64,21 +59,22 @@ class ConnectFoot extends React.Component {
                                             <span><FontAwesomeIcon icon={faLink} /></span>
                                     </div>
                                 </a>
-                                <span> /&nbsp;&nbsp;&nbsp;425-786-6688</span>
-
-                                <br/>
-                                <span> 
-                                    Download my 
-                                    <a className="dl-button foot" href={ Resume } download={true}>
-                                        <div className="bt-front">
-                                                <span>Resume</span>
-                                        </div>
-                                        <div className="bt-back">
-                                                <span className="icon"><FontAwesomeIcon icon={faDownload} /></span>
-                                        </div>
-                                    </a> 
-                                </span>
-                            </span> 
+                                <span>&nbsp;/&nbsp;</span>
+                                <span> Download my</span> 
+                                <a className="dl-button foot" href={ Resume } download={true}>
+                                    <div className="bt-front">
+                                            <span>Resume</span>
+                                    </div>
+                                    <div className="bt-back">
+                                            <span className="icon"><FontAwesomeIcon icon={faDownload} /></span>
+                                    </div>
+                                </a> 
+                            </h2>
+                        </div>
+                        <div className="foot-info">
+                            <h6>
+                                If you'd like to 'talk shop', discuss components of this site, or just say hi, feel free to contact me personally.
+                            </h6>
                         </div>
                     </div>
             </section>

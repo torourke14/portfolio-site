@@ -13,17 +13,20 @@ import ConnectFoot from './pages/ConnectFoot';
 
 import AboutMeDrawer from './components/AboutMeDrawer';
 import ExpSkillsDrawer from './components/ExpSkillsDrawer';
+import FloatingNav from './components/FloatingNav';
 
 
 function AppContainer({ location }) {
     return (
         <div id="backdrop">
+            
             <TransitionGroup component={null}>
                 <CSSTransition key={location.key} 
                 classNames={'slide'}
                 timeout={{ enter: 400, exit: 300 }} 
                 >
                     <section className="route-section">
+                        <FloatingNav activeLoc={location}/>
                         <Switch location={location}>
                             <Route exact path="/"  render={() =>
                                     <Landing />

@@ -30,7 +30,6 @@ class Landing extends React.Component {
         return (
         <header id="Landing" className="panel__Landing">
             <div id="landing-container">
-                <FloatingNav />
                 <div className="callout-container">
                     <h1>- Hi;</h1>
                     <h1>I'm&nbsp;Tanner.</h1>

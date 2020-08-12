@@ -1,6 +1,6 @@
 import React from 'react';
 import './FloatingNav.css';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -17,19 +17,14 @@ class FloatingNav extends React.Component {
                 deprecatePullout: props.deprecate,
                 sidenavOpen: false
             }
-            this.opScroll = this.onScroll.bind(this);
+            //this.onScroll = this.onScroll.bind(this);
 
-            const mainNavLinks = document.querySelectorAll("nav ul li a");
-            const mainSections = document.querySelectorAll("main section");
+            //const mainNavNavLinks = document.querySelectorAll("nav ul li a");
+            //const mainSections = document.querySelectorAll("main section");
         }
 
-        componentDidMount() {
+        /*componentDidMount() {
             window.addEventListener("scroll", this.onScroll);
-        }
-
-        static getDerivedStateFromProps(props, state) {
-            console.log("derived:", props.deprecate);
-            return {deprecatePullout: props.deprecate};
         }
 
         onScroll() {
@@ -38,7 +33,7 @@ class FloatingNav extends React.Component {
 
         componentWillMount() {
             window.removeEventListener("scroll");
-        }
+        }*/
 
         render() {
             const deprecated = this.state.deprecatePullout;
@@ -53,17 +48,25 @@ class FloatingNav extends React.Component {
             return (
                 <nav className="nav-menu">
                     <ul>
-                        <li><Link to="/">-</Link></li>
-                        <li><Link to="/About">About Me</Link></li>
-                        <li><Link to="/Portfolio">Portfolio</Link></li>
-                        <li><Link to="/connect">Connect</Link></li>
+                        <li><NavLink exact to="/" activeClassName="selected">
+                            Home
+                        </NavLink></li>
+                        <li><NavLink exact to="/About" activeClassName="selected">
+                            About Me
+                        </NavLink></li>
+                        <li><NavLink exact to="/Portfolio" activeClassName="selected">
+                            Portfolio
+                        </NavLink></li>
+                        <li><NavLink exact to="/connect" activeClassName="selected">
+                            Connect
+                        </NavLink></li>
                     </ul>
                 </nav>
             );
         }
 }
 
-let mainNavLinks = document.querySelectorAll("nav ul li a");
+let mainNavNavLinks = document.querySelectorAll("nav ul li a");
 let mainSections = document.querySelectorAll("main section");
 
 let lastId;
@@ -81,16 +84,16 @@ let cur = [];
 window.addEventListener("scroll", event => {
   let fromTop = window.scrollY;
 
-  mainNavLinks.forEach(link => {
-    let section = document.querySelector(link.hash);
+  mainNavNavLinks.forEach(NavLink => {
+    let section = document.querySelector(NavLink.hash);
 
     if (
       section.offsetTop <= fromTop &&
       section.offsetTop + section.offsetHeight > fromTop
     ) {
-      link.classList.add("current");
+      NavLink.classList.add("current");
     } else {
-      link.classList.remove("current");
+      NavLink.classList.remove("current");
     }
   });
 });

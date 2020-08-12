@@ -43,7 +43,6 @@ class Portfolio extends React.Component {
         }
         return (
             <section id="Portfolio" className="panel__Portfolio">   
-                <FloatingNav />      
                 <div className="portfolio-header" styles={headerStyle}>
                     My Work.
                 </div>
