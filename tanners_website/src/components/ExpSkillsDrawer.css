@@ -1,14 +1,47 @@
+   
+/* Common Styling */
+.Skills_Drawer h5 {
+    padding: 6px 0;
+    font-size: 1.05em; 
+}
+.Skills_Drawer h4 {
+    padding: 12px 0 6px 0;
+    font-size: 1.3em; 
+}
+.Skills_Drawe h1 {
+    padding: 12px 0;
+    font-size: 2.4em;
+}
+/* end ----- */
+
+.Skills_Drawer {
+    /*padding: 50px 7.5% 0 7.5%;*/
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 100vh;
+    height: 100%;
+    background-color: #2b3136;
+    padding-bottom: 40px;
+    padding-top: 40px;
+
+    font-family: 'Cousine', monospace;
+}
+
+
+
+
 /* ===== My Services Intro Styling ===== */
-#About_DrawerServices {
+.Skills_Drawer .Services {
     display: flex;
     flex-flow: row wrap;
     height: 100%;
-    padding: 96px 0 128px 10%;
+    padding: 5vh 0 20vh 10%;
     font-family: "Cousine", monospace;
     }
-    #services-content { 
+
+    #services-content {
         width: 70%;
-        color: #eeddaa;
+        color: #F9F1DC;
     }
     
     #skill-blocks {
@@ -16,159 +49,226 @@
         flex-flow: row wrap;
         }
         .skill-box { 
-            width: 50%; /*..of flex*/
+            width: 50%;
         }
         .skill-box p {
             padding-left: 6px;
             padding-right: 12px;
         }
     
-    #services-right {
+    #services-title {
         width: 30%;
-        padding-right: 5%;
+        padding-right: 10%;
     }
-        #title {
+        #services-title > div {
             position: relative;
             left: 0; 
             top: 25%;
             width: 3px; /*=stroke*/
             height: 110px; /*=length*/
-            background: #003F7A;
+            background: #778692;
             }
-            #title p {
+            #services-title div p {
                 position: relative;
                 top: 130px; /*=position from top of line*/
                 font-size: 2em;
-                font-weight: 500;
+                font-weight: 600;
             }
-            #title span {
-                color: #003F7A;
+            #services-title div span {
+                color: #F9F1DC;
                 left: 0;
-                font-weight: 700;
+                font-weight: 600;
 
             }
 /* end ----- */
 
-
-/* Common grid styling */
-.col-1 { width: 30%; }
-.col-2 { width: 70%; }
-
-    #Skills h5 {
-        padding: 6px 0;
-        font-size: 1.05em; 
-    }
-    #Skills h4 {
-        padding: 12px 0 6px 0;
-        font-size: 1.3em; 
-    }
-    #Skills h2 {
-        padding: 12px 0;
-        font-size: 2em;
-    }
-    #Skills h1 {
-        padding: 12px 0;
-        font-size: 2.4em;
-    }
-
-
 /* ===== My Skills Styling ===== */
-#Skills {
-    /*padding: 50px 7.5% 0 7.5%;*/
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
-    background-color: #16253D;
-    padding-bottom: 40px;
-    padding-top: 40px;
+.tabs-component {
+    width: 100%;
+    padding: 0 10% 10vw;
 }
 
-/* left column */
-#skills-title {
-    /* changes from .col-1 > div */
-    position: relative;
-    left: 40%;
-    top: 25%;
-    width: 3px;
-    height: 110px;
-    background: #EFB509;
-    padding: 0;
-    }
-    #skills-title p {
-        color: white;
-        position: relative;
-        top: 120px;
-        font-size: 2em;
-        font-weight: 550;
-    }
-    #skills-title span {
-        color: #CD7213;
-        font-weight: 800;
-    }
-
-/* right column */
-#skills-content {
-    display: flex;
-    flex-flow: row wrap;
-    color: white;
-    }
     .skills-header { 
         width: 100%; /*of box */
-        padding: 16px 0;
+        padding: 0;
+        font-size: 4rem;
+        color: #778692;
         }
-        .header-hr {
+        .skills-header hr {
             border: 0;
-            height: 1px;
-            width: 50%;
+            width: 80%;
             min-width: 200px;
-            background: #333;
-            background-image: linear-gradient(to right, #ffffff, #e7e7e7, #365b96, #264069, #16253d);
+            background-image: linear-gradient(to left, #f9f1dc, #e7e7e7, #365b96, #264069, #2b3136, #264069, #365b96, #f9f1dc);
+            width: 80%; 
+            height: 3px;
+            margin-top: 8px;
         }
-        #title-hr { 
-            width: 90%; 
-            height: 2px;
-            margin-bottom: 64px;
+
+
+    .tab-headers-flex {
+        display: flex; flex-flow: row nowrap;
+        width: 100%;
+        justify-content: space-evenly;
+        height: auto;
+        padding-top: 32px;
+        padding-bottom: 64px
+    }
+
+        .skill-tab-header {
+            font-family: monospace cursive;
+            flex-basis: 50%;
+            background: none;
+            color: #eeddaa;
+            border: none;
+            padding: 14px 0px;
+            font-size: 3vw;
+            text-align: center;
+            list-style-type: none;
+            cursor: pointer;
         }
-    .skill-bar {
-        padding-top: 16px;
-        padding-bottom: 20px;
-        display: inline-block;
+
+.skill-tab {
+    width: 100%;
+    padding: 5% 0;
+}
+
+.skills-container {
+    width: 40vw;
+    height: 100%;
+    
+    }
+    .skill-wrapper {
+        width: 100%;
+        position: relative;
+    }
+
+
+
+/* Leftist Text links */
+.link--animate {
+    /* General skill text styles */
+    padding: 2.5vh 0;
+    position: relative;
+    font-size: 6vw;
+    line-height: 1rem;
+    color: #F9F1DC;
+    display: inline-block;
+    /* animate link */
+	text-transform: uppercase;
+	font-weight: 900;
+	overflow: hidden;
+	line-height: 0.75;
+	color: #c5c2b8;
+}
+
+.link--animate::after {
+	content: '';
+	position: absolute;
+	height: 16px;
+	width: 100%;
+	top: 50%;
+	margin-top: -8px;
+	right: 0;
+	background: #E0BF00;
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.link--animate:hover::after {
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+}
+
+.link--animate::before {
+	content: attr(data-letters);
+	position: absolute;
+	z-index: 2;
+	overflow: hidden;
+	color: #eeddaa;
+	white-space: nowrap;
+	width: 0%;
+	-webkit-transition: width 0.5s 0.3s;
+	transition: width 0.5s 0.3s;
+}
+
+.link--animate:hover::before {
+	width: 100%;
+}
+
+.link--animate:hover {
+    color: #e7e7e7;
+    transition: color 0.1s;
+}
+
+.link--animate:hover .skill-content {
+    top: 0;
+    height: 5vh;
+}
+
+
+/* Right-side bubbles */
+.skill-content {
+    position: absolute; z-index: 10000;
+    left: 40vw;
+    color: #e7e7e7;
+    overflow: hidden;
+    width: 40vw;
+
+    top: 100vh; /* 100vh*/
+    opacity: 0.1; /*0.1*/
+    height: 0; /*0*/
+}
+
+.skill-content.active {
+    top: calc(-5vh - 1rem);
+    opacity: 1;
+    height: 20vw;
+    transition: top 0.5s ease-in-out, 
+        opacity 0.5s 0.3s ease-in-out,
+        height 0.5s 0.15s ease-in;
+}
+
+
+    .skill-content div {
+        display: table;
+        }
+        .skill-content > div p {
+            display: table-cell;
+           
+            vertical-align: middle;
+            margin: auto 0;
+        }
+
+
+    .skill-content .bubble {
+        width: 40%;
+        height: 80%;
+        float: left;
+        border: 6px solid #E0BF00;
+        border-radius: 50%;
+        color: #E0BF00;
+        text-align: center;
+        font-size: 1.5vw;
+        font-weight: 900;
+        font-style: oblique;
+    }
+    .skill-content .text {
+        width: 60%;
+        height: 50%;
+        padding-left: 10%;
+        color: #E0BF00;
+        font-size: 1vw;
+        font-weight: 600;
+    }
+        
+
+
+@media all and (max-width: 960px) {
+    .skill-box {
         width: 100%;
     }
-        .bar {
-            width: 80%;
-            height: 24px;
-            background-color: white;
-            color: white;
-            text-align: center;
-        }
-        #html {
-            width: 90%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #js {
-            width: 80%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #react {
-            width: 85%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #python {
-            width: 75%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #prototyping {
-            width: 90%;
-            height: inherit;
-            background-color: #CD7213;
-        }
-        #illustrator-figma {
-            width: 75%;
-            height: inherit;
-            background-color: #CD7213;
-        }
+}
