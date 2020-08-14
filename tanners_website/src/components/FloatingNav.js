@@ -1,6 +1,6 @@
 import React from 'react';
 import './FloatingNav.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -13,38 +13,28 @@ class FloatingNav extends React.Component {
         constructor(props) {
             super(props);
 
-            this.state = {
-                deprecatePullout: props.deprecate,
-                sidenavOpen: false
-            }
-            //this.onScroll = this.onScroll.bind(this);
+           
+            this.handleScroll = this.handleScroll.bind(this);
 
             //const mainNavNavLinks = document.querySelectorAll("nav ul li a");
             //const mainSections = document.querySelectorAll("main section");
         }
 
-        /*componentDidMount() {
-            window.addEventListener("scroll", this.onScroll);
+        componentDidMount() {
+            window.addEventListener("scroll", this.handleScroll);
         }
 
-        onScroll() {
-            
+        handleScroll() {
+            return
         }
 
         componentWillMount() {
-            window.removeEventListener("scroll");
-        }*/
+            window.removeEventListener("scroll", this.handleScroll);
+        }
 
         render() {
-            const deprecated = this.state.deprecatePullout;
-            console.log(this.state.sidenavOpen && deprecated);
+            console.log(this.props.activeLoc.pathname);
 
-            // Tanner
-                // Who? (to About slideout)
-            // About 
-                // Skills (to Skills pullout)
-            // Work
-            // Connect
             return (
                 <nav className="nav-menu">
                     <ul>

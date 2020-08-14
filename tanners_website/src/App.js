@@ -90,7 +90,7 @@ class App extends React.Component {
     }
 
     handleURLChange(location, action) {
-        console.log("action:_", action, "  ||  pathname:_", location.pathname, "state:_ ", location.state);
+        //console.log("action:_", action, "  ||  pathname:_", location.pathname, "state:_ ", location.state);
         //this.setState({pathname: location});
     }
 

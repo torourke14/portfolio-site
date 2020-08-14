@@ -7,13 +7,18 @@ import FloatingNav from '../components/FloatingNav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-
+import meAndDog from '../images/me-and-dog.jpg';
 
 
 class About extends React.Component {
     render() {
         return (
             <section id="About" className="panel__About">
+
+                <div className="about-bg-image">
+                    <img src={meAndDog} alt="" />
+                </div>
+
                 <div className="about-content">
                     <div className="about-intro-para">
                         <h2>I am a Front-End Developer</h2>
@@ -41,28 +46,21 @@ class About extends React.Component {
                         </p>
                     </div>
                 </div>
+
                 <div className="about-more-content">
                     <span>
                         <Link to="/me">
-                            <h3>Learn more about who I am
-                                <span>
-                                    &nbsp;&nbsp;&nbsp;
-                                    <FontAwesomeIcon icon={ faArrowRight }/>
-                                </span>
+                            <h3 data-letters="Learn more about who I am">
+                                Learn more about <u>who I am</u>
+                                <span><FontAwesomeIcon icon={ faArrowRight }/></span>
                             </h3>
                         </Link>
                     </span>
                     <span>
-                        &nbsp;
-                    </span>
-                    <span>
                         <Link to="/skills">
-                            <h3>
-                                But seriously, what are your technical skills?
-                                <span>
-                                    &nbsp;&nbsp;&nbsp;
-                                    <FontAwesomeIcon icon={ faArrowRight }/>
-                                </span>
+                            <h3 data-letters="But seriously, what are your technical expertises?">
+                                But seriously, what are your <u>technical expertises</u>?
+                                <span><FontAwesomeIcon icon={ faArrowRight }/></span>
                             </h3>
                         </Link>
                     </span>               
