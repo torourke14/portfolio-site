@@ -7,24 +7,25 @@
     position: relative;
     padding: 0;
     font-family: "Cousine", monospace;
+    overflow-x: hidden;
 }
 /* end ----- */
 
-.portfolio-header { 
+.portfolio-header {
     position: fixed;
-    top: -4px;
-    left: 30px;
-    font-size: 6rem;
-    font-family: 'Arial Black', serif; 
-    /*padding: 96px 0 0 5%;*/
+    height: calc(100vh - 8rem);
+    left: 5vw;
+    font-family: 'Arial Black', serif;
+    color: #eeddaa;
 }
+    /*.portfolio-header p {} --> in component */
 
 
 /* ===== Portfolio/Works Grid Styling ===== */
 .project-container {
     height: 100%;
     min-height: 60vh;
-    padding: 20vh 15% 20vh 15%;
+    padding: 20vh 10% 20vh 20%;
     background: none;
 }
 /*.project-wrapper {

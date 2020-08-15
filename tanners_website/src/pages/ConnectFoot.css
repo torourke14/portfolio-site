@@ -19,58 +19,76 @@
     border-top: 1px solid #eeddaa;
     text-align: left;
     }
-    .foot-callout {
-        display: inline-block;
-        padding: 10% 0;
-        height: 40%;
-        width: 100%;
-    }
+
+
+.foot-callout {
+    display: inline-block;
+    padding: 10% 0;
+    height: 40%;
+    width: 100%;
+}
     .foot-callout h1 {
-        font-size: 5rem;
+        font-size: 6rem;
         color: #F9F1DC;
     }
 
-    .foot-links { /* Connect */
+.foot-links { /* Connect */
+    display: inline-block;
+    height: 40%;
+    width: 100%;
+    padding: 5% 0;
+}
+    .foot-links h2 > span{
         display: inline-block;
-        height: 40%;
-        width: 100%;
-        padding: 5% 0;
+        color: #F9F1DC;
+        font-weight: 300;
+        white-space: pre-line;
     }
-        .foot-links h2 > span{
-            position: relative;
-            bottom: 16px;
-            color: #F9F1DC;
-            font-weight: 300;
-            white-space: pre-wrap;
-        }
-        .foot-links h2 a { /* box spacing */
-            margin: 0px;
-        }
-
-    .foot-info {
-        height: 20%;
-        padding: 2rem 0;
+    .foot-links h2 a { /* box spacing */
+        position: relative;
+        margin: 0px;
+        top: 16px;
     }
-        .foot-info h6 {
-            color: #F9F1DC;
-            font-weight: 200;
-        }
 
-        .dl-button.foot {
-            border: none;
-            margin-top: 8px;
+    .dl-button.foot {
+        border: none;
+        margin-top: 8px;
+    }
 
-        }
+.dl-button.foot .bt-back { 
+    background-color: transparent;
+    color: #f9f1dc; 
+}
+.dl-button.foot .bt-front { 
+    color: #F9F1DC; 
+    background-color: transparent;
+}
+.dl-button.foot .bt-back,
+.dl-button.foot .bt-front {
+    padding: 0 8px;
+}
 
-        .dl-button.foot .bt-back { 
-            background-color: transparent;
-            color: #f9f1dc; 
-        }
-        .dl-button.foot .bt-front { 
-            color: #F9F1DC; 
-            background-color: transparent;
-        }
-        .dl-button.foot .bt-back,
-        .dl-button.foot .bt-front {
-            padding: 0 8px;
-        }
+
+
+.foot-info {
+    height: 20%;
+    padding: 2rem 0;
+}
+    .foot-info h4 {
+        color: #F9F1DC;
+        font-weight: 200;
+    }
+
+
+/* Break line for large screens*/
+@media all and (min-width: 900px) {
+    .foot-links h2 > span:nth-of-type(5) {
+        display: table-row;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .foot-callout h1 {
+        font-size: 15vw;
+    }
+}

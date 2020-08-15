@@ -5,15 +5,26 @@
 - 
 ===============
 */
-.nav-menu {
-    position: fixed; z-index: 10000; /* top */
-    width: 10%; /* RIGHT 10% OF SCREEN */
-    bottom: 0;
-    right: 0;
-    padding-right: 24px;
-    padding-bottom: 16px;
-    scroll-behavior: smooth;
+.fixed-navigator {
     font-family: "Cousine", monospace;
+    position: fixed; z-index: 1000; /* top */
+    display: flex;
+    flex-flow: row nowrap;
+    width: 10vw; /* RIGHT 10% OF SCREEN */
+    height: 100%;
+    top: 0;
+    right: 0;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
+
+/*progress bar styles in component */
+
+.nav-menu {
+    align-self: flex-end;
+    width: 90%;
+    padding-right: 4px;
+    padding-bottom: 16px;
 }
 
     .nav-menu ul {
@@ -33,7 +44,7 @@
     .nav-menu ul li a {
         display: inline-block;
         text-decoration: none;
-        font-size: 1.6vw;
+        font-size: 1.75vw;
         color: #f9f1dc;
         cursor: pointer;
         white-space: nowrap;

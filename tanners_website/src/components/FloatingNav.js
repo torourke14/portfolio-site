@@ -13,54 +13,72 @@ class FloatingNav extends React.Component {
         constructor(props) {
             super(props);
 
-           
-            this.handleScroll = this.handleScroll.bind(this);
-
-            //const mainNavNavLinks = document.querySelectorAll("nav ul li a");
-            //const mainSections = document.querySelectorAll("main section");
+            this.state = {
+                scrollProgress: 0
+            }
+            this.scrollPosition = null;
         }
 
         componentDidMount() {
-            window.addEventListener("scroll", this.handleScroll);
+            window.addEventListener( "scroll", this.handleScroll);
         }
-
-        handleScroll() {
-            return
-        }
-
         componentWillMount() {
-            window.removeEventListener("scroll", this.handleScroll);
+            window.removeEventListener( "scroll", this.handleScroll);
+        }
+
+        handleScroll = () => {
+            const scrollTop = Math.max(
+                window.pageYOffset, 
+                document.documentElement.scrollTop
+            );
+            const winHeight = window.innerHeight;
+            const docHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight,
+                document.body.clientHeight, document.documentElement.clientHeight
+            );
+            const windowPos = docHeight - winHeight;
+            
+            this.scrollPosition = (scrollTop / windowPos) * 100;
+
+            this.setState({ scrollProgress: this.scrollPosition });
         }
 
         render() {
-            console.log(this.props.activeLoc.pathname);
-
+            const progressBarStyles = {
+                height: this.state.scrollProgress + "%",
+                width: "10%",
+                backgroundColor: "#e0bf00",
+                borderRadius: "0.5vw" 
+            }
+            
             return (
-                <nav className="nav-menu">
-                    <ul>
-                        <li><NavLink exact to="/" activeClassName="selected">
-                            Home
-                        </NavLink></li>
-                        <li><NavLink exact to="/About" activeClassName="selected">
-                            About Me
-                        </NavLink></li>
-                        <li><NavLink exact to="/Portfolio" activeClassName="selected">
-                            Portfolio
-                        </NavLink></li>
-                        <li><NavLink exact to="/connect" activeClassName="selected">
-                            Connect
-                        </NavLink></li>
-                    </ul>
-                </nav>
+                <div className="fixed-navigator" >
+                    <nav className="nav-menu">
+                        <ul>
+                            <li><NavLink exact to="/" activeClassName="selected">
+                                Home
+                            </NavLink></li>
+                            <li><NavLink exact to="/About" activeClassName="selected">
+                                About Me
+                            </NavLink></li>
+                            <li><NavLink exact to="/Portfolio" activeClassName="selected">
+                                Portfolio
+                            </NavLink></li>
+                            <li><NavLink exact to="/connect" activeClassName="selected">
+                                Connect
+                            </NavLink></li>
+                        </ul>
+                    </nav>
+                    <div className="progress-bar" style={progressBarStyles} />
+                </div>
             );
         }
 }
 
-let mainNavNavLinks = document.querySelectorAll("nav ul li a");
-let mainSections = document.querySelectorAll("main section");
+FloatingNav.defaultProps = {
 
-let lastId;
-let cur = [];
+}
 
 // This should probably be throttled.
 // Especially because it triggers during smooth scrolling.
@@ -70,23 +88,6 @@ let cur = [];
 //    _.throttle(doThatStuff, 100);
 // });
 // Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavNavLinks.forEach(NavLink => {
-    let section = document.querySelector(NavLink.hash);
-
-    if (
-      section.offsetTop <= fromTop &&
-      section.offsetTop + section.offsetHeight > fromTop
-    ) {
-      NavLink.classList.add("current");
-    } else {
-      NavLink.classList.remove("current");
-    }
-  });
-});
 
 export default FloatingNav;
 
