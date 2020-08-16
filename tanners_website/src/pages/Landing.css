@@ -180,11 +180,11 @@
         /*--- end */
 /* ----- end */
 
-    .img-container {
+    .polaroid-container {
         width: 40%; 
         position: relative; z-index: 5; 
         /*& NEW stack-context*/
-        padding: 0 5vw;
+        margin-right: 10%;
         left: 0;
         top: 0;
     }
@@ -197,7 +197,7 @@
     .hero-img {
         position: absolute;
         background-color: white;
-        max-width: 40vh;    
+        max-width: 35vh;    
             min-width: 15vh;
         height: auto;
         padding: 3% 1% 2%;
@@ -205,51 +205,57 @@
         .hero-img.top {
             /*.. Padding/Width MUST be same to maintain aspect ratio*/
             top: 0;
-            left: 5%;
+            left: 10%;
             transform: rotate(-20deg);
             
-            animation: fadeIn__top 0.5s;
+            animation: fadeIn__top 1.2s 0.2s;
             animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
             }
             @keyframes fadeIn__top {
-                0% { top: -300px; transform: rotate(0deg); }
-                100% { top: 0; left: 15%; transform: rotate(-20deg);}
+                0% { top: -600px;
+                    transform: 
+                    rotate(0deg);
+                }
+                100% { top: 0;
+                    left: 10%; 
+                    transform: rotate(-20deg);
+                }
             }
         .hero-img.mid {
             /*.. MUST be same to maintain aspect ratio*/
-            top: 30%;
-            left: 15%;
+            top: 35%;
+            left: 35%;
             transform: rotate(15deg);
             /*background-image: url('../images/');*/
-            animation: fadeIn__mid 0.7s;
+            animation: fadeIn__mid 1.4s 0.4s;
             animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
             }
             @keyframes fadeIn__mid {
-                0% { top: -300px; 
-                    left: 5%; 
+                0% { top: -600px; 
+                    left: -10%; 
                     transform: rotate(0deg); 
                 }
-                100% { top: 30%; 
-                    left: 15%;
+                100% { top: 35%; 
+                    left: 35%;
                     transform: rotate(15deg);
                 }
             }
         .hero-img.bot { 
             /*.. MUST be same to maintain aspect ratio*/
-            top: 70%;
-            left: 5%;
+            top: 60%;
+            left: -5%;
             transform: rotate(-15deg);
             /*background-image: url('../images/github-icon.png');*/
-            animation: fadeIn__bot 1s;
+            animation: fadeIn__bot 1.6s 0.2s;
             animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
             }
             @keyframes fadeIn__bot {
                 0% { top: -300px; 
-                    left: 0; 
+                    left: 10%; 
                     transform: rotate(0deg); 
                 }
-                100% { top: 70%; 
-                    left: 5%;
+                100% { top: 60%; 
+                    left: -5%;
                     transform: rotate(-15deg);
                 }
             }
@@ -324,7 +330,7 @@
             line-height: 2rem;
         }
 
-    .img-container {
+    .polaroid-container {
         width: 100%;
         height: 40vh;
         }

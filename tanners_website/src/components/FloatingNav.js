@@ -51,7 +51,6 @@ class FloatingNav extends React.Component {
                 backgroundColor: "#e0bf00",
                 borderRadius: "0.5vw" 
             }
-            
             return (
                 <div className="fixed-navigator" >
                     <nav className="nav-menu">
@@ -70,7 +69,7 @@ class FloatingNav extends React.Component {
                             </NavLink></li>
                         </ul>
                     </nav>
-                    <div className="progress-bar" style={progressBarStyles} />
+                    <div style={progressBarStyles} />
                 </div>
             );
         }

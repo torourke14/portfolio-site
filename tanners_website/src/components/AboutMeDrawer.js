@@ -3,13 +3,48 @@ import './AboutMeDrawer.css';
 
 //Icons
 import linkedInHero from '../images/LinkedInPic.jpg';
-import picFiller from '../images/enchantments.jpg';
 
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
+/*
+font-family: Arial,sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+box-sizing: border-box;
+position: absolute;
+left: 25vw;
+top: 10vw;
+right: auto;
+bottom: auto;
+z-index: 5;
+overflow: hidden;
+width: 50vw;
+will-change: transform;
+transform: translate3d(0px, 30.2312px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+transform-style: preserve-3d;
+*/
 
+/*
+font-family: Arial,sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+box-sizing: border-box;
+position: absolute;
+left: 25vw;
+top: 10vw;
+right: auto;
+bottom: auto;
+z-index: 5;
+overflow: hidden;
+width: 50vw;
+will-change: transform;
+transform: translate3d(0px, -17.2136px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+transform-style: preserve-3d;
+*/
 
 class AboutMeDrawer extends React.Component {
         
@@ -68,19 +103,19 @@ class AboutMeDrawer extends React.Component {
                                     </h4>
                                     <div className="spacer-img-overlay">
                                         <div className="img-overlay">
-                                            <img src={picFiller} alt="" height="200px" width="200px"/>
+                                            <img src={linkedInHero} alt="" height="200px" width="200px"/>
                                         </div>
                                         <div className="img-overlay">
-                                            <img src={picFiller} alt="" height="200px" width="200px"/>
+                                            <img src={linkedInHero} alt="" height="200px" width="200px"/>
                                         </div>
                                         <div className="img-overlay">
-                                            <img src={picFiller} alt="" height="200px" width="200px"/>
+                                            <img src={linkedInHero} alt="" height="200px" width="200px"/>
                                         </div>
                                         <div className="img-overlay">
-                                            <img src={picFiller} alt="" height="200px" width="200px"/>
+                                            <img src={linkedInHero} alt="" height="200px" width="200px"/>
                                         </div>
                                         <div className="img-overlay">
-                                            <img src={picFiller} alt="" height="200px" width="200px"/>
+                                            <img src={linkedInHero} alt="" height="200px" width="200px"/>
                                         </div>
                                     </div>
                                 </div>

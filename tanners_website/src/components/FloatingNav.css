@@ -18,13 +18,14 @@
     align-items: flex-start;
 }
 
-/*progress bar styles in component */
-
+/* progress-bar --> styled in component */
 .nav-menu {
-    align-self: flex-end;
     width: 90%;
-    padding-right: 4px;
+    align-self: flex-end;
+    margin-right: 12px;
+    margin-left: -12px;
     padding-bottom: 16px;
+    
 }
 
     .nav-menu ul {
@@ -35,7 +36,7 @@
 
     .nav-menu ul li {
         display: block;
-        padding: 8px 0;
+        padding: 0.5vh 0;
         text-align: right;
         text-decoration: none;
         list-style-type: none;

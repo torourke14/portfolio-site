@@ -59,7 +59,7 @@ class Landing extends React.Component {
                     </div>
                 </div>
 
-                <div className="img-container">
+                <div className="polaroid-container">
                     <div className="bg-streak" />
                     <img src={rainier} alt="oops :(" className="hero-img top" />
                     <img src={linkedInPic} alt="oops :(" className="hero-img mid" />
