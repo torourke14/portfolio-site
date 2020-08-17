@@ -106,7 +106,6 @@ class Portfolio extends React.Component {
     }
 }
 
-//class WorksControl extends React.Component
 
 class Project extends React.Component {
     constructor(props) {

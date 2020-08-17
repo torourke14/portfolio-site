@@ -26,7 +26,7 @@ function AppContainer({ location }) {
                 timeout={{ enter: 400, exit: 300 }} 
                 >
                     <section className="route-section">
-                        <FloatingNav activeLoc={location}/>
+                        <FloatingNav />
                         <Switch location={location}>
                             <Route exact path="/"  render={() =>
                                     <Landing />

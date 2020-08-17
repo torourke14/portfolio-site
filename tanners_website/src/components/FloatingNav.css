@@ -1,69 +1,130 @@
-/*
-===============
-- 
-- 
-- 
-===============
-*/
-.fixed-navigator {
+/* Navigation Menu */
+.navigation {
     font-family: "Cousine", monospace;
-    position: fixed; z-index: 1000; /* top */
+    width: 100vw;
+    max-height: 200px;
+    position: fixed; z-index: 999999;
+    top: 0; bottom: auto;
+    left: 0; right: auto;
     display: flex;
-    flex-flow: row nowrap;
-    width: 10vw; /* RIGHT 10% OF SCREEN */
-    height: 100%;
-    top: 0;
-    right: 0;
-    justify-items: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
 }
 
-/* progress-bar --> styled in component */
-.nav-menu {
-    width: 90%;
-    align-self: flex-end;
-    margin-right: 12px;
-    margin-left: -12px;
-    padding-bottom: 16px;
-    
-}
 
-    .nav-menu ul {
-        list-style-type: none;
+    .logo {
+        max-height: 160px;
+        width: auto;
+        top: 40px;
+        margin-top: 40px;
+        margin-left: 40px;
+        background-color: transparent;
+    }
+
+
+    .nav-menu {
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: flex-end;
+        justify-content: space-between;
+        max-height: 150px;
+        margin-top: 40px;
+        margin-right: 40px;
         padding: 0;
-        margin: 0;
+        cursor: pointer;
     }
 
-    .nav-menu ul li {
-        display: block;
-        padding: 0.5vh 0;
-        text-align: right;
-        text-decoration: none;
-        list-style-type: none;
-        cursor: pointer;
+    /* Mobile Menu Bar (changes) */
+    .nav-menu.mobile {
+        max-height: 100px;
     }
-    .nav-menu ul li a {
-        display: inline-block;
-        text-decoration: none;
-        font-size: 1.75vw;
-        color: #f9f1dc;
-        cursor: pointer;
+    .nav-menu.mobile .open-btn {
+        color: #eeddaa;
+        font-size: 1.25rem;
+        }
+        .nav-menu.mobile .open-btn svg {
+            padding-right: 8px;
+        }
+
+    /* Mobile Curtain Menu */
+    .mobile-nav-curtain {
+        position: fixed; z-index: 99999;
+        top: 0; bottom: auto;
+        right: 0; left: auto;
+        height: 100vh;
+        width: 0;
+        max-width: 100vw;
+        background-color: rgba(0,0,0, 0.9); /* fallback */
+        background-color: #f9f1dc;
+    }
+        .mobile-nav-curtain .close-btn {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-size: 2.25rem;
+            cursor: pointer;
+        }
+        .curtain-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+            
+/* All Navigation Links */
+.menu-link {
+    position: relative;
+    display: inline-block;
+    padding: 0.5vh 0;
+    text-decoration: none;
+    font-size: 1.5rem; /*24px*/
+    font-weight: 600;
+    color: #f9f1dc;
+    overflow: hidden;
+    }
+    .mobile-nav-curtain .menu-link {
+        padding: 1vh 0;
+        font-size: 3rem;
+        color: #2b3136;
+    }
+.menu-link.selected {
+    color: #e0bf00;
+}
+
+
+    /* hover text overlay */
+    .menu-link::before {
+        content: attr(data-letters);
+        position: absolute;
+        z-index: 300;
+        overflow: hidden;
+        color: #E0BF00;
         white-space: nowrap;
+        width: 0%;
+        -webkit-transition: width 0.6s ease-in-out 0.3s;
+        transition: width 0.6s ease-in-out 0.3s;
     }
-
-    .nav-menu ul li a.selected {
-        color: #e0bf00;
-        text-decoration: underline #eeddaa;
-    }
-
-    .nav-menu ul li a:hover {
-        text-decoration: underline #e0bf00;
-        transition: 0.5s ease-in-out;
+    .menu-link:hover::before {
+        width: 100%;
         margin-right: 8px;
     }
-    .nav-menu ul li a.selected:hover {
-        color: #f9f1dc;
-        text-decoration: underline #eeddaa;
-        transition: 0.5s ease-in-out;
-        margin-right: 8px;
+
+    /* hover line overlay */
+    .menu-link::after {
+        content: '';
+        position: absolute;
+        height: 6px;
+        top: 50%;
+        width: 100%;
+        right: 0;
+        background: #2b3136;
+        -webkit-transform: translate3d(-100%,0,0) cubic-bezier(0.7,0,0.3,1);
+        -webkit-transition: -webkit-transform 0.6s;
+        transform: translate3d(-100%,0,0);
+        transition: transform 0.6s cubic-bezier(0.7,0,0.3,1);
+    }
+
+    .menu-link:hover::after {
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
     }
