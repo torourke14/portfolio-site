@@ -1,87 +1,113 @@
 
-/* Global styling */
-
+/* Global Page (<Portfolio/>) styling */
 #Portfolio {
     background-color: #2b3136;
-    border-top: 1px solid #eeddaa;
-    position: relative;
+    /*position: relative;*/
     padding: 0;
     font-family: "Cousine", monospace;
     overflow-x: hidden;
-}
-/* end ----- */
+    }
 
-.portfolio-header {
-    position: fixed;
-    height: calc(100vh - 8rem);
-    left: 5vw;
-    font-family: 'Arial Black', serif;
-    color: #eeddaa;
-}
-    /*.portfolio-header p {} --> in component */
+    .portfolio-intro {
+        height: 60vh;
+        padding: 10% 0;
+        background-color: #2b3136;
+    }
+    .portfolio-intro > p {
+        font-family: 'Arial Black', serif;
+        /*REST IN COMPONENT */
+    }
+    /*.portfolio-intro .intro-content {
+        IN COMPONENT }*/
+/* --- end, project Intro */
+    
 
-
-/* ===== Portfolio/Works Grid Styling ===== */
+/* ===== Portfolio Card Styling ===== */
 .project-container {
     height: 100%;
-    min-height: 60vh;
-    padding: 20vh 10% 20vh 20%;
+    min-height: 100vh;
+    padding: 20vh 25% 20vh 15%;
     background: none;
+    position: static;
 }
-/*.project-wrapper {
+
+.card-wrapper {
     position: relative;
-    rest of styles in component
-}*/
-    .entry {
+    background-color: #e0e0e0;
+    width: 100%;
+    height: 60vh;
+    pointer-events: all;
+}
+.card-wrapper::before {
+    content: '';
+    position: absolute;
+    display: block;
+    padding: 1vh;
+    margin-top: -1vh;
+    margin-left: -1vh;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #F3C12B;
+  }
+
+    .card {
         position: relative;
-        height: 60vh;
-        width: 100%;
+        top: -2vh;
+        left: -2vw; 
+        height: 55vh;
+        width: 95%;
         padding: 24px 0;
         overflow: hidden;
         border-radius: 2px;
         text-align: center;
         background: black;
         display: table;
-        /*animation: moveEntryCard 10ms ease-in;*/
     }
-        .entry-bg-wrap {
+    .card:hover {
+        background-color: #F3C12B;
+        box-shadow: 0 0 5px #000;
+        -webkit-transition-timing-function: cubic-bezier(0.6,0,0.4,1);
+        transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+        -webkit-transition-duration: 0.8s;
+        transition-duration: 0.8s;
+    }
+    .project-container:nth-of-type(1) .card {
+        background-color: #428FBE; /* from style guide */
+    }
+    .project-container:nth-of-type(2) .card {
+        background-color: #1DB954; /* spotify green */
+    }
+    .project-container:nth-of-type(3) .card {
+        background-color: white;
+    }
+    .project-container:nth-of-type(4) .card {
+        background-color: #000000;
+    }
+    
+        .card-bg-img {
             display: table-cell;
             vertical-align: middle;
             margin-left: auto;
             margin-right: auto;
         }
-    
-    .project-container:nth-of-type(1) .entry {
-        background-color: #428FBE; /* from style guide */
-    }
-    .project-container:nth-of-type(2) .entry {
-        background-color: #1DB954; /* spotify green */
-    }
-    .project-container:nth-of-type(3) .entry {
-        background-color: white;
-    }
-    .project-container:nth-of-type(4) .entry {
-        background-color: #000000;
-    }
-    
-        .entry img, .entry svg {
-            display: block;
-            position: relative;
-            /* center (& pad) image */
-            top: 0; left: 5%;
-            width: 90%; height: auto;
-        }
-        .entry #spt svg {
-            transform: scale(2.5);
-            left: 10%;
-            }
-            .entry #spt h1 {
+            .card img, .card svg {
+                display: block;
                 position: relative;
-                top: 5vh;
-                color: white;
+                /* center (& pad) image */
+                top: 0; left: 5%;
+                width: 90%; height: auto;
             }
+                .card #spt svg {
+                    transform: scale(2.5);
+                    left: 10%;
+                    }
+                .card #spt h1 {
+                    position: relative;
+                    top: 5vh;
+                    color: white;
+                }
 
-        .entry .mask, .entry .content-bg {
+        .card .mask, .card .content-bg {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -89,205 +115,244 @@
             top: 0;
             left: 0;
         }
-        .entry h2 {
-            text-transform: uppercase;
-            color: #EEDDAA;
-            text-align: center;
-            position: relative;
-            font-size: 4rem;
-            padding: 10px 0;
-            background: rgba(0,0,0, 0.8);
-            margin-top: 10vh;
-        }
-        .entry p {
-            font-size: 1rem;
-            position: relative;
-            top: 1vh;
-            padding: 10px 10px 10px;
-            color: black;
-        }
-        .entry button.info {
-            position: relative;
-                top: 2vh;
-            background: black;
-            padding: 7px 14px;
-            color: #fff;
-            text-transform: uppercase;
-            box-shadow: 0 0 1px #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        @media all and (max-width: 900px) {
-            .entry h2 {
-                padding: 0;
+            .card h2 {
+                text-transform: uppercase;
+                color: #EEDDAA;
+                text-align: center;
+                position: relative;
+                font-size: 4rem;
+                padding: 10px 0;
+                background: rgba(0,0,0, 0.8);
+                margin-top: 10vh;
             }
-            .entry p, .entry button {
-                top: 0;
-                font-size: 0.5rem;
-
+            .card p {
+                font-size: 1rem;
+                position: relative;
+                top: 1vh;
+                padding: 10px 10px 10px;
+                color: black;
             }
-        }
-        @media all and (max-width: 600px) {
-            .entry h2 {
-                font-size: 2rem;
+            .card button.toggle-card {
+                position: relative;
+                    top: 2vh;
+                background: black;
+                padding: 7px 14px;
+                color: #fff;
+                text-transform: uppercase;
+                box-shadow: 0 0 1px #000;
+                text-decoration: none;
+                cursor: pointer;
             }
-            .entry p, .entry button {
-                font-size: 0.75rem;
-                top: 2%;
+            @media all and (max-width: 900px) {
+                .card h2 {
+                    padding: 0;
+                }
+                .card p, .card button {
+                    top: 0;
+                    font-size: 0.5rem;
+                }
             }
-        }
-        .entry:hover {
-            background-color: #F3C12B;
-            box-shadow: 0 0 5px #000;
-
-            -webkit-transition-timing-function: cubic-bezier(0.6,0,0.4,1);
-            transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-            -webkit-transition-duration: 0.8s;
-            transition-duration: 0.8s;
-        }
+            @media all and (max-width: 600px) {
+                .card h2 {
+                    font-size: 2rem;
+                }
+                .card p, .card button {
+                    font-size: 0.75rem;
+                    top: 2%;
+                }
+            }
         
-        /* box animation cover styling */
-        .entry-cover img { 
-            transition: all 0.5s linear;
-        }
-            .entry-cover .mask {
-                opacity: 0;
-                background-color: transparent; 
-                box-shadow: 4px 4px 8px #2b3136;
+    /* card animation cover */
+    .card-cover img { 
+        transition: all 0.5s linear;
+    }
+    .card-cover .mask {
+        opacity: 0;
+        background-color: transparent; 
+        box-shadow: 4px 4px 8px #2b3136;
 
-                -webkit-transition-timing-function: cubic-bezier(0.6,0,0.4,1);
-                transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-	            -webkit-transition-duration: 0.8s;
-	            transition-duration: 0.8s;
-            }
-            .entry-cover h2 {
-                transform: translateY(1000px);
-                opacity: 0;
-                transition: all 0.2s ease-in-out;
-            }
-            .entry-cover p { 
-                transform: translateY(100px);
-                opacity: 0;
-                transition: all 0.2s linear;
-            }
-            .entry-cover button.info {
-                opacity: 0;
-                transition: all 0.2s ease-in-out;
-                overflow: hidden;
-            }
-
-        /* box cover animation */
-        .entry-cover:hover img { 
+        -webkit-transition-timing-function: cubic-bezier(0.6,0,0.4,1);
+        transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+        -webkit-transition-duration: 0.8s;
+        transition-duration: 0.8s;
+    }
+    .card-cover h2 {
+        transform: translateY(1000px);
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+    .card-cover p { 
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.2s linear;
+    }
+    .card-cover button.toggle-card /*button.info*/ {
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        overflow: hidden;
+    }
+        /* card cover animations */
+        .card-cover:hover img { 
             transform: scale(1.05);
             opacity: 0;
         } 
-        .entry-cover:hover .mask { 
+        .card-cover:hover .mask { 
             opacity: 1;
         }
-        .entry-cover:hover h2,
-        .entry-cover:hover p,
-        .entry-cover:hover button.info {
+        .card-cover:hover h2,
+        .card-cover:hover p,
+        .card-cover:hover button {
             opacity: 1;
             transform: translateY(0px);
         }
-        .entry-cover:hover p {
+        .card-cover:hover p {
             transition-delay: 0.1s;
         }
-        .entry-cover:hover a.info {
+        .card-cover:hover button {
             transition-delay: 0.2s;
         }
 
-        /*Entry Dropbox animations*/
-        .entry-dropbox--open {
-            animation: work-dropbox--open 0.5s normal forwards ease-in-out;
-            transform-origin: 50% 0;
-            -webkit-animation: work-dropbox--open 0.5s normal forwards ease-in-out;
-            -moz-animation: work-dropbox--open 0.5s normal forwards ease-in-out;
-                    animation: work-dropbox--open 0.5s normal forwards ease-in-out;
-            -webkit-transform-origin: 100% 0%;
-            -moz-transform-origin: 100% 0%;
-                    transform-origin: 100% 0%;
-        }
-        .entry-dropbox--closed {
-            animation: work-dropbox--closed 0.5s normal forwards ease-in-out;
-            transform-origin: 50% 0;
-            -webkit-animation: work-dropbox--closed 0.5s normal forwards ease-in-out;
-            -moz-animation: work-dropbox--closed 0.5s normal forwards ease-in-out;
-                    animation: work-dropbox--closed 0.5s normal forwards ease-in-out;
-            -webkit-transform-origin: 50% 0%;
-            -moz-transform-origin: 50% 0%;
-                    transform-origin: 50% 0%;
-        }
 
-        /* map animations (4each browser) */
-        @-webkit-keyframes entry-dropbox--open {
-            from { transform: scaleY(0) }
-            to { transform: scaleY(1) }
-        }
-        @-moz-keyframes entry-dropbox--open {
-            from { transform: scaleY(0) }
-            to { transform: scaleY(1) }
-        }
-        @keyframes entry-dropbox--open {
-            from { transform: scaleY(0) }
-            to { transform: scaleY(1) }
-        }
+/* The cover (expanding background) */
 
-        @-webkit-keyframes entry-dropbox--closed {
-            from { transform: scaleY(1) }
-            to { transform: scaleY(0) }
-        }
-        @-moz-keyframes entry-dropbox--closed {
-            from { transform: scaleY(1) }
-            to { transform: scaleY(0) }
-        }
-        @keyframes  entry-dropbox--closed {
-            from { transform: scaleY(1) }
-            to { transform: scaleY(0) }
-        }
+/* The open card's page content */
+.project {
+    position: fixed;
+    z-index: 9000;
+    
+    transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+}
+/*Project Card -- page opening animations*/
+.project.open {
+    visibility: visible;
+    opacity: 1;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    pointer-events: all;
+    transition: all 200ms ease-in 500ms;
+}
 
-    /* Dropdown content Styling */
-        .content-bg {
-            background:rgb(43, 49, 54, 0.85);
-            padding: 48px 0 24px 0;
-        }
-        .content {
-            margin: 0 2%;
-            padding: 16px 8px 48px 24px;
-            background-color: #F9F1DC;
-            
-            border-radius: 8px;
-        }
-
-            .content .header {
-                padding: 16px 0 24px 12px;
-                display: flex;
-                flex-flow: row wrap;
-                align-items: baseline;
-                justify-content: space-between;
-                width: 100%;
-            }
-                .content .header:first-child { /* Title */
-                    padding-right: 12px;
-                }
-                .content .header .detail {
-                    padding: 0 8px;
-                }
-                .content .header .detail h5 { text-decoration: underline; }
-                .content .header .closebtn {
-                    padding: 0 8px 12px;
-                    color: #3d3d3d;
-                    cursor: pointer;
-                    align-self: center;
-                }
-                
+.project-contents {
+    position: relative;
+    opacity: 0;
+}
+.project.open .project-contents {
+    opacity: 1;
+    transition: all 300ms linear;
+}
 
 
+    .project span.toggle-project {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+        pointer-events: all;
+    }
+    .project span.toggle-project svg {
+        color: #2b3136;
+    }
 
-            
-                .content .section-title {
-                    text-decoration: underline;
-                    padding-top: 16px;
-                }
+.project-header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    justify-items: flex-start;
+    width: 90%;
+    position: relative;
+      margin-left: 3%;
+      margin-top: 20px;
+}
+    .project-header > img {
+        display: block;
+        width: 60%;
+        flex-basis: 60%;
+        height: auto;
+    }
+    .project-header .titles {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        justify-items: flex-start;
+        width: 30%;
+        flex-basis: 30%;
+        padding: 5% 2%;
+    }
+        .project-header .titles div {
+            padding: 8px 0;
+        }
+        .project-header .titles div h5 { 
+            text-decoration: underline
+        }
+.project-content {
+    width: 80%;
+    background: #fff;
+    /*margin-top: -56%;
+    padding: 60% 5% 5% 5%;*/
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+    .project-content .content-section {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .project-content h3 {
+        text-decoration: underline;
+        padding-top: 16px;
+    }
+/*--- end project detail styling */
 
-/* end ----- */
+
+
+
+
+
+/* Project Card -- Transition definitions */
+.card-wrapper {
+    transition: opacity 200ms linear 320ms, transform 200ms ease-out 320ms;
+}
+.card-wrapper::before { /*border*/
+    transition: opacity 200ms linear, transform 200ms ease-out;
+}
+.card-wrapper .card-bg-img /*.project img*/ {
+    transition: opacity 200ms linear, transform 200ms ease-in;
+}
+.card-wrapper h2 {
+    transition: opacity 200ms linear, transform 200ms ease-in;
+}
+
+/* Clicked card */
+.card-wrapper.clicked {
+    pointer-events: none;
+}
+.card-wrapper.clicked::before /*.project.clicked .border*/ {
+    opacity: 0;
+    transform: scale(1.5);
+}
+.card-wrapper.clicked .card-bg-img /*.project.clicked img*/ {
+    transform: translate3d(0px, -40px, 0px);
+    opacity: 0;
+}
+.card-wrapper.clicked h2 {
+    transform: translate3d(0px, 200px, 0px);
+    opacity: 0;
+}
+
+/* Transition Project Detail OUT */
+/*.card-wrapper.out, .card-wrapper.out img {
+    transform: translate3d(0px, -40px, 0px);
+    opacity: 0;
+}
+.card-wrapper.out h1, .card-wrapper.clicked h1 {
+    transform: translate3d(20%, -40px, 0px);
+    opacity: 0;
+}
+*/

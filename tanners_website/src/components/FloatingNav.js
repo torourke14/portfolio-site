@@ -15,31 +15,28 @@ class FloatingNav extends React.Component {
         super(props);
 
         this.state = {            
-            mobileMenuBarStyles: {
-                transition: "opacity 0.5s ease-in, visibility 0s",
-                transitionDelay: "0.2s"
-            },
+            //menuButtonStyles: { /*translateY = -400px:0px*/ },
             curtainToggleStyles: {
-                width: "0%",
-                transition: "width 0.5s 0.2s cubic-bezier(0.7,0,0.3,1)"
+                /*bg-color => transform(top-right corner) => width/height=100vw/vh*/
+                transition: "all 0.5s cubic-bezier(0.7,0,0.3,1)"
             },
             mobileCurtainOpen: false,
             mobileActive: false,
 
-            navScrollToggleStyles: {
-                transform: "translateY(0px)",
-                transition: "transform 1s 0.1s cubic-bezier(0.7,0,0.3,1)"
+            navScrollToggleStyles: { 
+                /*translateY = -400px:0px*/
+                transition: "transform 1s cubic-bezier(0.7, 0, 0.3, 1) 0.2s"
             }
         }
         this.lastScrollTop = 0;
-
-        this.toggleMobileCurtain = this.toggleMobileCurtain.bind(this);
+        this.toggleCurtain = this.toggleCurtain.bind(this);
     }
 
     componentDidMount() {
         window.addEventListener("load", this.handleLoad);
         window.addEventListener("resize", this.handleResize);
         window.addEventListener("scroll", this.handleScroll);
+        this.handleResize();
     }
     componentWillMount() {
         window.removeEventListener("load", this.handleLoad);
@@ -81,17 +78,20 @@ class FloatingNav extends React.Component {
             navScrollToggleStyles: {
                 ...prevState.navScrollToggleStyles,
                 transform: (scrollTop > this.lastScrollTop) ? "translateY(-400px)" : "translateY(0px)"
-            }
+            },
+            mobileCurtainOpen: false // close curtain on scroll
         }));
         // set for next || mobile scroll check
         this.lastScrollTop = (scrollTop <= 0) ? 0 : scrollTop;
     }
 
-    toggleMobileCurtain = () => {
+    toggleCurtain = () => {
         this.setState(prevState => ({
             curtainToggleStyles: {
                 ...prevState.curtainToggleStyles,
-                width: (prevState.mobileActive && prevState.mobileCurtainOpen === false) ? ("100%") : ("0")
+                visibility: (prevState.mobileActive && prevState.mobileCurtainOpen === false) ? ("visible") : ("hidden"),
+                width: (prevState.mobileActive && prevState.mobileCurtainOpen === false) ? ("100vw") : ("0"),
+                height: (prevState.mobileActive && prevState.mobileCurtainOpen === false) ? ("100vh") : ("0")
             },
             mobileCurtainOpen: !prevState.mobileCurtainOpen
         }));
@@ -102,63 +102,44 @@ class FloatingNav extends React.Component {
             <span>Media.</span>
         </NavLink>*/
         return (
-            <nav className="navigation" style={this.state.navScrollToggleStyles}>
+            <div className="navigation" style={this.state.navScrollToggleStyles}>
                 <NavLink exact to="/" className="logo">
                     <img src="" alt="signature" />
                 </NavLink>
-                
-                {(()=> {
-                    if (!this.state.mobileActive) {
-                        return (
-                            <div className="nav-menu">
-                                <NavLink exact to="/About" className="menu-link" activeClassName="selected" data-letters="About.">
-                                        <span>About.</span>
-                                </NavLink>
-                                <NavLink exact to="/Portfolio" className="menu-link" activeClassName="selected" data-letters="Work.">
-                                    <span>Work.</span>
-                                </NavLink>
-                                <NavLink exact to="/connect" className="menu-link" activeClassName="selected" data-letters="Connect.">
-                                    <span>Connect.</span>
-                                </NavLink>
-                            </div>
-                        );
-                    } 
-                    else {
-                        return (
-                            <React.Fragment>
-                            <div className="nav-menu mobile" style={this.state.mobileMenuBarStyles}>
-                                <span className="open-btn" onClick={this.toggleMobileCurtain}>
-                                    <FontAwesomeIcon icon={faBars} size="1x"/>
-                                    <span>Menu.</span>
-                                </span>
-                            </div>
-                            <div className="mobile-nav-curtain" style={this.state.curtainToggleStyles}>
-                                <span className="close-btn" onClick={this.toggleMobileCurtain}>
-                                    <FontAwesomeIcon icon={ faTimes } size="1x" />
-                                </span>
-                                <div className="curtain-content">
-                                    <div><NavLink exact to="/About" className="menu-link" activeClassName="selected" data-letters="About.">
-                                        About.
-                                    </NavLink></div>
 
-                                    <div><NavLink exact to="/Portfolio" className="menu-link" activeClassName="selected" data-letters="Work.">
-                                        Work.
-                                    </NavLink></div>
-
-                                    <div><NavLink exact to="/connect" className="menu-link" activeClassName="selected" data-letters="Connect.">
-                                        Connect.
-                                    </NavLink></div>
-                                </div>
-                            </div>
-                            </React.Fragment>
-                        );
+                <nav className={!(window.innerWidth < 760) ? "nav-menu" : "nav-menu mobile"} >
+                    {(this.state.mobileActive) 
+                        ?   (<button className="mobile-menu-btn" onClick={this.toggleCurtain}>
+                                <FontAwesomeIcon icon= {faBars} size="2x" />
+                                Menu.
+                            </button>)
+                        :   null
                     }
-                })()} 
-            </nav>
+                    
+                    <div className="menu-content" style={this.state.mobileActive ? this.state.curtainToggleStyles : null}>
+                        {/* MAIN: display nav-links only
+                        MOBILE: toggle(display nav-links & close button /// bar menu)*/}
+                        <NavLink exact to="/About" className="menu-link" activeClassName="selected" data-letters="About.">
+                                <span>About.</span>
+                        </NavLink>
+                        <NavLink exact to="/Portfolio" className="menu-link" activeClassName="selected" data-letters="Work.">
+                                <span>Work.</span>
+                        </NavLink>
+                        <NavLink exact to="/connect" className="menu-link" activeClassName="selected" data-letters="Connect.">
+                                <span>Connect.</span>
+                        </NavLink>
+                        {(this.state.mobileActive && this.state.mobileCurtainOpen) 
+                            ?   (<button id="curtain-close-btn" onClick={this.toggleCurtain}>
+                                    <FontAwesomeIcon icon= {faTimes} size="2x" />
+                                </button>)
+                            :   null
+                        }
+                    </div>
+                </nav>
+            </div>
         );
     }
 }
-FloatingNav.defaultProps = {}
 
 
 export default FloatingNav;

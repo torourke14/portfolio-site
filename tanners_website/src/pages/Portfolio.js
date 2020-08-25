@@ -17,11 +17,25 @@ class Portfolio extends React.Component {
         super(props);
 
         this.state = {
-            scrollProgress: 0
+            headerStyles: {
+                position: 'fixed',
+                left: '10vw',
+                lineHeight: "6rem",
+                fontSize: "6rem",
+                color: '#eeddaa',
+                height: '100%'
+            },
+            headerDescStyles: { 
+                position: 'relative',
+                top: '80%',
+                left: '60%',
+                width: '30%',
+                fontSize: '0.8rem',
+                color: '#eeddaa',
+                padding: '0 0 0 20px',
+                borderLeft: '2px solid #e0e0e0'
+            }
         }
-        this.scrollPosition = null;
-        this.headerElement = null;
-        this.headerRef = createRef();
 
         //!!! Change to ProjectInfo.js MAPPING !!!
         this.domadBG = <img src={DoMADLogo} alt="DoMAD" />;
@@ -37,7 +51,6 @@ class Portfolio extends React.Component {
         window.addEventListener("scroll", this.handleScroll);
     }
     componentWillUnmount() {
-        window.removeEventListener("mousemove", this.handleMouseMove);
         window.removeEventListener("scroll", this.handleScroll);
     }
 
@@ -53,166 +66,284 @@ class Portfolio extends React.Component {
             document.body.clientHeight, document.documentElement.clientHeight
         );
         const windowPos = docHeight - winHeight;
-        
-        this.scrollPosition = (scrollTop / windowPos) * 100;
-
-        console.log(this.scrollPosition);
-
-        this.setState({ scrollProgress: this.scrollPosition });
+        const scrollPosition = (scrollTop / windowPos) * 100;
+        this.setState(prevState => ({ 
+            headerStyles: {
+                ...prevState.headerStyles,
+                transform: `translateY(calc(${scrollPosition}%))`,
+                top: `calc(${(scrollPosition * -0.01) * 20}vh + 75px)`,
+                transition: "all 500ms ease-in"
+            },
+            headerDescStyles : {
+                ...prevState.headerDescStyles,
+                opacity: (scrollPosition > 2) ? '0.5' : '1',
+                transform: (scrollPosition > 2) ? 'translateX(200%)' : 'translateX(0%)',
+                transition: (scrollPosition > 2) ? 'all 600ms ease-out 100ms' : 'transform 600ms ease-in 0ms'
+            }
+        }));
     }
 
     render() {
-        const headStyles = {
-            height: "100%",
-            transition: "top 1000ms ease",
-            transform: `translateY(calc(${this.state.scrollProgress}%))`,
-            lineHeight: "6rem",
-            fontSize: "6rem"
-        }
         return (
             <section id="Portfolio" className="panel__Portfolio">
-                <div className="portfolio-header" >
-                    <p style={headStyles} >My Work.</p>
+                <div className="portfolio-intro" >
+                    <p style={this.state.headerStyles}>My Work.</p>
+
+                    <div className="intro-content" style={this.state.headerDescStyles}>
+                        <p>A collection of my recent<br/><b>freelance & professional work</b></p>
+                    </div>
                 </div>
+                
+                {/*<Route path={`${path}/:1`}/>*/}
                 <div className="projects">
-                    <Project ref={this.projectsRef}
-                        title="Donations Make a Difference"
+                    <Project refID={1} title="Donations Make a Difference"
                         position='Lead UI Designer, Front-End Developer'
                         cardDesc='Website design and build for non-profit donation org. DoMAD'
-                        location='Boulder, CO'
-                        bgsrc={this.domadBG} />
-                    <Project ref={this.projectsRef}
-                        title="Spotipy Data Analysis" position='Data Analytics Researcher'
+                        location='Boulder, CO' year='2019-2020'
+                        bgsrc={this.domadBG} 
+                    />
+                    <Project refID={2} title="Spotipy Data Analysis" 
+                        position='Data Analytics Researcher'
                         cardDesc='Discovered patterns in past, present, and future musical attributes'
-                        location='Boulder, CO'
-                        bgsrc={this.spotipyBG} />
-                    <Project ref={this.projectsRef}
-                        title="Liberty Oilfield Services" position='Software Engineering Intern'
+                        location='Boulder, CO' year='2018 (Winter)'
+                        bgsrc={this.spotipyBG} 
+                    />
+                    <Project refID={3} title="Liberty Oilfield Services" 
+                        position='Software Engineering Intern'
                         cardDesc='Summer Intern'
-                        location='Denver, CO'
-                        bgsrc={this.libertyBG} />
-                    <Project ref={this.projectsRef}
-                        title="London Bridge Studios"
+                        location='Denver, CO' year='2018 (Summer)'
+                        bgsrc={this.libertyBG} 
+                    />
+                    <Project refID={4} title="London Bridge Studios"
                         position='Web Developer'
                         cardDesc='Page flows and SEO enhancements for a Seattle-based recording studio'
-                        location='Seattle, WA'
-                        bgsrc={this.lbsBG} />
+                        location='Seattle, WA' year='2019 (Summer)'
+                        bgsrc={this.lbsBG}
+                    />
                 </div>
-                <div className="project-pagination-container">
+                <div className="portfolio-pagination">
+
+                </div>
+                <div className="porttfolio-footer">
 
                 </div>
             </section>
         );
     }
 }
-
-
 class Project extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            display: false,
+        this.defaultProjectTransitionStyle = {
+            backgroundColor: 'transparent',
+            top: '0',
+            left: '0',
+            height: '0',
+            width: '0',
+            visibility: 'hidden',
+            opacity: '0'
         }
-        
+        this.state = {
+            animate: false,
+            show: false,
+            projectTransitionStyle: { }
+        }
         this.settings = {
+            page: props.refID,
             title: props.title,
             position: props.position,
             description: props.desc,
             location: props.location,
-            bg: props.bgsrc,
+            year: props.year,
+            bgImg: props.bgsrc
         }
-
-        this.openTab = this.openTab.bind(this);
-        this.closeTab = this.closeTab.bind(this);
+        this.element = null;
     }
-
-    /*componentDidMount() {
+    componentDidMount() {
+        window.addEventListener('unload', this.handleUnload);
         this.element = findDOMNode(this);
     }
     componentWillUnmount() {
+        window.removeEventListener('unload', this.handleUnload);
     }
-    */
 
-    openTab() {
-        if (!this.settings.display && document.getElementsByClassName('work-dropbox--open').length === 0) { //{
-            var i, x;
-            x = document.getElementsByClassName("work-dropbox--open");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
+    handleUnload = () => {
+        this.setState({
+            show: false,
+            cardTransitionStyle: {}
+        });
+    }
+    
+    animateCard = (direction) => {
+        if (this.cardRef !== undefined) {
+            var cardRect = this.cardRef.getBoundingClientRect();
+            var cardBG;
+
+            if (direction) {
+                cardBG = window.getComputedStyle(this.bgRef).backgroundColor;
+                this.setState({ 
+                    animate: true 
+                }, this.setProjectToCard(cardRect, cardBG, direction));
+            } else {
+                cardBG = 'transparent'
+                this.setState({ 
+                    show: false 
+                }, this.setProjectToCard(cardRect, cardBG, direction));
             }
-            this.setState({ display: true });
-            //console.log(document.getElementsByClassName('work-dropbox--open') !== null);
         }
     }
-    closeTab() {
-        this.setState({ display: false });
+    animateCardBack = () => {
+        if (this.cardRef !== undefined) {
+            var cardRect = this.cardRef.getBoundingClientRect();
+
+            this.setState({ 
+                show: false
+            }, this.setProjectToCard(cardRect, 'transparent', 'out'));
+        }
+    }
+    setProjectToCard = (cardRect, cardBG, direction) => {
+        setTimeout(() => {
+            this.setState(prevState => ({
+                projectTransitionStyle: {
+                    ...prevState.cardTransitionStyle,
+                    backgroundColor: cardBG,
+                    visibility: 'visible',
+                    opacity: '0.25',
+                    width: cardRect.width,
+                    height: cardRect.height,
+                    left: cardRect.left,
+                    top: cardRect.top,
+                    transition: 'all 500ms ease-in'
+                }
+            }), (direction)
+                ? this.scaleProjectToWindow(cardRect, cardBG)
+                : this.scaleProjectToClosed(cardRect, cardBG));
+        }, 100);
+    }
+
+    scaleProjectToWindow = (cardRect, cardBG) => {
+        setTimeout(() => {
+            this.setState({ 
+                projectTransitionStyle: {
+                    backgroundColor: cardBG,
+                    visibility: 'visible',
+                    opacity: '1',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    minHeight: '100vh',
+                    transition: 'all 500ms ease-in',
+                }
+            })
+        }, 1000);
+        setTimeout(() => {
+            this.setState({
+                show: true
+            }) 
+        }, 1500);
+    }
+
+    scaleProjectToClosed = (cardRect, cardBG) => {
+        setTimeout(() => {
+            this.setState({ 
+                projectTransitionStyle: {
+                    backgroundColor: cardBG,
+                    visibility: 'hidden',
+                    opacity: '0',
+                    width: '0',
+                    height: '0',
+                    transition: 'all 500ms ease-in',
+                }
+            })
+        }, 1000);
+        console.log('cut it');
+        setTimeout(() => {
+            this.setState({
+                animate: false,
+                projectTransitionStyle: {}
+            }) 
+        }, 1250);
+    }
+    
+    handleToggle = () => {
+        if (!this.state.show) {
+            this.animateCard(true);
+        } else {
+            this.animateCard(false);
+        }
     }
 
     render() {
-        let displayStyles = {
-            borderRadius: '4px',
-            width: '100%',
-            background: '#EBEBEB',
-            display: this.state.display ? 'block' : 'none',
-            transition: 'ease cubic-bezier(.03,.98,.52,.99)'
-        }
-
+        const projectStyle = {
+            ...this.state.projectTransitionStyle
+        };
+        console.log(projectStyle);
+        console.log(this.state.animate);
         return (
-            <div className="project-container" /*onMouse={this.handleMouseMove}*/>
-                <AnimatedCard>
-                    <div className="entry entry-cover" /*style={overlayStyles}*/>
-                        <div className="entry-bg-wrap">
-                            {this.settings.bg}
+            <div className="project-container">
+                <div className={(this.state.animate) ? "card-wrapper clicked" : "card-wrapper"} 
+                 ref={el => this.cardRef = el}>
+                    <AnimatedCard>
+                        <div className="card card-cover" ref={el => this.bgRef = el}>
+                            <div className="card-bg-img">
+                                {this.settings.bgImg}
+                            </div>
+                            <div className='mask'>
+                                <h2>DoMAD</h2>
+                                <p>A Donation Database for worldwide travelers.</p>
+                                <button className="toggle-card" onClick={this.handleToggle}>
+                                    Read More
+                                </button>
+                            </div>
                         </div>
-                        <div className='mask'>
-                            <h2>DoMAD</h2>
-                            <p>A Donation Database for worldwide travelers.</p>
-                            <button className='info' onClick={(e) => this.openTab(e)}>Read More</button>
+                    </AnimatedCard>
+                </div>
+
+                <div className={this.state.show ? "project open" : "project closed"}
+                 style={projectStyle}>
+                    <div className='project-contents'>
+                        <span className='toggle-project' onClick={this.handleToggle}>
+                            <FontAwesomeIcon  icon={faTimesCircle} size="2x" />
+                        </span>
+                        <div className="project-header">                        
+                            <div className="titles">
+                                <div>
+                                    <h5>Role</h5>
+                                    <p>{this.settings.position}</p>
+                                </div>
+                                <div>
+                                    <h5>Location</h5>
+                                    <p>{this.settings.location}</p>
+                                </div>
+                                <div>
+                                    <h5>Year</h5>
+                                    <p>{this.settings.year}</p>
+                                </div>
+                            </div>
+                            <img src={this.settings.bgImg} alt="" />
+                        </div>
+                        <div className="project-content">
+                        <div id='problem' className="content-section">
+                            <h3>The Problem</h3>
+                            <p></p>
+                        </div>
+                        <div id='approach' className="content-section">
+                            <h3>The Approach</h3>
+                            <p></p>
+                        </div>
+                        <div id='outcome' className="content-section">
+                            <h3>The Outcome</h3>
+                            <p></p>
                         </div>
                     </div>
-                </AnimatedCard>
-                <div className="project-detail">
-
-                </div>
-                <div className={this.state.display ? "entry-dropbox--open" : "entry-dropbox--closed"} style={displayStyles} >
-                    <div className="content-bg">
-                        <div className="content">
-                            <div className="header">
-                                <div><h4>{this.state.title}</h4></div>
-                                <div className="detail">
-                                    <h5>Position</h5>
-                                    <h6>{this.state.position}</h6>
-                                </div>
-                                <div className="detail">
-                                    <h5>Location</h5>
-                                    <h6>{this.state.location}</h6>
-                                </div>
-                                <div className="detail">
-                                    <h5>Year</h5>
-                                    <h6>2020</h6>
-                                </div>
-                                <span className="closebtn" onClick={() => this.closeTab()}>
-                                    <FontAwesomeIcon icon={faTimesCircle} />
-                                </span>
-                            </div>
-                            <div className="problem">
-                                <div className="section-title"><h3>The Problem</h3></div>
-                            </div>
-                            <div className="approach">
-                                <div className="section-title"><h3>The Approach</h3></div>
-                            </div>
-                            <div className="outcome">
-                                <div className="section-title"><h3>The Outcome</h3></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         );
     }
 }
-
 
 /*
 * --- Animate Card --------------------------------
@@ -223,6 +354,7 @@ class Project extends React.Component {
     -   event HANDLERS for mouse enter, move, and leave 
         of a card for 3d perspective animatuons
 */
+
 class AnimatedCard extends React.Component {
     constructor(props) {
         super(props)
@@ -230,7 +362,7 @@ class AnimatedCard extends React.Component {
             cardStyle: { }
         }
         this.settings = {
-            max: 35,
+            max: 20,
             perspective: 1250,
             scale: '1.1',
             speed: '1000'
@@ -300,8 +432,7 @@ class AnimatedCard extends React.Component {
                 position: "relative",
                 transform: `perspective(${this.settings.perspective}px) rotateX(${values.tiltY}deg) rotateY(${values.tiltX}deg) scale3d(${this.settings.scale}, ${this.settings.scale}, ${this.settings.scale})`,
                 top: `${values.boxShiftY}vh`,
-                left: `${values.boxShiftX}vw`,
-                opacity: '1'
+                left: `${values.boxShiftX}vw`
             }
         }));
         this.updateCall = null;
@@ -318,7 +449,8 @@ class AnimatedCard extends React.Component {
                 cardStyle: {
                     ...prevState.cardStyle,
                     transform: `perspective(${this.settings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) translateX(0px) translateY(0px)`,
-                    opacity: '0.85'
+                    top: 'initial',
+                    left: 'initial'
                 }
             }))
         });
@@ -343,8 +475,8 @@ class AnimatedCard extends React.Component {
         const tiltX = (this.settings.max / 2 - _x * this.settings.max).toFixed(2);
         const tiltY = (_y * this.settings.max - this.settings.max / 2).toFixed(2);
 
-        const boxShiftX =  ((e.nativeEvent.clientX / this.winWidth) - 0.5) * 10;
-        const boxShiftY = ((e.nativeEvent.clientY / this.winHeightt) - 0.5) * 10;
+        const boxShiftX =  ((e.nativeEvent.clientX / this.winWidth) - 1) * 10;
+        const boxShiftY = ((e.nativeEvent.clientY / this.winHeightt) - 1) * 10;
 
         return {
             tiltX,

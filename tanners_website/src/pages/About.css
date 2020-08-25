@@ -6,7 +6,6 @@
     min-height: 100vh;
     height: 100%;
     padding-top: 10vh;
-    border-top: 1px solid #eeddaa;
     background: #2b3136;
     font-family: "Cousine", monospace;
 }
@@ -90,6 +89,11 @@
         -webkit-animation: arrowBounce 1s ease-in-out infinite 0.4s;
     }
     @keyframes arrowBounce {
+        0%   { transform: translateX(0px); }
+        50%  { transform: translateX(20px); }
+        100% { transform: translateY(0px); }
+    }
+    @-webkit-keyframes arrowBounce {
         0%   { transform: translateX(0px); }
         50%  { transform: translateX(20px); }
         100% { transform: translateY(0px); }
