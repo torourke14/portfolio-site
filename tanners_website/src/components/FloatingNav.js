@@ -116,20 +116,19 @@ class FloatingNav extends React.Component {
                         :   null
                     }
                     
-                    <div className="menu-content" style={this.state.mobileActive ? this.state.curtainToggleStyles : null}>
-                        {/* MAIN: display nav-links only
-                        MOBILE: toggle(display nav-links & close button /// bar menu)*/}
-                        <NavLink exact to="/About" className="menu-link" activeClassName="selected" data-letters="About.">
+                    <div className="menu-content" 
+                     style={this.state.mobileActive ? this.state.curtainToggleStyles : null}>
+                        <NavLink exact to="/About" className="menu-link overlay--magic underline--magic" activeClassName="selected" data-letters="About.">
                                 <span>About.</span>
                         </NavLink>
-                        <NavLink exact to="/Portfolio" className="menu-link" activeClassName="selected" data-letters="Work.">
+                        <NavLink exact to="/Portfolio" className="menu-link overlay--magic underline--magic" activeClassName="selected" data-letters="Work.">
                                 <span>Work.</span>
                         </NavLink>
-                        <NavLink exact to="/connect" className="menu-link" activeClassName="selected" data-letters="Connect.">
+                        <NavLink exact to="/connect" className="menu-link overlay--magic underline--magic" activeClassName="selected" data-letters="Connect.">
                                 <span>Connect.</span>
                         </NavLink>
                         {(this.state.mobileActive && this.state.mobileCurtainOpen) 
-                            ?   (<button id="curtain-close-btn" onClick={this.toggleCurtain}>
+                            ?   (<button id="curtain-close-btn" className="overlay--magic" onClick={this.toggleCurtain}>
                                     <FontAwesomeIcon icon= {faTimes} size="2x" />
                                 </button>)
                             :   null
