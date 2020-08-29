@@ -1,16 +1,12 @@
 @import "~animate.css/animate.css";
 
 
-/* Global Landing font styles */
-#Landing h6 { font-size: 1.1rem; }
-#Landing h4 { font-size: 1rem; }
-#Landing h3 { font-size: 1.75rem; }
-#Landing h2 { font-size: 2rem; }
-#Landing h1 { font-size: 5rem; }
+
+
 
 #Landing {
-    position: relative;
     font-family: "Cousine", monospace;
+    background-color: #2b3136;
 }
 #landing-container {
     position: relative; /* for absolutely positioned children */
@@ -20,7 +16,7 @@
     height: 100%; 
     min-height: 100vh;
 
-    background-color: #2b3136;
+    
     padding: 0;
     overflow: hidden;
 }
@@ -287,6 +283,14 @@
                     transform: rotate(-15deg);
                 }
             }
+
+/*===== About Intro Container ===== */
+.landing-about-intro {
+    height: 80vh;
+    border: 1px solid #eeddaa;
+}
+
+
 
             
 /* ==== download button === */

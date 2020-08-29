@@ -23,7 +23,7 @@ function AppContainer({ location }) {
             <TransitionGroup component={null}>
                 <CSSTransition key={location.key} 
                 classNames={'slide'}
-                timeout={{ enter: 400, exit: 300 }} 
+                timeout={{ enter: 1000, exit: 1000 }} 
                 >
                     <section className="route-section">
                         <FloatingNav />

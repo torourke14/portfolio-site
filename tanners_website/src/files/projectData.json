@@ -1,0 +1,106 @@
+[{
+    "index": 0,
+    "headlline": "DoMAD",
+    "title": "Donations Make a Difference",
+    "position": "Lead UI Designer, Front-End Developer",
+    "client": "DoMAD (Donations Make a Difference)",
+    "type": "Capstone Project",
+    "technologies": "Heroku, React, MongoDB, Express, Node, Figma, Sketch",
+    "location": "Boulder, CO",
+    "year": "2019-2020",
+    "description": "Website redesign and full-stack development for an upcoming non-profit donation organization",
+    "externalLink": "https://domad.herokuapp.com/",
+
+    "card": {
+        "srcURL": "'../images/projects/DoMADLogoDark.svg'",
+        "HTML": "<img src={DoMADLogo} alt=\"DoMAD\"/>",
+        "cardColor": "#428FBE",
+        "textColor": "#FFFFFF"
+    },
+    "text": {
+        "openingParagraph": "",
+        "problem": "",
+        "approach": "",
+        "solution": ""
+    },
+    "imgs": ["'../images/codeScreenshot.png'", 
+        "", "", "", false, null]
+},
+{
+    "index": 1,
+    "headlline": "Fostering enterprise systems",
+    "title": "Summer Intern",
+    "position": "Software Engineering Intern",
+    "client": "Liberty Oilfield Services",
+    "type": "Summer Intern",
+    "technologies": "C#, SQL, Python, Java",
+    "location": "Denver, CO",
+    "year": "2018, summer",
+    "description": "",
+    "externalLink": null,
+    "card": {
+        "srcURL": "'../images/projects/libertyLogo.png'",
+        "HTML": "<img src={libertyLogo} alt=\"Liberty Oil Services\"/>",
+        "cardColor": "red",
+        "textColor": "white"
+    },
+    "text": {
+        "openingParagraph": "",
+        "problem": "",
+        "approach": "",
+        "solution": ""
+    },
+    "imgs": ["", "", "", "", false, null]
+},
+{
+    "index": 2,
+    "headlline": "Temporal Trends in Music Popularity",
+    "title": "SpotiPy Data Research",
+    "position": "Lead UI Designer, Front-End Developer",
+    "client": "classroom",
+    "type": "classroom",
+    "technologies": "Jupyter Notebook, ",
+    "location": "Boulder, CO",
+    "year": "2018, winter",
+    "description": "Engineering models of past, present, and future musical characterisics",
+    "externalLink": "PAPER LINK",
+    "card": {
+        "srcURL": null,
+        "HTML": "<div id=\"spt\"><FontAwesomeIcon icon={faSpotify} size=\"8x\"/><h1>(Spotify's API)</h1></div>",
+        "cardColor": "green",
+        "textColor": "orange"
+    },
+    "text": {
+        "openingParagraph": "",
+        "problem": "",
+        "approach": "",
+        "solution": ""
+    },
+    "imgs": ["", "", "", "", false, null]
+},
+{
+    "index": 3,
+    "headlline": "Refining a Studio's online presence",
+    "title": "Web Consulting",
+    "position": "Technical Consultant",
+    "client": "London Bridge Studios",
+    "type": "Technical Consulting",
+    "technologies": "CWS, SEO, HTML/CSS",
+    "location": "Seattle, WA",
+    "year": "2019, Summer",
+    "description": "Page flows and SEO enhancements for a Seattle-based recording studio",
+    "externalLink": "https://www.londonbridgestudio.com/",
+    "card": {
+        "srcURL": "'../images/projects/lbsLogo.jpg'",
+        "HTML": "<img src={lbsLogo} alt=\"London Bridge Studios\"/>",
+        "cardColor": "#FFFFF",
+        "textColor": "#E0E0E0"
+    },
+    "text": {
+        "openingParagraph": "",
+        "problem": "",
+        "approach": "",
+        "solution": ""
+    },
+    "imgs": ["", "", "", "", false, null]
+}]

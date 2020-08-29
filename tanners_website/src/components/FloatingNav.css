@@ -73,6 +73,7 @@
     /* hovertext overlay */
     .overlay--magic::before {
         content: attr(data-letters);
+        display: inline-block;
         position: absolute;
         z-index: 998;
         overflow: hidden;
@@ -91,13 +92,13 @@
     .underline--magic {
         background-image: linear-gradient(120deg, rgb(119,134,146, 1) 0%, rgba(119,134,146, 0.6) 80%);
         background-repeat: no-repeat;
-        background-size: 110% 0.2em;
-        background-position: 0% 90%;
+        background-size: 100% 0.2em;
+        background-position: 0% 80%;
         transition: background-size 250ms ease-in;
         padding: 10px;
     }
     .underline--magic:hover {
-        background-size: 110% 100%;
+        background-size: 100% 100%;
     }
 
 
@@ -133,7 +134,7 @@
     position: fixed; /*fixed*/
     top: 20px;
     right: 20px;
-    background-color: #2b3136;
+    background: transparent;
     font-family: 'Montserrat', sans-serif;
     color: #eeddaa;
     cursor: pointer;

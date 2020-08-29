@@ -32,48 +32,49 @@ class Landing extends React.Component {
         <div id="Landing" className="panel__Landing">
             <header>
                 <div id="landing-container">
-                <div className="callout-container">
-                    <h1>- Hi;</h1>
-                    <h1>I'm&nbsp;Tanner.</h1>
+                    <div className="callout-container">
+                        <h1 className="reveal-text">
+                            <span>- Hi;</span><span>I'm&nbsp;Tanner.</span>
+                        </h1>
 
-                    <div className="down-link">
-                        <Link to="/about">
-                        <button className="landingLinkBox">
-                                Who?
-                                <span className="arrow">
-                                    <FontAwesomeIcon icon={faArrowDown} />
-                                </span>
-                        </button>
-                        </Link>
+                        <div className="down-link">
+                            <Link to="/about">
+                            <button className="landingLinkBox">
+                                    Who?
+                                    <span className="arrow">
+                                        <FontAwesomeIcon icon={faArrowDown} />
+                                    </span>
+                            </button>
+                            </Link>
+                        </div>
+
+                        <div className="rotating-words-wrap">
+                            <h2 className="rw-sentence">
+                                <span>Among other things, I</span>
+                                <br/>
+                                <div className="rw-words">
+                                    <span>developing</span>
+                                    <span>building</span>
+                                    <span>designing</span>
+                                    <span>stylizing</span>
+                                </div>
+                            </h2>
+                        </div>
                     </div>
 
-                    <div className="rotating-words-wrap">
-                        <h2 className="rw-sentence">
-                            <span>Among other things, I</span>
-                            <br/>
-                            <div className="rw-words">
-                                <span>developing</span>
-                                <span>building</span>
-                                <span>designing</span>
-                                <span>stylizing</span>
-                            </div>
-                        </h2>
+                    <div className="polaroid-container">
+                        <div className="bg-streak" />
+                        <img src={rainier} alt="oops :(" className="hero-img top" />
+                        <img src={linkedInPic} alt="oops :(" className="hero-img mid" />
+                        <img src={codeShot} alt="oops :(" className="hero-img bot" />
                     </div>
                 </div>
-
-                <div className="polaroid-container">
-                    <div className="bg-streak" />
-                    <img src={rainier} alt="oops :(" className="hero-img top" />
-                    <img src={linkedInPic} alt="oops :(" className="hero-img mid" />
-                    <img src={codeShot} alt="oops :(" className="hero-img bot" />
-                </div>
-            </div>
             </header>
 
-            <div className="about-intro">
-
+            <div className="landing-about-intro">
+                <p>words</p>
             </div>
-            
+            <Portfolio />
         </div>
         );
     }

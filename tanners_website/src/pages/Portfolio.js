@@ -1,41 +1,51 @@
 import React, { createRef } from 'react';
 import './Portfolio.css';
+import { findDOMNode } from 'react-dom';
+import { Route } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { findDOMNode } from 'react-dom';
+import { faTimesCircle, faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 // Project Images
 import DoMADLogo from '../images/projects/DoMADLogoDark.svg';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
 import lbsLogo from '../images/projects/lbsLogo.jpg';
 import libertyLogo from '../images/projects/libertyLogo.png';
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
+import projectData from '../files/projectData.json';
 
 class Portfolio extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            current: 0,
             headerStyles: {
                 position: 'fixed',
-                left: '10vw',
-                lineHeight: "6rem",
-                fontSize: "6rem",
-                color: '#eeddaa',
-                height: '100%'
+                left: '15vw',
+                lineHeight: "8rem",
+                fontSize: "10vw",
+                color: '#eeddaa'
             },
-            headerDescStyles: { 
+            descriptorStyles: { 
                 position: 'relative',
-                top: '80%',
-                left: '60%',
+                top: '40%',
+                left: '20vw',
                 width: '30%',
-                fontSize: '0.8rem',
+                fontSize: '1.2vw',
                 color: '#eeddaa',
                 padding: '0 0 0 20px',
-                borderLeft: '2px solid #e0e0e0'
+                borderLeft: '2px solid #e0e0e0',
+                transform: 'rotate(90deg)',
+                transformOrigin: '0% 50%'
             }
         }
+        this.page = null;
+
+        this.handlePreviousClick = this.handlePreviousClick.bind(this)
+        this.handleNextClick = this.handleNextClick.bind(this)
+        this.handleSlideClick = this.handleSlideClick.bind(this)
 
         //!!! Change to ProjectInfo.js MAPPING !!!
         this.domadBG = <img src={DoMADLogo} alt="DoMAD" />;
@@ -49,14 +59,19 @@ class Portfolio extends React.Component {
 
     componentDidMount() {
         window.addEventListener("scroll", this.handleScroll);
+        this.page = findDOMNode(this);
+        this.handleScroll();
     }
     componentWillUnmount() {
         window.removeEventListener("scroll", this.handleScroll);
     }
 
     handleScroll = () => {
+        let scrollTrans, scrollPosition;
+        const elementTop = this.page.getBoundingClientRect().top;
+
         const scrollTop = Math.max(
-            window.pageYOffset, 
+            window.pageYOffset,
             document.documentElement.scrollTop
         );
         const winHeight = window.innerHeight;
@@ -65,141 +80,211 @@ class Portfolio extends React.Component {
             document.body.offsetHeight, document.documentElement.offsetHeight,
             document.body.clientHeight, document.documentElement.clientHeight
         );
-        const windowPos = docHeight - winHeight;
-        const scrollPosition = (scrollTop / windowPos) * 100;
+        const elementPos = (docHeight - winHeight);
+
+        scrollPosition = (scrollTop / elementPos) * 50;
+        scrollTrans = `translateY(calc(10vh + ${scrollPosition * 0.1}vh))`;
+
         this.setState(prevState => ({ 
             headerStyles: {
                 ...prevState.headerStyles,
-                transform: `translateY(calc(${scrollPosition}%))`,
-                top: `calc(${(scrollPosition * -0.01) * 20}vh + 75px)`,
-                transition: "all 500ms ease-in"
+                opacity: (elementTop > window.innerHeight/3) ? '0' : '0.8',
+                transform: scrollTrans,
+                //top: `calc(${scrollPosition * -0.1}vh)`,
+                transition: "opacity 1s, transform 300ms linear"
             },
-            headerDescStyles : {
-                ...prevState.headerDescStyles,
-                opacity: (scrollPosition > 2) ? '0.5' : '1',
-                transform: (scrollPosition > 2) ? 'translateX(200%)' : 'translateX(0%)',
-                transition: (scrollPosition > 2) ? 'all 600ms ease-out 100ms' : 'transform 600ms ease-in 0ms'
+            descriptorStyles: {
+                ...prevState.descriptorStyles,
+                opacity: (scrollPosition > 0 || elementTop < window.innerHeight * - 0.25) 
+                    ? '0.25' : '1',
+                transform: (scrollPosition > 0 || elementTop < window.innerHeight * - 0.25) 
+                    ? 'rotate(90deg) translateY(100vh)' 
+                    : 'rotate(90deg)',
+                transition: 'opacity 200ms, transform 250ms ease-out 250ms'
             }
         }));
     }
 
+    handlePreviousClick() {
+        const previous = this.state.current - 1
+        this.setState({ 
+          current: (previous < 0)  
+            ? /*this.props.slides.length*/ 4 - 1
+            : previous
+        })
+      }
+
+    handleNextClick() {
+        const next = this.state.current + 1;
+        this.setState({ 
+            current: (next === 4/*this.props.slides.length*/) 
+            ? 0
+            : next
+        })
+    }
+
+    handleSlideClick = (index) => {
+        if (this.state.current !== index) {
+            this.setState({ current: index })
+        }
+    }
+
+    /*
+    {slides.map(project => {
+        return (
+        <Project
+            index={project.index}
+            current={current}
+            handleSlideClick={this.handleSlideClick}
+            title={project.headline}
+            position={project.position}
+            cardDesc={project.description}
+            location={project.location} year={project.year}
+            project={project}
+            bgsrc={this.domadBG}
+        />
+        )
+    })}
+    */
+
     render() {
+        const { current, direction } = this.state
+        const { slides, heading } = this.props 
+        //const headingId = `slider-heading__${heading.replace(/\s+/g, '-').toLowerCase()}`
+        const wrapperTransform = {
+          'transform': `translateX(-${current * (100 / 4/*slides.length*/)}%)`
+        }
+
         return (
             <section id="Portfolio" className="panel__Portfolio">
+                
                 <div className="portfolio-intro" >
-                    <p style={this.state.headerStyles}>My Work.</p>
+                    <p style={this.state.headerStyles}>My&nbsp;Work.</p>
 
-                    <div className="intro-content" style={this.state.headerDescStyles}>
-                        <p>A collection of my recent<br/><b>freelance & professional work</b></p>
+                    <div className="intro-content" style={this.state.descriptorStyles}>
+                        <p>A glimpse of my recent<br/><b>freelance & professional work.</b></p>
                     </div>
                 </div>
                 
-                {/*<Route path={`${path}/:1`}/>*/}
-                <div className="projects">
-                    <Project refID={1} title="Donations Make a Difference"
-                        position='Lead UI Designer, Front-End Developer'
-                        cardDesc='Website design and build for non-profit donation org. DoMAD'
-                        location='Boulder, CO' year='2019-2020'
-                        bgsrc={this.domadBG} 
-                    />
-                    <Project refID={2} title="Spotipy Data Analysis" 
-                        position='Data Analytics Researcher'
-                        cardDesc='Discovered patterns in past, present, and future musical attributes'
-                        location='Boulder, CO' year='2018 (Winter)'
-                        bgsrc={this.spotipyBG} 
-                    />
-                    <Project refID={3} title="Liberty Oilfield Services" 
-                        position='Software Engineering Intern'
-                        cardDesc='Summer Intern'
-                        location='Denver, CO' year='2018 (Summer)'
-                        bgsrc={this.libertyBG} 
-                    />
-                    <Project refID={4} title="London Bridge Studios"
-                        position='Web Developer'
-                        cardDesc='Page flows and SEO enhancements for a Seattle-based recording studio'
-                        location='Seattle, WA' year='2019 (Summer)'
-                        bgsrc={this.lbsBG}
-                    />
+                <div className="projects-slider">
+                    <ul className="projects-slider__flex-wrap" style={wrapperTransform}>
+                    
+                        <Project index={0} current={current}
+                            handleSlideClick={this.handleSlideClick}
+                            title="Donations Make a Difference"
+                            position='Lead UI Designer, Front-End Developer'
+                            cardDesc='Website design and build for non-profit donation org. DoMAD'
+                            location='Boulder, CO' year='2019-2020'
+                            bgsrc={this.domadBG} 
+                        />
+                        <Project index={1} current={current}
+                            handleSlideClick={this.handleSlideClick}
+                            title="Spotipy Data Analysis" 
+                            position='Data Analytics Researcher'
+                            cardDesc='Discovered patterns in past, present, and future musical attributes'
+                            location='Boulder, CO' year='2018 (Winter)'
+                            bgsrc={this.spotipyBG} 
+                        />
+                        <Project index={2} current={current}
+                            handleSlideClick={this.handleSlideClick}
+                            title="Liberty Oilfield Services" 
+                            position='Software Engineering Intern'
+                            cardDesc='Summer Intern'
+                            location='Denver, CO' year='2018 (Summer)'
+                            bgsrc={this.libertyBG} 
+                        />
+                        <Project index={3} current={current}
+                            handleSlideClick={this.handleSlideClick}
+                            title="London Bridge Studios"
+                            position='Web Developer'
+                            cardDesc='Page flows and SEO enhancements for a Seattle-based recording studio'
+                            location='Seattle, WA' year='2019 (Summer)'
+                            bgsrc={this.lbsBG}
+                        />
+                    </ul>
+                
+                    <nav className="slider-controls">
+                        <button className="previous" title='prev' onClick={this.handlePreviousClick}>
+                            <span className="icon-wrap">
+                                <FontAwesomeIcon icon={faArrowLeft} size='1x' />
+                            </span>
+                            <h3>Spotipy!</h3>
+                        </button>
+                        <button className="next" title='next' onClick={this.handleNextClick}>
+                            <span class="icon-wrap">
+                                <FontAwesomeIcon icon={faArrowRight} size='1x' />
+                            </span>
+                            <h3>Spotipy!</h3>
+                        </button>
+                    </nav>
                 </div>
-                <div className="portfolio-pagination">
 
-                </div>
-                <div className="porttfolio-footer">
-
-                </div>
+                <Route path='/portfolio'>
+                    <div className="portfolio-footer">
+                        <div>
+                            <h2>Still not convinced? Want to talk shop?</h2>
+                            <p>
+                                I keep a solid menagerie of my conceptual, archived, and miscellaneous work on&nbsp;
+                                <span className="underline--magic">
+                                    <span className="overlay--magic" data-letters='Github'>Github</span>
+                                    <FontAwesomeIcon icon={faGithub} size='2x'/>
+                                    .
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </Route>
             </section>
         );
     }
 }
+
+
 class Project extends React.Component {
     constructor(props) {
         super(props);
 
-        this.defaultProjectTransitionStyle = {
-            backgroundColor: 'transparent',
-            top: '0',
-            left: '0',
-            height: '0',
-            width: '0',
-            visibility: 'hidden',
-            opacity: '0'
-        }
         this.state = {
             animate: false,
             show: false,
             projectTransitionStyle: { }
         }
         this.settings = {
-            page: props.refID,
             title: props.title,
             position: props.position,
-            description: props.desc,
+            description: props.cardDesc,
             location: props.location,
             year: props.year,
             bgImg: props.bgsrc
         }
-        this.element = null;
+        //this.cardRef
     }
     componentDidMount() {
         window.addEventListener('unload', this.handleUnload);
-        this.element = findDOMNode(this);
     }
     componentWillUnmount() {
         window.removeEventListener('unload', this.handleUnload);
     }
-
     handleUnload = () => {
         this.setState({
             show: false,
             cardTransitionStyle: {}
         });
     }
-    
     animateCard = (direction) => {
         if (this.cardRef !== undefined) {
             var cardRect = this.cardRef.getBoundingClientRect();
-            var cardBG;
 
             if (direction) {
-                cardBG = window.getComputedStyle(this.bgRef).backgroundColor;
+                var cardBG = window.getComputedStyle(this.bgRef).backgroundColor;
                 this.setState({ 
                     animate: true 
                 }, this.setProjectToCard(cardRect, cardBG, direction));
             } else {
-                cardBG = 'transparent'
                 this.setState({ 
                     show: false 
-                }, this.setProjectToCard(cardRect, cardBG, direction));
+                }, this.setProjectToCard(cardRect, 'transparent', direction));
             }
-        }
-    }
-    animateCardBack = () => {
-        if (this.cardRef !== undefined) {
-            var cardRect = this.cardRef.getBoundingClientRect();
-
-            this.setState({ 
-                show: false
-            }, this.setProjectToCard(cardRect, 'transparent', 'out'));
         }
     }
     setProjectToCard = (cardRect, cardBG, direction) => {
@@ -221,7 +306,6 @@ class Project extends React.Component {
                 : this.scaleProjectToClosed(cardRect, cardBG));
         }, 100);
     }
-
     scaleProjectToWindow = (cardRect, cardBG) => {
         setTimeout(() => {
             this.setState({ 
@@ -230,7 +314,7 @@ class Project extends React.Component {
                     visibility: 'visible',
                     opacity: '1',
                     top: '0',
-                    left: '0',
+                    /*left: '0',*/
                     width: '100%',
                     height: '100%',
                     minHeight: '100vh',
@@ -244,7 +328,6 @@ class Project extends React.Component {
             }) 
         }, 1500);
     }
-
     scaleProjectToClosed = (cardRect, cardBG) => {
         setTimeout(() => {
             this.setState({ 
@@ -258,7 +341,6 @@ class Project extends React.Component {
                 }
             })
         }, 1000);
-        console.log('cut it');
         setTimeout(() => {
             this.setState({
                 animate: false,
@@ -266,45 +348,54 @@ class Project extends React.Component {
             }) 
         }, 1250);
     }
-    
-    handleToggle = () => {
-        if (!this.state.show) {
-            this.animateCard(true);
+
+    handleSlideClickToggle = () => {
+        console.log(this.props.current, this.props.index);
+        if (this.props.current !== this.props.index) {
+            this.props.handleSlideClick(this.props.index);
         } else {
-            this.animateCard(false);
+            if (!this.state.show) {
+                this.animateCard(true);
+            } else {
+                this.animateCard(false);
+            }
         }
     }
 
     render() {
+        //const { src, button, headline, index } = this.props.slide
+        const current = this.props.current;
+        const index = this.props.index;
+        const curClass = (current === index) ? '__current' : '';
+        const prvClass = (current - 1 === index) ? '__previous' : '';
+        const nxtClass = (current + 1 === index) ? '__next' : '';
         const projectStyle = {
             ...this.state.projectTransitionStyle
         };
-        console.log(projectStyle);
-        console.log(this.state.animate);
+
         return (
-            <div className="project-container">
-                <div className={(this.state.animate) ? "card-wrapper clicked" : "card-wrapper"} 
+            <li className={`project ${curClass} ${prvClass} ${nxtClass}`}>
+                <div className={this.state.animate ? 'card-wrapper __animating' : 'card-wrapper'} 
                  ref={el => this.cardRef = el}>
                     <AnimatedCard>
-                        <div className="card card-cover" ref={el => this.bgRef = el}>
+                        <div className="card card-cover" ref={el => this.bgRef = el} 
+                         onClick={this.handleSlideClickToggle}>
                             <div className="card-bg-img">
                                 {this.settings.bgImg}
                             </div>
                             <div className='mask'>
-                                <h2>DoMAD</h2>
-                                <p>A Donation Database for worldwide travelers.</p>
-                                <button className="toggle-card" onClick={this.handleToggle}>
-                                    Read More
-                                </button>
+                                <h2>{this.settings.title}</h2>
+                                <h3>{this.settings.position}</h3>
+                                <p>{this.settings.description}</p>
                             </div>
                         </div>
                     </AnimatedCard>
                 </div>
 
-                <div className={this.state.show ? "project open" : "project closed"}
+                <div className={this.state.show ? "project-content open" : "project-content closed"}
                  style={projectStyle}>
-                    <div className='project-contents'>
-                        <span className='toggle-project' onClick={this.handleToggle}>
+                    <div className='contents'>
+                        <span className='toggle-project' onClick={this.handleSlideClickToggle}>
                             <FontAwesomeIcon  icon={faTimesCircle} size="2x" />
                         </span>
                         <div className="project-header">                        
@@ -340,7 +431,7 @@ class Project extends React.Component {
                     </div>
                     </div>
                 </div>
-            </div>
+            </li>
         );
     }
 }
@@ -363,9 +454,9 @@ class AnimatedCard extends React.Component {
         }
         this.settings = {
             max: 20,
-            perspective: 1250,
-            scale: '1.1',
-            speed: '1000'
+            perspective: 2500,
+            scale: '1.025',
+            speed: '500'
         }
         this.width = null
         this.height = null
@@ -402,8 +493,9 @@ class AnimatedCard extends React.Component {
         this.setState(prevState => ({
             cardStyle: {
                 ...prevState.cardStyle,
-                transition: `1000ms cubic-bezier(.03,.98,.52,.99)`
+                transition: `500ms cubic-bezier(0.25, 0.46, 0.45, 0.84)`
             }
+            //cubic-bezier(.03,.98,.52,.99)
         }));
         this.transitionTimeout = setTimeout(() => {
             this.setState(prevState => ({
@@ -430,9 +522,10 @@ class AnimatedCard extends React.Component {
             cardStyle: {
                 ...prevState.cardStyle,
                 position: "relative",
-                transform: `perspective(${this.settings.perspective}px) rotateX(${values.tiltY}deg) rotateY(${values.tiltX}deg) scale3d(${this.settings.scale}, ${this.settings.scale}, ${this.settings.scale})`,
-                top: `${values.boxShiftY}vh`,
-                left: `${values.boxShiftX}vw`
+                overflow: 'hidden',
+                transform: `perspective(${this.settings.perspective}px) rotateX(${values.tiltY}deg) rotateY(${values.tiltX}deg) scale(${this.settings.scale}, ${this.settings.scale})`,
+                top: `${values.boxShiftY}px`,
+                left: `${values.boxShiftX}px`
             }
         }));
         this.updateCall = null;
@@ -448,15 +541,13 @@ class AnimatedCard extends React.Component {
             this.setState(prevState => ({
                 cardStyle: {
                     ...prevState.cardStyle,
-                    transform: `perspective(${this.settings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) translateX(0px) translateY(0px)`,
-                    top: 'initial',
-                    left: 'initial'
+                    transform: `perspective(${this.settings.perspective}px) rotateX(0deg) rotateY(0deg) scale(1, 1) translateX(0px) translateY(0px)`,
+                    top: '0px',
+                    left: '0px'
                 }
             }))
         });
     }
-
-//translateX(${values.boxShiftX}vw) translateY(${values.boxShiftY}vh)
 
     updateElementPosition() {
         const rect = this.element.getBoundingClientRect();
@@ -475,9 +566,11 @@ class AnimatedCard extends React.Component {
         const tiltX = (this.settings.max / 2 - _x * this.settings.max).toFixed(2);
         const tiltY = (_y * this.settings.max - this.settings.max / 2).toFixed(2);
 
-        const boxShiftX =  ((e.nativeEvent.clientX / this.winWidth) - 1) * 10;
-        const boxShiftY = ((e.nativeEvent.clientY / this.winHeightt) - 1) * 10;
-
+        const boxShiftX =  ((e.clientX / this.winWidth) - 0.5) * 100;
+        const boxShiftY = ((e.clientY / this.winHeight) - 0.5) * 100;
+        //const boxShiftX =  e.nativeEvent.clientX - (this.left + Math.floor(this.width / 2));
+        //const boxShiftY = e.nativeEvent.clientY - (this.top + Math.floor(this.height / 2))  ;
+        console.log(boxShiftX, boxShiftY);
         return {
             tiltX,
             tiltY,
