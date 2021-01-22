@@ -124,6 +124,7 @@ class Portfolio extends React.Component {
     }
 
     handleSlideClick = (index) => {
+        console.log('handling');
         if (this.state.current !== index) {
             this.setState({ current: index })
         }
@@ -211,7 +212,7 @@ class Portfolio extends React.Component {
                             <h3>Spotipy!</h3>
                         </button>
                         <button className="next" title='next' onClick={this.handleNextClick}>
-                            <span class="icon-wrap">
+                            <span className="icon-wrap">
                                 <FontAwesomeIcon icon={faArrowRight} size='1x' />
                             </span>
                             <h3>Spotipy!</h3>
@@ -374,12 +375,11 @@ class Project extends React.Component {
         };
 
         return (
-            <li className={`project ${curClass} ${prvClass} ${nxtClass}`}>
+            <li className={`project ${curClass} ${prvClass} ${nxtClass}`} onClick={this.handleSlideClickToggle}>
                 <div className={this.state.animate ? 'card-wrapper __animating' : 'card-wrapper'} 
                  ref={el => this.cardRef = el}>
                     <AnimatedCard>
-                        <div className="card card-cover" ref={el => this.bgRef = el} 
-                         onClick={this.handleSlideClickToggle}>
+                        <div className="card card-cover" ref={el => this.bgRef = el}>
                             <div className="card-bg-img">
                                 {this.settings.bgImg}
                             </div>
